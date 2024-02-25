@@ -10,8 +10,16 @@ html {
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
-    sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif,
+    Apple Color Emoji,
+    Segoe UI Emoji;
 }
 
 hr {
@@ -33,7 +41,12 @@ code,
 kbd,
 pre,
 samp {
-  font-family: ui-monospace, SFMono-Regular, Consolas, Liberation Mono, Menlo,
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Consolas,
+    Liberation Mono,
+    Menlo,
     monospace;
   font-size: 1em;
 }
@@ -240,8 +253,15 @@ code,
 kbd,
 pre,
 samp {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    Liberation Mono, Courier New, monospace;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    Liberation Mono,
+    Courier New,
+    monospace;
 }
 
 audio,
@@ -7402,12 +7422,30 @@ video {
 }
 
 .transition {
-  transition-property: background-color, border-color, color, fill, stroke,
-    opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property:
+    background-color,
+    border-color,
+    color,
+    fill,
+    stroke,
+    opacity,
+    box-shadow,
+    transform,
+    filter,
+    -webkit-backdrop-filter;
   transition-property: background-color, border-color, color, fill, stroke,
     opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: background-color, border-color, color, fill, stroke,
-    opacity, box-shadow, transform, filter, backdrop-filter,
+  transition-property:
+    background-color,
+    border-color,
+    color,
+    fill,
+    stroke,
+    opacity,
+    box-shadow,
+    transform,
+    filter,
+    backdrop-filter,
     -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 0.15s;
@@ -11506,7 +11544,9 @@ video {
   margin-bottom: 1rem;
   padding: 8px;
   border-radius: 4px;
-  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.1), 0 2px 15px 0 rgba(0, 0, 0, 0.05);
+  box-shadow:
+    0 1px 10px 0 rgba(0, 0, 0, 0.1),
+    0 2px 15px 0 rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
   max-height: var(--toastify-toast-max-height);
@@ -12132,7 +12172,7 @@ video {
   }
 }
 
-@font-face {
+/* @font-face {
   font-family: Rubik;
   src: url(/fonts/Rubik/Rubik-BlackItalic.woff2) format("woff2");
   font-weight: 900;
@@ -12259,7 +12299,7 @@ video {
     url(/fonts/Rubik/Rubik-Black.ttf) format("truetype");
   font-weight: 900;
   font-style: normal;
-}
+} */
 
 .font-montserrat {
   font-family: Montserrat, sans-serif;
@@ -12271,7 +12311,9 @@ video {
 
 body {
   top: 0 !important;
-  font-family: Rubik, PingFang SC;
+  font-family:
+    Rubik,
+    PingFang SC;
   background-color: #18191a;
 }
 
@@ -12475,7 +12517,8 @@ select {
 }
 
 .border_bronze_gradient {
-  background: linear-gradient(#242526, #242526) padding-box,
+  background:
+    linear-gradient(#242526, #242526) padding-box,
     linear-gradient(
       274.89deg,
       #ffba81 -5.31%,
@@ -12523,7 +12566,8 @@ select {
 }
 
 .border_silver_gradient {
-  background: linear-gradient(#242526, #242526) padding-box,
+  background:
+    linear-gradient(#242526, #242526) padding-box,
     linear-gradient(
       274.89deg,
       #eaeaea -5.31%,
@@ -12573,7 +12617,8 @@ select {
 }
 
 .border_gold_gradient {
-  background: linear-gradient(#242526, #242526) padding-box,
+  background:
+    linear-gradient(#242526, #242526) padding-box,
     linear-gradient(
       274.89deg,
       #ffe663 -5.31%,
@@ -12785,7 +12830,9 @@ select {
 }
 
 .nft-shadow {
-  box-shadow: -10px -10px 80px -35px #e644f8, 10px 10px 80px -35px #82d2ff;
+  box-shadow:
+    -10px -10px 80px -35px #e644f8,
+    10px 10px 80px -35px #82d2ff;
 }
 
 .text-main-gradient {
@@ -12810,7 +12857,8 @@ select {
 
 .nftCard-lineGradient,
 .nftCard-wrapper {
-  box-shadow: -16.1698px -22.6378px 97.019px -48.5095px rgba(70, 46, 140, 0.86),
+  box-shadow:
+    -16.1698px -22.6378px 97.019px -48.5095px rgba(70, 46, 140, 0.86),
     16.9783px 34.7651px 80.8491px 16.1698px rgba(0, 0, 0, 0.25);
 }
 
@@ -12829,7 +12877,8 @@ select {
     #ff3f70 54.81%,
     #ffc801 141.45%
   );
-  box-shadow: 5px 0 30px rgba(255, 124, 63, 0.2),
+  box-shadow:
+    5px 0 30px rgba(255, 124, 63, 0.2),
     -5px 0 30px rgba(197, 50, 199, 0.2);
 }
 
@@ -14122,7 +14171,9 @@ select {
 }
 
 .maxQore_main_timer_shadow {
-  box-shadow: 0 0 20px 0 #2dcf3e4d, 0 7px 10px 0 #00000040,
+  box-shadow:
+    0 0 20px 0 #2dcf3e4d,
+    0 7px 10px 0 #00000040,
     inset 0 0 10px 0 #ffffffbf;
 }
 
@@ -14197,9 +14248,13 @@ select {
 }
 
 .maxQore_logo_shadow {
-  box-shadow: 0 0 11.2234678268px 0 #3ef050, 0 0 22.4469356537px 0 #3ef050,
-    0 0 78.5642776489px 0 #3ef050, 0 0 157.1285552979px 0 #3ef050,
-    0 0 269.3632202148px 0 #3ef050, 0 0 471.3856506348px 0 #3ef050;
+  box-shadow:
+    0 0 11.2234678268px 0 #3ef050,
+    0 0 22.4469356537px 0 #3ef050,
+    0 0 78.5642776489px 0 #3ef050,
+    0 0 157.1285552979px 0 #3ef050,
+    0 0 269.3632202148px 0 #3ef050,
+    0 0 471.3856506348px 0 #3ef050;
 }
 
 .game_chanses_buy {
@@ -14219,7 +14274,9 @@ select {
 }
 
 .mq_lottery_shadow {
-  box-shadow: inset 0 -30px 40px -20px #37f3ff0d, 0 104px 90px -70px #00000080;
+  box-shadow:
+    inset 0 -30px 40px -20px #37f3ff0d,
+    0 104px 90px -70px #00000080;
 }
 
 .mq_lottery_table_bg {
@@ -14241,7 +14298,8 @@ select {
 .mq_lottery_timer_bg {
   background: linear-gradient(180deg, #151b20, #202020),
     linear-gradient(180deg, rgba(45, 212, 62, 0), rgba(45, 212, 62, 0.4));
-  box-shadow: inset 0 -4.9927430153px 4.9927430153px 0 #2dd43e0f,
+  box-shadow:
+    inset 0 -4.9927430153px 4.9927430153px 0 #2dd43e0f,
     0 -4.9927430153px 14.9782295227px 0 #2dd43e1a,
     inset 0 4.9927430153px 4.9927430153px 0 #0000001a;
 }
@@ -14314,7 +14372,9 @@ select {
     rgba(55, 147, 255, 0.9),
     rgba(55, 195, 255, 0.5)
   );
-  box-shadow: inset 0 0 2px 0 #ffffffbf, 0 0 20px 0 #406aff4d,
+  box-shadow:
+    inset 0 0 2px 0 #ffffffbf,
+    0 0 20px 0 #406aff4d,
     0 4px 4px 0 #00000040;
 }
 
@@ -14374,6 +14434,7 @@ select {
 }
 
 .frgx-balance-shadow {
-  box-shadow: 0 0 10px 0 rgba(122, 231, 255, 0.25),
+  box-shadow:
+    0 0 10px 0 rgba(122, 231, 255, 0.25),
     inset 0 0 4px 0 rgba(164, 233, 255, 0.25);
 }
