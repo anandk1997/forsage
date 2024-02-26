@@ -1102,6 +1102,7 @@ const Home = () => {
                       <a
                         className="sm:order-2"
                         target="_blank"
+                        rel="noreferrer"
                         href="https://bscscan.com/tx/0x6237cab12c8ad765173ed1647c4e9ec49a4ae48aa569f59c81953d64a21220bc"
                       >
                         <svg
@@ -1189,6 +1190,7 @@ const Home = () => {
                       <a
                         className="sm:order-2"
                         target="_blank"
+                        rel="noreferrer"
                         href="https://bscscan.com/tx/0x6237cab12c8ad765173ed1647c4e9ec49a4ae48aa569f59c81953d64a21220bc"
                       >
                         <svg
@@ -1257,6 +1259,7 @@ const Home = () => {
                       <a
                         className="sm:order-2"
                         target="_blank"
+                        rel="noreferrer"
                         href="https://bscscan.com/tx/0x82c774d35cf50377149f23f2e272353f2bd55d49069f8fb4ecca30de9a924e5b"
                       >
                         <svg
@@ -1344,6 +1347,7 @@ const Home = () => {
                       <a
                         className="sm:order-2"
                         target="_blank"
+                        rel="noreferrer"
                         href="https://bscscan.com/tx/0x82c774d35cf50377149f23f2e272353f2bd55d49069f8fb4ecca30de9a924e5b"
                       >
                         <svg
@@ -1429,6 +1433,7 @@ const Home = () => {
                       <a
                         className="sm:order-2"
                         target="_blank"
+                        rel="noreferrer"
                         href="https://bscscan.com/tx/0x82c774d35cf50377149f23f2e272353f2bd55d49069f8fb4ecca30de9a924e5b"
                       >
                         <svg
@@ -1505,6 +1510,7 @@ const Home = () => {
                       <a
                         className="sm:order-2"
                         target="_blank"
+                        rel="noreferrer"
                         href="https://bscscan.com/tx/0x363036e615aa726492a5327dff797146b0a067f2d217a4921947460d54564259"
                       >
                         <svg
@@ -1592,6 +1598,7 @@ const Home = () => {
                       <a
                         className="sm:order-2"
                         target="_blank"
+                        rel="noreferrer"
                         href="https://bscscan.com/tx/0x363036e615aa726492a5327dff797146b0a067f2d217a4921947460d54564259"
                       >
                         <svg
@@ -1679,6 +1686,7 @@ const Home = () => {
                       <a
                         className="sm:order-2"
                         target="_blank"
+                        rel="noreferrer"
                         href="https://bscscan.com/tx/0x363036e615aa726492a5327dff797146b0a067f2d217a4921947460d54564259"
                       >
                         <svg
@@ -1747,6 +1755,7 @@ const Home = () => {
                       <a
                         className="sm:order-2"
                         target="_blank"
+                        rel="noreferrer"
                         href="https://bscscan.com/tx/0xd6dae201126d510f3cf06cb84b2fee0351dc79b1f6a0b94e4bc4ab4f3e7a49c7"
                       >
                         <svg
@@ -1834,6 +1843,7 @@ const Home = () => {
                       <a
                         className="sm:order-2"
                         target="_blank"
+                        rel="noreferrer"
                         href="https://bscscan.com/tx/0xd6dae201126d510f3cf06cb84b2fee0351dc79b1f6a0b94e4bc4ab4f3e7a49c7"
                       >
                         <svg
@@ -1919,6 +1929,7 @@ const Home = () => {
                       <a
                         className="sm:order-2"
                         target="_blank"
+                        rel="noreferrer"
                         href="https://bscscan.com/tx/0xd6dae201126d510f3cf06cb84b2fee0351dc79b1f6a0b94e4bc4ab4f3e7a49c7"
                       >
                         <svg

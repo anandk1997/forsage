@@ -8,6 +8,7 @@ export const Footer = () => {
           <a
             className="w-7 h-7 flex justify-center items-center rounded-full bg-white-100 hover:bg-white-300"
             target="_blank"
+            rel="noreferrer"
             href="https://discord.gg/forsage/"
           >
             <svg
@@ -22,6 +23,7 @@ export const Footer = () => {
           <a
             className="w-7 h-7 flex justify-center items-center rounded-full bg-white-100 hover:bg-white-300"
             target="_blank"
+            rel="noreferrer"
             href="https://t.me/forsageio_official/"
           >
             <svg
@@ -41,6 +43,7 @@ export const Footer = () => {
           <a
             className="w-7 h-7 flex justify-center items-center rounded-full bg-white-100 hover:bg-white-300"
             target="_blank"
+            rel="noreferrer"
             href="https://www.youtube.com/@FORSAGECommunity/"
           >
             <svg
@@ -58,6 +61,7 @@ export const Footer = () => {
           <a
             className="w-7 h-7 flex justify-center items-center rounded-full bg-white-100 hover:bg-white-300"
             target="_blank"
+            rel="noreferrer"
             href="https://twitter.com/forsageofficial/"
           >
             <svg
