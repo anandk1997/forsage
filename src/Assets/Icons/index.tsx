@@ -18,4 +18,5 @@ export {
   TelegramIcon,
   YoutubeIcon,
   TwitterIcon,
+  ForsageIcon,
 } from "../Svg";

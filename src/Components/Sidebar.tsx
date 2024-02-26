@@ -251,7 +251,7 @@ export const Sidebar = () => {
   );
 };
 
-const Devider = () => (
+export const Devider = () => (
   <div className="border-solid border-[1px] border-[#363738] lg:hidden mx-2.5" />
 );
 
