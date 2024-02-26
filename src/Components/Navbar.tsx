@@ -1,6 +1,8 @@
-import React from "react";
+import { useNavContext } from "src/Contexts/useNavContext";
 
 export const Navbar = () => {
+  const { hideNavbar } = useNavContext();
+
   return (
     <div className="fixed top-0 left-1/2 -translate-x-1/2 flex justify-center w-full px-10 py-2.5 z-40 lg:p-0 lg:max-h-screen z-999999">
       <div className="flex justify-between items-center rounded-mini max-w-desktop-preview-bar w-full bg-main-blue px-5 py-2 shadow-preview-bar lg:pl-10 sm:pl-5 lg:py-2.5 lg:rounded-none lg:rounded-b-mini lg:pr-0 false">
@@ -29,10 +31,7 @@ export const Navbar = () => {
               </span>
               <div className="flex justify-between items-center space-x-2.5 lg:space-x-5 lg:w-full lg:hidden">
                 <input className="px-4 py-3 rounded-mini leading-5 bg-white-100 text-white text-base outline-none false" />
-                <button
-                  disabled=""
-                  className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none bg-white-100 py-3 px-5 cursor-not-allowed"
-                >
+                <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none bg-white-100 py-3 px-5 cursor-not-allowed">
                   Go
                 </button>
               </div>
@@ -43,7 +42,10 @@ export const Navbar = () => {
           </button>
         </div>
         <div className="flex lg:justify-end lg:ml-auto lg:pr-10 sm:pr-5">
-          <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-white-100 hover:bg-white-300 rounded-full lg:hidden w-10 h-10 !p-0 ml-5">
+          <button
+            className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-white-100 hover:bg-white-300 rounded-full lg:hidden w-10 h-10 !p-0 ml-5"
+            onClick={hideNavbar}
+          >
             <svg
               className="w-6 h-6 cursor-pointer"
               viewBox="0 0 24 24"

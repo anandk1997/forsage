@@ -1,4 +1,3 @@
-import React from "react";
 import { DashboardLayout } from "src/Layout/DashboardLayout";
 
 const Home = () => {
@@ -94,7 +93,7 @@ const Home = () => {
                       className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none ml-1.5"
                       data-tip="true"
                       data-for="Personal link"
-                      currentitem="false"
+                      // currentitem="false"
                     >
                       <span></span>
                       <svg
@@ -1017,7 +1016,7 @@ const Home = () => {
                 className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none ml-1.5"
                 data-tip="true"
                 data-for="Platform recent activity"
-                currentitem="false"
+                // currentitem="false"
               >
                 <span></span>
                 <svg
@@ -1991,7 +1990,7 @@ const Home = () => {
                         className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none ml-1.5"
                         data-tip="true"
                         data-for="Members total"
-                        currentitem="false"
+                        // currentitem="false"
                       >
                         <span></span>
                         <svg
@@ -2046,7 +2045,7 @@ const Home = () => {
                       className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none ml-1.5"
                       data-tip="true"
                       data-for="Members received"
-                      currentitem="false"
+                      // currentitem="false"
                     >
                       <span></span>
                       <svg

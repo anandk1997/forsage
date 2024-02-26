@@ -1,5 +1,3 @@
-import React from "react";
-
 import { DashboardLayout } from "src/Layout/DashboardLayout";
 
 const Partners = () => {
@@ -442,7 +440,9 @@ const Partners = () => {
                           0 BNB
                         </td>
                         <td className="p-6 xl:p-4 lg:p-3 whitespace-nowrap notranslate text-white text-right font-medium text-xs">
-                          <span className="text-green-350 font-semibold">+ 1</span>
+                          <span className="text-green-350 font-semibold">
+                            + 1
+                          </span>
                         </td>
                         <td className="p-6 xl:p-4 lg:p-3 whitespace-nowrap notranslate text-white text-right font-medium text-xs">
                           3

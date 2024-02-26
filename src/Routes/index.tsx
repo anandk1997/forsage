@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+
 import NotFoundPage from "src/Components/NotFoundPage";
 
 import Home from "src/Pages/Home";

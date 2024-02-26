@@ -170,7 +170,7 @@ export const InfoIcon = () => (
   </svg>
 );
 
-export const DropdownIcon = ({ show }) => (
+export const DropdownIcon = ({ show }: { show: boolean }) => (
   <svg
     className={`ml-auto lg:mr-5 ${show && "rotate-180"}`}
     width="24"

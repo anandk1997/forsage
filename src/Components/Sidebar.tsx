@@ -23,14 +23,24 @@ import {
   YoutubeIcon,
 } from "src/Assets/Icons";
 
+import { useNavContext } from "src/Contexts/useNavContext";
+import { cm } from "src/Hooks/useClassesMerge";
+
 export const Sidebar = () => {
   const [isTeam, setIsTeam] = useReducer((open) => !open, false);
   const [isInfo, setIsInfo] = useReducer((open) => !open, false);
 
+  const { isNavBar } = useNavContext();
+
   return (
     <div className="relative w-full max-w-desktop-left-bar flex-shrink-0 border-r border-white-100 lg:hidden">
       <div className="fixed top-0 max-w-desktop-left-bar w-full flex h-screen z-10 pt-4">
-        <div className="flex flex-col min-h-screen w-full flex-shrink-0 pl-10 pr-5 pt-22 overflow-auto">
+        <div
+          className={cm(
+            "flex flex-col min-h-screen w-full flex-shrink-0 pl-10 pr-5 overflow-auto",
+            isNavBar ? "pt-22" : ""
+          )}
+        >
           <div className="flex-1 lg:pr-0 lg:pl-10 sm:pl-5">
             <div className="flex flex-1 flex-col h-full w-full overflow-y-auto space-y-2.5 lg:space-y-0">
               <div className="flex flex-1 flex-col w-full h-full overflow-y-auto space-y-2.5 lg:space-y-0 lg:mb-5 sm:mb-[50px]">
