@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { NavProvider } from "./useNavContext";
 
@@ -20,7 +20,9 @@ const ContextProviders = ({ children }: { children: ReactNode }) => {
     <>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider theme={theme}>
-          <NavProvider>{children}</NavProvider>
+          <Suspense fallback={<h1 className="text-black">Loading</h1>}>
+            <NavProvider>{children}</NavProvider>
+          </Suspense>
         </ThemeProvider>
       </QueryClientProvider>
     </>

@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 import {
   CalculatorIcon,
@@ -32,13 +32,15 @@ export const Sidebar = () => {
 
   const { isNavBar } = useNavContext();
 
+  const { pathname } = useLocation();
+
   return (
     <div className="relative w-full max-w-desktop-left-bar flex-shrink-0 border-r border-white-100 lg:hidden">
       <div className="fixed top-0 max-w-desktop-left-bar w-full flex h-screen z-10 pt-4">
         <div
           className={cm(
             "flex flex-col min-h-screen w-full flex-shrink-0 pl-10 pr-5 overflow-auto",
-            isNavBar ? "pt-22" : "",
+            isNavBar ? "pt-22" : ""
           )}
         >
           <div className="flex-1 lg:pr-0 lg:pl-10 sm:pl-5">
@@ -49,7 +51,12 @@ export const Sidebar = () => {
                     <div className="flex items-center text-left">
                       <DashboardIcon />
 
-                      <span className="text-white-500 text-base ml-2.5 text-white-900">
+                      <span
+                        className={cm(
+                          "text-white-500 text-base ml-2.5",
+                          pathname === "/" ? "text-white-900" : "text-white-500"
+                        )}
+                      >
                         Dashboard
                       </span>
                     </div>
@@ -79,24 +86,21 @@ export const Sidebar = () => {
                           title="Partners"
                           icon={PartnersIcon}
                           to="/partners"
+                          path={pathname}
                         />
 
                         <NavigateButton
                           title="Links"
                           icon={LinksIcon}
                           to="/links"
-                        />
-
-                        <NavigateButton
-                          title="Links"
-                          icon={LinksIcon}
-                          to="/links"
+                          path={pathname}
                         />
 
                         <NavigateButton
                           title="Stats"
                           icon={StatsIcon}
                           to="/stats"
+                          path={pathname}
                         />
                       </div>
                     </>
@@ -165,12 +169,14 @@ export const Sidebar = () => {
                           title="Instruction"
                           icon={InstructionsIcon}
                           to="/instructions"
+                          path={pathname}
                         />
 
                         <NavigateButton
                           title="Calculator"
                           icon={CalculatorIcon}
                           to="/calculator"
+                          path={pathname}
                           latest
                         />
 
@@ -178,12 +184,14 @@ export const Sidebar = () => {
                           title="Smart tools"
                           icon={ToolsIcon}
                           to="/smartTools"
+                          path={pathname}
                         />
 
                         <NavigateButton
                           title="Ideas"
                           icon={IdeasIcon}
                           to="/ideas"
+                          path={pathname}
                         />
                       </div>
                     </>
@@ -259,20 +267,34 @@ const NavigateButton = ({
   title,
   icon: Icon,
   to,
+  path,
   latest,
 }: {
   title: string;
   icon: () => JSX.Element;
   to: string;
+  path: string;
   latest?: boolean;
 }) => {
+  console.log(path === to);
   return (
     <NavLink className=" " to={to}>
-      <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
+      <button
+        className={cm(
+          "relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent"
+        )}
+      >
         <div className="flex items-center text-left">
           <Icon />
 
-          <span className="text-white-500 text-base ml-2.5 false">{title}</span>
+          <span
+            className={cm(
+              "text-white-500 text-base ml-2.5 false",
+              path === to ? "text-white-900" : ""
+            )}
+          >
+            {title}
+          </span>
 
           {latest && (
             <span className="absolute top-1 right-1.5 text-green text-sm lg:bg-green-200 lg:px-2.5 lg:py-1 lg:rounded lg:top-1/2 lg:-translate-y-1/2 lg:right-5">

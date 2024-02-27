@@ -1,6 +1,7 @@
 import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 
+import { DashboardLayout } from "src/Layout/DashboardLayout";
 import NotFoundPage from "src/Components/NotFoundPage";
 
 const Home = lazy(() => import("src/Pages/Home"));
@@ -20,64 +21,68 @@ const SmartTools = lazy(() => import("src/Pages/SmartTools"));
 export const router = createBrowserRouter([
   {
     path: "/",
-    loader: () => ({ message: "Hello Data Router!" }),
-    element: <Home />,
-    // element: <h1>kjnmmnm</h1>,
-    errorElement: <NotFoundPage />,
+    element: <DashboardLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+        errorElement: <NotFoundPage />,
+      },
 
-    // Component() {
-    //   let data = useLoaderData();
-    //   return <h1>{data.message}</h1>;
-    // },
+      {
+        path: "dashboard/x3",
+        element: <X3 />,
+      },
+
+      {
+        path: "dashboard/x4",
+        element: <X4 />,
+      },
+
+      {
+        path: "dashboard/xxx",
+        element: <XXX />,
+      },
+
+      {
+        path: "dashboard/xGold",
+        element: <XGold />,
+      },
+
+      {
+        path: "dashboard/xQore",
+        element: <XQore />,
+      },
+
+      {
+        path: "dashboard/maxQore",
+        element: <MaxQore />,
+      },
+
+      {
+        path: "partners",
+        element: <Partners />,
+      },
+
+      {
+        path: "links",
+        element: <Links />,
+      },
+
+      {
+        path: "instructions",
+        element: <Instructions />,
+      },
+
+      {
+        path: "smartTools",
+        element: <SmartTools />,
+      },
+    ],
   },
 
   {
-    path: "dashboard/x3",
-    element: <X3 />,
-  },
-
-  {
-    path: "dashboard/x4",
-    element: <X4 />,
-  },
-
-  {
-    path: "dashboard/xxx",
-    element: <XXX />,
-  },
-
-  {
-    path: "dashboard/xGold",
-    element: <XGold />,
-  },
-
-  {
-    path: "dashboard/xQore",
-    element: <XQore />,
-  },
-
-  {
-    path: "dashboard/maxQore",
-    element: <MaxQore />,
-  },
-
-  {
-    path: "partners",
-    element: <Partners />,
-  },
-
-  {
-    path: "links",
-    element: <Links />,
-  },
-
-  {
-    path: "instructions",
-    element: <Instructions />,
-  },
-
-  {
-    path: "smartTools",
-    element: <SmartTools />,
+    path: "*",
+    element: <NotFoundPage />,
   },
 ]);

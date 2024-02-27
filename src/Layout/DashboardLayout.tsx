@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { Outlet } from "react-router-dom";
 
 import { Footer } from "src/Components/Footer";
 import Navbar from "src/Components/Navbar";
@@ -6,7 +6,7 @@ import { Sidebar } from "src/Components/Sidebar";
 import { useNavContext } from "src/Contexts/useNavContext";
 import { cm } from "src/Hooks/useClassesMerge";
 
-export const DashboardLayout = ({ children }: { children: ReactNode }) => {
+export const DashboardLayout = () => {
   const { isNavBar } = useNavContext();
 
   return (
@@ -23,7 +23,7 @@ export const DashboardLayout = ({ children }: { children: ReactNode }) => {
           )}
         >
           <div className="flex relative flex-1 py-10 pt-8.5 flex-col justify-between w-full px-10 sm:px-0 sm:pt-7.5">
-            {children}
+            <Outlet />
 
             <Footer />
           </div>

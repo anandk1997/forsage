@@ -294,24 +294,16 @@ export const PromoIcon = () => (
 
 export const DashboardIcon = () => (
   <svg
-    className="w-6 h-6 stroke-current text-white-500"
+    className="w-6 h-6 stroke-current text-white-500 "
     viewBox="0 0 24 24"
+    stroke="#fff"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      d="M9 4H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1ZM19 4h-4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1ZM9 14H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1Z"
-      fill="#fff"
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    ></path>
-    <path
-      d="M19 14h-4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1Z"
-      fill="#8B8C8C"
-      stroke="#8B8C8C"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      d="M9 4H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1ZM19 4h-4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1ZM9 14H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1ZM19 14h-4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1Z"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     ></path>
   </svg>
 );

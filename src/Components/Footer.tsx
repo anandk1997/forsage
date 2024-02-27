@@ -1,5 +1,3 @@
-import React from "react";
-
 export const Footer = () => {
   return (
     <footer className="flex lg:flex-col items-center mt-auto justify-between lg:justify-start lg:items-start py-10 w-full lg:p-5 lg:pb-9 pb-0 lg:pb-0 z-10">
