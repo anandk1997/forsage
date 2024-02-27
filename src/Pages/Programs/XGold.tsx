@@ -3460,7 +3460,7 @@ const XGold = () => {
                         stroke="#F0B90B"
                       ></path>
                     </svg>
-                    1 440
+                    1440
                   </span>
                 </div>
                 <div className="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3">
@@ -3802,7 +3802,7 @@ const XGold = () => {
                         stroke="#F0B90B"
                       ></path>
                     </svg>
-                    2 330
+                    2330
                   </span>
                 </div>
                 <div className="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3">
@@ -4144,7 +4144,7 @@ const XGold = () => {
                         stroke="#F0B90B"
                       ></path>
                     </svg>
-                    3 770
+                    3770
                   </span>
                 </div>
                 <div className="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3">
@@ -4486,7 +4486,7 @@ const XGold = () => {
                         stroke="#F0B90B"
                       ></path>
                     </svg>
-                    6 100
+                    6100
                   </span>
                 </div>
                 <div className="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3">
@@ -4828,7 +4828,7 @@ const XGold = () => {
                         stroke="#F0B90B"
                       ></path>
                     </svg>
-                    9 870
+                    9870
                   </span>
                 </div>
                 <div className="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3">

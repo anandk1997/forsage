@@ -87,7 +87,7 @@ const ProgramsLayout = ({ children }: { children: ReactNode }) => {
               </div>
               <div className="flex flex-col items-end">
                 <div className="self-end text-two-half text-white font-bold sm:text-2xl whitespace-nowrap">
-                  369 245 BUSD
+                  369245 BUSD
                 </div>
               </div>
             </div>

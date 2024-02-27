@@ -1624,7 +1624,7 @@ const XXX = () => {
                         stroke="#F0B90B"
                       ></path>
                     </svg>
-                    1 555
+                    1555
                   </span>
                 </div>
                 <div className="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3">
@@ -1822,7 +1822,7 @@ const XXX = () => {
                         stroke="#F0B90B"
                       ></path>
                     </svg>
-                    2 999
+                    2999
                   </span>
                 </div>
                 <div className="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3">
@@ -2020,7 +2020,7 @@ const XXX = () => {
                         stroke="#F0B90B"
                       ></path>
                     </svg>
-                    5 755
+                    5755
                   </span>
                 </div>
                 <div className="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3">
@@ -2218,7 +2218,7 @@ const XXX = () => {
                         stroke="#F0B90B"
                       ></path>
                     </svg>
-                    9 696
+                    9696
                   </span>
                 </div>
                 <div className="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3">

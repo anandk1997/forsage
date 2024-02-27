@@ -2,6 +2,16 @@ import { NavLink } from "react-router-dom";
 import { DashboardLayout } from "src/Layout/DashboardLayout";
 
 const Home = () => {
+  const copyToClipboard = () => {
+    navigator.clipboard
+      .writeText("forsage.io/b/xqg1z8")
+      .then(() => alert("Text copied to clipboard!"))
+      .catch((err) => {
+        console.error("Could not copy text: ", err);
+        alert("Failed to copy text to clipboard");
+      });
+  };
+
   return (
     <DashboardLayout>
       <div className="flex flex-col w-full space-y-10 sm:space-y-5">
@@ -129,7 +139,10 @@ const Home = () => {
                   forsage.io/b/xqg1z8
                 </span>
                 <div className="flex space-x-2.5 sm:w-full">
-                  <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none py-0 px-2.5 bg-main-blue text-white rounded !leading-30px hover:bg-hover-main-blue active:bg-active-main-blue !leading-30px sm:flex-1">
+                  <button
+                    className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none py-0 px-2.5 bg-main-blue text-white rounded !leading-30px hover:bg-hover-main-blue active:bg-active-main-blue !leading-30px sm:flex-1"
+                    onClick={copyToClipboard}
+                  >
                     Copy
                   </button>
                 </div>
@@ -322,7 +335,7 @@ const Home = () => {
                   </div>
                   <div className="flex items-center justify-between">
                     <div className="flex flex-1 w-full text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
-                      1 116 069 BUSD
+                      1116069 BUSD
                     </div>
                     <div className="flex p-1.5">
                       <div className="w-full text-green-light flex text-base items-center justify-end notranslate sm:text-sm">
@@ -485,7 +498,7 @@ const Home = () => {
                   </span>
                 </div>
                 <span className="text-white text-2xl font-bold justify-end text-right notranslate sm:text-xl">
-                  368 715 BUSD
+                  368715 BUSD
                 </span>
               </div>
               <div className="flex justify-between h-full w-full">
@@ -573,7 +586,7 @@ const Home = () => {
                   </span>
                 </div>
                 <span className="text-white text-2xl font-bold justify-end text-right notranslate sm:text-xl">
-                  410 970 BUSD
+                  410970 BUSD
                 </span>
               </div>
               <div className="flex justify-between h-full w-full">
@@ -661,7 +674,7 @@ const Home = () => {
                   </span>
                 </div>
                 <span className="text-white text-2xl font-bold justify-end text-right notranslate sm:text-xl">
-                  174 249 BUSD
+                  174249 BUSD
                 </span>
               </div>
               <div className="flex justify-between h-full w-full">
@@ -749,7 +762,7 @@ const Home = () => {
                   </span>
                 </div>
                 <span className="text-white text-2xl font-bold justify-end text-right notranslate sm:text-xl">
-                  162 135 BUSD
+                  162135 BUSD
                 </span>
               </div>
               <div className="flex justify-between h-full w-full">
@@ -2024,7 +2037,7 @@ const Home = () => {
                     </div>
                   </div>
                   <span className="text-white text-2xl font-bold notranslate sm:text-xl false mt-5 sm:mt-2.5">
-                    1 652 000
+                    1652000
                   </span>
                 </div>
                 <div className="p-5 pt-0 flex text-green-light text-base items-baseline notranslate sm:text-sm">
@@ -2080,15 +2093,15 @@ const Home = () => {
                 </span>
                 <div className="flex flex-col py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
                   <span className="text-2xl text-white font-bold sm:text-xl">
-                    147 273 343.76 BUSD
+                    147273343.76 BUSD
                   </span>
                   <span className="text-green-light text-base items-baseline sm:text-sm">
-                    + 13 276.3 BUSD
+                    + 13276.3 BUSD
                   </span>
                 </div>
                 <div className="flex flex-col py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
                   <span className="text-2xl text-white font-bold sm:text-xl">
-                    22 428.1621 BNB
+                    22428.1621 BNB
                   </span>
                   <span className="text-green-light text-base items-baseline sm:text-sm">
                     + 3.5985 BNB
@@ -2364,7 +2377,7 @@ const Home = () => {
                         Transactions made
                       </span>
                       <span className="text-2xl text-white font-bold sm:text-xl">
-                        5 817 992
+                        5817992
                       </span>
                       <span className="text-green-light text-base items-baseline sm:text-sm">
                         + 993
@@ -2378,10 +2391,10 @@ const Home = () => {
                         </span>
                       </span>
                       <span className="text-2xl text-white font-bold sm:text-xl">
-                        294 546 687.52
+                        294546687.52
                       </span>
                       <span className="text-green-light text-base items-baseline sm:text-sm">
-                        + 26 552.6
+                        + 26552.6
                       </span>
                     </div>
                   </div>

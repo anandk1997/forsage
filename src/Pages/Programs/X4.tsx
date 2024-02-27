@@ -1048,7 +1048,7 @@ const X4 = () => {
                         stroke="#F0B90B"
                       ></path>
                     </svg>
-                    1 250
+                    1250
                   </span>
                 </div>
                 <div className="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3">
@@ -1174,7 +1174,7 @@ const X4 = () => {
                         stroke="#F0B90B"
                       ></path>
                     </svg>
-                    2 500
+                    2500
                   </span>
                 </div>
                 <div className="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3">
@@ -1300,7 +1300,7 @@ const X4 = () => {
                         stroke="#F0B90B"
                       ></path>
                     </svg>
-                    5 000
+                    5000
                   </span>
                 </div>
                 <div className="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3">
@@ -1426,7 +1426,7 @@ const X4 = () => {
                         stroke="#F0B90B"
                       ></path>
                     </svg>
-                    9 900
+                    9900
                   </span>
                 </div>
                 <div className="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3">
