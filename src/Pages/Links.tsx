@@ -205,8 +205,8 @@ const Links = () => {
                         >
                           <path
                             d="M4 10V1m0 0L1 4m3-3 3 3"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           ></path>
                         </svg>
                         0
@@ -245,8 +245,8 @@ const Links = () => {
                         >
                           <path
                             d="M4 10V1m0 0L1 4m3-3 3 3"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           ></path>
                         </svg>
                         1
@@ -285,8 +285,8 @@ const Links = () => {
                         >
                           <path
                             d="M4 10V1m0 0L1 4m3-3 3 3"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           ></path>
                         </svg>
                         447
@@ -323,8 +323,8 @@ const Links = () => {
                         >
                           <path
                             d="M4 10V1m0 0L1 4m3-3 3 3"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           ></path>
                         </svg>
                         10 BUSD
@@ -4148,7 +4148,7 @@ const Links = () => {
                 viewBox="0 0 44 44"
                 stroke="#fff"
               >
-                <g fill="none" fillRule="evenodd" stroke-width="2">
+                <g fill="none" fillRule="evenodd" strokeWidth="2">
                   <circle cx="22" cy="22" r="1">
                     <animate
                       attributeName="r"

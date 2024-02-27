@@ -354,8 +354,8 @@ const NavbarSm = ({ close }: { close: () => void }) => {
           >
             <path
               d="M18 6 6 18M6 6l12 12"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             ></path>
           </svg>
         </button>
@@ -374,8 +374,8 @@ const NavbarSm = ({ close }: { close: () => void }) => {
               >
                 <path
                   d="M18 6 6 18M6 6l12 12"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></path>
               </svg>
             </div>

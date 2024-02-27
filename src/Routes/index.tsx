@@ -1,10 +1,13 @@
+import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 
 import NotFoundPage from "src/Components/NotFoundPage";
 
-import Home from "src/Pages/Home";
-import Links from "src/Pages/Links";
-import Partners from "src/Pages/Partners";
+const Home = lazy(() => import("src/Pages/Home"));
+const Instructions = lazy(() => import("src/Pages/Instructions"));
+const Links = lazy(() => import("src/Pages/Links"));
+const Partners = lazy(() => import("src/Pages/Partners"));
+const SmartTools = lazy(() => import("src/Pages/SmartTools"));
 
 export const router = createBrowserRouter([
   {
@@ -19,12 +22,24 @@ export const router = createBrowserRouter([
     //   return <h1>{data.message}</h1>;
     // },
   },
+
   {
     path: "/partners",
     element: <Partners />,
   },
+
   {
     path: "/links",
     element: <Links />,
+  },
+
+  {
+    path: "/instructions",
+    element: <Instructions />,
+  },
+
+  {
+    path: "/smartTools",
+    element: <SmartTools />,
   },
 ]);

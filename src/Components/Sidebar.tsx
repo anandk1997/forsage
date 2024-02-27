@@ -38,7 +38,7 @@ export const Sidebar = () => {
         <div
           className={cm(
             "flex flex-col min-h-screen w-full flex-shrink-0 pl-10 pr-5 overflow-auto",
-            isNavBar ? "pt-22" : ""
+            isNavBar ? "pt-22" : "",
           )}
         >
           <div className="flex-1 lg:pr-0 lg:pl-10 sm:pl-5">
@@ -164,7 +164,7 @@ export const Sidebar = () => {
                         <NavigateButton
                           title="Instruction"
                           icon={InstructionsIcon}
-                          to="/instruction"
+                          to="/instructions"
                         />
 
                         <NavigateButton
