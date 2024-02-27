@@ -17,6 +17,7 @@ const Instructions = lazy(() => import("src/Pages/Instructions"));
 const Links = lazy(() => import("src/Pages/Links"));
 const Partners = lazy(() => import("src/Pages/Partners"));
 const SmartTools = lazy(() => import("src/Pages/SmartTools"));
+const Ideas = lazy(() => import("src/Pages/Ideas"));
 
 export const router = createBrowserRouter([
   {
@@ -77,6 +78,11 @@ export const router = createBrowserRouter([
       {
         path: "smartTools",
         element: <SmartTools />,
+      },
+
+      {
+        path: "ideas",
+        element: <Ideas />,
       },
     ],
   },
