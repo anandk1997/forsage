@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { DashboardLayout } from "src/Layout/DashboardLayout";
 
 const Home = () => {
@@ -453,9 +454,9 @@ const Home = () => {
             </button>
           </div>
           <div className="grid w-full gap-10 mt-8 grid-cols-2 sm:grid-cols-1">
-            <a
+            <NavLink
+              to="/dashboard/x3"
               className="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
-              href="/dashboard/x3?user=1"
             >
               <svg
                 className="absolute top-2 right-2 sm:top-1 sm:right-1"
@@ -539,10 +540,11 @@ const Home = () => {
                   backgroundSize: "cover",
                 }}
               ></div>
-            </a>
-            <a
+            </NavLink>
+
+            <NavLink
+              to="/dashboard/x4"
               className="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
-              href="/dashboard/x4?user=1"
             >
               <svg
                 className="absolute top-2 right-2 sm:top-1 sm:right-1"
@@ -626,10 +628,11 @@ const Home = () => {
                   backgroundSize: "cover",
                 }}
               ></div>
-            </a>
-            <a
+            </NavLink>
+
+            <NavLink
+              to="/dashboard/xxx"
               className="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
-              href="/dashboard/xXx?user=1"
             >
               <svg
                 className="absolute top-2 right-2 sm:top-1 sm:right-1"
@@ -713,10 +716,11 @@ const Home = () => {
                   backgroundSize: "cover",
                 }}
               ></div>
-            </a>
-            <a
+            </NavLink>
+
+            <NavLink
+              to="/dashboard/xGold"
               className="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
-              href="/dashboard/xGold?user=1"
             >
               <svg
                 className="absolute top-2 right-2 sm:top-1 sm:right-1"
@@ -803,10 +807,11 @@ const Home = () => {
                   backgroundSize: "cover",
                 }}
               ></div>
-            </a>
-            <a
+            </NavLink>
+
+            <NavLink
+              to="/dashboard/xQore"
               className="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
-              href="/dashboard/xQore?user=1"
             >
               <svg
                 className="absolute top-2 right-2 sm:top-1 sm:right-1"
@@ -890,10 +895,11 @@ const Home = () => {
                   backgroundSize: "cover",
                 }}
               ></div>
-            </a>
-            <a
+            </NavLink>
+
+            <NavLink
+              to="/dashboard/maxQore"
               className="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
-              href="/dashboard/maxQore?user=1"
             >
               <svg
                 className="absolute top-2 right-2 sm:top-1 sm:right-1"
@@ -980,9 +986,10 @@ const Home = () => {
                   backgroundSize: "cover",
                 }}
               ></div>
-            </a>
+            </NavLink>
           </div>
         </div>
+
         <div className="sm:px-5">
           <div className="ambassador-buttonGradient rounded p-[1px]">
             <div className="overflow-hidden bg-darkBlack rounded h-[140px] sm:h-auto w-full flex items-center justify-between space-x-5 sm:space-x-0 sm:flex-col sm:px-5 sm:py-[30px]">
