@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactNode, Suspense } from "react";
+import { Toaster } from "react-hot-toast";
 
 import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@emotion/react";
@@ -20,6 +21,8 @@ const queryClient = new QueryClient({
 const ContextProviders = ({ children }: { children: ReactNode }) => {
   return (
     <>
+      <Toaster position="top-center" reverseOrder={false} />
+
       <QueryClientProvider client={queryClient}>
         <ThemeProvider theme={theme}>
           <Suspense fallback={<Loading />}>

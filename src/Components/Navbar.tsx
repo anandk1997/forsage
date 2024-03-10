@@ -18,35 +18,16 @@ import {
   TeamIcon,
   ToolsIcon,
 } from "src/Assets/Icons";
-// import { useNavContext } from "src/Contexts/useNavContext";
 import { Devider } from "./Sidebar";
 
-export const Navbar = () => {
-  // const { hideNavbar } = useNavContext();
+import { useWalletConnect } from "src/Hooks/useWalletConnect";
 
+export const Navbar = () => {
   const navigate = useNavigate();
 
   const [isNavSm, setIsNavSm] = useReducer((open) => !open, false);
 
-  async function connectMetaMask() {
-    if (typeof window.ethereum !== "undefined") {
-      try {
-        let accounts = await window.ethereum.request({
-          method: "eth_requestAccounts",
-        });
-        console.log("accounts", accounts);
-        document.getElementById("wallet_address").value = accounts[0];
-        const walletAddress2 = document.getElementById("connectButton");
-        walletAddress2.style.display = "none";
-        const walletAddress = document.getElementById("loginBtn");
-        walletAddress.style.display = "block";
-      } catch (error) {
-        console.error("Error connecting to MetaMask:", error);
-      }
-    } else {
-      console.error("MetaMask is not installed.");
-    }
-  }
+  const { connectWallet, walletAddress } = useWalletConnect();
 
   return (
     <div className="fixed top-0 left-1/2 -translate-x-1/2 flex justify-center w-full px-10 py-2.5 z-40 lg:p-0 lg:max-h-screen z-999999">
@@ -87,9 +68,16 @@ export const Navbar = () => {
             </div>
             <button
               className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-bg hover:bg-black-500 whitespace-nowrap lg:hidden"
-              onClick={connectMetaMask}
+              onClick={() => {
+                if (!(walletAddress.length > 0)) connectWallet();
+              }}
             >
-              Connect wallet
+              {walletAddress && walletAddress.length > 0
+                ? `Connected: ${walletAddress.substring(
+                    0,
+                    6
+                  )}...${walletAddress.substring(38)}`
+                : "Connect Wallet"}
             </button>
           </div>
           <div className="flex lg:justify-end lg:ml-auto lg:pr-10 sm:pr-5">
