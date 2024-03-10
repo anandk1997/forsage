@@ -5,9 +5,10 @@ import { DashboardLayout } from "src/Layout/DashboardLayout";
 import NotFoundPage from "src/Components/NotFoundPage";
 import { AuthLayout } from "src/Layout/AuthLayout";
 
+const Home = lazy(() => import("src/Pages/Home"));
 const Login = lazy(() => import("src/Pages/Login"));
 
-const Home = lazy(() => import("src/Pages/Home"));
+const Dashboard = lazy(() => import("src/Pages/Dashboard"));
 
 const X3 = lazy(() => import("src/Pages/Programs/X3"));
 const X4 = lazy(() => import("src/Pages/Programs/X4"));
@@ -28,6 +29,11 @@ export const router = createBrowserRouter([
     element: <AuthLayout />,
     children: [
       {
+        path: "/home",
+        element: <Home />,
+      },
+
+      {
         path: "/login",
         element: <Login />,
       },
@@ -40,7 +46,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <Home />,
+        element: <Dashboard />,
         errorElement: <NotFoundPage />,
       },
 
