@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   CalculatorIcon,
   DashboardIcon,
@@ -18,13 +18,16 @@ import {
   TeamIcon,
   ToolsIcon,
 } from "src/Assets/Icons";
-import { useNavContext } from "src/Contexts/useNavContext";
 import { Devider } from "./Sidebar";
 
+import { useWalletConnect } from "src/Hooks/useWalletConnect";
+
 export const Navbar = () => {
-  const { hideNavbar } = useNavContext();
+  const navigate = useNavigate();
 
   const [isNavSm, setIsNavSm] = useReducer((open) => !open, false);
+
+  const { connectWallet, walletAddress } = useWalletConnect();
 
   return (
     <div className="fixed top-0 left-1/2 -translate-x-1/2 flex justify-center w-full px-10 py-2.5 z-40 lg:p-0 lg:max-h-screen z-999999">
@@ -63,14 +66,25 @@ export const Navbar = () => {
                 </div>
               </div>
             </div>
-            <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-bg hover:bg-black-500 whitespace-nowrap lg:hidden">
-              Connect wallet
+            <button
+              className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-bg hover:bg-black-500 whitespace-nowrap lg:hidden"
+              onClick={() => {
+                if (!(walletAddress.length > 0)) connectWallet();
+              }}
+            >
+              {walletAddress && walletAddress.length > 0
+                ? `Connected: ${walletAddress.substring(
+                    0,
+                    6,
+                  )}...${walletAddress.substring(38)}`
+                : "Connect Wallet"}
             </button>
           </div>
           <div className="flex lg:justify-end lg:ml-auto lg:pr-10 sm:pr-5">
             <button
               className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-white-100 hover:bg-white-300 rounded-full lg:hidden w-10 h-10 !p-0 ml-5"
-              onClick={hideNavbar}
+              // onClick={hideNavbar}
+              onClick={() => navigate("/login")}
             >
               <svg
                 className="w-6 h-6 cursor-pointer"

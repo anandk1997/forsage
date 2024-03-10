@@ -3,6 +3,9 @@ import { createBrowserRouter } from "react-router-dom";
 
 import { DashboardLayout } from "src/Layout/DashboardLayout";
 import NotFoundPage from "src/Components/NotFoundPage";
+import { AuthLayout } from "src/Layout/AuthLayout";
+
+const Login = lazy(() => import("src/Pages/Login"));
 
 const Home = lazy(() => import("src/Pages/Home"));
 
@@ -22,41 +25,52 @@ const Ideas = lazy(() => import("src/Pages/Ideas"));
 export const router = createBrowserRouter([
   {
     path: "/",
+    element: <AuthLayout />,
+    children: [
+      {
+        path: "/login",
+        element: <Login />,
+      },
+    ],
+  },
+
+  {
+    path: "/dashboard",
     element: <DashboardLayout />,
     children: [
       {
-        path: "/",
+        path: "",
         element: <Home />,
         errorElement: <NotFoundPage />,
       },
 
       {
-        path: "dashboard/x3",
+        path: "x3",
         element: <X3 />,
       },
 
       {
-        path: "dashboard/x4",
+        path: "x4",
         element: <X4 />,
       },
 
       {
-        path: "dashboard/xxx",
+        path: "xxx",
         element: <XXX />,
       },
 
       {
-        path: "dashboard/xGold",
+        path: "xGold",
         element: <XGold />,
       },
 
       {
-        path: "dashboard/xQore",
+        path: "xQore",
         element: <XQore />,
       },
 
       {
-        path: "dashboard/maxQore",
+        path: "maxQore",
         element: <MaxQore />,
       },
 

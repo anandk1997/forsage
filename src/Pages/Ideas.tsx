@@ -327,19 +327,19 @@ const Ideas = () => {
                 <path
                   d="M10.233 20.932h3.386M6 9.926a5.926 5.926 0 0 1 11.852 0 5.903 5.903 0 0 1-2.54 4.855l-.458 2.172a1.693 1.693 0 0 1-1.674 1.44h-2.508a1.693 1.693 0 0 1-1.674-1.44L8.54 14.79A5.92 5.92 0 0 1 6 9.926Z"
                   stroke="#969797"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></path>
                 <path
                   d="M19 4.854 20.854 3M5.062 4.582l-2.27-1.31M19 15l1.854 1.854M4.854 15 3 16.854M20 10h2.621M1 10H3.62"
                   stroke="#969797"
-                  stroke-linecap="round"
+                  strokeLinecap="round"
                 ></path>
                 <path
                   d="M13 16V9c0-1.5 2-1 2 0 0 2-6 2.059-6 0 0-1 2-1.561 2 0v7"
                   stroke="#FFE456"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></path>
               </svg>
               <span>Show more</span>
