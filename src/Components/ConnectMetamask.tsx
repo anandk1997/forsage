@@ -59,7 +59,7 @@ export const ConnectMeta = () => {
       await window.ethereum!.request({
         method: "eth_getBalance",
         params: [accounts[0], "latest"],
-      })
+      }),
     );
     const chainId = await window.ethereum!.request({
       method: "eth_chainId",

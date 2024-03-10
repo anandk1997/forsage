@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
-// import WalletConnectProvider from "@walletconnect/ethereum-provider";
-// import Web3Modal from "web3modal";
-// import Web3 from "web3";
-
 declare global {
   interface Window {
     ethereum?: any;
