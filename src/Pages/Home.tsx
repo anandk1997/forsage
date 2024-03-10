@@ -1,2400 +1,3093 @@
 import { NavLink } from "react-router-dom";
 
 const Home = () => {
-  const copyToClipboard = () => {
-    navigator.clipboard
-      .writeText("forsage.io/b/xqg1z8")
-      .then(() => alert("Text copied to clipboard!"))
-      .catch((err) => {
-        console.error("Could not copy text: ", err);
-        alert("Failed to copy text to clipboard");
-      });
-  };
-
   return (
-    <div className="flex flex-col w-full space-y-10 sm:space-y-5">
-      <div className="flex w-full items-start justify-between space-x-10 lg:space-x-2.5 sm:space-x-0 sm:space-y-5 sm:flex-col sm:px-5">
-        <div className="flex items-start flex-shrink-0 sm:flex-shrink sm:w-full">
-          <div className="relative cursor-pointer rounded-full avatar_gradient p-1 sm:p-[5px] z-10">
-            <div>
-              <div className="z-10 flex-shrink-0 relative w-34 h-34 rounded-full bg-black-light cursor-pointer sm:w-[100px] sm:h-[100px]">
-                <img
-                  alt=""
-                  className="max-w-full max-h-full"
-                  src="https://busd.forsage.io/UnknownUser.png"
-                />
-              </div>
-              <div className="flex justify-center items-center w-10 h-10 sm:w-7.5 sm:h-7.5 bg-status-gold rounded-full w-[36px] h-[36px] z-10 absolute right-0 bottom-2.5">
+    <>
+      <div id="__next">
+        <div className="flex flex-col w-full">
+          <div className="sticky top-0 flex flex-col items-center w-full z-50 bg-darkGray">
+            {/* <div className="flex justify-center border-b border-white-200 w-full bg-black">
+              <div className="flex justify-center items-center py-3 space-x-5 max-w-desktop-full w-full px-5 text-[12px] leading-[14px] overflow-auto sm:max-w-auto">
                 <svg
-                  className="h-5 sm:h-3.5 fill-current text-gray"
-                  fill="none"
-                  viewBox="0 0 21 14"
+                  className="w-[18px] h-[18px]"
                   xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 44 44"
+                  stroke="#fff"
                 >
-                  <path
-                    clipRule="evenodd"
-                    d="M17.205 3.531a.207.207 0 0 1 .264.128l.186.54s-.797-.255-1.213-.336l.763-.332Zm2.606 1.446c-.002 0-.084-.057-.128-.08l-1.34-.688c-.414-.2-.323-.356-.48-.792a2.705 2.705 0 0 0-.236-.488c-.765-.365-2.937-.28-3.144-1.933 0 0-.811.535-.959 1.516C4.961 1.854.99 6.612.99 6.612c1.595-.64 3.316-.943 5.037-1.024-3.272 2.536-4.302 6.355-4.302 6.355s2.65-2.592 6.635-4.037c-1.043 1.483-1.647 3.474-1.4 6.09 0 0 2.05-7.877 11.774-5.972 0 0 .356-1.047 1.274-2.118a.466.466 0 0 0 .098-.28.754.754 0 0 0-.296-.65Z"
-                  ></path>
+                  <g fill="none" fill-rule="evenodd" stroke-width="2">
+                    <circle cx="22" cy="22" r="1">
+                      <animate
+                        attributeName="r"
+                        begin="0s"
+                        dur="1.8s"
+                        values="1; 20"
+                        calcMode="spline"
+                        keyTimes="0; 1"
+                        keySplines="0.165, 0.84, 0.44, 1"
+                        repeatCount="indefinite"
+                      ></animate>
+                      <animate
+                        attributeName="stroke-opacity"
+                        begin="0s"
+                        dur="1.8s"
+                        values="1; 0"
+                        calcMode="spline"
+                        keyTimes="0; 1"
+                        keySplines="0.3, 0.61, 0.355, 1"
+                        repeatCount="indefinite"
+                      ></animate>
+                    </circle>
+                    <circle cx="22" cy="22" r="1">
+                      <animate
+                        attributeName="r"
+                        begin="-0.9s"
+                        dur="1.8s"
+                        values="1; 20"
+                        calcMode="spline"
+                        keyTimes="0; 1"
+                        keySplines="0.165, 0.84, 0.44, 1"
+                        repeatCount="indefinite"
+                      ></animate>
+                      <animate
+                        attributeName="stroke-opacity"
+                        begin="-0.9s"
+                        dur="1.8s"
+                        values="1; 0"
+                        calcMode="spline"
+                        keyTimes="0; 1"
+                        keySplines="0.3, 0.61, 0.355, 1"
+                        repeatCount="indefinite"
+                      ></animate>
+                    </circle>
+                  </g>
                 </svg>
               </div>
-            </div>
-          </div>
-          <div className="flex flex-col items-start ml-6 h-full justify-center my-auto sm:w-full">
-            <div className="flex justify-center items-center mb-1 sm:mb-2.5 sm:w-full sm:justify-between">
-              <span className="text-white notranslate font-bold text-3xl mr-2.5 sm:text-xl cursor-pointer">
-                ID 1
-              </span>
-            </div>
-            <div className="flex flex-col items-start w-full sm:hidden">
-              <div className="flex justify-between w-full">
-                <div className="flex flex-col">
-                  <div className="flex items-center mb-1">
-                    <span className="text-white font-bold mr-2.5 text-base sm:text-sm">
-                      0x14Dc...207F
-                    </span>
-                    <button>
-                      <svg
-                        className="w-5 h-5"
-                        viewBox="0 0 20 20"
-                        fill="#fff"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M15 6.667H8.332c-.92 0-1.667.746-1.667 1.666V15c0 .92.746 1.667 1.667 1.667h6.666c.92 0 1.667-.747 1.667-1.667V8.333c0-.92-.746-1.666-1.667-1.666Z"></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M3.469 3.468A2.167 2.167 0 0 1 5 2.833h6.666A2.167 2.167 0 0 1 13.834 5v1.667a.5.5 0 0 1-1 0V5a1.167 1.167 0 0 0-1.167-1.167H5.001A1.167 1.167 0 0 0 3.834 5v6.667a1.167 1.167 0 0 0 1.167 1.166h1.666a.5.5 0 1 1 0 1H5.001a2.167 2.167 0 0 1-2.167-2.166V5c0-.575.228-1.126.635-1.532Z"
-                        ></path>
-                      </svg>
-                    </button>
+            </div> */}
+            <div className="flex justify-between items-center max-w-desktop-full w-full py-5 px-5">
+              <div className="flex items-center space-x-20 lg:space-x-5">
+                <a href="index.html">
+                  <img src="https://thecryptoglobal.io/stake/uploads/logo-new.png" />
+                </a>
+                <div className="flex flex-start space-x-10 lg:space-x-5 font-medium sm:hidden">
+                  <a
+                    className="hover:text-white"
+                    target="_blank"
+                    href="https://support.cryptoglobal.io/"
+                  >
+                    Documentation
+                  </a>
+                </div>
+              </div>
+              <div className="relative group min-w-[175px] lg:min-w-max sm:hidden">
+                <div className="flex justify-between items-center cursor-pointer p-4 group-hover:text-white">
+                  <div className="flex items-center space-x-2">
+                    <img
+                      src="flags/en.svg"
+                      className="w-5 h-5 lg:mr-2.5"
+                      alt=""
+                    />
+                    <span className="lg:hidden">English</span>
                   </div>
-                </div>
-              </div>
-            </div>
-            <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-blue hover:bg-hover-main-blue active:bg-active-main-blue !w-full !py-0 !leading-[30px] !bg-[#242526] !text-[#9FA4B5] rounded-[16px] hidden sm:flex">
-              <span className="min-w-[80px] mr-2.5">Show more</span>
-              <svg
-                className="w-2.5 h-2.5 transition-all"
-                viewBox="0 0 12 10"
-                stroke="#9FA4B5"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="m1 1.992 4.75 6.016L11 1.992"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                ></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div className="flex flex-col max-w-500px w-full sm:max-w-full space-y-2">
-          <div className="relative flex flex-wrap flex-grow w-full h-full p-5 justify-between bg-blue-100 rounded z-10 sm:p-4">
-            <div className="flex items-center mb-2 sm:justify-between sm:w-full sm:flex-wrap">
-              <div className="flex items-center justify-between">
-                <span className="text-white-500 text-base text-sm sm:text-xs">
-                  Personal link
-                </span>
-                <div className="relative group">
-                  <button
-                    className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none ml-1.5"
-                    data-tip="true"
-                    data-for="Personal link"
-                    // currentitem="false"
+                  <svg
+                    className="fill-current w-2.5 transition all easy-out group-hover:rotate-180"
+                    viewBox="0 0 8 4"
+                    fill="#8B8C8C"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <span></span>
-                    <svg
-                      className="w-5 h-5"
-                      viewBox="0 0 20 20"
-                      fill="#fff"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M17 10a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Zm-8.07 1.15c.04.04.09.06.15.06h.99c.073 0 .13-.02.17-.06a.547.547 0 0 0 .11-.19c.007-.06.023-.173.05-.34a1.4 1.4 0 0 1 .23-.52c.12-.167.287-.363.5-.59.293-.32.513-.603.66-.85.153-.247.23-.537.23-.87a1.61 1.61 0 0 0-.25-.85c-.16-.273-.42-.497-.78-.67-.353-.18-.807-.27-1.36-.27-.533 0-.997.1-1.39.3-.393.193-.697.45-.91.77-.207.32-.317.663-.33 1.03 0 .073.02.133.06.18.047.047.103.07.17.07h.87c.147 0 .243-.077.29-.23.133-.647.523-.97 1.17-.97.287 0 .53.08.73.24.207.16.297.377.27.65a.864.864 0 0 1-.19.46 5.091 5.091 0 0 1-.5.56c-.293.293-.523.56-.69.8-.167.24-.267.517-.3.83-.007.073-.01.18-.01.32 0 .053.02.1.06.14Zm-.05 2.25c.047.047.103.07.17.07h.99a.244.244 0 0 0 .18-.07.231.231 0 0 0 .07-.17v-.89a.218.218 0 0 0-.08-.17.231.231 0 0 0-.17-.07h-.99a.231.231 0 0 0-.17.07.231.231 0 0 0-.07.17v.89c0 .067.023.123.07.17Z"
-                      ></path>
-                    </svg>
-                  </button>
-                  {/* <div
-                    className="__react_component_tooltip t64b24fba-5f51-471b-bf14-6b8a93a32fa7 place-bottom type-dark"
-                    id="Personal link"
-                    data-id="tooltip"
-                  >
-                    Invite your friends to Forsage BUSD and build your team by
-                    sharing your link
-                  </div> */}
+                    <path d="M8 0H0l4 4 4-4Z"></path>
+                  </svg>
                 </div>
+                <ul className="w-full absolute bg-lightGray rounded-[15px] hidden group-hover:flex flex-col overflow-hidden drop-shadow-lg top-[50px]">
+                  <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                    <img src="flags/en.svg" className="w-5 h-5" alt="" />
+                    <span className="lg:hidden">English</span>
+                  </li>
+                  <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                    <img src="flags/de.svg" className="w-5 h-5" alt="" />
+                    <span className="lg:hidden">German</span>
+                  </li>
+                  <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                    <img src="flags/es.svg" className="w-5 h-5" alt="" />
+                    <span className="lg:hidden">Spanish</span>
+                  </li>
+                  <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                    <img src="flags/ru.svg" className="w-5 h-5" alt="" />
+                    <span className="lg:hidden">Русский</span>
+                  </li>
+                  <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                    <img src="flags/fr.svg" className="w-5 h-5" alt="" />
+                    <span className="lg:hidden">French</span>
+                  </li>
+                  <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                    <img src="flags/es.svg" className="w-5 h-5" alt="" />
+                    <span className="lg:hidden">Spanish</span>
+                  </li>
+                  <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                    <img src="flags/it.svg" className="w-5 h-5" alt="" />
+                    <span className="lg:hidden">Italian</span>
+                  </li>
+                  <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                    <img src="flags/az.svg" className="w-5 h-5" alt="" />
+                    <span className="lg:hidden">AZƏRBAYCAN</span>
+                  </li>
+                  <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                    <img src="flags/ar.svg" className="w-5 h-5" alt="" />
+                    <span className="lg:hidden">العربية</span>
+                  </li>
+                  <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                    <img src="flags/he.svg" className="w-5 h-5" alt="" />
+                    <span className="lg:hidden">עִבְרִית</span>
+                  </li>
+                </ul>
               </div>
-              <span className="hidden sm:block text-main-blue text-base font-bold notranslate">
-                forsage.io/b/xqg1z8
-              </span>
-            </div>
-            <div className="flex items-center justify-between w-full">
-              <span className="text-main-blue text-xl font-bold notranslate sm:hidden">
-                forsage.io/b/xqg1z8
-              </span>
-              <div className="flex space-x-2.5 sm:w-full">
-                <button
-                  className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none py-0 px-2.5 bg-main-blue text-white rounded !leading-30px hover:bg-hover-main-blue active:bg-active-main-blue !leading-30px sm:flex-1"
-                  onClick={copyToClipboard}
+              <div className="flex justify-end space-x-10 lg:space-x-0 sm:hidden">
+                <NavLink
+                  to="/login"
+                  className="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] !px-4 !py-2.5 rounded-[40px] bg-transparent hover:bg-purple font-bold"
                 >
-                  Copy
+                  Login
+                </NavLink>
+                <button className="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] !px-4 !py-2.5 rounded-[40px] bg-transparent hover:bg-purple font-bold">
+                  Registration
                 </button>
               </div>
+              <button className="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] !w-10 !h-10 !p-0 !max-w-none rounded-full hidden relative sm:flex flex-col justify-center">
+                <span className="absolute top-3.5 left-1/2 -translate-x-1/2 w-5 border-b-2 border-white transition-all duration-150 ease-in-out false"></span>
+                <span className="absolute top-6 left-1/2 -translate-x-1/2 w-5 border-b-2 border-white transition-all duration-150 ease-in-out false"></span>
+              </button>
             </div>
           </div>
-          <div className="cursor-pointer h-[75px] w-full rounded z-[1] relative flex items-end justify-end sm:pt-4 sm:h-[55px] hover:opacity-70">
-            <div className="w-full h-[75px] rounded relative overflow-hidden bg-[#1E1E1E] sm:h-[55px]">
-              <div className="flex items-center justify-end w-full h-full space-x-[14px] pr-8 sm:pr-6 sm:space-x-2">
-                <span className="text-white z-[11] text-lg font-medium ml-7.5 sm:ml-0 font-poppins sm:text-sm whitespace-nowrap">
-                  FRGX Token
-                </span>
-                <div className="flex items-center justify-center frgx-banner-border h-[40px] w-[150px] rounded-2xl p-[1px] z-[11] sm:w-[120px] sm:h-[35px]">
-                  <div className="flex items-center justify-center w-full h-full bg-black rounded-2xl">
-                    <span className="text-lg text-white font-poppins sm:text-sm !text-xs text-center">
-                      Login to show balance
-                    </span>
-                  </div>
-                </div>
+          <div className="relative mb-32 flex items-center flex-col h-[calc(100vh-150px)] first-overflow-wrapper">
+            <img
+              src="img/logo/maxqore/left_ellipse.png"
+              className="z-0 absolute top-1/2 left-0 -translate-y-1/2 sm:-left-1/3 sm:top-2/3 max-w-[50vw] sm:max-w-[90vw]"
+              alt=""
+            />
+            <img
+              src="img/logo/maxqore/right_ellipse.png"
+              className="z-0 absolute top-1/2 right-0 -translate-y-1/2 sm:-right-1/3 sm:top-1/3 max-w-[50vw] sm:max-w-[90vw]"
+              alt=""
+            />
+            <div className="w-full flex flex-col items-center justify-center flex-1 max-w-desktop-full w-full pt-5 sm:pt-0 sm:px-5">
+              <div className="flex flex-col items-center">
                 <img
-                  className="absolute right-0"
-                  src="https://busd.forsage.io/dashboardUnderRef/Token/buttonShadow.png"
+                  src="https://thecryptoglobal.io/stake/uploads/firstImage.png"
+                  className="z-0 max-w-[457px] sm:max-w-[300px] w-full mb-[-25px] sm:mb-[-15px]"
                 />
-              </div>
-              <img
-                className="absolute w-[full] right-0 left-0 top-0 h-full z-[0] bottom-0"
-                src="https://busd.forsage.io/dashboardUnderRef/Token/frgx.png"
-              />
-              <svg
-                className="absolute right-1 top-1"
-                width="20"
-                height="20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M14.52 5.48a.5.5 0 0 1 0 .707L6.187 14.52a.5.5 0 0 1-.707-.707l8.333-8.333a.5.5 0 0 1 .707 0Z"
-                  fill="#fff"
-                ></path>
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M6.167 5.833a.5.5 0 0 1 .5-.5h7.5a.5.5 0 0 1 .5.5v7.5a.5.5 0 1 1-1 0v-7h-7a.5.5 0 0 1-.5-.5Z"
-                  fill="#fff"
-                ></path>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="flex w-full mt-15 sm:mt-5 sm:px-5">
-        <div className="flex w-full flex-wrap lg:flex-col">
-          <div className="flex mr-2 space-x-2 lg:mr-0 lg:mt-10 sm:mt-5 sm:space-x-0 lg:order-3 sm:overflow-auto sm:w-full sm:flex-col sm:space-y-5">
-            <div className="flex space-x-2 sm:space-x-5">
-              <div className="lg:flex-grow sm:w-full sm:mobile-infoblock-base flex flex-col bg-black-light rounded relative z-[11] overflow-hidden desktop-infoblock-base sm:mobile-infoblock-base">
-                <img
-                  className="h-[70%] sm:h-3/4 absolute bottom-0 right-0 z-[-11] sm:h-3/4 absolute bottom-0 right-0 z-[-11]"
-                  src="https://busd.forsage.io/Partners.png"
-                />
-                <div className="flex flex-col px-5 pt-5 w-full relative sm:justify-between sm:items-start">
-                  <div className="flex items-center z-[10]">
-                    <span className="text-white-500 text-base sm:text-sm sm:whitespace-nowrap">
-                      Partners
-                    </span>
-                  </div>
-                  <span className="text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
-                    22181
-                  </span>
-                </div>
-                <div className="flex p-2.5 w-full">
-                  <div className="w-full bg-green-100 text-green-light rounded p-2 flex text-base items-center justify-between notranslate sm:text-sm">
-                    <div className="flex items-center justify-start">
-                      <svg
-                        className="stroke-current mr-1.5"
-                        width="8"
-                        height="11"
-                        stroke="#2CFF4E"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M4 10V1m0 0L1 4m3-3 3 3"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        ></path>
-                      </svg>
-                      2
-                    </div>
-                    <img
-                      src="https://busd.forsage.io/icons/activity_green.png"
-                      className="ml-2.5 w-6 h-6"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="lg:flex-grow sm:w-full sm:mobile-infoblock-base flex flex-col bg-black-light rounded relative z-[11] overflow-hidden desktop-infoblock-base sm:mobile-infoblock-base">
-                <img
-                  className="h-[70%] sm:h-3/4 absolute bottom-0 right-0 z-[-11] sm:h-3/4 absolute bottom-0 right-0 z-[-11]"
-                  src="https://busd.forsage.io/Team.png"
-                />
-                <div className="flex flex-col px-5 pt-5 w-full relative sm:justify-between sm:items-start">
-                  <div className="flex items-center z-[10]">
-                    <span className="text-white-500 text-base sm:text-sm sm:whitespace-nowrap">
-                      Team
-                    </span>
-                  </div>
-                  <span className="text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
-                    1651994
-                  </span>
-                </div>
-                <div className="flex p-2.5 w-full">
-                  <div className="w-full bg-green-100 text-green-light rounded p-2 flex text-base items-center justify-between notranslate sm:text-sm">
-                    <div className="flex items-center justify-start">
-                      <svg
-                        className="stroke-current mr-1.5"
-                        width="8"
-                        height="11"
-                        stroke="#2CFF4E"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M4 10V1m0 0L1 4m3-3 3 3"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        ></path>
-                      </svg>
-                      464
-                    </div>
-                    <img
-                      src="https://busd.forsage.io/icons/activity_green.png"
-                      className="ml-2.5 w-6 h-6"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="lg:flex-grow sm:max-w-full sm:!min-h-0 sm:!flex-row flex flex-col bg-black-light rounded relative z-[11] overflow-hidden desktop-infoblock-base sm:mobile-infoblock-base">
-              <img
-                className="h-[70%] sm:h-3/4 absolute bottom-0 right-0 z-[-11] h-[70%] right-0 sm:h-full absolute bottom-0 sm:left-1/4 sm:-translate-x-1/2 z-[-11]"
-                src="https://busd.forsage.io/Ratio.png"
-              />
-              <div className="flex flex-col px-5 pt-5 w-full relative sm:!flex-row sm:!justify-between sm:!items-center sm:!px-2 sm:!py-0">
-                <div className="flex items-center z-[10]">
-                  <span className="text-white-500 text-base sm:text-sm sm:whitespace-nowrap">
-                    Ratio
-                  </span>
-                </div>
-                <span className="text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
-                  2653 %
-                </span>
-              </div>
-              <div className="flex p-2.5 w-full">
-                <div className="w-full bg-white-100 text-white rounded p-2 flex text-base items-center justify-between notranslate sm:text-sm">
-                  <div className="flex items-center justify-start">
-                    <svg
-                      className="stroke-current mr-1.5"
-                      width="8"
-                      height="11"
-                      stroke="#2CFF4E"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4 10V1m0 0L1 4m3-3 3 3"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                    </svg>
-                    0 %
-                  </div>
+                <div className="relative flex flex-col items-center">
                   <img
-                    src="https://busd.forsage.io/icons/activity_white.png"
-                    className="ml-2.5 w-6 h-6"
+                    src="https://thecryptoglobal.io/stake/uploads/secondImage.png"
+                    className="sm:hidden z-10 max-h-[200px] h-full sm:h-auto"
+                    alt=""
+                  />
+                  <img
+                    src="https://thecryptoglobal.io/stake/uploads/secondImage.png"
+                    className="hidden sm:block z-10 max-h-[250px] h-full sm:h-auto"
+                    alt=""
                   />
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="flex flex-1 lg:flex-0 sm:flex-0 h-full sm:max-w-full overflow-hidden w-full relative justify-start items-end bg-black-light rounded lg:max-w-full desktop-infoblock-chart-base">
-            <div className="flex-shrink-0 relative flex flex-col bg-black-light rounded w-full">
-              <img
-                className="h-full absolute top-0 bottom-0 left-1/2 -translate-x-1/2"
-                src="https://busd.forsage.io/bnbBusd.png"
-                alt=""
-              />
-              <div className="flex flex-col px-5 py-5 w-full">
-                <div className="flex items-center mb-1">
-                  <span className="text-white-500 text-base sm:text-sm sm:whitespace-nowrap">
-                    Profits
-                  </span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex flex-1 w-full text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
-                    1116069 BUSD
-                  </div>
-                  <div className="flex p-1.5">
-                    <div className="w-full text-green-light flex text-base items-center justify-end notranslate sm:text-sm">
-                      <div className="flex items-center justify-start">
-                        <svg
-                          className="stroke-current mr-1.5"
-                          width="8"
-                          height="11"
-                          stroke="#2CFF4E"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M4 10V1m0 0L1 4m3-3 3 3"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          ></path>
-                        </svg>
-                        15
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
-                    363.7599 BNB
-                  </span>
-                  <div className="flex p-1.5">
-                    <div className="w-full text-white flex text-base items-center justify-end notranslate sm:text-sm">
-                      <div className="flex items-center justify-start">
-                        <svg
-                          className="stroke-current mr-1.5"
-                          width="8"
-                          height="11"
-                          stroke="#2CFF4E"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M4 10V1m0 0L1 4m3-3 3 3"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          ></path>
-                        </svg>
-                        0
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="hidden">
-          <span>00:00:00:00</span>
-        </div>
-      </div>
-      <div className="min-h-[125px] mt-10 px-2.5 py-1.5 sm:pb-5 w-full rounded bg-white-30 items-center justify-between flex flex-row sm:w-full sm:flex-col sm:rounded-none relative sm:space-y-2.5">
-        <div className="flex items-center justify-evenly w-full">
-          <img
-            src="https://busd.forsage.io/achievements/cup.svg"
-            className="w-[110px] sm:w-20"
-            alt=""
-          />
-          <img
-            src="https://busd.forsage.io/achievements/cup.svg"
-            className="w-[110px] sm:w-20"
-            alt=""
-          />
-          <img
-            src="https://busd.forsage.io/achievements/cup.svg"
-            className="w-[110px] sm:w-20"
-            alt=""
-          />
-          <img
-            src="https://busd.forsage.io/achievements/cup.svg"
-            className="w-[110px] sm:w-20"
-            alt=""
-          />
-        </div>
-        <div className="flex flex-row cursor-pointer pr-5 sm:w-full">
-          <a className="w-full p-2.5" href="/achievements?user=1">
-            <div className="flex space-x-2.5 items-center justify-center sm:w-full">
-              <span className="text-base text-white-500 font-semibold whitespace-nowrap sm:text-sm">
-                Show all{" "}
-              </span>
-              <svg
-                className="h-7.5 sm:h-5"
-                viewBox="0 0 30 28"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M20.364 0c1.526 0 2.936.814 3.7 2.136l5.364 9.291a4.272 4.272 0 0 1 0 4.271l-5.365 9.292a4.271 4.271 0 0 1-3.699 2.135H9.636a4.271 4.271 0 0 1-3.7-2.135L.573 15.698a4.271 4.271 0 0 1 0-4.271l5.365-9.291A4.271 4.271 0 0 1 9.636 0h10.728Z"
-                  fill="#406AFF"
-                ></path>
-                <path
-                  d="m13 8 5 5-5 5"
-                  stroke="#fff"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                ></path>
-              </svg>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div className="notranslate flex flex-col mt-15 sm:px-5">
-        <div className="flex items-center false">
-          <span className="text-white text-3xl font-bold sm:text-2xl mr-2.5">
-            <span>
-              <span className="notranslate mr-1.5">Forsage</span>
-              Programs
-            </span>
-          </span>
-          <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none py-0 px-2.5 bg-main-blue text-white rounded !leading-30px hover:bg-hover-main-blue active:bg-active-main-blue font-normal sm:items-center py-1">
-            <svg
-              className="w-5 h-5 mr-1.5"
-              viewBox="0 0 20 20"
-              fill="#fff"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M17 10a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Zm-8.07 1.15c.04.04.09.06.15.06h.99c.073 0 .13-.02.17-.06a.547.547 0 0 0 .11-.19c.007-.06.023-.173.05-.34a1.4 1.4 0 0 1 .23-.52c.12-.167.287-.363.5-.59.293-.32.513-.603.66-.85.153-.247.23-.537.23-.87a1.61 1.61 0 0 0-.25-.85c-.16-.273-.42-.497-.78-.67-.353-.18-.807-.27-1.36-.27-.533 0-.997.1-1.39.3-.393.193-.697.45-.91.77-.207.32-.317.663-.33 1.03 0 .073.02.133.06.18.047.047.103.07.17.07h.87c.147 0 .243-.077.29-.23.133-.647.523-.97 1.17-.97.287 0 .53.08.73.24.207.16.297.377.27.65a.864.864 0 0 1-.19.46 5.091 5.091 0 0 1-.5.56c-.293.293-.523.56-.69.8-.167.24-.267.517-.3.83-.007.073-.01.18-.01.32 0 .053.02.1.06.14Zm-.05 2.25c.047.047.103.07.17.07h.99a.244.244 0 0 0 .18-.07.231.231 0 0 0 .07-.17v-.89a.218.218 0 0 0-.08-.17.231.231 0 0 0-.17-.07h-.99a.231.231 0 0 0-.17.07.231.231 0 0 0-.07.17v.89c0 .067.023.123.07.17Z"
-              ></path>
-            </svg>
-            <span className="text-base sm:text-sm"> Info </span>
-          </button>
-        </div>
-        <div className="grid w-full gap-10 mt-8 grid-cols-2 sm:grid-cols-1">
-          <NavLink
-            to="/dashboard/x3"
-            className="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
-          >
-            <svg
-              className="absolute top-2 right-2 sm:top-1 sm:right-1"
-              width="20"
-              height="20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M14.52 5.48a.5.5 0 0 1 0 .707L6.187 14.52a.5.5 0 0 1-.707-.707l8.333-8.333a.5.5 0 0 1 .707 0Z"
-                fill="#fff"
-              ></path>
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M6.167 5.833a.5.5 0 0 1 .5-.5h7.5a.5.5 0 0 1 .5.5v7.5a.5.5 0 1 1-1 0v-7h-7a.5.5 0 0 1-.5-.5Z"
-                fill="#fff"
-              ></path>
-            </svg>
-            <div className="flex justify-between w-full z-10">
-              <div className="flex items-center">
-                <span className="text-white text-2xl notranslate font-bold justify-start sm:text-xl false">
-                  x3
-                </span>
-              </div>
-              <span className="text-white text-2xl font-bold justify-end text-right notranslate sm:text-xl">
-                368715 BUSD
-              </span>
-            </div>
-            <div className="flex justify-between h-full w-full">
-              <div className="flex justify-between w-full z-10 sm:flex-col mt-5 w-full items-end">
-                <div className="flex w-5/12 h-full flex-col items-start justify-end sm:w-full flex-wrap sm:mb-7.5">
-                  <div className="flex flex-wrap -m-1">
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                  </div>
-                </div>
-                <div className="flex flex-col h-full relative justify-end sm:w-full sm:items-center">
-                  <div className="flex sm:w-full">
-                    <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-blue hover:bg-hover-main-blue active:bg-active-main-blue z-0 sm:w-full pointer-events-none text-white">
-                      <div className="flex flex-col space-y-1 items-start">
-                        <div className="flex items-center">
-                          Preview
-                          <svg
-                            className="ml-3 fill-current"
-                            width="16"
-                            height="16"
-                            fill="#fff"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              clipRule="evenodd"
-                              d="M15.5 8a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Zm-4.646-2.854A.5.5 0 0 1 11 5.5v5a.5.5 0 0 1-1 0V6.707l-4.146 4.147a.5.5 0 0 1-.708-.708L9.293 6H5.5a.5.5 0 0 1 0-1h5c.138 0 .263.056.354.146Z"
-                            ></path>
-                          </svg>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="absolute w-full h-full inset-0"
-              style={{
-                backgroundImage: "url('/blurs/dashboard/blue-blur.png')",
-                backgroundRepeat: "round",
-                backgroundSize: "cover",
-              }}
-            ></div>
-          </NavLink>
-
-          <NavLink
-            to="/dashboard/x4"
-            className="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
-          >
-            <svg
-              className="absolute top-2 right-2 sm:top-1 sm:right-1"
-              width="20"
-              height="20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M14.52 5.48a.5.5 0 0 1 0 .707L6.187 14.52a.5.5 0 0 1-.707-.707l8.333-8.333a.5.5 0 0 1 .707 0Z"
-                fill="#fff"
-              ></path>
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M6.167 5.833a.5.5 0 0 1 .5-.5h7.5a.5.5 0 0 1 .5.5v7.5a.5.5 0 1 1-1 0v-7h-7a.5.5 0 0 1-.5-.5Z"
-                fill="#fff"
-              ></path>
-            </svg>
-            <div className="flex justify-between w-full z-10">
-              <div className="flex items-center">
-                <span className="text-white text-2xl notranslate font-bold justify-start sm:text-xl false">
-                  x4
-                </span>
-              </div>
-              <span className="text-white text-2xl font-bold justify-end text-right notranslate sm:text-xl">
-                410970 BUSD
-              </span>
-            </div>
-            <div className="flex justify-between h-full w-full">
-              <div className="flex justify-between w-full z-10 sm:flex-col mt-5 w-full items-end">
-                <div className="flex w-5/12 h-full flex-col items-start justify-end sm:w-full flex-wrap sm:mb-7.5">
-                  <div className="flex flex-wrap -m-1">
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                  </div>
-                </div>
-                <div className="flex flex-col h-full relative justify-end sm:w-full sm:items-center">
-                  <div className="flex sm:w-full">
-                    <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-light-purple hover:bg-hover-purple active:bg-active-purple z-0 sm:w-full pointer-events-none text-white">
-                      <div className="flex flex-col space-y-1 items-start">
-                        <div className="flex items-center">
-                          Preview
-                          <svg
-                            className="ml-3 fill-current"
-                            width="16"
-                            height="16"
-                            fill="#fff"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              clipRule="evenodd"
-                              d="M15.5 8a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Zm-4.646-2.854A.5.5 0 0 1 11 5.5v5a.5.5 0 0 1-1 0V6.707l-4.146 4.147a.5.5 0 0 1-.708-.708L9.293 6H5.5a.5.5 0 0 1 0-1h5c.138 0 .263.056.354.146Z"
-                            ></path>
-                          </svg>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="absolute w-full h-full inset-0"
-              style={{
-                backgroundImage: "url('/blurs/dashboard/purple-blur.png')",
-                backgroundRepeat: "round",
-                backgroundSize: "cover",
-              }}
-            ></div>
-          </NavLink>
-
-          <NavLink
-            to="/dashboard/xxx"
-            className="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
-          >
-            <svg
-              className="absolute top-2 right-2 sm:top-1 sm:right-1"
-              width="20"
-              height="20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M14.52 5.48a.5.5 0 0 1 0 .707L6.187 14.52a.5.5 0 0 1-.707-.707l8.333-8.333a.5.5 0 0 1 .707 0Z"
-                fill="#fff"
-              ></path>
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M6.167 5.833a.5.5 0 0 1 .5-.5h7.5a.5.5 0 0 1 .5.5v7.5a.5.5 0 1 1-1 0v-7h-7a.5.5 0 0 1-.5-.5Z"
-                fill="#fff"
-              ></path>
-            </svg>
-            <div className="flex justify-between w-full z-10">
-              <div className="flex items-center">
-                <span className="text-white text-2xl notranslate font-bold justify-start sm:text-xl false">
-                  xXx
-                </span>
-              </div>
-              <span className="text-white text-2xl font-bold justify-end text-right notranslate sm:text-xl">
-                174249 BUSD
-              </span>
-            </div>
-            <div className="flex justify-between h-full w-full">
-              <div className="flex justify-between w-full z-10 sm:flex-col mt-5 w-full items-end">
-                <div className="flex w-5/12 h-full flex-col items-start justify-end sm:w-full flex-wrap sm:mb-7.5">
-                  <div className="flex flex-wrap -m-1">
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                  </div>
-                </div>
-                <div className="flex flex-col h-full relative justify-end sm:w-full sm:items-center">
-                  <div className="flex sm:w-full">
-                    <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-dark-pink hover:bg-hover-pink active:bg-active-pink z-0 sm:w-full pointer-events-none text-white">
-                      <div className="flex flex-col space-y-1 items-start">
-                        <div className="flex items-center">
-                          Preview
-                          <svg
-                            className="ml-3 fill-current"
-                            width="16"
-                            height="16"
-                            fill="#fff"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              clipRule="evenodd"
-                              d="M15.5 8a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Zm-4.646-2.854A.5.5 0 0 1 11 5.5v5a.5.5 0 0 1-1 0V6.707l-4.146 4.147a.5.5 0 0 1-.708-.708L9.293 6H5.5a.5.5 0 0 1 0-1h5c.138 0 .263.056.354.146Z"
-                            ></path>
-                          </svg>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="absolute w-full h-full inset-0"
-              style={{
-                backgroundImage: "url('/blurs/dashboard/pink-blur.png')",
-                backgroundRepeat: "round",
-                backgroundSize: "cover",
-              }}
-            ></div>
-          </NavLink>
-
-          <NavLink
-            to="/dashboard/xGold"
-            className="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
-          >
-            <svg
-              className="absolute top-2 right-2 sm:top-1 sm:right-1"
-              width="20"
-              height="20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M14.52 5.48a.5.5 0 0 1 0 .707L6.187 14.52a.5.5 0 0 1-.707-.707l8.333-8.333a.5.5 0 0 1 .707 0Z"
-                fill="#fff"
-              ></path>
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M6.167 5.833a.5.5 0 0 1 .5-.5h7.5a.5.5 0 0 1 .5.5v7.5a.5.5 0 1 1-1 0v-7h-7a.5.5 0 0 1-.5-.5Z"
-                fill="#fff"
-              ></path>
-            </svg>
-            <div className="flex justify-between w-full z-10">
-              <div className="flex items-center">
-                <span className="text-white text-2xl notranslate font-bold justify-start sm:text-xl false">
-                  xGold
-                </span>
-              </div>
-              <span className="text-white text-2xl font-bold justify-end text-right notranslate sm:text-xl">
-                162135 BUSD
-              </span>
-            </div>
-            <div className="flex justify-between h-full w-full">
-              <div className="flex justify-between w-full z-10 sm:flex-col mt-5 w-full items-end">
-                <div className="flex w-5/12 h-full flex-col items-start justify-end sm:w-full flex-wrap sm:mb-7.5">
-                  <div className="flex flex-wrap -m-1">
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                  </div>
-                </div>
-                <div className="flex flex-col h-full relative justify-end sm:w-full sm:items-center">
-                  <div className="flex sm:w-full">
-                    <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-orange hover:bg-hover-orange active:bg-active-orange z-0 sm:w-full pointer-events-none text-white">
-                      <div className="flex flex-col space-y-1 items-start">
-                        <div className="flex items-center">
-                          Preview
-                          <svg
-                            className="ml-3 fill-current"
-                            width="16"
-                            height="16"
-                            fill="#fff"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              clipRule="evenodd"
-                              d="M15.5 8a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Zm-4.646-2.854A.5.5 0 0 1 11 5.5v5a.5.5 0 0 1-1 0V6.707l-4.146 4.147a.5.5 0 0 1-.708-.708L9.293 6H5.5a.5.5 0 0 1 0-1h5c.138 0 .263.056.354.146Z"
-                            ></path>
-                          </svg>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="absolute w-full h-full inset-0"
-              style={{
-                backgroundImage: "url('/blurs/dashboard/gold-blur.png')",
-                backgroundRepeat: "round",
-                backgroundSize: "cover",
-              }}
-            ></div>
-          </NavLink>
-
-          <NavLink
-            to="/dashboard/xQore"
-            className="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
-          >
-            <svg
-              className="absolute top-2 right-2 sm:top-1 sm:right-1"
-              width="20"
-              height="20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M14.52 5.48a.5.5 0 0 1 0 .707L6.187 14.52a.5.5 0 0 1-.707-.707l8.333-8.333a.5.5 0 0 1 .707 0Z"
-                fill="#fff"
-              ></path>
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M6.167 5.833a.5.5 0 0 1 .5-.5h7.5a.5.5 0 0 1 .5.5v7.5a.5.5 0 1 1-1 0v-7h-7a.5.5 0 0 1-.5-.5Z"
-                fill="#fff"
-              ></path>
-            </svg>
-            <div className="flex justify-between w-full z-10">
-              <div className="flex items-center">
-                <span className="text-white text-2xl notranslate font-bold justify-start sm:text-xl false">
-                  xQore
-                </span>
-              </div>
-              <span className="text-white text-2xl font-bold justify-end text-right notranslate sm:text-xl">
-                136.2655 BNB
-              </span>
-            </div>
-            <div className="flex justify-between h-full w-full">
-              <div className="flex justify-between w-full z-10 sm:flex-col mt-5 w-full items-end">
-                <div className="flex w-5/12 h-full flex-col items-start justify-end sm:w-full flex-wrap sm:mb-7.5">
-                  <div className="flex flex-wrap -m-1">
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                  </div>
-                </div>
-                <div className="flex flex-col h-full relative justify-end sm:w-full sm:items-center">
-                  <div className="flex sm:w-full">
-                    <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-cyan-300 hover:bg-hover-cyan-300 active:bg-active-cyan-300 z-0 sm:w-full pointer-events-none text-white">
-                      <div className="flex flex-col space-y-1 items-start">
-                        <div className="flex items-center">
-                          Preview
-                          <svg
-                            className="ml-3 fill-current"
-                            width="16"
-                            height="16"
-                            fill="#fff"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              clipRule="evenodd"
-                              d="M15.5 8a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Zm-4.646-2.854A.5.5 0 0 1 11 5.5v5a.5.5 0 0 1-1 0V6.707l-4.146 4.147a.5.5 0 0 1-.708-.708L9.293 6H5.5a.5.5 0 0 1 0-1h5c.138 0 .263.056.354.146Z"
-                            ></path>
-                          </svg>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="absolute w-full h-full inset-0"
-              style={{
-                backgroundImage: "url('/blurs/dashboard/tiffany-blur.png')",
-                backgroundRepeat: "round",
-                backgroundSize: "cover",
-              }}
-            ></div>
-          </NavLink>
-
-          <NavLink
-            to="/dashboard/maxQore"
-            className="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
-          >
-            <svg
-              className="absolute top-2 right-2 sm:top-1 sm:right-1"
-              width="20"
-              height="20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M14.52 5.48a.5.5 0 0 1 0 .707L6.187 14.52a.5.5 0 0 1-.707-.707l8.333-8.333a.5.5 0 0 1 .707 0Z"
-                fill="#fff"
-              ></path>
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M6.167 5.833a.5.5 0 0 1 .5-.5h7.5a.5.5 0 0 1 .5.5v7.5a.5.5 0 1 1-1 0v-7h-7a.5.5 0 0 1-.5-.5Z"
-                fill="#fff"
-              ></path>
-            </svg>
-            <div className="flex justify-between w-full z-10">
-              <div className="flex items-center">
-                <span className="text-white text-2xl notranslate font-bold justify-start sm:text-xl false">
-                  maxQore
-                </span>
-              </div>
-              <span className="text-white text-2xl font-bold justify-end text-right notranslate sm:text-xl">
-                227.49 BNB
-              </span>
-            </div>
-            <div className="flex justify-between h-full w-full">
-              <div className="flex justify-between w-full z-10 sm:flex-col mt-5 w-full items-end">
-                <div className="flex w-5/12 h-full flex-col items-start justify-end sm:w-full flex-wrap sm:mb-7.5">
-                  <div className="flex flex-wrap -m-1">
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                  </div>
-                </div>
-                <div className="flex flex-col h-full relative justify-end sm:w-full sm:items-center">
-                  <div className="flex sm:w-full flex-col space-y-1.5 sm:flex-row-reverse sm:space-y-0">
-                    <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-program-green hover:bg-program-green-600 active:bg-program-green-600 z-0 sm:w-full pointer-events-none text-white">
-                      <div className="flex flex-col space-y-1 items-start">
-                        <div className="flex items-center">
-                          Preview
-                          <svg
-                            className="ml-3 fill-current"
-                            width="16"
-                            height="16"
-                            fill="#fff"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              clipRule="evenodd"
-                              d="M15.5 8a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Zm-4.646-2.854A.5.5 0 0 1 11 5.5v5a.5.5 0 0 1-1 0V6.707l-4.146 4.147a.5.5 0 0 1-.708-.708L9.293 6H5.5a.5.5 0 0 1 0-1h5c.138 0 .263.056.354.146Z"
-                            ></path>
-                          </svg>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="absolute w-full h-full inset-0"
-              style={{
-                backgroundImage: "url('/blurs/dashboard/green-blur.png')",
-                backgroundRepeat: "round",
-                backgroundSize: "cover",
-              }}
-            ></div>
-          </NavLink>
-        </div>
-      </div>
-
-      <div className="sm:px-5">
-        <div className="ambassador-buttonGradient rounded p-[1px]">
-          <div className="overflow-hidden bg-darkBlack rounded h-[140px] sm:h-auto w-full flex items-center justify-between space-x-5 sm:space-x-0 sm:flex-col sm:px-5 sm:py-[30px]">
-            <div className="pl-5 h-full flex items-center sm:order-3 sm:w-full sm:pl-0">
-              <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none ambassador-buttonGradient rounded-[100px] px-0 py-0 text-white py-[8px] px-[30px] sm:w-full sm:max-w-full sm:py-2.5">
-                Go to Program
-              </button>
-            </div>
-            <div className="py-[25px] h-full flex items-center justify-center sm:order-2 sm:py-[30px]">
-              <img
-                src="https://busd.forsage.io/ambassador/text-logo.svg"
-                className="max-h-[60px] sm:max-h-[50px] h-full"
-                alt=""
-              />
-            </div>
-            <img
-              src="https://busd.forsage.io/ambassador/logo-full.png"
-              className="pr-5 sm:pr-0 h-[130%] sm:h-[125px] sm:order-1"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-col">
-        <div className="flex items-center sm:px-5">
-          <span className="text-white text-3xl font-bold sm:text-2xl">
-            Platform recent activity
-          </span>
-          <div className="relative group">
-            <button
-              className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none ml-1.5"
-              data-tip="true"
-              data-for="Platform recent activity"
-              // currentitem="false"
-            >
-              <span></span>
-              <svg
-                className="w-5 h-5"
-                viewBox="0 0 20 20"
-                fill="#fff"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M17 10a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Zm-8.07 1.15c.04.04.09.06.15.06h.99c.073 0 .13-.02.17-.06a.547.547 0 0 0 .11-.19c.007-.06.023-.173.05-.34a1.4 1.4 0 0 1 .23-.52c.12-.167.287-.363.5-.59.293-.32.513-.603.66-.85.153-.247.23-.537.23-.87a1.61 1.61 0 0 0-.25-.85c-.16-.273-.42-.497-.78-.67-.353-.18-.807-.27-1.36-.27-.533 0-.997.1-1.39.3-.393.193-.697.45-.91.77-.207.32-.317.663-.33 1.03 0 .073.02.133.06.18.047.047.103.07.17.07h.87c.147 0 .243-.077.29-.23.133-.647.523-.97 1.17-.97.287 0 .53.08.73.24.207.16.297.377.27.65a.864.864 0 0 1-.19.46 5.091 5.091 0 0 1-.5.56c-.293.293-.523.56-.69.8-.167.24-.267.517-.3.83-.007.073-.01.18-.01.32 0 .053.02.1.06.14Zm-.05 2.25c.047.047.103.07.17.07h.99a.244.244 0 0 0 .18-.07.231.231 0 0 0 .07-.17v-.89a.218.218 0 0 0-.08-.17.231.231 0 0 0-.17-.07h-.99a.231.231 0 0 0-.17.07.231.231 0 0 0-.07.17v.89c0 .067.023.123.07.17Z"
-                ></path>
-              </svg>
-            </button>
-            <div
-              className="__react_component_tooltip tf640bdb3-1443-45ec-bd66-7832b2e7572b place-bottom type-dark"
-              id="Platform recent activity"
-              data-id="tooltip"
-            >
-              Forsage BUSD real-time global events with links to transactions in
-              blockchain
-            </div>
-          </div>
-        </div>
-        <div className="grid grid-cols-3 gap-10 mt-5 lg:grid-cols-1 lg:gap-0 z-10">
-          <div className="notranslate w-full overflow-hidden flex flex-col col-span-2 p-5 bg-gray rounded h-[1000px] lg:order-2 sm:rounded-none sm:p-5 sm:max-h-3/4">
-            <div className="flex -mr-10 pr-10 flex-col flex-1 overflow-auto">
-              <div className="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
-                <div className="flex items-center sm:items-start justify-start sm:w-full">
-                  <div className="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
-                    <svg
-                      className="fill-current text-green w-5 h-5"
-                      viewBox="0 0 20 20"
-                      fill="#ffff"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"
-                      ></path>
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                        fillOpacity=".5"
-                      ></path>
-                      <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div className="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5">
-                    <a
-                      className="flex items-center justify-center notranslate px-2.5 leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded font-medium text-base sm:text-sm w-max false"
-                      href="/dashboard?user=350025"
-                    >
-                      ID 350025
-                    </a>
-                    <div className="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 false">
-                      <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
-                        +
-                      </span>
-                      <span className="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">
-                        0.012 BNB{" "}
-                      </span>
-                      <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
-                        in
-                        <span className="notranslate text-cyan-100">xQore</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex items-center justify-end whitespace-nowrap h-full">
-                    <a
-                      className="sm:order-2"
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://bscscan.com/tx/0x6237cab12c8ad765173ed1647c4e9ec49a4ae48aa569f59c81953d64a21220bc"
-                    >
-                      <svg
-                        className="w-6 h-6"
-                        viewBox="0 0 24 24"
-                        fill="#fff"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"
-                        ></path>
-                      </svg>
-                    </a>
-                    <span className="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">
-                      2 minutes
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
-                <div className="flex items-center sm:items-start justify-start sm:w-full">
-                  <div className="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
-                    <svg
-                      className="fill-current text-green w-5 h-5"
-                      viewBox="0 0 20 20"
-                      fill="#ffff"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"
-                      ></path>
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                        fillOpacity=".5"
-                      ></path>
-                      <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div className="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5">
-                    <a
-                      className="flex items-center justify-center notranslate px-2.5 leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded font-medium text-base sm:text-sm w-max false"
-                      href="/dashboard?user=1393891"
-                    >
-                      ID 1393891
-                    </a>
-                    <div className="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 false">
-                      <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
-                        +
-                      </span>
-                      <span className="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">
-                        0.012 BNB{" "}
-                      </span>
-                      <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
-                        in
-                        <span className="notranslate text-cyan-100">xQore</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex items-center justify-end whitespace-nowrap h-full">
-                    <a
-                      className="sm:order-2"
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://bscscan.com/tx/0x6237cab12c8ad765173ed1647c4e9ec49a4ae48aa569f59c81953d64a21220bc"
-                    >
-                      <svg
-                        className="w-6 h-6"
-                        viewBox="0 0 24 24"
-                        fill="#fff"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"
-                        ></path>
-                      </svg>
-                    </a>
-                    <span className="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">
-                      2 minutes
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
-                <div className="flex items-center sm:items-start justify-start sm:w-full">
-                  <div className="bg-white-100 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
-                    <svg
-                      className="fill-current text-white w-5 h-5"
-                      width="20"
-                      height="20"
-                      fill="#fff"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M7.5 9.167a3.333 3.333 0 1 0 0-6.667 3.333 3.333 0 0 0 0 6.667ZM2.5 17.5v-2.667A3.333 3.333 0 0 1 5.833 11.5h3.334a3.333 3.333 0 0 1 3.333 3.333V17.5"></path>
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M15.833 6.167a.5.5 0 0 1 .5.5v2h2a.5.5 0 1 1 0 1h-2v2a.5.5 0 1 1-1 0v-2h-2a.5.5 0 0 1 0-1h2v-2a.5.5 0 0 1 .5-.5Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div className="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5">
-                    <a
-                      className="flex items-center justify-center notranslate px-2.5 leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded font-medium text-base sm:text-sm w-max order-2"
-                      href="/dashboard?user=1652001"
-                    >
-                      ID 1652001
-                    </a>
-                    <div className="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 ml-0">
-                      <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
-                        new user joined
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex items-center justify-end whitespace-nowrap h-full">
-                    <a
-                      className="sm:order-2"
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://bscscan.com/tx/0x82c774d35cf50377149f23f2e272353f2bd55d49069f8fb4ecca30de9a924e5b"
-                    >
-                      <svg
-                        className="w-6 h-6"
-                        viewBox="0 0 24 24"
-                        fill="#fff"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"
-                        ></path>
-                      </svg>
-                    </a>
-                    <span className="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">
-                      3 minutes
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
-                <div className="flex items-center sm:items-start justify-start sm:w-full">
-                  <div className="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
-                    <svg
-                      className="fill-current text-green w-5 h-5"
-                      viewBox="0 0 20 20"
-                      fill="#ffff"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"
-                      ></path>
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                        fillOpacity=".5"
-                      ></path>
-                      <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div className="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5">
-                    <a
-                      className="flex items-center justify-center notranslate px-2.5 leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded font-medium text-base sm:text-sm w-max false"
-                      href="/dashboard?user=1648071"
-                    >
-                      ID 1648071
-                    </a>
-                    <div className="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 false">
-                      <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
-                        +
-                      </span>
-                      <span className="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">
-                        5 BUSD{" "}
-                      </span>
-                      <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
-                        in
-                        <span className="notranslate text-light-purple">
-                          x4
-                        </span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex items-center justify-end whitespace-nowrap h-full">
-                    <a
-                      className="sm:order-2"
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://bscscan.com/tx/0x82c774d35cf50377149f23f2e272353f2bd55d49069f8fb4ecca30de9a924e5b"
-                    >
-                      <svg
-                        className="w-6 h-6"
-                        viewBox="0 0 24 24"
-                        fill="#fff"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"
-                        ></path>
-                      </svg>
-                    </a>
-                    <span className="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">
-                      3 minutes
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
-                <div className="flex items-center sm:items-start justify-start sm:w-full">
-                  <div className="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
-                    <svg
-                      className="fill-current text-green w-5 h-5"
-                      viewBox="0 0 20 20"
-                      fill="#ffff"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"
-                      ></path>
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                        fillOpacity=".5"
-                      ></path>
-                      <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div className="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5">
-                    <a
-                      className="flex items-center justify-center notranslate px-2.5 leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded font-medium text-base sm:text-sm w-max false"
-                      href="/dashboard?user=1651121"
-                    >
-                      ID 1651121
-                    </a>
-                    <div className="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 false">
-                      <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
-                        +
-                      </span>
-                      <span className="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">
-                        5 BUSD{" "}
-                      </span>
-                      <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
-                        in
-                        <span className="notranslate text-main-blue">x3</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex items-center justify-end whitespace-nowrap h-full">
-                    <a
-                      className="sm:order-2"
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://bscscan.com/tx/0x82c774d35cf50377149f23f2e272353f2bd55d49069f8fb4ecca30de9a924e5b"
-                    >
-                      <svg
-                        className="w-6 h-6"
-                        viewBox="0 0 24 24"
-                        fill="#fff"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"
-                        ></path>
-                      </svg>
-                    </a>
-                    <span className="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">
-                      3 minutes
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
-                <div className="flex items-center sm:items-start justify-start sm:w-full">
-                  <div className="bg-cyan-400 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
-                    <svg
-                      className="fill-current text-cyan-100 w-5 h-5"
-                      viewBox="0 0 20 20"
-                      fill="#2CFF4E"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10 20c5.523 0 10-4.477 10-10S15.523 0 10 0 0 4.477 0 10s4.477 10 10 10Z"
-                        fillOpacity=".3"
-                      ></path>
-                      <path
-                        d="M10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"
-                        fillOpacity=".3"
-                      ></path>
-                      <path d="M10 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"></path>
-                    </svg>
-                  </div>
-                  <div className="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5">
-                    <a
-                      className="flex items-center justify-center notranslate px-2.5 leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded font-medium text-base sm:text-sm w-max false"
-                      href="/dashboard?user=1632095"
-                    >
-                      ID 1632095
-                    </a>
-                    <div className="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 false">
-                      <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
-                        activates
-                      </span>
-                      <span className="text-white text-base sm:text-sm sm:leading-30px">
-                        &nbsp;
-                        <span className="notranslate text-cyan-100">xQore</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex items-center justify-end whitespace-nowrap h-full">
-                    <a
-                      className="sm:order-2"
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://bscscan.com/tx/0x363036e615aa726492a5327dff797146b0a067f2d217a4921947460d54564259"
-                    >
-                      <svg
-                        className="w-6 h-6"
-                        viewBox="0 0 24 24"
-                        fill="#fff"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"
-                        ></path>
-                      </svg>
-                    </a>
-                    <span className="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">
-                      3 minutes
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
-                <div className="flex items-center sm:items-start justify-start sm:w-full">
-                  <div className="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
-                    <svg
-                      className="fill-current text-green w-5 h-5"
-                      viewBox="0 0 20 20"
-                      fill="#ffff"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"
-                      ></path>
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                        fillOpacity=".5"
-                      ></path>
-                      <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div className="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5">
-                    <a
-                      className="flex items-center justify-center notranslate px-2.5 leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded font-medium text-base sm:text-sm w-max false"
-                      href="/dashboard?user=1597856"
-                    >
-                      ID 1597856
-                    </a>
-                    <div className="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 false">
-                      <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
-                        +
-                      </span>
-                      <span className="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">
-                        0.009 BNB{" "}
-                      </span>
-                      <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
-                        in
-                        <span className="notranslate text-cyan-100">xQore</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex items-center justify-end whitespace-nowrap h-full">
-                    <a
-                      className="sm:order-2"
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://bscscan.com/tx/0x363036e615aa726492a5327dff797146b0a067f2d217a4921947460d54564259"
-                    >
-                      <svg
-                        className="w-6 h-6"
-                        viewBox="0 0 24 24"
-                        fill="#fff"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"
-                        ></path>
-                      </svg>
-                    </a>
-                    <span className="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">
-                      3 minutes
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
-                <div className="flex items-center sm:items-start justify-start sm:w-full">
-                  <div className="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
-                    <svg
-                      className="fill-current text-green w-5 h-5"
-                      viewBox="0 0 20 20"
-                      fill="#ffff"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"
-                      ></path>
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                        fillOpacity=".5"
-                      ></path>
-                      <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div className="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5">
-                    <a
-                      className="flex items-center justify-center notranslate px-2.5 leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded font-medium text-base sm:text-sm w-max false"
-                      href="/dashboard?user=1567404"
-                    >
-                      ID 1567404
-                    </a>
-                    <div className="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 false">
-                      <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
-                        +
-                      </span>
-                      <span className="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">
-                        0.009 BNB{" "}
-                      </span>
-                      <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
-                        in
-                        <span className="notranslate text-cyan-100">xQore</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex items-center justify-end whitespace-nowrap h-full">
-                    <a
-                      className="sm:order-2"
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://bscscan.com/tx/0x363036e615aa726492a5327dff797146b0a067f2d217a4921947460d54564259"
-                    >
-                      <svg
-                        className="w-6 h-6"
-                        viewBox="0 0 24 24"
-                        fill="#fff"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"
-                        ></path>
-                      </svg>
-                    </a>
-                    <span className="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">
-                      3 minutes
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
-                <div className="flex items-center sm:items-start justify-start sm:w-full">
-                  <div className="bg-white-100 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
-                    <svg
-                      className="fill-current text-white w-5 h-5"
-                      width="20"
-                      height="20"
-                      fill="#fff"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M7.5 9.167a3.333 3.333 0 1 0 0-6.667 3.333 3.333 0 0 0 0 6.667ZM2.5 17.5v-2.667A3.333 3.333 0 0 1 5.833 11.5h3.334a3.333 3.333 0 0 1 3.333 3.333V17.5"></path>
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M15.833 6.167a.5.5 0 0 1 .5.5v2h2a.5.5 0 1 1 0 1h-2v2a.5.5 0 1 1-1 0v-2h-2a.5.5 0 0 1 0-1h2v-2a.5.5 0 0 1 .5-.5Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div className="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5">
-                    <a
-                      className="flex items-center justify-center notranslate px-2.5 leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded font-medium text-base sm:text-sm w-max order-2"
-                      href="/dashboard?user=1652000"
-                    >
-                      ID 1652000
-                    </a>
-                    <div className="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 ml-0">
-                      <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
-                        new user joined
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex items-center justify-end whitespace-nowrap h-full">
-                    <a
-                      className="sm:order-2"
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://bscscan.com/tx/0xd6dae201126d510f3cf06cb84b2fee0351dc79b1f6a0b94e4bc4ab4f3e7a49c7"
-                    >
-                      <svg
-                        className="w-6 h-6"
-                        viewBox="0 0 24 24"
-                        fill="#fff"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"
-                        ></path>
-                      </svg>
-                    </a>
-                    <span className="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">
-                      6 minutes
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
-                <div className="flex items-center sm:items-start justify-start sm:w-full">
-                  <div className="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
-                    <svg
-                      className="fill-current text-green w-5 h-5"
-                      viewBox="0 0 20 20"
-                      fill="#ffff"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"
-                      ></path>
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                        fillOpacity=".5"
-                      ></path>
-                      <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div className="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5">
-                    <a
-                      className="flex items-center justify-center notranslate px-2.5 leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded font-medium text-base sm:text-sm w-max false"
-                      href="/dashboard?user=1647115"
-                    >
-                      ID 1647115
-                    </a>
-                    <div className="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 false">
-                      <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
-                        +
-                      </span>
-                      <span className="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">
-                        5 BUSD{" "}
-                      </span>
-                      <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
-                        in
-                        <span className="notranslate text-light-purple">
-                          x4
-                        </span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex items-center justify-end whitespace-nowrap h-full">
-                    <a
-                      className="sm:order-2"
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://bscscan.com/tx/0xd6dae201126d510f3cf06cb84b2fee0351dc79b1f6a0b94e4bc4ab4f3e7a49c7"
-                    >
-                      <svg
-                        className="w-6 h-6"
-                        viewBox="0 0 24 24"
-                        fill="#fff"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"
-                        ></path>
-                      </svg>
-                    </a>
-                    <span className="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">
-                      6 minutes
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
-                <div className="flex items-center sm:items-start justify-start sm:w-full">
-                  <div className="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
-                    <svg
-                      className="fill-current text-green w-5 h-5"
-                      viewBox="0 0 20 20"
-                      fill="#ffff"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"
-                      ></path>
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                        fillOpacity=".5"
-                      ></path>
-                      <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div className="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5">
-                    <a
-                      className="flex items-center justify-center notranslate px-2.5 leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded font-medium text-base sm:text-sm w-max false"
-                      href="/dashboard?user=1647115"
-                    >
-                      ID 1647115
-                    </a>
-                    <div className="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 false">
-                      <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
-                        +
-                      </span>
-                      <span className="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">
-                        5 BUSD{" "}
-                      </span>
-                      <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
-                        in
-                        <span className="notranslate text-main-blue">x3</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex items-center justify-end whitespace-nowrap h-full">
-                    <a
-                      className="sm:order-2"
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://bscscan.com/tx/0xd6dae201126d510f3cf06cb84b2fee0351dc79b1f6a0b94e4bc4ab4f3e7a49c7"
-                    >
-                      <svg
-                        className="w-6 h-6"
-                        viewBox="0 0 24 24"
-                        fill="#fff"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"
-                        ></path>
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"
-                        ></path>
-                      </svg>
-                    </a>
-                    <span className="ml-2.5 text-white-500 text-base sm:text-sm sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">
-                      7 minutes
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-white-100 hover:bg-white-300 w-full rounded-mini mt-5 flex justify-center items-center">
-              <svg
-                className="mr-2.5"
-                width="21"
-                height="20"
-                fill="#fff"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M10.5 15.833c3.333 0 6.11-1.944 8.333-5.833-2.222-3.89-5-5.833-8.333-5.833S4.39 6.11 2.167 10c2.222 3.889 5 5.833 8.333 5.833ZM12.167 10a1.667 1.667 0 1 1-3.334 0 1.667 1.667 0 0 1 3.334 0Z"
-                ></path>
-              </svg>
-              See more
-            </button>
-          </div>
-          <div className="flex flex-col space-y-10 lg:w-full lg:order-1 lg:mb-10 sm:mb-5 sm:space-y-5 sm:px-5">
-            <div className="sm:mobile-infoblock-base flex flex-col bg-black-light rounded relative z-[11] overflow-hidden desktop-infoblock-base sm:mobile-infoblock-base">
-              <div className="flex flex-col px-5 pt-5 w-full relative sm:justify-between sm:items-start">
-                <div className="flex items-center z-[10]">
-                  <span className="text-white-500 text-base sm:text-sm sm:whitespace-nowrap">
-                    Members total
-                  </span>
-                  <div className="relative group">
-                    <button
-                      className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none ml-1.5"
-                      data-tip="true"
-                      data-for="Members total"
-                      // currentitem="false"
-                    >
-                      <span></span>
-                      <svg
-                        className="w-5 h-5"
-                        viewBox="0 0 20 20"
-                        fill="#fff"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M17 10a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Zm-8.07 1.15c.04.04.09.06.15.06h.99c.073 0 .13-.02.17-.06a.547.547 0 0 0 .11-.19c.007-.06.023-.173.05-.34a1.4 1.4 0 0 1 .23-.52c.12-.167.287-.363.5-.59.293-.32.513-.603.66-.85.153-.247.23-.537.23-.87a1.61 1.61 0 0 0-.25-.85c-.16-.273-.42-.497-.78-.67-.353-.18-.807-.27-1.36-.27-.533 0-.997.1-1.39.3-.393.193-.697.45-.91.77-.207.32-.317.663-.33 1.03 0 .073.02.133.06.18.047.047.103.07.17.07h.87c.147 0 .243-.077.29-.23.133-.647.523-.97 1.17-.97.287 0 .53.08.73.24.207.16.297.377.27.65a.864.864 0 0 1-.19.46 5.091 5.091 0 0 1-.5.56c-.293.293-.523.56-.69.8-.167.24-.267.517-.3.83-.007.073-.01.18-.01.32 0 .053.02.1.06.14Zm-.05 2.25c.047.047.103.07.17.07h.99a.244.244 0 0 0 .18-.07.231.231 0 0 0 .07-.17v-.89a.218.218 0 0 0-.08-.17.231.231 0 0 0-.17-.07h-.99a.231.231 0 0 0-.17.07.231.231 0 0 0-.07.17v.89c0 .067.023.123.07.17Z"
-                        ></path>
-                      </svg>
-                    </button>
-                    <div
-                      className="__react_component_tooltip tfea33235-5c88-4ea1-9f96-7ecb7903da56 place-bottom type-dark"
-                      id="Members total"
-                      data-id="tooltip"
-                    >
-                      Total number of members in Forsage BUSD and last 24 hours
-                      change
-                    </div>
-                  </div>
-                </div>
-                <span className="text-white text-2xl font-bold notranslate sm:text-xl false mt-5 sm:mt-2.5">
-                  1652000
-                </span>
-              </div>
-              <div className="p-5 pt-0 flex text-green-light text-base items-baseline notranslate sm:text-sm">
-                <svg
-                  className="mr-1.5"
-                  width="8"
-                  height="11"
-                  stroke="#2CFF4E"
-                  xmlns="http://www.w3.org/2000/svg"
+              <div className="flex flex-col items-center w-full sm:space-y-2.5 sm:mt-10">
+                <a
+                  href="stake/enroll"
+                  className="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] bg-purple hover:bg-lightPurple active:bg-lightPurple z-10 hidden sm:flex sm:max-w-full sm:w-full"
                 >
-                  <path
-                    d="M4 10V1m0 0L1 4m3-3 3 3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  ></path>
-                </svg>
-                469
-              </div>
-            </div>
-            <div className="bg-gray rounded p-5 flex flex-col max-w-full">
-              <span className="inline-flex items-center text-base text-white-500 sm:text-sm">
-                Members received
-                <div className="relative group">
-                  <button
-                    className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none ml-1.5"
-                    data-tip="true"
-                    data-for="Members received"
-                    // currentitem="false"
-                  >
-                    <span></span>
-                    <svg
-                      className="w-5 h-5"
-                      viewBox="0 0 20 20"
-                      fill="#fff"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M17 10a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Zm-8.07 1.15c.04.04.09.06.15.06h.99c.073 0 .13-.02.17-.06a.547.547 0 0 0 .11-.19c.007-.06.023-.173.05-.34a1.4 1.4 0 0 1 .23-.52c.12-.167.287-.363.5-.59.293-.32.513-.603.66-.85.153-.247.23-.537.23-.87a1.61 1.61 0 0 0-.25-.85c-.16-.273-.42-.497-.78-.67-.353-.18-.807-.27-1.36-.27-.533 0-.997.1-1.39.3-.393.193-.697.45-.91.77-.207.32-.317.663-.33 1.03 0 .073.02.133.06.18.047.047.103.07.17.07h.87c.147 0 .243-.077.29-.23.133-.647.523-.97 1.17-.97.287 0 .53.08.73.24.207.16.297.377.27.65a.864.864 0 0 1-.19.46 5.091 5.091 0 0 1-.5.56c-.293.293-.523.56-.69.8-.167.24-.267.517-.3.83-.007.073-.01.18-.01.32 0 .053.02.1.06.14Zm-.05 2.25c.047.047.103.07.17.07h.99a.244.244 0 0 0 .18-.07.231.231 0 0 0 .07-.17v-.89a.218.218 0 0 0-.08-.17.231.231 0 0 0-.17-.07h-.99a.231.231 0 0 0-.17.07.231.231 0 0 0-.07.17v.89c0 .067.023.123.07.17Z"
-                      ></path>
-                    </svg>
-                  </button>
-                  <div
-                    className="__react_component_tooltip t7d926c16-0e54-402d-b1ed-1a57b630d327 place-bottom type-dark"
-                    id="Members received"
-                    data-id="tooltip"
-                  >
-                    Total amount received by all members of Forsage and last 24
-                    hours change
-                  </div>
-                </div>
-              </span>
-              <div className="flex flex-col py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
-                <span className="text-2xl text-white font-bold sm:text-xl">
-                  147273343.76 BUSD
-                </span>
-                <span className="text-green-light text-base items-baseline sm:text-sm">
-                  + 13276.3 BUSD
-                </span>
-              </div>
-              <div className="flex flex-col py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
-                <span className="text-2xl text-white font-bold sm:text-xl">
-                  22428.1621 BNB
-                </span>
-                <span className="text-green-light text-base items-baseline sm:text-sm">
-                  + 3.5985 BNB
-                </span>
-              </div>
-            </div>
-            <div className="bg-gray rounded p-5 flex flex-col flex-1 max-w-full">
-              <div className="flex justify-between items-center text-base text-white-500 sm:text-sm">
-                <span>Forsage BUSD Contracts</span>
-                <button className="rounded-full h-5 w-5 justify-center items-center bg-main-blue hidden lg:flex">
+                  signIn
+                </a>
+                <button className="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] bg-purple hover:bg-lightPurple active:bg-lightPurple mt-[50px] z-10 sm:max-w-full sm:w-full">
+                  Registration
                   <svg
-                    className="stroke-current text-white"
-                    width="8"
-                    height="4"
-                    fill="#fff"
+                    className="h-5 w-5 ml-2.5 sm:h-4 sm:w-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path d="M4 4 0 0h8L4 4Z"></path>
+                    <g
+                      clip-path="url(#a)"
+                      stroke="#fff"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M19 12H5M13 18l6-6M13 6l6 6"></path>
+                    </g>
+                    <defs>
+                      <clipPath id="a">
+                        <path
+                          fill="#fff"
+                          transform="rotate(90 12 12)"
+                          d="M0 0h24v24H0z"
+                        ></path>
+                      </clipPath>
+                    </defs>
                   </svg>
                 </button>
               </div>
-              <div className="flex flex-col flex-1 justify-between lg:hidden">
-                <div className="flex flex-col border-t border-b border-white-100 pb-2.5 mt-2.5">
-                  <div className="flex justify-between items-center py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
-                    <span className="text-base text-white-500 notranslate sm:text-sm">
-                      x3/x4
-                    </span>
-                    <div className="flex justify-end items-center space-x-2.5">
-                      <span className="text-base text-white notranslate sm:text-sm">
-                        0x5ac...B97
-                      </span>
-                      <button>
-                        <svg
-                          className="h-18px w-18px"
-                          viewBox="0 0 20 20"
-                          fill="#fff"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M15 6.667H8.332c-.92 0-1.667.746-1.667 1.666V15c0 .92.746 1.667 1.667 1.667h6.666c.92 0 1.667-.747 1.667-1.667V8.333c0-.92-.746-1.666-1.667-1.666Z"></path>
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M3.469 3.468A2.167 2.167 0 0 1 5 2.833h6.666A2.167 2.167 0 0 1 13.834 5v1.667a.5.5 0 0 1-1 0V5a1.167 1.167 0 0 0-1.167-1.167H5.001A1.167 1.167 0 0 0 3.834 5v6.667a1.167 1.167 0 0 0 1.167 1.166h1.666a.5.5 0 1 1 0 1H5.001a2.167 2.167 0 0 1-2.167-2.166V5c0-.575.228-1.126.635-1.532Z"
-                          ></path>
-                        </svg>
-                      </button>
-                      <a
-                        target="_blank"
-                        href="https://bscscan.com/address/0x5acc84a3e955bdd76467d3348077d003f00ffb97"
+            </div>
+          </div>
+          <div className="pb-40 relative flex justify-center w-full px-5 sm:pb-8">
+            <img
+              src="img/planet.png"
+              className="absolute right-0 -top-44 z-0 sm:hidden"
+              alt="cryptoglobalPlanet"
+            />
+            <div className="w-full flex flex-col max-w-desktop-full space-y-28">
+              <div className="text-white text-[24px] leading-[40px] max-w-525px text-2xl z-10 sm:text-[20px] sm:leading-[30px]">
+                decentralizedNetworkPlatform
+                <span className="text-gradient mx-1.5">
+                  bringsPeopleTogether
+                </span>
+                fromAllTheWorld
+                <span className="text-gradient mx-1.5">opensUpEndless</span>
+                newEconomicFinancial systems
+              </div>
+              <div className="relative flex w-full z-10">
+                <img
+                  src="img/planet_mobile.png"
+                  className="absolute -top-24 left-1/2 -translate-x-1/2 z-0 hidden sm:block"
+                  alt="cryptoglobalPlanet"
+                />
+                <div className="flex w-full lg:hidden">
+                  <a
+                    className="w-full flex justify-center items-center px-2.5 sm:px-0"
+                    target="_blank"
+                    href="https://support.cryptoglobal.io/"
+                  ></a>
+                  <div className="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">
+                    <a
+                      className="w-full flex justify-center items-center px-2.5 sm:px-0"
+                      target="_blank"
+                      href="https://support.cryptoglobal.io/"
+                    >
+                      <div className="flex flex-col items-start text-left flex-1 space-y-2.5">
+                        <span className="text-white text-2xl">
+                          Documentation
+                        </span>
+                        <span>participantLearningPlatform</span>
+                      </div>{" "}
+                    </a>
+                    <a className="flex items-center text-white" href="#">
+                      <span>startLearning</span>
+                      <svg
+                        className="ml-1 w-5 h-5"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          className="h-18px w-18px"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <g
+                          clip-path="url(#a)"
+                          stroke="#fff"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
                         >
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M11.314 3.813a3.446 3.446 0 1 1 4.873 4.874l-3.331 3.331a3.418 3.418 0 0 1-4.88-.001.5.5 0 0 1 .715-.7 2.417 2.417 0 0 0 3.452 0l.004-.004L15.48 7.98a2.446 2.446 0 1 0-3.46-3.46l-.416.417a.5.5 0 1 1-.707-.707l.417-.417Z"
-                            fill="#fff"
-                          ></path>
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M8.26 7.225a3.417 3.417 0 0 1 3.765.758.5.5 0 0 1-.715.7 2.417 2.417 0 0 0-3.452 0l-.003.004L4.52 12.02a2.446 2.446 0 0 0 3.46 3.46l.416-.417a.5.5 0 1 1 .708.707l-.417.417a3.446 3.446 0 1 1-4.874-4.874l3.332-3.332a3.417 3.417 0 0 1 1.115-.756Z"
-                            fill="#fff"
-                          ></path>
-                        </svg>
-                      </a>
-                    </div>
+                          <path d="M19 12H5M13 18l6-6M13 6l6 6"></path>
+                        </g>
+                        <defs>
+                          <clipPath id="a">
+                            <path
+                              fill="#fff"
+                              transform="rotate(90 12 12)"
+                              d="M0 0h24v24H0z"
+                            ></path>
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </a>
+                    <img
+                      src="img/cards/book.png"
+                      className="absolute right-1.5 bottom-1.5 !w-40 !h-40"
+                    />
                   </div>
-                  <div className="flex justify-between items-center py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
-                    <span className="text-base text-white-500 notranslate sm:text-sm">
-                      xXx
-                    </span>
-                    <div className="flex justify-end items-center space-x-2.5">
-                      <span className="text-base text-white notranslate sm:text-sm">
-                        0x2CA...e52
-                      </span>
-                      <button>
-                        <svg
-                          className="h-18px w-18px"
-                          viewBox="0 0 20 20"
-                          fill="#fff"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M15 6.667H8.332c-.92 0-1.667.746-1.667 1.666V15c0 .92.746 1.667 1.667 1.667h6.666c.92 0 1.667-.747 1.667-1.667V8.333c0-.92-.746-1.666-1.667-1.666Z"></path>
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M3.469 3.468A2.167 2.167 0 0 1 5 2.833h6.666A2.167 2.167 0 0 1 13.834 5v1.667a.5.5 0 0 1-1 0V5a1.167 1.167 0 0 0-1.167-1.167H5.001A1.167 1.167 0 0 0 3.834 5v6.667a1.167 1.167 0 0 0 1.167 1.166h1.666a.5.5 0 1 1 0 1H5.001a2.167 2.167 0 0 1-2.167-2.166V5c0-.575.228-1.126.635-1.532Z"
-                          ></path>
-                        </svg>
-                      </button>
-                      <a
-                        target="_blank"
-                        href="https://bscscan.com/address/0x2caa4694cb7daf7d49a198dc1103c06d4991ae52"
+                  <a
+                    className="w-full flex justify-center items-center px-2.5 sm:px-0"
+                    target="_blank"
+                    href="https://t.me/smartpeoplechat/"
+                  ></a>
+                  <div className="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">
+                    <a
+                      className="w-full flex justify-center items-center px-2.5 sm:px-0"
+                      target="_blank"
+                      href="https://t.me/smartpeoplechat/"
+                    >
+                      <div className="flex flex-col items-start text-left flex-1 space-y-2.5">
+                        <span className="text-white text-2xl">liveChat</span>
+                        <span>platformWhereYouCanAsk</span>
+                      </div>{" "}
+                    </a>
+                    <a className="flex items-center text-white" href="#">
+                      <span>findMentor</span>
+                      <svg
+                        className="ml-1 w-5 h-5"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          className="h-18px w-18px"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <g
+                          clip-path="url(#a)"
+                          stroke="#fff"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
                         >
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M11.314 3.813a3.446 3.446 0 1 1 4.873 4.874l-3.331 3.331a3.418 3.418 0 0 1-4.88-.001.5.5 0 0 1 .715-.7 2.417 2.417 0 0 0 3.452 0l.004-.004L15.48 7.98a2.446 2.446 0 1 0-3.46-3.46l-.416.417a.5.5 0 1 1-.707-.707l.417-.417Z"
-                            fill="#fff"
-                          ></path>
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M8.26 7.225a3.417 3.417 0 0 1 3.765.758.5.5 0 0 1-.715.7 2.417 2.417 0 0 0-3.452 0l-.003.004L4.52 12.02a2.446 2.446 0 0 0 3.46 3.46l.416-.417a.5.5 0 1 1 .708.707l-.417.417a3.446 3.446 0 1 1-4.874-4.874l3.332-3.332a3.417 3.417 0 0 1 1.115-.756Z"
-                            fill="#fff"
-                          ></path>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
-                    <span className="text-base text-white-500 notranslate sm:text-sm">
-                      xGold
-                    </span>
-                    <div className="flex justify-end items-center space-x-2.5">
-                      <span className="text-base text-white notranslate sm:text-sm">
-                        0x988...7C5
-                      </span>
-                      <button>
-                        <svg
-                          className="h-18px w-18px"
-                          viewBox="0 0 20 20"
-                          fill="#fff"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M15 6.667H8.332c-.92 0-1.667.746-1.667 1.666V15c0 .92.746 1.667 1.667 1.667h6.666c.92 0 1.667-.747 1.667-1.667V8.333c0-.92-.746-1.666-1.667-1.666Z"></path>
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M3.469 3.468A2.167 2.167 0 0 1 5 2.833h6.666A2.167 2.167 0 0 1 13.834 5v1.667a.5.5 0 0 1-1 0V5a1.167 1.167 0 0 0-1.167-1.167H5.001A1.167 1.167 0 0 0 3.834 5v6.667a1.167 1.167 0 0 0 1.167 1.166h1.666a.5.5 0 1 1 0 1H5.001a2.167 2.167 0 0 1-2.167-2.166V5c0-.575.228-1.126.635-1.532Z"
-                          ></path>
-                        </svg>
-                      </button>
-                      <a
-                        target="_blank"
-                        href="https://bscscan.com/address/0x98872a66D0749C720D8Dc1A80d496b24B04ff7C5"
-                      >
-                        <svg
-                          className="h-18px w-18px"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M11.314 3.813a3.446 3.446 0 1 1 4.873 4.874l-3.331 3.331a3.418 3.418 0 0 1-4.88-.001.5.5 0 0 1 .715-.7 2.417 2.417 0 0 0 3.452 0l.004-.004L15.48 7.98a2.446 2.446 0 1 0-3.46-3.46l-.416.417a.5.5 0 1 1-.707-.707l.417-.417Z"
-                            fill="#fff"
-                          ></path>
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M8.26 7.225a3.417 3.417 0 0 1 3.765.758.5.5 0 0 1-.715.7 2.417 2.417 0 0 0-3.452 0l-.003.004L4.52 12.02a2.446 2.446 0 0 0 3.46 3.46l.416-.417a.5.5 0 1 1 .708.707l-.417.417a3.446 3.446 0 1 1-4.874-4.874l3.332-3.332a3.417 3.417 0 0 1 1.115-.756Z"
-                            fill="#fff"
-                          ></path>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
-                    <span className="text-base text-white-500 notranslate sm:text-sm">
-                      xQore
-                    </span>
-                    <div className="flex justify-end items-center space-x-2.5">
-                      <span className="text-base text-white notranslate sm:text-sm">
-                        0x1ee...a78
-                      </span>
-                      <button>
-                        <svg
-                          className="h-18px w-18px"
-                          viewBox="0 0 20 20"
-                          fill="#fff"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M15 6.667H8.332c-.92 0-1.667.746-1.667 1.666V15c0 .92.746 1.667 1.667 1.667h6.666c.92 0 1.667-.747 1.667-1.667V8.333c0-.92-.746-1.666-1.667-1.666Z"></path>
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M3.469 3.468A2.167 2.167 0 0 1 5 2.833h6.666A2.167 2.167 0 0 1 13.834 5v1.667a.5.5 0 0 1-1 0V5a1.167 1.167 0 0 0-1.167-1.167H5.001A1.167 1.167 0 0 0 3.834 5v6.667a1.167 1.167 0 0 0 1.167 1.166h1.666a.5.5 0 1 1 0 1H5.001a2.167 2.167 0 0 1-2.167-2.166V5c0-.575.228-1.126.635-1.532Z"
-                          ></path>
-                        </svg>
-                      </button>
-                      <a
-                        target="_blank"
-                        href="https://bscscan.com/address/0x1ee4A7a62726fDd1EDe780f90fd2a77f53F5Ba78"
-                      >
-                        <svg
-                          className="h-18px w-18px"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M11.314 3.813a3.446 3.446 0 1 1 4.873 4.874l-3.331 3.331a3.418 3.418 0 0 1-4.88-.001.5.5 0 0 1 .715-.7 2.417 2.417 0 0 0 3.452 0l.004-.004L15.48 7.98a2.446 2.446 0 1 0-3.46-3.46l-.416.417a.5.5 0 1 1-.707-.707l.417-.417Z"
-                            fill="#fff"
-                          ></path>
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M8.26 7.225a3.417 3.417 0 0 1 3.765.758.5.5 0 0 1-.715.7 2.417 2.417 0 0 0-3.452 0l-.003.004L4.52 12.02a2.446 2.446 0 0 0 3.46 3.46l.416-.417a.5.5 0 1 1 .708.707l-.417.417a3.446 3.446 0 1 1-4.874-4.874l3.332-3.332a3.417 3.417 0 0 1 1.115-.756Z"
-                            fill="#fff"
-                          ></path>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
-                    <span className="text-base text-white-500 notranslate sm:text-sm">
-                      maxQore
-                    </span>
-                    <div className="flex justify-end items-center space-x-2.5">
-                      <span className="text-base text-white notranslate sm:text-sm">
-                        0x27D...260
-                      </span>
-                      <button>
-                        <svg
-                          className="h-18px w-18px"
-                          viewBox="0 0 20 20"
-                          fill="#fff"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M15 6.667H8.332c-.92 0-1.667.746-1.667 1.666V15c0 .92.746 1.667 1.667 1.667h6.666c.92 0 1.667-.747 1.667-1.667V8.333c0-.92-.746-1.666-1.667-1.666Z"></path>
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M3.469 3.468A2.167 2.167 0 0 1 5 2.833h6.666A2.167 2.167 0 0 1 13.834 5v1.667a.5.5 0 0 1-1 0V5a1.167 1.167 0 0 0-1.167-1.167H5.001A1.167 1.167 0 0 0 3.834 5v6.667a1.167 1.167 0 0 0 1.167 1.166h1.666a.5.5 0 1 1 0 1H5.001a2.167 2.167 0 0 1-2.167-2.166V5c0-.575.228-1.126.635-1.532Z"
-                          ></path>
-                        </svg>
-                      </button>
-                      <a
-                        target="_blank"
-                        href="https://bscscan.com/address/0x27D6bBaC9112D2097FafA3B14Ae367539A7B1260"
-                      >
-                        <svg
-                          className="h-18px w-18px"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M11.314 3.813a3.446 3.446 0 1 1 4.873 4.874l-3.331 3.331a3.418 3.418 0 0 1-4.88-.001.5.5 0 0 1 .715-.7 2.417 2.417 0 0 0 3.452 0l.004-.004L15.48 7.98a2.446 2.446 0 1 0-3.46-3.46l-.416.417a.5.5 0 1 1-.707-.707l.417-.417Z"
-                            fill="#fff"
-                          ></path>
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M8.26 7.225a3.417 3.417 0 0 1 3.765.758.5.5 0 0 1-.715.7 2.417 2.417 0 0 0-3.452 0l-.003.004L4.52 12.02a2.446 2.446 0 0 0 3.46 3.46l.416-.417a.5.5 0 1 1 .708.707l-.417.417a3.446 3.446 0 1 1-4.874-4.874l3.332-3.332a3.417 3.417 0 0 1 1.115-.756Z"
-                            fill="#fff"
-                          ></path>
-                        </svg>
-                      </a>
-                    </div>
+                          <path d="M19 12H5M13 18l6-6M13 6l6 6"></path>
+                        </g>
+                        <defs>
+                          <clipPath id="a">
+                            <path
+                              fill="#fff"
+                              transform="rotate(90 12 12)"
+                              d="M0 0h24v24H0z"
+                            ></path>
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </a>
+                    <img
+                      src="img/cards/chat.png"
+                      className="absolute right-1.5 bottom-1.5 !w-40 !h-40"
+                    />
                   </div>
                 </div>
-                <div className="flex flex-col pt-2.5 mt-auto">
-                  <div className="flex flex-col py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
-                    <span className="text-base text-white-500 sm:text-sm">
-                      Transactions made
-                    </span>
-                    <span className="text-2xl text-white font-bold sm:text-xl">
-                      5817992
-                    </span>
-                    <span className="text-green-light text-base items-baseline sm:text-sm">
-                      + 993
-                    </span>
-                  </div>
-                  <div className="flex flex-col py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
-                    <span className="text-base text-white-500 sm:text-sm">
-                      <span>
-                        Turnover,
-                        <span className="notranslate">BUSD</span>
-                      </span>
-                    </span>
-                    <span className="text-2xl text-white font-bold sm:text-xl">
-                      294546687.52
-                    </span>
-                    <span className="text-green-light text-base items-baseline sm:text-sm">
-                      + 26552.6
-                    </span>
+                <div className="margin-item-carousel w-full hidden lg:flex lg:pb-8">
+                  <div className="carousel-root">
+                    <div
+                      className="carousel carousel-slider"
+                      // style="width: 100%"
+                    >
+                      <ul className="control-dots">
+                        <li
+                          className="dot selected"
+                          value="0"
+                          role="button"
+                          //   tabindex="0"
+                          aria-label="slide item 1"
+                        ></li>
+                        <li
+                          className="dot"
+                          value="1"
+                          role="button"
+                          //   tabindex="0"
+                          aria-label="slide item 2"
+                        ></li>
+                      </ul>
+                      <button
+                        type="button"
+                        aria-label="previous slide / item"
+                        className="control-arrow control-prev control-disabled"
+                      ></button>
+                      <div className="slider-wrapper axis-horizontal">
+                        <ul
+                          className="slider animated"
+                          //   style="
+                          //     -webkit-transform: translate3d(-100%, 0, 0);
+                          //     -ms-transform: translate3d(-100%, 0, 0);
+                          //     -o-transform: translate3d(-100%, 0, 0);
+                          //     transform: translate3d(-100%, 0, 0);
+                          //     -webkit-transition-duration: 350ms;
+                          //     -moz-transition-duration: 350ms;
+                          //     -o-transition-duration: 350ms;
+                          //     transition-duration: 350ms;
+                          //     -ms-transition-duration: 350ms;
+                          //   "
+                        >
+                          <li className="slide">
+                            <a
+                              className="w-full flex justify-center items-center px-2.5 sm:px-0"
+                              target="_blank"
+                              href="https://t.me/smartpeoplechat/"
+                            ></a>
+                            <div className="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">
+                              <a
+                                className="w-full flex justify-center items-center px-2.5 sm:px-0"
+                                target="_blank"
+                                href="https://t.me/smartpeoplechat/"
+                              >
+                                <div className="flex flex-col items-start text-left flex-1 space-y-2.5">
+                                  <span className="text-white text-2xl">
+                                    liveChat
+                                  </span>
+                                  <span>platformWhereYouCanAsk</span>
+                                </div>{" "}
+                              </a>
+                              <a
+                                className="flex items-center text-white"
+                                href="#"
+                              >
+                                <span>findMentor</span>
+                                <svg
+                                  className="ml-1 w-5 h-5"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <g
+                                    clip-path="url(#a)"
+                                    stroke="#fff"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                  >
+                                    <path d="M19 12H5M13 18l6-6M13 6l6 6"></path>
+                                  </g>
+                                  <defs>
+                                    <clipPath id="a">
+                                      <path
+                                        fill="#fff"
+                                        transform="rotate(90 12 12)"
+                                        d="M0 0h24v24H0z"
+                                      ></path>
+                                    </clipPath>
+                                  </defs>
+                                </svg>
+                              </a>
+                              <img
+                                src="img/cards/chat.png"
+                                className="absolute right-1.5 bottom-1.5 !w-40 !h-40"
+                              />
+                            </div>
+                          </li>
+                          <li className="slide selected previous">
+                            <a
+                              className="w-full flex justify-center items-center px-2.5 sm:px-0"
+                              target="_blank"
+                              href="https://support.cryptoglobal.io/"
+                            ></a>
+                            <div className="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">
+                              <a
+                                className="w-full flex justify-center items-center px-2.5 sm:px-0"
+                                target="_blank"
+                                href="https://support.cryptoglobal.io/"
+                              >
+                                <div className="flex flex-col items-start text-left flex-1 space-y-2.5">
+                                  <span className="text-white text-2xl">
+                                    Documentation
+                                  </span>
+                                  <span>participantLearningPlatform</span>
+                                </div>{" "}
+                              </a>
+                              <a
+                                className="flex items-center text-white"
+                                href="#"
+                              >
+                                <span>startLearning</span>
+                                <svg
+                                  className="ml-1 w-5 h-5"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <g
+                                    clip-path="url(#a)"
+                                    stroke="#fff"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                  >
+                                    <path d="M19 12H5M13 18l6-6M13 6l6 6"></path>
+                                  </g>
+                                  <defs>
+                                    <clipPath id="a">
+                                      <path
+                                        fill="#fff"
+                                        transform="rotate(90 12 12)"
+                                        d="M0 0h24v24H0z"
+                                      ></path>
+                                    </clipPath>
+                                  </defs>
+                                </svg>
+                              </a>
+                              <img
+                                src="img/cards/book.png"
+                                className="absolute right-1.5 bottom-1.5 !w-40 !h-40"
+                              />
+                            </div>
+                          </li>
+                          <li className="slide">
+                            <a
+                              className="w-full flex justify-center items-center px-2.5 sm:px-0"
+                              target="_blank"
+                              href="https://t.me/smartpeoplechat/"
+                            ></a>
+                            <div className="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">
+                              <a
+                                className="w-full flex justify-center items-center px-2.5 sm:px-0"
+                                target="_blank"
+                                href="https://t.me/smartpeoplechat/"
+                              >
+                                <div className="flex flex-col items-start text-left flex-1 space-y-2.5">
+                                  <span className="text-white text-2xl">
+                                    liveChat
+                                  </span>
+                                  <span>platformWhereYouCanAsk</span>
+                                </div>{" "}
+                              </a>
+                              <a
+                                className="flex items-center text-white"
+                                href="#"
+                              >
+                                <span>findMentor</span>
+                                <svg
+                                  className="ml-1 w-5 h-5"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <g
+                                    clip-path="url(#a)"
+                                    stroke="#fff"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                  >
+                                    <path d="M19 12H5M13 18l6-6M13 6l6 6"></path>
+                                  </g>
+                                  <defs>
+                                    <clipPath id="a">
+                                      <path
+                                        fill="#fff"
+                                        transform="rotate(90 12 12)"
+                                        d="M0 0h24v24H0z"
+                                      ></path>
+                                    </clipPath>
+                                  </defs>
+                                </svg>
+                              </a>
+                              <img
+                                src="img/cards/chat.png"
+                                className="absolute right-1.5 bottom-1.5 !w-40 !h-40"
+                              />
+                            </div>
+                          </li>
+                          <li className="slide selected previous">
+                            <a
+                              className="w-full flex justify-center items-center px-2.5 sm:px-0"
+                              target="_blank"
+                              href="https://support.cryptoglobal.io/"
+                            ></a>
+                            <div className="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">
+                              <a
+                                className="w-full flex justify-center items-center px-2.5 sm:px-0"
+                                target="_blank"
+                                href="https://support.cryptoglobal.io/"
+                              >
+                                <div className="flex flex-col items-start text-left flex-1 space-y-2.5">
+                                  <span className="text-white text-2xl">
+                                    Documentation
+                                  </span>
+                                  <span>participantLearningPlatform</span>
+                                </div>{" "}
+                              </a>
+                              <a
+                                className="flex items-center text-white"
+                                href="#"
+                              >
+                                <span>startLearning</span>
+                                <svg
+                                  className="ml-1 w-5 h-5"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <g
+                                    clip-path="url(#a)"
+                                    stroke="#fff"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                  >
+                                    <path d="M19 12H5M13 18l6-6M13 6l6 6"></path>
+                                  </g>
+                                  <defs>
+                                    <clipPath id="a">
+                                      <path
+                                        fill="#fff"
+                                        transform="rotate(90 12 12)"
+                                        d="M0 0h24v24H0z"
+                                      ></path>
+                                    </clipPath>
+                                  </defs>
+                                </svg>
+                              </a>
+                              <img
+                                src="img/cards/book.png"
+                                className="absolute right-1.5 bottom-1.5 !w-40 !h-40"
+                              />
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <button
+                        type="button"
+                        aria-label="next slide / item"
+                        className="control-arrow control-next control-disabled"
+                      ></button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="hidden">
-            <span>00:00:00:00</span>
+          <div className="relative flex justify-center w-full space-x-5 sm:space-x-0 mb-[-250px] z-[11] sm:mb-[-100px]">
+            <div className="h-full absolute top-1/2 -translate-y-1/2 left-5 w-[280px] flex flex-col items-end justify-between sm:left-1">
+              <div className="flex flex-col items-end space-y-10 w-full mt-4">
+                <img
+                  className="w-[170px] sm:w-[80px] sm:mr-auto"
+                  src="img/schoolIcon/hat.png"
+                />
+                <img
+                  className="w-[170px] mr-auto sm:w-[80px]"
+                  src="img/schoolIcon/magnifier.png"
+                />
+              </div>
+              <img
+                className="w-[130px] sm:w-[60px] sm:mr-auto"
+                src="img/schoolIcon/bulb.png"
+              />
+            </div>
+            <div className="flex flex-col items-center text-center space-y-8 z-[10]">
+              <div className="w-full max-w-[850px] sm:px-5">
+                <span className="text-center text-[25px] text-white font-light sm:text-sm">
+                  <span className="purple-gradient">Crypto global School</span>{" "}
+                  is an exclusive training course designed specifically for
+                  those who want to unlock their full potential with Crypto
+                  global!
+                </span>
+              </div>
+              <a
+                className="!mt-2.5 bg-white-50 hover:bg-white-100 py-2.5 px-5 rounded-[30px] min-w-[200px] sm:min-w-[85%]"
+                target="_blank"
+                href="https://cryptoglobal.io/"
+                rel="noreferrer"
+              >
+                <span className="purple-gradient">Go to school</span>
+              </a>
+              <iframe
+                className="rounded-[30px] w-full school-box-shadow h-[510px] sm:h-[200px] max-w-[85%]"
+                src="https://www.youtube.com/embed/eeKwImXmlBM"
+                title="YouTube video player"
+                // frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              ></iframe>
+            </div>
+            <div className="h-full absolute top-1/2 -translate-y-1/2 right-5 w-[280px] flex flex-col justify-between sm:right-1">
+              <div className="flex flex-col justify-start space-y-10 w-full">
+                <img
+                  className="w-[170px] sm:w-[80px] sm:ml-auto"
+                  src="img/schoolIcon/globe.png"
+                />
+                <img
+                  className="w-[170px] ml-auto sm:w-[80px]"
+                  src="img/schoolIcon/book.png"
+                />
+              </div>
+              <img
+                className="w-[130px] sm:w-[60px] sm:ml-auto"
+                src="img/schoolIcon/pencil.png"
+              />
+            </div>
+          </div>
+          <div className="flex flex-col items-center background-gradient pt-[220px] sm:pt-[250px] sm:pt-[100px]">
+            <div className="py-[100px] flex flex-col max-w-desktop-full w-full lg:py-[40px]">
+              <div className="flex flex-col align-middle">
+                <div className="flex flex-col mb-10 items-center sm:items-start px-5 sm:mb-5">
+                  <span className="max-w-[870px] text-white text-[48px] leading-[60px] font-bold mb-[30px] sm:mb-5 sm:text-[30px] sm:leading-[36px]">
+                    platformRecentActivity
+                  </span>
+                  <span className="text-white-700 text-[18px] sm:text-sm">
+                    realTimeGlobalEventsCryptoglobal
+                  </span>
+                </div>
+                <div className="flex flex-col mt-2.5 ml-auto mr-auto max-w-[970px] w-full z-10 px-5 sm:px-0">
+                  <div className="w-full max-h-[832px] overflow-hidden flex flex-col col-span-2 p-5 bg-gray rounded-[30px] h-full lg:order-2 sm:rounded-none sm:p-5 sm:max-h-[75vh]">
+                    <div
+                      className="flex -mr-10 pr-10 flex-col flex-1 overflow-auto"
+                      id="yourContainerId"
+                    >
+                      <div>
+                        <div className="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
+                          <div className="flex items-center sm:items-start justify-start sm:w-full">
+                            <svg
+                              className="fill-current text-green w-7 h-7 mr-5 sm:mr-2.5"
+                              viewBox="0 0 22 22"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m10.97 1 2.47 2.53-6.22 6.22-2.47-2.47L10.97 1ZM14.72 4.75l2.47 2.53-9.97 9.97-2.47-2.47 9.97-10.03ZM3.47 8.5l2.47 2.53-2.47 2.47L1 11.03 3.47 8.5ZM18.47 8.5l2.47 2.53L10.97 21 8.5 18.53 18.47 8.5Z"
+                                fill="#D2A927"
+                                stroke="#F0B90B"
+                                stroke-width=".097"
+                              ></path>
+                            </svg>
+                            <div className="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
+                              <svg
+                                className="fill-current text-green w-5 h-5"
+                                viewBox="0 0 20 20"
+                                fill="#ffff"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"
+                                ></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
+                                  fill-opacity=".5"
+                                ></path>
+                                <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"
+                                ></path>
+                              </svg>
+                            </div>
+                            <div className="flex ml-5 items-center sm:w-full flex flex-wrap sm:ml-2.5">
+                              <a
+                                className="flex items-center justify-center px-[10px] py-[5px] sm:py-[2.5px] leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded-[20px] font-medium text-base sm:text-[12px] w-max false"
+                                target="_blank"
+                                href="#"
+                              >
+                                0xaae543622526800c4d0a8e03e474f75a69ea45686fda760f708f465f4e53f3a2
+                              </a>
+                              <div className="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 sm:text-[12px] false">
+                                <span className="text-white-500 text-base sm:text-[12px] sm:leading-30px"></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex items-start">
+                            <div className="flex items-center justify-end whitespace-nowrap h-full">
+                              <a
+                                className="sm:order-2"
+                                target="_blank"
+                                href="https://bscscan.com/tx/0xaae543622526800c4d0a8e03e474f75a69ea45686fda760f708f465f4e53f3a2"
+                              >
+                                <svg
+                                  className="w-6 h-6 sm:h-4 sm:w-4"
+                                  viewBox="0 0 24 24"
+                                  fill="#fff"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"
+                                  ></path>
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"
+                                  ></path>
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"
+                                  ></path>
+                                </svg>
+                              </a>
+                              <span className="ml-2.5 text-white-500 text-base sm:text-[12px] sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">
+                                1 hour ago
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
+                          <div className="flex items-center sm:items-start justify-start sm:w-full">
+                            <svg
+                              className="fill-current text-green w-7 h-7 mr-5 sm:mr-2.5"
+                              viewBox="0 0 22 22"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m10.97 1 2.47 2.53-6.22 6.22-2.47-2.47L10.97 1ZM14.72 4.75l2.47 2.53-9.97 9.97-2.47-2.47 9.97-10.03ZM3.47 8.5l2.47 2.53-2.47 2.47L1 11.03 3.47 8.5ZM18.47 8.5l2.47 2.53L10.97 21 8.5 18.53 18.47 8.5Z"
+                                fill="#D2A927"
+                                stroke="#F0B90B"
+                                stroke-width=".097"
+                              ></path>
+                            </svg>
+                            <div className="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
+                              <svg
+                                className="fill-current text-green w-5 h-5"
+                                viewBox="0 0 20 20"
+                                fill="#ffff"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"
+                                ></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
+                                  fill-opacity=".5"
+                                ></path>
+                                <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"
+                                ></path>
+                              </svg>
+                            </div>
+                            <div className="flex ml-5 items-center sm:w-full flex flex-wrap sm:ml-2.5">
+                              <a
+                                className="flex items-center justify-center px-[10px] py-[5px] sm:py-[2.5px] leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded-[20px] font-medium text-base sm:text-[12px] w-max false"
+                                target="_blank"
+                                href="#"
+                              >
+                                0xf3884aa59ebed56781cf331a90ec5681141017fb25a09db332f045e22473bf57
+                              </a>
+                              <div className="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 sm:text-[12px] false">
+                                <span className="text-white-500 text-base sm:text-[12px] sm:leading-30px"></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex items-start">
+                            <div className="flex items-center justify-end whitespace-nowrap h-full">
+                              <a
+                                className="sm:order-2"
+                                target="_blank"
+                                href="https://bscscan.com/tx/0xf3884aa59ebed56781cf331a90ec5681141017fb25a09db332f045e22473bf57"
+                              >
+                                <svg
+                                  className="w-6 h-6 sm:h-4 sm:w-4"
+                                  viewBox="0 0 24 24"
+                                  fill="#fff"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"
+                                  ></path>
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"
+                                  ></path>
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"
+                                  ></path>
+                                </svg>
+                              </a>
+                              <span className="ml-2.5 text-white-500 text-base sm:text-[12px] sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">
+                                1 hour ago
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
+                          <div className="flex items-center sm:items-start justify-start sm:w-full">
+                            <svg
+                              className="fill-current text-green w-7 h-7 mr-5 sm:mr-2.5"
+                              viewBox="0 0 22 22"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m10.97 1 2.47 2.53-6.22 6.22-2.47-2.47L10.97 1ZM14.72 4.75l2.47 2.53-9.97 9.97-2.47-2.47 9.97-10.03ZM3.47 8.5l2.47 2.53-2.47 2.47L1 11.03 3.47 8.5ZM18.47 8.5l2.47 2.53L10.97 21 8.5 18.53 18.47 8.5Z"
+                                fill="#D2A927"
+                                stroke="#F0B90B"
+                                stroke-width=".097"
+                              ></path>
+                            </svg>
+                            <div className="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
+                              <svg
+                                className="fill-current text-green w-5 h-5"
+                                viewBox="0 0 20 20"
+                                fill="#ffff"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"
+                                ></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
+                                  fill-opacity=".5"
+                                ></path>
+                                <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"
+                                ></path>
+                              </svg>
+                            </div>
+                            <div className="flex ml-5 items-center sm:w-full flex flex-wrap sm:ml-2.5">
+                              <a
+                                className="flex items-center justify-center px-[10px] py-[5px] sm:py-[2.5px] leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded-[20px] font-medium text-base sm:text-[12px] w-max false"
+                                target="_blank"
+                                href="#"
+                              >
+                                0x145ff6331e5a0af5cce6a4b5ca186d2966541c9c5e22480ceb5165b39d2704f7
+                              </a>
+                              <div className="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 sm:text-[12px] false">
+                                <span className="text-white-500 text-base sm:text-[12px] sm:leading-30px"></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex items-start">
+                            <div className="flex items-center justify-end whitespace-nowrap h-full">
+                              <a
+                                className="sm:order-2"
+                                target="_blank"
+                                href="https://bscscan.com/tx/0x145ff6331e5a0af5cce6a4b5ca186d2966541c9c5e22480ceb5165b39d2704f7"
+                              >
+                                <svg
+                                  className="w-6 h-6 sm:h-4 sm:w-4"
+                                  viewBox="0 0 24 24"
+                                  fill="#fff"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"
+                                  ></path>
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"
+                                  ></path>
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"
+                                  ></path>
+                                </svg>
+                              </a>
+                              <span className="ml-2.5 text-white-500 text-base sm:text-[12px] sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">
+                                1 hour ago
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
+                          <div className="flex items-center sm:items-start justify-start sm:w-full">
+                            <svg
+                              className="fill-current text-green w-7 h-7 mr-5 sm:mr-2.5"
+                              viewBox="0 0 22 22"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m10.97 1 2.47 2.53-6.22 6.22-2.47-2.47L10.97 1ZM14.72 4.75l2.47 2.53-9.97 9.97-2.47-2.47 9.97-10.03ZM3.47 8.5l2.47 2.53-2.47 2.47L1 11.03 3.47 8.5ZM18.47 8.5l2.47 2.53L10.97 21 8.5 18.53 18.47 8.5Z"
+                                fill="#D2A927"
+                                stroke="#F0B90B"
+                                stroke-width=".097"
+                              ></path>
+                            </svg>
+                            <div className="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
+                              <svg
+                                className="fill-current text-green w-5 h-5"
+                                viewBox="0 0 20 20"
+                                fill="#ffff"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"
+                                ></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
+                                  fill-opacity=".5"
+                                ></path>
+                                <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"
+                                ></path>
+                              </svg>
+                            </div>
+                            <div className="flex ml-5 items-center sm:w-full flex flex-wrap sm:ml-2.5">
+                              <a
+                                className="flex items-center justify-center px-[10px] py-[5px] sm:py-[2.5px] leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded-[20px] font-medium text-base sm:text-[12px] w-max false"
+                                target="_blank"
+                                href="#"
+                              >
+                                0x58fb1918450c4588b48f59ce08e795095f316b5f2825bbfd11c53d3bdf8269c6
+                              </a>
+                              <div className="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 sm:text-[12px] false">
+                                <span className="text-white-500 text-base sm:text-[12px] sm:leading-30px"></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex items-start">
+                            <div className="flex items-center justify-end whitespace-nowrap h-full">
+                              <a
+                                className="sm:order-2"
+                                target="_blank"
+                                href="https://bscscan.com/tx/0x58fb1918450c4588b48f59ce08e795095f316b5f2825bbfd11c53d3bdf8269c6"
+                              >
+                                <svg
+                                  className="w-6 h-6 sm:h-4 sm:w-4"
+                                  viewBox="0 0 24 24"
+                                  fill="#fff"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"
+                                  ></path>
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"
+                                  ></path>
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"
+                                  ></path>
+                                </svg>
+                              </a>
+                              <span className="ml-2.5 text-white-500 text-base sm:text-[12px] sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">
+                                4 hours ago
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
+                          <div className="flex items-center sm:items-start justify-start sm:w-full">
+                            <svg
+                              className="fill-current text-green w-7 h-7 mr-5 sm:mr-2.5"
+                              viewBox="0 0 22 22"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m10.97 1 2.47 2.53-6.22 6.22-2.47-2.47L10.97 1ZM14.72 4.75l2.47 2.53-9.97 9.97-2.47-2.47 9.97-10.03ZM3.47 8.5l2.47 2.53-2.47 2.47L1 11.03 3.47 8.5ZM18.47 8.5l2.47 2.53L10.97 21 8.5 18.53 18.47 8.5Z"
+                                fill="#D2A927"
+                                stroke="#F0B90B"
+                                stroke-width=".097"
+                              ></path>
+                            </svg>
+                            <div className="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
+                              <svg
+                                className="fill-current text-green w-5 h-5"
+                                viewBox="0 0 20 20"
+                                fill="#ffff"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"
+                                ></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
+                                  fill-opacity=".5"
+                                ></path>
+                                <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"
+                                ></path>
+                              </svg>
+                            </div>
+                            <div className="flex ml-5 items-center sm:w-full flex flex-wrap sm:ml-2.5">
+                              <a
+                                className="flex items-center justify-center px-[10px] py-[5px] sm:py-[2.5px] leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded-[20px] font-medium text-base sm:text-[12px] w-max false"
+                                target="_blank"
+                                href="#"
+                              >
+                                0x40bdd628677321d59a212abdd3df01c7815cae6db28aed3ea196eededc66f597
+                              </a>
+                              <div className="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 sm:text-[12px] false">
+                                <span className="text-white-500 text-base sm:text-[12px] sm:leading-30px"></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex items-start">
+                            <div className="flex items-center justify-end whitespace-nowrap h-full">
+                              <a
+                                className="sm:order-2"
+                                target="_blank"
+                                href="https://bscscan.com/tx/0x40bdd628677321d59a212abdd3df01c7815cae6db28aed3ea196eededc66f597"
+                              >
+                                <svg
+                                  className="w-6 h-6 sm:h-4 sm:w-4"
+                                  viewBox="0 0 24 24"
+                                  fill="#fff"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"
+                                  ></path>
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"
+                                  ></path>
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"
+                                  ></path>
+                                </svg>
+                              </a>
+                              <span className="ml-2.5 text-white-500 text-base sm:text-[12px] sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">
+                                4 hours ago
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
+                          <div className="flex items-center sm:items-start justify-start sm:w-full">
+                            <svg
+                              className="fill-current text-green w-7 h-7 mr-5 sm:mr-2.5"
+                              viewBox="0 0 22 22"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m10.97 1 2.47 2.53-6.22 6.22-2.47-2.47L10.97 1ZM14.72 4.75l2.47 2.53-9.97 9.97-2.47-2.47 9.97-10.03ZM3.47 8.5l2.47 2.53-2.47 2.47L1 11.03 3.47 8.5ZM18.47 8.5l2.47 2.53L10.97 21 8.5 18.53 18.47 8.5Z"
+                                fill="#D2A927"
+                                stroke="#F0B90B"
+                                stroke-width=".097"
+                              ></path>
+                            </svg>
+                            <div className="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
+                              <svg
+                                className="fill-current text-green w-5 h-5"
+                                viewBox="0 0 20 20"
+                                fill="#ffff"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"
+                                ></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
+                                  fill-opacity=".5"
+                                ></path>
+                                <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"
+                                ></path>
+                              </svg>
+                            </div>
+                            <div className="flex ml-5 items-center sm:w-full flex flex-wrap sm:ml-2.5">
+                              <a
+                                className="flex items-center justify-center px-[10px] py-[5px] sm:py-[2.5px] leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded-[20px] font-medium text-base sm:text-[12px] w-max false"
+                                target="_blank"
+                                href="#"
+                              >
+                                0x50af95f3a6dbe2b0da0ab8e96c60cb731a603d84aa71df2928fb9fdd2fdeb492
+                              </a>
+                              <div className="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 sm:text-[12px] false">
+                                <span className="text-white-500 text-base sm:text-[12px] sm:leading-30px"></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex items-start">
+                            <div className="flex items-center justify-end whitespace-nowrap h-full">
+                              <a
+                                className="sm:order-2"
+                                target="_blank"
+                                href="https://bscscan.com/tx/0x50af95f3a6dbe2b0da0ab8e96c60cb731a603d84aa71df2928fb9fdd2fdeb492"
+                              >
+                                <svg
+                                  className="w-6 h-6 sm:h-4 sm:w-4"
+                                  viewBox="0 0 24 24"
+                                  fill="#fff"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"
+                                  ></path>
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"
+                                  ></path>
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"
+                                  ></path>
+                                </svg>
+                              </a>
+                              <span className="ml-2.5 text-white-500 text-base sm:text-[12px] sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">
+                                5 hours ago
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
+                          <div className="flex items-center sm:items-start justify-start sm:w-full">
+                            <svg
+                              className="fill-current text-green w-7 h-7 mr-5 sm:mr-2.5"
+                              viewBox="0 0 22 22"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m10.97 1 2.47 2.53-6.22 6.22-2.47-2.47L10.97 1ZM14.72 4.75l2.47 2.53-9.97 9.97-2.47-2.47 9.97-10.03ZM3.47 8.5l2.47 2.53-2.47 2.47L1 11.03 3.47 8.5ZM18.47 8.5l2.47 2.53L10.97 21 8.5 18.53 18.47 8.5Z"
+                                fill="#D2A927"
+                                stroke="#F0B90B"
+                                stroke-width=".097"
+                              ></path>
+                            </svg>
+                            <div className="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
+                              <svg
+                                className="fill-current text-green w-5 h-5"
+                                viewBox="0 0 20 20"
+                                fill="#ffff"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"
+                                ></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
+                                  fill-opacity=".5"
+                                ></path>
+                                <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"
+                                ></path>
+                              </svg>
+                            </div>
+                            <div className="flex ml-5 items-center sm:w-full flex flex-wrap sm:ml-2.5">
+                              <a
+                                className="flex items-center justify-center px-[10px] py-[5px] sm:py-[2.5px] leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded-[20px] font-medium text-base sm:text-[12px] w-max false"
+                                target="_blank"
+                                href="#"
+                              >
+                                0xe6753ffa3b26e96d3ac6b259f49539a8d905a8d3ddae099800d44e3221ce0f6c
+                              </a>
+                              <div className="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 sm:text-[12px] false">
+                                <span className="text-white-500 text-base sm:text-[12px] sm:leading-30px"></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex items-start">
+                            <div className="flex items-center justify-end whitespace-nowrap h-full">
+                              <a
+                                className="sm:order-2"
+                                target="_blank"
+                                href="https://bscscan.com/tx/0xe6753ffa3b26e96d3ac6b259f49539a8d905a8d3ddae099800d44e3221ce0f6c"
+                              >
+                                <svg
+                                  className="w-6 h-6 sm:h-4 sm:w-4"
+                                  viewBox="0 0 24 24"
+                                  fill="#fff"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"
+                                  ></path>
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"
+                                  ></path>
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"
+                                  ></path>
+                                </svg>
+                              </a>
+                              <span className="ml-2.5 text-white-500 text-base sm:text-[12px] sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">
+                                5 hours ago
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
+                          <div className="flex items-center sm:items-start justify-start sm:w-full">
+                            <svg
+                              className="fill-current text-green w-7 h-7 mr-5 sm:mr-2.5"
+                              viewBox="0 0 22 22"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m10.97 1 2.47 2.53-6.22 6.22-2.47-2.47L10.97 1ZM14.72 4.75l2.47 2.53-9.97 9.97-2.47-2.47 9.97-10.03ZM3.47 8.5l2.47 2.53-2.47 2.47L1 11.03 3.47 8.5ZM18.47 8.5l2.47 2.53L10.97 21 8.5 18.53 18.47 8.5Z"
+                                fill="#D2A927"
+                                stroke="#F0B90B"
+                                stroke-width=".097"
+                              ></path>
+                            </svg>
+                            <div className="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
+                              <svg
+                                className="fill-current text-green w-5 h-5"
+                                viewBox="0 0 20 20"
+                                fill="#ffff"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"
+                                ></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
+                                  fill-opacity=".5"
+                                ></path>
+                                <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"
+                                ></path>
+                              </svg>
+                            </div>
+                            <div className="flex ml-5 items-center sm:w-full flex flex-wrap sm:ml-2.5">
+                              <a
+                                className="flex items-center justify-center px-[10px] py-[5px] sm:py-[2.5px] leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded-[20px] font-medium text-base sm:text-[12px] w-max false"
+                                target="_blank"
+                                href="#"
+                              >
+                                0x48e05b8e5ae0ee11f5b56d7938b81d51e491ebec1b5e0f7ae68de29900c021d1
+                              </a>
+                              <div className="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 sm:text-[12px] false">
+                                <span className="text-white-500 text-base sm:text-[12px] sm:leading-30px"></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex items-start">
+                            <div className="flex items-center justify-end whitespace-nowrap h-full">
+                              <a
+                                className="sm:order-2"
+                                target="_blank"
+                                href="https://bscscan.com/tx/0x48e05b8e5ae0ee11f5b56d7938b81d51e491ebec1b5e0f7ae68de29900c021d1"
+                              >
+                                <svg
+                                  className="w-6 h-6 sm:h-4 sm:w-4"
+                                  viewBox="0 0 24 24"
+                                  fill="#fff"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"
+                                  ></path>
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"
+                                  ></path>
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"
+                                  ></path>
+                                </svg>
+                              </a>
+                              <span className="ml-2.5 text-white-500 text-base sm:text-[12px] sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">
+                                5 hours ago
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
+                          <div className="flex items-center sm:items-start justify-start sm:w-full">
+                            <svg
+                              className="fill-current text-green w-7 h-7 mr-5 sm:mr-2.5"
+                              viewBox="0 0 22 22"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m10.97 1 2.47 2.53-6.22 6.22-2.47-2.47L10.97 1ZM14.72 4.75l2.47 2.53-9.97 9.97-2.47-2.47 9.97-10.03ZM3.47 8.5l2.47 2.53-2.47 2.47L1 11.03 3.47 8.5ZM18.47 8.5l2.47 2.53L10.97 21 8.5 18.53 18.47 8.5Z"
+                                fill="#D2A927"
+                                stroke="#F0B90B"
+                                stroke-width=".097"
+                              ></path>
+                            </svg>
+                            <div className="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
+                              <svg
+                                className="fill-current text-green w-5 h-5"
+                                viewBox="0 0 20 20"
+                                fill="#ffff"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"
+                                ></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
+                                  fill-opacity=".5"
+                                ></path>
+                                <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"
+                                ></path>
+                              </svg>
+                            </div>
+                            <div className="flex ml-5 items-center sm:w-full flex flex-wrap sm:ml-2.5">
+                              <a
+                                className="flex items-center justify-center px-[10px] py-[5px] sm:py-[2.5px] leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded-[20px] font-medium text-base sm:text-[12px] w-max false"
+                                target="_blank"
+                                href="#"
+                              >
+                                0xa76ef7cb1ec0faf224b758a15283e7f5f61791604dc2ee4da509b5d77228a710
+                              </a>
+                              <div className="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 sm:text-[12px] false">
+                                <span className="text-white-500 text-base sm:text-[12px] sm:leading-30px"></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex items-start">
+                            <div className="flex items-center justify-end whitespace-nowrap h-full">
+                              <a
+                                className="sm:order-2"
+                                target="_blank"
+                                href="https://bscscan.com/tx/0xa76ef7cb1ec0faf224b758a15283e7f5f61791604dc2ee4da509b5d77228a710"
+                              >
+                                <svg
+                                  className="w-6 h-6 sm:h-4 sm:w-4"
+                                  viewBox="0 0 24 24"
+                                  fill="#fff"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"
+                                  ></path>
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"
+                                  ></path>
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"
+                                  ></path>
+                                </svg>
+                              </a>
+                              <span className="ml-2.5 text-white-500 text-base sm:text-[12px] sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">
+                                5 hours ago
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
+                          <div className="flex items-center sm:items-start justify-start sm:w-full">
+                            <svg
+                              className="fill-current text-green w-7 h-7 mr-5 sm:mr-2.5"
+                              viewBox="0 0 22 22"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m10.97 1 2.47 2.53-6.22 6.22-2.47-2.47L10.97 1ZM14.72 4.75l2.47 2.53-9.97 9.97-2.47-2.47 9.97-10.03ZM3.47 8.5l2.47 2.53-2.47 2.47L1 11.03 3.47 8.5ZM18.47 8.5l2.47 2.53L10.97 21 8.5 18.53 18.47 8.5Z"
+                                fill="#D2A927"
+                                stroke="#F0B90B"
+                                stroke-width=".097"
+                              ></path>
+                            </svg>
+                            <div className="bg-green-200 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
+                              <svg
+                                className="fill-current text-green w-5 h-5"
+                                viewBox="0 0 20 20"
+                                fill="#ffff"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"
+                                ></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
+                                  fill-opacity=".5"
+                                ></path>
+                                <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"
+                                ></path>
+                              </svg>
+                            </div>
+                            <div className="flex ml-5 items-center sm:w-full flex flex-wrap sm:ml-2.5">
+                              <a
+                                className="flex items-center justify-center px-[10px] py-[5px] sm:py-[2.5px] leading-30px bg-blue-100 hover:bg-main-blue-300 text-main-blue rounded-[20px] font-medium text-base sm:text-[12px] w-max false"
+                                target="_blank"
+                                href="#"
+                              >
+                                0x8c89e2ee32cd94b79caf71a4b9abbd0764000212f92717e390342ea9f786e95d
+                              </a>
+                              <div className="h-full flex flex-wrap justify-center items-center mx-2.5 sm:mx-1.5 sm:text-[12px] false">
+                                <span className="text-white-500 text-base sm:text-[12px] sm:leading-30px"></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex items-start">
+                            <div className="flex items-center justify-end whitespace-nowrap h-full">
+                              <a
+                                className="sm:order-2"
+                                target="_blank"
+                                href="https://bscscan.com/tx/0x8c89e2ee32cd94b79caf71a4b9abbd0764000212f92717e390342ea9f786e95d"
+                              >
+                                <svg
+                                  className="w-6 h-6 sm:h-4 sm:w-4"
+                                  viewBox="0 0 24 24"
+                                  fill="#fff"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M4.232 7.232A2.5 2.5 0 0 1 6 6.5h5a.5.5 0 0 1 0 1H6A1.5 1.5 0 0 0 4.5 9v9A1.5 1.5 0 0 0 6 19.5h9a1.5 1.5 0 0 0 1.5-1.5v-5a.5.5 0 0 1 1 0v5a2.5 2.5 0 0 1-2.5 2.5H6A2.5 2.5 0 0 1 3.5 18V9a2.5 2.5 0 0 1 .732-1.768Z"
+                                  ></path>
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M20.354 3.646a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.708-.708l10-10a.5.5 0 0 1 .708 0Z"
+                                  ></path>
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M14.5 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V4.5H15a.5.5 0 0 1-.5-.5Z"
+                                  ></path>
+                                </svg>
+                              </a>
+                              <span className="ml-2.5 text-white-500 text-base sm:text-[12px] sm:order-1 sm:ml-2.5 sm:mr-1 sm:leading-30px">
+                                5 hours ago
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col px-5 mt-[100px] sm:mt-10">
+                <div className="flex flex-col items-center text-center sm:text-left sm:items-start">
+                  <span className="max-w-[870px] text-white text-[48px] leading-[60px] font-bold mb-[30px] sm:mb-5 sm:text-[30px] sm:leading-[36px]">
+                    Partner results
+                  </span>
+                  <span className="font-light text-white-700 text-[18px] leading-[30px] font-semibold max-w-[770px] sm:text-[14px] sm:leading-[22px]">
+                    All data is stored in the blockchain in the public domain
+                    and can be verified!
+                  </span>
+                </div>
+                <div className="flex flex-col w-full items-center mb-5 sm:items-start sm:mt-2.5 sm:mb-2.5">
+                  <div className="flex space-x-2 sm:flex-col sm:space-x-0 sm:space-y-2">
+                    <span>
+                      Contract address
+                      <span className="text-white font-semibold">
+                        bscscan :
+                      </span>
+                    </span>
+                    <span className="text-white cursor-pointer hover:text-white-800 sm:hidden">
+                      0xf6be8847ab503fe3a09e3526a04f62d8482d9edf
+                    </span>
+                    <div className="justify-start items-center hidden sm:flex">
+                      <span className="text-white mr-2.5">
+                        0xf6be8847ab5...04f62d8482d9edf
+                      </span>
+                      <button
+                        // onclick="copyText('contract')"
+                        className="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] !p-0 !max-w-none"
+                      >
+                        <svg
+                          className="w-5 h-5"
+                          viewBox="0 0 20 20"
+                          fill="#fff"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M15 6.667H8.332c-.92 0-1.667.746-1.667 1.666V15c0 .92.746 1.667 1.667 1.667h6.666c.92 0 1.667-.747 1.667-1.667V8.333c0-.92-.746-1.666-1.667-1.666Z"></path>
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M3.469 3.468A2.167 2.167 0 0 1 5 2.833h6.666A2.167 2.167 0 0 1 13.834 5v1.667a.5.5 0 0 1-1 0V5a1.167 1.167 0 0 0-1.167-1.167H5.001A1.167 1.167 0 0 0 3.834 5v6.667a1.167 1.167 0 0 0 1.167 1.166h1.666a.5.5 0 1 1 0 1H5.001a2.167 2.167 0 0 1-2.167-2.166V5c0-.575.228-1.126.635-1.532Z"
+                          ></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="flex space-x-2 sm:flex-col sm:space-x-0 sm:space-y-2">
+                    <span>
+                      Contract address
+                      <span className="text-white font-semibold">USDT :</span>
+                    </span>
+                    <span className="text-white cursor-pointer hover:text-white-800 sm:hidden">
+                      0x55d398326f99059ff775485246999027b3197955
+                    </span>
+                    <div className="justify-start items-center hidden sm:flex">
+                      <span className="text-white mr-2.5">
+                        0x55d398326f9...7b3197955
+                      </span>
+                      <button
+                        // onclick="copyText('usdt')"
+                        className="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] !p-0 !max-w-none"
+                      >
+                        <svg
+                          className="w-5 h-5"
+                          viewBox="0 0 20 20"
+                          fill="#fff"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M15 6.667H8.332c-.92 0-1.667.746-1.667 1.666V15c0 .92.746 1.667 1.667 1.667h6.666c.92 0 1.667-.747 1.667-1.667V8.333c0-.92-.746-1.666-1.667-1.666Z"></path>
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M3.469 3.468A2.167 2.167 0 0 1 5 2.833h6.666A2.167 2.167 0 0 1 13.834 5v1.667a.5.5 0 0 1-1 0V5a1.167 1.167 0 0 0-1.167-1.167H5.001A1.167 1.167 0 0 0 3.834 5v6.667a1.167 1.167 0 0 0 1.167 1.166h1.666a.5.5 0 1 1 0 1H5.001a2.167 2.167 0 0 1-2.167-2.166V5c0-.575.228-1.126.635-1.532Z"
+                          ></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div className="relative flex flex-col justify-center items-center w-full">
+                  <div className="flex flex-col items-center w-full">
+                    <div className="flex bg-white-200 rounded-[40px] p-1.5 w-max mb-16 sm:mb-10 sm:w-full">
+                      <div
+                        // onclick="UpdateClass(this,'all')"
+                        id="all"
+                        className="flex flex-1 justify-center font-bold rounded-[40px] w-max px-5 py-1.5 cursor-pointer uppercase sm:px-2.5 bg-white text-black"
+                      >
+                        Total
+                      </div>
+                      <div
+                        // onclick="UpdateClass(this,'usdt')"
+                        id="usdt"
+                        className="flex flex-1 justify-center font-bold rounded-[40px] w-max px-5 py-1.5 cursor-pointer uppercase sm:px-2.5"
+                      >
+                        USDT
+                      </div>
+                    </div>
+                    <div className="flex justify-start w-full sm:h-[300px]">
+                      <div
+                        className="flex items-center justify-evenly flex-wrap w-full sm:flex-col sm:space-y-5 sm:items-start sm:w-full"
+                        id="allText"
+                      >
+                        <div className="flex flex-col items-center flex-1 sm:justify-center sm:items-center sm:w-full">
+                          <div className="flex whitespace-nowrap sm:flex-wrap justify-center items-center space-x-2.5 text-center">
+                            <span className="text-white text-[42px] leading-[50px] num-bold-style">
+                              3 174 455
+                            </span>
+                            <span className="text-green text-[24px] leading-[50px] num-bold-style">
+                              +548
+                            </span>
+                          </div>
+                          <span className="text-white-700 font-semibold">
+                            Accounts count
+                          </span>
+                        </div>
+                        <div className="flex flex-col items-center flex-1 sm:justify-center sm:items-center sm:w-full">
+                          <div className="flex whitespace-nowrap sm:flex-wrap justify-center items-center space-x-2.5 text-center">
+                            <span className="text-white text-[42px] leading-[50px] num-bold-style">
+                              1 464 928 936
+                            </span>
+                            <span className="text-green text-[24px] leading-[50px] num-bold-style">
+                              +11 262
+                            </span>
+                          </div>
+                          <span className="text-white-700 font-semibold">
+                            Total result, USD
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        className="hidden items-center justify-evenly flex-wrap w-full sm:flex-col sm:space-y-5 sm:items-start sm:w-full"
+                        id="usdtText"
+                      >
+                        <div className="flex flex-col items-center flex-1 sm:justify-center sm:items-center sm:w-full">
+                          <div className="flex whitespace-nowrap sm:flex-wrap justify-center items-center space-x-2.5 text-center">
+                            <span className="text-white text-[42px] leading-[50px] num-bold-style">
+                              1 056 961
+                            </span>
+                          </div>
+                          <span className="text-white-700 font-semibold">
+                            Accounts count
+                          </span>
+                        </div>
+                        <div className="flex flex-col items-center flex-1 sm:justify-center sm:items-center sm:w-full">
+                          <div className="flex whitespace-nowrap sm:flex-wrap justify-center items-center space-x-2.5 text-center">
+                            <span className="text-white text-[42px] leading-[50px] num-bold-style">
+                              1 162 559 598
+                            </span>
+                          </div>
+                          <span className="text-white-700 font-semibold">
+                            Total result, USD
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col items-center">
+            <div className="py-[100px] flex flex-col max-w-desktop-full w-full lg:py-[40px] px-5">
+              <div className="flex flex-col text-center space-y-[50px] lg:space-y-5">
+                <div className="flex flex-col items-center text-center sm:text-left sm:items-start">
+                  <span className="max-w-[870px] text-white text-[48px] leading-[60px] font-bold mb-[30px] sm:mb-5 sm:text-[30px] sm:leading-[36px]">
+                    technologyOfSmartContracts
+                  </span>
+                  <span className="font-light text-white-700 text-[18px] leading-[30px] font-semibold max-w-[770px] sm:text-[14px] sm:leading-[22px]">
+                    decentralizedMarketing
+                  </span>
+                </div>
+                <div className="">
+                  <div className="flex justify-center space-x-[50px] lg:space-x-0 lg:hidden">
+                    <div className="flex flex-col flex-1 items-center justify-center space-y-5 h-[400px] max-w-[600px] rounded-[30px] gray-gradient-without lg:max-w-full lg:max-h-auto lg:px-[40px] lg:py-[20px] lg:space-y-2.5">
+                      <div className="w-[60px] h-[60px] flex justify-center items-center background-gradient rounded-full sm:w-[50px] sm:h-[50px]">
+                        <svg
+                          className="w-[30px] h-[30px]"
+                          viewBox="0 0 30 30"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M15 4.75C9.34 4.75 4.75 9.339 4.75 15c0 5.66 4.59 10.25 10.25 10.25S25.25 20.66 25.25 15c0-5.661-4.59-10.25-10.25-10.25zM2.75 15C2.75 8.234 8.235 2.75 15 2.75S27.25 8.234 27.25 15c0 6.765-5.485 12.25-12.25 12.25S2.75 21.765 2.75 15z"
+                            fill="#fff"
+                          ></path>
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M10.25 12.5a1 1 0 0 1 1-1h.012a1 1 0 1 1 0 2h-.012a1 1 0 0 1-1-1zm7.5 0a1 1 0 0 1 1-1h.012a1 1 0 1 1 0 2h-.012a1 1 0 0 1-1-1zm-6.575 5.535a1 1 0 0 1 1.414.015 3.375 3.375 0 0 0 4.822 0 1 1 0 0 1 1.428 1.4 5.375 5.375 0 0 1-7.678 0 1 1 0 0 1 .014-1.415z"
+                            fill="#fff"
+                          ></path>
+                        </svg>
+                      </div>
+                      <div className="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5">
+                        <span className="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">
+                          Autonomy
+                        </span>
+                        <span className="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">
+                          CryptoglobalEcosystemAroundTechnology
+                        </span>
+                      </div>
+                    </div>
+                    <div className="flex flex-col justify-center w-full max-w-[330px] space-y-1.5 lg:hidden">
+                      <div className="flex justify-center items-center w-full px-[30px] py-4 rounded-[30px] border-2 border-transparent font-bold text-[18px] leading-[24px] cursor-pointer border-white-200 bg-white-200 text-white">
+                        Autonomy
+                      </div>
+                      <div className="flex justify-center items-center w-full px-[30px] py-4 rounded-[30px] border-2 border-transparent font-bold text-[18px] leading-[24px] cursor-pointer text-white-700">
+                        unchangingConditions
+                      </div>
+                      <div className="flex justify-center items-center w-full px-[30px] py-4 rounded-[30px] border-2 border-transparent font-bold text-[18px] leading-[24px] cursor-pointer text-white-700">
+                        Transparency
+                      </div>
+                      <div className="flex justify-center items-center w-full px-[30px] py-4 rounded-[30px] border-2 border-transparent font-bold text-[18px] leading-[24px] cursor-pointer text-white-700">
+                        fullAutomation
+                      </div>
+                      <div className="flex justify-center items-center w-full px-[30px] py-4 rounded-[30px] border-2 border-transparent font-bold text-[18px] leading-[24px] cursor-pointer text-white-700">
+                        Decentralization
+                      </div>
+                      <div className="flex justify-center items-center w-full px-[30px] py-4 rounded-[30px] border-2 border-transparent font-bold text-[18px] leading-[24px] cursor-pointer text-white-700">
+                        100%Online
+                      </div>
+                    </div>
+                  </div>
+                  <div className="margin-item-carousel hidden lg:flex">
+                    <div className="carousel-root">
+                      <div
+                        className="carousel carousel-slider"
+                        //   style="width: 100%"
+                      >
+                        <ul className="control-dots">
+                          <li
+                            className="dot selected"
+                            value="0"
+                            role="button"
+                            // tabindex="0"
+                            aria-label="slide item 1"
+                          ></li>
+                          <li
+                            className="dot"
+                            value="1"
+                            role="button"
+                            // tabindex="0"
+                            aria-label="slide item 2"
+                          ></li>
+                          <li
+                            className="dot"
+                            value="2"
+                            role="button"
+                            // tabindex="0"
+                            aria-label="slide item 3"
+                          ></li>
+                          <li
+                            className="dot"
+                            value="3"
+                            role="button"
+                            // tabindex="0"
+                            aria-label="slide item 4"
+                          ></li>
+                          <li
+                            className="dot"
+                            value="4"
+                            role="button"
+                            // tabindex="0"
+                            aria-label="slide item 5"
+                          ></li>
+                          <li
+                            className="dot"
+                            value="5"
+                            role="button"
+                            // tabindex="0"
+                            aria-label="slide item 6"
+                          ></li>
+                        </ul>
+                        <button
+                          type="button"
+                          aria-label="previous slide / item"
+                          className="control-arrow control-prev control-disabled"
+                        ></button>
+                        <div className="slider-wrapper axis-horizontal">
+                          <ul
+                            className="slider animated"
+                            // style="
+                            //   -webkit-transform: translate3d(-100%, 0, 0);
+                            //   -ms-transform: translate3d(-100%, 0, 0);
+                            //   -o-transform: translate3d(-100%, 0, 0);
+                            //   transform: translate3d(-100%, 0, 0);
+                            //   -webkit-transition-duration: 350ms;
+                            //   -moz-transition-duration: 350ms;
+                            //   -o-transition-duration: 350ms;
+                            //   transition-duration: 350ms;
+                            //   -ms-transition-duration: 350ms;
+                            // "
+                          >
+                            <li className="slide">
+                              <div className="flex flex-col flex-1 items-center justify-center space-y-5 h-[400px] max-w-[600px] rounded-[30px] gray-gradient-without lg:max-w-full lg:max-h-auto lg:px-[40px] lg:py-[20px] lg:space-y-2.5">
+                                <div className="w-[60px] h-[60px] flex justify-center items-center background-gradient rounded-full sm:w-[50px] sm:h-[50px]">
+                                  <svg
+                                    className="w-[30px] h-[30px]"
+                                    viewBox="0 0 31 31"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M15.986 11.003a1.5 1.5 0 0 0-1.5 1.5v5a1.5 1.5 0 0 0 3 0v-5a1.5 1.5 0 0 0-1.5-1.5zm0-2a3.5 3.5 0 0 1 3.5 3.5v5a3.5 3.5 0 1 1-7 0v-5a3.5 3.5 0 0 1 3.5-3.5z"
+                                      fill="#fff"
+                                    ></path>
+                                    <path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M15.986 4.753c-5.66 0-10.25 4.59-10.25 10.25 0 5.661 4.59 10.25 10.25 10.25 5.661 0 10.25-4.589 10.25-10.25 0-5.66-4.589-10.25-10.25-10.25zm-12.25 10.25c0-6.765 5.485-12.25 12.25-12.25 6.766 0 12.25 5.485 12.25 12.25 0 6.766-5.484 12.25-12.25 12.25-6.765 0-12.25-5.484-12.25-12.25z"
+                                      fill="#fff"
+                                    ></path>
+                                  </svg>
+                                </div>
+                                <div className="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5">
+                                  <span className="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">
+                                    100%Online
+                                  </span>
+                                  <span className="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">
+                                    hiddenCostsOrServiceFees
+                                  </span>
+                                </div>
+                              </div>
+                            </li>
+                            <li className="slide selected previous">
+                              <div className="flex flex-col flex-1 items-center justify-center space-y-5 h-[400px] max-w-[600px] rounded-[30px] gray-gradient-without lg:max-w-full lg:max-h-auto lg:px-[40px] lg:py-[20px] lg:space-y-2.5">
+                                <div className="w-[60px] h-[60px] flex justify-center items-center background-gradient rounded-full sm:w-[50px] sm:h-[50px]">
+                                  <svg
+                                    className="w-[30px] h-[30px]"
+                                    viewBox="0 0 30 30"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M15 4.75C9.34 4.75 4.75 9.339 4.75 15c0 5.66 4.59 10.25 10.25 10.25S25.25 20.66 25.25 15c0-5.661-4.59-10.25-10.25-10.25zM2.75 15C2.75 8.234 8.235 2.75 15 2.75S27.25 8.234 27.25 15c0 6.765-5.485 12.25-12.25 12.25S2.75 21.765 2.75 15z"
+                                      fill="#fff"
+                                    ></path>
+                                    <path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M10.25 12.5a1 1 0 0 1 1-1h.012a1 1 0 1 1 0 2h-.012a1 1 0 0 1-1-1zm7.5 0a1 1 0 0 1 1-1h.012a1 1 0 1 1 0 2h-.012a1 1 0 0 1-1-1zm-6.575 5.535a1 1 0 0 1 1.414.015 3.375 3.375 0 0 0 4.822 0 1 1 0 0 1 1.428 1.4 5.375 5.375 0 0 1-7.678 0 1 1 0 0 1 .014-1.415z"
+                                      fill="#fff"
+                                    ></path>
+                                  </svg>
+                                </div>
+                                <div className="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5">
+                                  <span className="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">
+                                    Autonomy
+                                  </span>
+                                  <span className="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">
+                                    Crypto global Ecosystem Around Technology
+                                  </span>
+                                </div>
+                              </div>
+                            </li>
+                            <li className="slide">
+                              <div className="flex flex-col flex-1 items-center justify-center space-y-5 h-[400px] max-w-[600px] rounded-[30px] gray-gradient-without lg:max-w-full lg:max-h-auto lg:px-[40px] lg:py-[20px] lg:space-y-2.5">
+                                <div className="w-[60px] h-[60px] flex justify-center items-center background-gradient rounded-full sm:w-[50px] sm:h-[50px]">
+                                  <svg
+                                    className="w-[30px] h-[30px]"
+                                    viewBox="0 0 30 30"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M17.5 2.75a1 1 0 0 1 1 1v5a.25.25 0 0 0 .25.25h5a1 1 0 1 1 0 2h-5a2.25 2.25 0 0 1-2.25-2.25v-5a1 1 0 0 1 1-1z"
+                                      fill="#fff"
+                                    ></path>
+                                    <path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M8.75 4.75a1.5 1.5 0 0 0-1.5 1.5V10a1 1 0 1 1-2 0V6.25a3.5 3.5 0 0 1 3.5-3.5h8.75a1 1 0 0 1 .707.293l6.25 6.25a1 1 0 0 1 .293.707v13.75a3.5 3.5 0 0 1-3.5 3.5H15a1 1 0 1 1 0-2h6.25a1.5 1.5 0 0 0 1.5-1.5V10.414L17.086 4.75H8.75z"
+                                      fill="#fff"
+                                    ></path>
+                                    <path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M7.5 14.75a2.75 2.75 0 1 0 0 5.5 2.75 2.75 0 0 0 0-5.5zM2.75 17.5a4.75 4.75 0 1 1 9.5 0 4.75 4.75 0 0 1-9.5 0z"
+                                      fill="#fff"
+                                    ></path>
+                                    <path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M5.912 20.292a1 1 0 0 1 .67 1.245l-1.21 4.034 1.68-.84a1 1 0 0 1 .895 0l1.68.84-1.21-4.034a1 1 0 1 1 1.916-.574l1.875 6.25a1 1 0 0 1-1.405 1.181L7.5 26.745l-3.303 1.65a1 1 0 0 1-1.405-1.181l1.875-6.25a1 1 0 0 1 1.245-.67z"
+                                      fill="#fff"
+                                    ></path>
+                                  </svg>
+                                </div>
+                                <div className="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5">
+                                  <span className="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">
+                                    unchangingConditions
+                                  </span>
+                                  <span className="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">
+                                    algorithmStoredBlockchain
+                                  </span>
+                                </div>
+                              </div>
+                            </li>
+                            <li className="slide">
+                              <div className="flex flex-col flex-1 items-center justify-center space-y-5 h-[400px] max-w-[600px] rounded-[30px] gray-gradient-without lg:max-w-full lg:max-h-auto lg:px-[40px] lg:py-[20px] lg:space-y-2.5">
+                                <div className="w-[60px] h-[60px] flex justify-center items-center background-gradient rounded-full sm:w-[50px] sm:h-[50px]">
+                                  <svg
+                                    className="w-[30px] h-[30px]"
+                                    viewBox="0 0 30 31"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M15 13.503a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-3.5 1.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"
+                                      fill="#fff"
+                                    ></path>
+                                    <path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M3.658 15.003c3.02 5.055 6.604 7.51 10.714 7.733a1 1 0 0 1-.108 1.998c-5.154-.28-9.35-3.491-12.632-9.234a1 1 0 0 1 0-.993C5.074 8.484 9.52 5.253 15 5.253s9.926 3.23 13.368 9.254a1 1 0 0 1 0 .992 27.71 27.71 0 0 1-1.7 2.636 1 1 0 1 1-1.614-1.18c.44-.602.87-1.252 1.288-1.951-3.168-5.301-6.957-7.75-11.342-7.75-4.385 0-8.174 2.449-11.342 7.75z"
+                                      fill="#fff"
+                                    ></path>
+                                    <path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M26.957 20.546a1 1 0 0 1 0 1.415l-5 5a1 1 0 0 1-1.414 0l-2.5-2.5a1 1 0 0 1 1.414-1.415l1.793 1.793 4.293-4.293a1 1 0 0 1 1.414 0z"
+                                      fill="#fff"
+                                    ></path>
+                                  </svg>
+                                </div>
+                                <div className="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5">
+                                  <span className="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">
+                                    Transparency
+                                  </span>
+                                  <span className="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">
+                                    smartContractCodeIsStored
+                                  </span>
+                                </div>
+                              </div>
+                            </li>
+                            <li className="slide">
+                              <div className="flex flex-col flex-1 items-center justify-center space-y-5 h-[400px] max-w-[600px] rounded-[30px] gray-gradient-without lg:max-w-full lg:max-h-auto lg:px-[40px] lg:py-[20px] lg:space-y-2.5">
+                                <div className="w-[60px] h-[60px] flex justify-center items-center background-gradient rounded-full sm:w-[50px] sm:h-[50px]">
+                                  <svg
+                                    className="w-[30px] h-[30px]"
+                                    viewBox="0 0 31 31"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M6.011 5.029a3.5 3.5 0 0 1 2.475-1.026h12.5a2.25 2.25 0 0 1 2.25 2.25v2.75h.25a2.25 2.25 0 0 1 2.25 2.25v3.75a1 1 0 1 1-2 0v-3.75a.25.25 0 0 0-.25-.25h-15a3.5 3.5 0 0 1-1.5-.337v11.837a1.5 1.5 0 0 0 1.5 1.5h15a.25.25 0 0 0 .25-.25v-3.75a1 1 0 1 1 2 0v3.75a2.25 2.25 0 0 1-2.25 2.25h-15a3.5 3.5 0 0 1-3.5-3.5v-15A3.5 3.5 0 0 1 6.011 5.03zm.975 2.474a1.5 1.5 0 0 0 1.5 1.5h12.75v-2.75a.25.25 0 0 0-.25-.25h-12.5a1.5 1.5 0 0 0-1.5 1.5z"
+                                      fill="#fff"
+                                    ></path>
+                                    <path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M20.986 16.003a1.5 1.5 0 0 0 0 3h4v-3h-4zm-2.474-.975a3.5 3.5 0 0 1 2.474-1.025h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a3.5 3.5 0 0 1-2.474-5.975z"
+                                      fill="#fff"
+                                    ></path>
+                                  </svg>
+                                </div>
+                                <div className="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5">
+                                  <span className="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">
+                                    fullAutomation
+                                  </span>
+                                  <span className="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">
+                                    transactionsBetweenCommunityMembers
+                                  </span>
+                                </div>
+                              </div>
+                            </li>
+                            <li className="slide">
+                              <div className="flex flex-col flex-1 items-center justify-center space-y-5 h-[400px] max-w-[600px] rounded-[30px] gray-gradient-without lg:max-w-full lg:max-h-auto lg:px-[40px] lg:py-[20px] lg:space-y-2.5">
+                                <div className="w-[60px] h-[60px] flex justify-center items-center background-gradient rounded-full sm:w-[50px] sm:h-[50px]">
+                                  <svg
+                                    className="w-[30px] h-[30px]"
+                                    viewBox="0 0 30 31"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M6.25 21.003a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-3.5 1.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0zm21-16.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-3.5 1.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"
+                                      fill="#fff"
+                                    ></path>
+                                    <path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M23.75 9.003a1 1 0 0 1 1 1v6.25a7.25 7.25 0 0 1-7.25 7.25h-1.336l2.043 2.043a1 1 0 0 1-1.414 1.415l-3.75-3.75a1 1 0 0 1 0-1.415l3.75-3.75a1 1 0 0 1 1.414 1.415l-2.043 2.042H17.5a5.25 5.25 0 0 0 5.25-5.25v-6.25a1 1 0 0 1 1-1zM11.793 3.046a1 1 0 0 1 1.414 0l3.75 3.75a1 1 0 0 1 0 1.415l-3.75 3.75a1 1 0 0 1-1.414-1.415l2.043-2.043H12.5a5.25 5.25 0 0 0-5.25 5.25v6.25a1 1 0 1 1-2 0v-6.25a7.25 7.25 0 0 1 7.25-7.25h1.336l-2.043-2.042a1 1 0 0 1 0-1.415z"
+                                      fill="#fff"
+                                    ></path>
+                                  </svg>
+                                </div>
+                                <div className="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5">
+                                  <span className="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">
+                                    Decentralization
+                                  </span>
+                                  <span className="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">
+                                    notEvenCreators
+                                  </span>
+                                </div>
+                              </div>
+                            </li>
+                            <li className="slide">
+                              <div className="flex flex-col flex-1 items-center justify-center space-y-5 h-[400px] max-w-[600px] rounded-[30px] gray-gradient-without lg:max-w-full lg:max-h-auto lg:px-[40px] lg:py-[20px] lg:space-y-2.5">
+                                <div className="w-[60px] h-[60px] flex justify-center items-center background-gradient rounded-full sm:w-[50px] sm:h-[50px]">
+                                  <svg
+                                    className="w-[30px] h-[30px]"
+                                    viewBox="0 0 31 31"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M15.986 11.003a1.5 1.5 0 0 0-1.5 1.5v5a1.5 1.5 0 0 0 3 0v-5a1.5 1.5 0 0 0-1.5-1.5zm0-2a3.5 3.5 0 0 1 3.5 3.5v5a3.5 3.5 0 1 1-7 0v-5a3.5 3.5 0 0 1 3.5-3.5z"
+                                      fill="#fff"
+                                    ></path>
+                                    <path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M15.986 4.753c-5.66 0-10.25 4.59-10.25 10.25 0 5.661 4.59 10.25 10.25 10.25 5.661 0 10.25-4.589 10.25-10.25 0-5.66-4.589-10.25-10.25-10.25zm-12.25 10.25c0-6.765 5.485-12.25 12.25-12.25 6.766 0 12.25 5.485 12.25 12.25 0 6.766-5.484 12.25-12.25 12.25-6.765 0-12.25-5.484-12.25-12.25z"
+                                      fill="#fff"
+                                    ></path>
+                                  </svg>
+                                </div>
+                                <div className="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5">
+                                  <span className="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">
+                                    100%Online
+                                  </span>
+                                  <span className="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">
+                                    hiddenCostsOrServiceFees
+                                  </span>
+                                </div>
+                              </div>
+                            </li>
+                            <li className="slide selected previous">
+                              <div className="flex flex-col flex-1 items-center justify-center space-y-5 h-[400px] max-w-[600px] rounded-[30px] gray-gradient-without lg:max-w-full lg:max-h-auto lg:px-[40px] lg:py-[20px] lg:space-y-2.5">
+                                <div className="w-[60px] h-[60px] flex justify-center items-center background-gradient rounded-full sm:w-[50px] sm:h-[50px]">
+                                  <svg
+                                    className="w-[30px] h-[30px]"
+                                    viewBox="0 0 30 30"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M15 4.75C9.34 4.75 4.75 9.339 4.75 15c0 5.66 4.59 10.25 10.25 10.25S25.25 20.66 25.25 15c0-5.661-4.59-10.25-10.25-10.25zM2.75 15C2.75 8.234 8.235 2.75 15 2.75S27.25 8.234 27.25 15c0 6.765-5.485 12.25-12.25 12.25S2.75 21.765 2.75 15z"
+                                      fill="#fff"
+                                    ></path>
+                                    <path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M10.25 12.5a1 1 0 0 1 1-1h.012a1 1 0 1 1 0 2h-.012a1 1 0 0 1-1-1zm7.5 0a1 1 0 0 1 1-1h.012a1 1 0 1 1 0 2h-.012a1 1 0 0 1-1-1zm-6.575 5.535a1 1 0 0 1 1.414.015 3.375 3.375 0 0 0 4.822 0 1 1 0 0 1 1.428 1.4 5.375 5.375 0 0 1-7.678 0 1 1 0 0 1 .014-1.415z"
+                                      fill="#fff"
+                                    ></path>
+                                  </svg>
+                                </div>
+                                <div className="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5">
+                                  <span className="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">
+                                    Autonomy
+                                  </span>
+                                  <span className="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">
+                                    Crypto global Ecosystem Around Technology
+                                  </span>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                        <button
+                          type="button"
+                          aria-label="next slide / item"
+                          className="control-arrow control-next control-disabled"
+                        ></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col items-center">
+            <div className="py-[100px] flex flex-col max-w-desktop-full w-full lg:py-[40px] px-5">
+              <div className="flex flex-col items-center text-center sm:text-left sm:items-start">
+                <span className="max-w-[870px] text-white text-[48px] leading-[60px] font-bold mb-[30px] sm:mb-5 sm:text-[30px] sm:leading-[36px]">
+                  convenientOffice
+                </span>
+                <span className="font-light text-white-700 text-[18px] leading-[30px] font-semibold max-w-[770px] sm:text-[14px] sm:leading-[22px]">
+                  interactiveOnlineVisualization
+                </span>
+              </div>
+              <div className="relative flex justify-center items-center bg-gradient sm:mt-5">
+                <img
+                  src="img/cabinet_preview.png"
+                  className="max-w-full sm:max-w-[90vw]"
+                  alt="cabinet_preview_image"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col items-center">
+            <div className="py-[100px] flex flex-col max-w-desktop-full w-full lg:py-[40px] px-5">
+              <div className="flex flex-col items-center text-center sm:text-left sm:items-start">
+                <span className="max-w-[870px] text-white text-[48px] leading-[60px] font-bold mb-[60px] sm:mb-5 sm:text-[30px] sm:leading-[36px]">
+                  frequentlyAskedQuestions
+                </span>
+              </div>
+              <div data-accordion-component="Accordion" className="accordion">
+                <div className="relative flex flex-col w-full">
+                  <svg
+                    className="absolute top-1/3 -left-10 h-40 sm:left-5 sm:top-10"
+                    viewBox="0 0 60 100"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.551 63.978c0-2.69.187-5.239.561-7.65.467-2.41 1.495-4.682 3.084-6.815 1.589-2.225 4.066-4.219 7.43-5.98a146.221 146.221 0 0 1 4.346-2.226 47.366 47.366 0 0 0 5.888-3.338c1.962-1.298 3.598-2.735 4.906-4.311 1.402-1.67 2.103-3.477 2.103-5.424 0-2.133-.841-3.802-2.523-5.007-1.682-1.298-3.645-1.947-5.888-1.947s-4.112.556-5.607 1.668a14.35 14.35 0 0 0-3.505 3.617c-.841 1.298-1.636 2.41-2.383 3.338L0 17.942c2.43-5.656 6.262-10.06 11.495-13.213C16.73 1.576 22.71 0 29.44 0c3.552 0 7.103.51 10.654 1.53a30.12 30.12 0 0 1 9.954 4.868c2.99 2.225 5.374 5.146 7.15 8.762C59.064 18.776 60 23.18 60 28.373c0 4.45-.841 8.53-2.523 12.239-1.683 3.616-4.58 6.815-8.692 9.597a53.935 53.935 0 0 1-8.411 4.728c-2.804 1.299-5.187 2.643-7.15 4.034-1.962 1.298-2.944 2.967-2.944 5.007H8.551ZM8.972 100V77.19h21.729V100H8.972Z"
+                      fill="#fff"
+                      fill-opacity=".1"
+                    ></path>
+                  </svg>
+                  <svg
+                    className="absolute bottom-4 right-14 h-36 rotate-180"
+                    viewBox="0 0 60 100"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.551 63.978c0-2.69.187-5.239.561-7.65.467-2.41 1.495-4.682 3.084-6.815 1.589-2.225 4.066-4.219 7.43-5.98a146.221 146.221 0 0 1 4.346-2.226 47.366 47.366 0 0 0 5.888-3.338c1.962-1.298 3.598-2.735 4.906-4.311 1.402-1.67 2.103-3.477 2.103-5.424 0-2.133-.841-3.802-2.523-5.007-1.682-1.298-3.645-1.947-5.888-1.947s-4.112.556-5.607 1.668a14.35 14.35 0 0 0-3.505 3.617c-.841 1.298-1.636 2.41-2.383 3.338L0 17.942c2.43-5.656 6.262-10.06 11.495-13.213C16.73 1.576 22.71 0 29.44 0c3.552 0 7.103.51 10.654 1.53a30.12 30.12 0 0 1 9.954 4.868c2.99 2.225 5.374 5.146 7.15 8.762C59.064 18.776 60 23.18 60 28.373c0 4.45-.841 8.53-2.523 12.239-1.683 3.616-4.58 6.815-8.692 9.597a53.935 53.935 0 0 1-8.411 4.728c-2.804 1.299-5.187 2.643-7.15 4.034-1.962 1.298-2.944 2.967-2.944 5.007H8.551ZM8.972 100V77.19h21.729V100H8.972Z"
+                      fill="#fff"
+                      fill-opacity=".1"
+                    ></path>
+                  </svg>
+                  <div
+                    data-accordion-component="AccordionItem"
+                    className="accordion__item"
+                  >
+                    <div className="flex flex-col w-full pt-[36px] pb-[30px] border-b border-white-200 sm:pt-5 sm:pb-5">
+                      {/* <div
+                    data-accordion-component="AccordionItemHeading"
+                    role="heading"
+                    className="accordion__heading"
+                    aria-level="3"
+                  >
+                    <div
+                      className="accordion__button"
+                      id="accordion__heading-raa-7"
+                      aria-disabled="false"
+                      aria-expanded="false"
+                      aria-controls="accordion__panel-raa-7"
+                      role="button"
+                    //   tabindex="0"
+                      data-accordion-component="AccordionItemButton"
+                    >
+                      <div
+                        className="flex items-center justify-between space-x-2.5"
+                      >
+                        <span
+                          className="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]"
+                          >why Is Crypto global The Best Alternative To
+                          Trading</span
+                        >
+                        <div
+                          className="flex-shrink-0 flex justify-center items-center cursor-pointer rounded-full border border-purple w-[40px] h-[40px] transition duration-500 sm:w-[30px] sm:h-[30px]"
+                        >
+                          <svg
+                            className="w-3.5 sm:w-2.5"
+                            viewBox="0 0 14 9"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m1 1 6 6 6-6"
+                              stroke="#fff"
+                              stroke-width="2"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div> */}
+                      <div
+                        data-accordion-component="AccordionItemPanel"
+                        className="accordion__panel"
+                        aria-hidden="true"
+                        id="accordion__panel-raa-7"
+                        // hidden=""
+                      >
+                        <div className="font-light text-white-700 text-[18px] leading-[28px] transition-all mt-5 sm:mt-2.5 duration-500 ease-in-out sm:text-[14px] sm:leading-[22px]">
+                          <span className="transition-opacity duration-500 ease-in-out">
+                            <div className="space-y-1.5">
+                              theCryptocurrencyRateHasNoEffectOnTheSustainabilityOfTheRewards
+                              <ul className="space-y-1.5">
+                                <li>
+                                  theMinimumEntryThresholdIsEqualToJustACoupleOfCupsOfCoffee
+                                </li>
+                                <li>
+                                  thereIsNoNeedToWaitForPayoutsFundsComeInstantlyToYourWallet
+                                </li>
+                                <li>
+                                  rewardsAlwaysDependOnlyOnTheActionsOfTheParticipant
+                                </li>
+                                <li>
+                                  theParticipantCanReceiveTheRewardIndefinitelyAsLongAsHeExpandsHisTeam
+                                </li>
+                              </ul>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-accordion-component="AccordionItem"
+                    className="accordion__item"
+                  >
+                    <div className="flex flex-col w-full pt-[36px] pb-[30px] border-b border-white-200 sm:pt-5 sm:pb-5">
+                      {/* <div
+                    data-accordion-component="AccordionItemHeading"
+                    role="heading"
+                    className="accordion__heading"
+                    aria-level="3"
+                  >
+                    <div
+                      className="accordion__button"
+                      id="accordion__heading-raa-8"
+                      aria-disabled="false"
+                      aria-expanded="false"
+                      aria-controls="accordion__panel-raa-8"
+                      role="button"
+                    //   tabindex="0"
+                      data-accordion-component="AccordionItemButton"
+                    >
+                      <div
+                        className="flex items-center justify-between space-x-2.5"
+                      >
+                        <span
+                          className="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]"
+                          >Is Crypto global Safe</span
+                        >
+                        <div
+                          className="flex-shrink-0 flex justify-center items-center cursor-pointer rounded-full border border-purple w-[40px] h-[40px] transition duration-500 sm:w-[30px] sm:h-[30px]"
+                        >
+                          <svg
+                            className="w-3.5 sm:w-2.5"
+                            viewBox="0 0 14 9"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m1 1 6 6 6-6"
+                              stroke="#fff"
+                              stroke-width="2"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div> */}
+                      <div
+                        data-accordion-component="AccordionItemPanel"
+                        className="accordion__panel"
+                        aria-hidden="true"
+                        id="accordion__panel-raa-8"
+                        // hidden=""
+                      >
+                        <div className="font-light text-white-700 text-[18px] leading-[28px] transition-all mt-5 sm:mt-2.5 duration-500 ease-in-out sm:text-[14px] sm:leading-[22px]">
+                          <span className="transition-opacity duration-500 ease-in-out">
+                            <span>Is Crypto global Safe Description</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-accordion-component="AccordionItem"
+                    className="accordion__item"
+                  >
+                    <div className="flex flex-col w-full pt-[36px] pb-[30px] border-b border-white-200 sm:pt-5 sm:pb-5">
+                      {/* <div
+                    data-accordion-component="AccordionItemHeading"
+                    role="heading"
+                    className="accordion__heading"
+                    aria-level="3"
+                  >
+                    <div
+                      className="accordion__button"
+                      id="accordion__heading-raa-9"
+                      aria-disabled="false"
+                      aria-expanded="false"
+                      aria-controls="accordion__panel-raa-9"
+                      role="button"
+                    //   tabindex="0"
+                      data-accordion-component="AccordionItemButton"
+                    >
+                      <div
+                        className="flex items-center justify-between space-x-2.5"
+                      >
+                        <span
+                          className="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]"
+                          >how Much Does It Cost To Participate In Crypto
+                          global USDT</span
+                        >
+                        <div
+                          className="flex-shrink-0 flex justify-center items-center cursor-pointer rounded-full border border-purple w-[40px] h-[40px] transition duration-500 sm:w-[30px] sm:h-[30px]"
+                        >
+                          <svg
+                            className="w-3.5 sm:w-2.5"
+                            viewBox="0 0 14 9"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m1 1 6 6 6-6"
+                              stroke="#fff"
+                              stroke-width="2"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div> */}
+                      <div
+                        data-accordion-component="AccordionItemPanel"
+                        className="accordion__panel"
+                        aria-hidden="true"
+                        id="accordion__panel-raa-9"
+                        // hidden=""
+                      >
+                        <div className="font-light text-white-700 text-[18px] leading-[28px] transition-all mt-5 sm:mt-2.5 duration-500 ease-in-out sm:text-[14px] sm:leading-[22px]">
+                          <span className="transition-opacity duration-500 ease-in-out">
+                            <span>
+                              how Much Does It Cost To Participate In Crypto
+                              global USDT Description
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-accordion-component="AccordionItem"
+                    className="accordion__item"
+                  >
+                    <div className="flex flex-col w-full pt-[36px] pb-[30px] border-b border-white-200 sm:pt-5 sm:pb-5">
+                      {/* <div
+                    data-accordion-component="AccordionItemHeading"
+                    role="heading"
+                    className="accordion__heading"
+                    aria-level="3"
+                  >
+                    <div
+                      className="accordion__button"
+                      id="accordion__heading-raa-10"
+                      aria-disabled="false"
+                      aria-expanded="false"
+                      aria-controls="accordion__panel-raa-10"
+                      role="button"
+                    //   tabindex="0"
+                      data-accordion-component="AccordionItemButton"
+                    >
+                      <div
+                        className="flex items-center justify-between space-x-2.5"
+                      >
+                        <span
+                          className="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]"
+                          >what Do I Need To Get Started In Crypto global
+                          USDT</span
+                        >
+                        <div
+                          className="flex-shrink-0 flex justify-center items-center cursor-pointer rounded-full border border-purple w-[40px] h-[40px] transition duration-500 sm:w-[30px] sm:h-[30px]"
+                        >
+                          <svg
+                            className="w-3.5 sm:w-2.5"
+                            viewBox="0 0 14 9"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m1 1 6 6 6-6"
+                              stroke="#fff"
+                              stroke-width="2"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div> */}
+                      <div
+                        data-accordion-component="AccordionItemPanel"
+                        className="accordion__panel"
+                        aria-hidden="true"
+                        id="accordion__panel-raa-10"
+                        // hidden=""
+                      >
+                        <div className="font-light text-white-700 text-[18px] leading-[28px] transition-all mt-5 sm:mt-2.5 duration-500 ease-in-out sm:text-[14px] sm:leading-[22px]">
+                          <span className="transition-opacity duration-500 ease-in-out">
+                            <span>
+                              what Do I Need To Get Started In Crypto global
+                              USDT Description
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-accordion-component="AccordionItem"
+                    className="accordion__item"
+                  >
+                    <div className="flex flex-col w-full pt-[36px] pb-[30px] border-b border-white-200 sm:pt-5 sm:pb-5">
+                      {/* <div
+                    data-accordion-component="AccordionItemHeading"
+                    role="heading"
+                    className="accordion__heading"
+                    aria-level="3"
+                  >
+                    <div
+                      className="accordion__button"
+                      id="accordion__heading-raa-11"
+                      aria-disabled="false"
+                      aria-expanded="false"
+                      aria-controls="accordion__panel-raa-11"
+                      role="button"
+                    //   tabindex="0"
+                      data-accordion-component="AccordionItemButton"
+                    >
+                      <div
+                        className="flex items-center justify-between space-x-2.5"
+                      >
+                        <span
+                          className="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]"
+                          >howDoIStart</span
+                        >
+                        <div
+                          className="flex-shrink-0 flex justify-center items-center cursor-pointer rounded-full border border-purple w-[40px] h-[40px] transition duration-500 sm:w-[30px] sm:h-[30px]"
+                        >
+                          <svg
+                            className="w-3.5 sm:w-2.5"
+                            viewBox="0 0 14 9"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m1 1 6 6 6-6"
+                              stroke="#fff"
+                              stroke-width="2"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div> */}
+                      <div
+                        data-accordion-component="AccordionItemPanel"
+                        className="accordion__panel"
+                        aria-hidden="true"
+                        id="accordion__panel-raa-11"
+                        // hidden=""
+                      >
+                        <div className="font-light text-white-700 text-[18px] leading-[28px] transition-all mt-5 sm:mt-2.5 duration-500 ease-in-out sm:text-[14px] sm:leading-[22px]">
+                          <span className="transition-opacity duration-500 ease-in-out">
+                            <div className="space-y-1.5">
+                              Register On The Website To Gain Access To The
+                              Crypto global Academy And Community
+                              <ul className="space-y-1.5">
+                                <li>
+                                  Study The Instructions Guides And Articles On
+                                  Marketing So Youre Ready To Go
+                                  <a
+                                    className="underline"
+                                    target="_blank"
+                                    href="https://t.me/smartpeoplechat"
+                                  >
+                                    t.me/smartpeoplechat
+                                  </a>
+                                </li>
+                                <li>
+                                  activateNFTHeroesAndUseThemToMakeProgressWithYourTeam
+                                </li>
+                              </ul>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-accordion-component="AccordionItem"
+                    className="accordion__item"
+                  >
+                    <div className="flex flex-col w-full pt-[36px] pb-[30px] border-b border-white-200 sm:pt-5 sm:pb-5">
+                      {/* <div
+                    data-accordion-component="AccordionItemHeading"
+                    role="heading"
+                    className="accordion__heading"
+                    aria-level="3"
+                  >
+                    <div
+                      className="accordion__button"
+                      id="accordion__heading-raa-12"
+                      aria-disabled="false"
+                      aria-expanded="false"
+                      aria-controls="accordion__panel-raa-12"
+                      role="button"
+                    //   tabindex="0"
+                      data-accordion-component="AccordionItemButton"
+                    >
+                      <div
+                        className="flex items-center justify-between space-x-2.5"
+                      >
+                        <span
+                          className="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]"
+                          >whereWillMyProfitComeFrom</span
+                        >
+                        <div
+                          className="flex-shrink-0 flex justify-center items-center cursor-pointer rounded-full border border-purple w-[40px] h-[40px] transition duration-500 sm:w-[30px] sm:h-[30px]"
+                        >
+                          <svg
+                            className="w-3.5 sm:w-2.5"
+                            viewBox="0 0 14 9"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m1 1 6 6 6-6"
+                              stroke="#fff"
+                              stroke-width="2"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div> */}
+                      <div
+                        data-accordion-component="AccordionItemPanel"
+                        className="accordion__panel"
+                        aria-hidden="true"
+                        id="accordion__panel-raa-12"
+                        // hidden=""
+                      >
+                        <div className="font-light text-white-700 text-[18px] leading-[28px] transition-all mt-5 sm:mt-2.5 duration-500 ease-in-out sm:text-[14px] sm:leading-[22px]">
+                          <span className="transition-opacity duration-500 ease-in-out">
+                            <span>
+                              allEarningsToYourWalletWillOnlyComeFromTheActivityOfOtherMembersWhoOpenNFTCards
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-accordion-component="AccordionItem"
+                    className="accordion__item"
+                  >
+                    <div className="flex flex-col w-full pt-[36px] pb-[30px] border-b border-white-200 sm:pt-5 sm:pb-5">
+                      {/* <div
+                    data-accordion-component="AccordionItemHeading"
+                    role="heading"
+                    className="accordion__heading"
+                    aria-level="3"
+                  >
+                    <div
+                      className="accordion__button"
+                      id="accordion__heading-raa-13"
+                      aria-disabled="false"
+                      aria-expanded="false"
+                      aria-controls="accordion__panel-raa-13"
+                      role="button"
+                    //   tabindex="0"
+                      data-accordion-component="AccordionItemButton"
+                    >
+                      <div
+                        className="flex items-center justify-between space-x-2.5"
+                      >
+                        <span
+                          className="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]"
+                          >whatRoleDoNFTTokensPlayInCrypto global</span
+                        >
+                        <div
+                          className="flex-shrink-0 flex justify-center items-center cursor-pointer rounded-full border border-purple w-[40px] h-[40px] transition duration-500 sm:w-[30px] sm:h-[30px]"
+                        >
+                          <svg
+                            className="w-3.5 sm:w-2.5"
+                            viewBox="0 0 14 9"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m1 1 6 6 6-6"
+                              stroke="#fff"
+                              stroke-width="2"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div> */}
+                      <div
+                        data-accordion-component="AccordionItemPanel"
+                        className="accordion__panel"
+                        aria-hidden="true"
+                        id="accordion__panel-raa-13"
+                        // hidden=""
+                      >
+                        <div className="font-light text-white-700 text-[18px] leading-[28px] transition-all mt-5 sm:mt-2.5 duration-500 ease-in-out sm:text-[14px] sm:leading-[22px]">
+                          <span className="transition-opacity duration-500 ease-in-out">
+                            <span>
+                              NFTTokensAreCombinedIntoCollectionsWithSeveralMillionUniqueCharacters
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col items-center">
+            <div className="py-[100px] flex flex-col max-w-desktop-full w-full lg:py-[40px] px-5">
+              <div className="flex flex-col items-center text-center sm:text-left sm:items-start">
+                <span className="max-w-[870px] text-white text-[48px] leading-[60px] font-bold mb-[60px] sm:mb-5 sm:text-[30px] sm:leading-[36px]">
+                  officialChannels
+                </span>
+              </div>
+              <div className="flex items-start w-full justify-evenly lg:flex-wrap sm:justify-around">
+                <a
+                  className="w-full flex flex-col items-center justify-center text-center group lg:p-5 lg:w-[30vw] lg:flex-wrap"
+                  target="_blank"
+                  href="https://t.me/#"
+                >
+                  <div className="w-[60px] h-[60px] flex justify-center items-center mb-3.5 relative btn__bordered_gradient cursor-pointer">
+                    <svg
+                      className="w-6 h-6"
+                      viewBox="0 0 32 28"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M28.788.94 1.102 11.92a1 1 0 0 0 .074 1.886l6.978 2.16 2.83 8.758a1 1 0 0 0 1.632.426l4.1-3.808 7.778 5.724a1 1 0 0 0 1.566-.578l5.414-23.234A2 2 0 0 0 28.788.941V.94ZM12.58 17.79l-.864 5.18-2-7.253 19.54-12.75-16.676 14.82v.002Z"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+                  </div>
+                  <span className="max-w-[90px] group-hover:text-white">
+                    Telegram channel
+                  </span>{" "}
+                </a>
+                <a
+                  className="w-full flex flex-col items-center justify-center text-center group lg:p-5 lg:w-[30vw] lg:flex-wrap"
+                  target="_blank"
+                  href="https://t.me/#"
+                >
+                  <div className="w-[60px] h-[60px] flex justify-center items-center mb-3.5 relative btn__bordered_gradient cursor-pointer">
+                    <svg
+                      className="w-6 h-6"
+                      viewBox="0 0 32 28"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M28.788.94 1.102 11.92a1 1 0 0 0 .074 1.886l6.978 2.16 2.83 8.758a1 1 0 0 0 1.632.426l4.1-3.808 7.778 5.724a1 1 0 0 0 1.566-.578l5.414-23.234A2 2 0 0 0 28.788.941V.94ZM12.58 17.79l-.864 5.18-2-7.253 19.54-12.75-16.676 14.82v.002Z"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+                  </div>
+                  <span className="max-w-[90px] group-hover:text-white">
+                    Telegram chat
+                  </span>{" "}
+                </a>
+                <a
+                  className="w-full flex flex-col items-center justify-center text-center group lg:p-5 lg:w-[30vw] lg:flex-wrap"
+                  target="_blank"
+                  href="https://twitter.com/#"
+                >
+                  <div className="w-[60px] h-[60px] flex justify-center items-center mb-3.5 relative btn__bordered_gradient cursor-pointer">
+                    <svg
+                      className="w-6 h-6"
+                      viewBox="0 0 30 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M29.494 2.845c-1.104.488-2.275.81-3.474.956a6.074 6.074 0 0 0 2.66-3.35c-1.168.694-2.46 1.2-3.842 1.468a6.052 6.052 0 0 0-10.312 5.52A17.148 17.148 0 0 1 2.05 1.107a6.058 6.058 0 0 0 1.88 8.088 5.93 5.93 0 0 1-2.75-.756v.074a6.056 6.056 0 0 0 4.856 5.938 6.11 6.11 0 0 1-1.592.212c-.388 0-.768-.036-1.138-.112a6.062 6.062 0 0 0 5.658 4.206A12.134 12.134 0 0 1 0 21.263a16.918 16.918 0 0 0 9.262 2.738c11.144 0 17.232-9.23 17.232-17.238 0-.262-.008-.524-.02-.78a12.32 12.32 0 0 0 3.02-3.138Z"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+                  </div>
+                  <span className="max-w-[90px] group-hover:text-white">
+                    Twitter
+                  </span>{" "}
+                </a>
+                <a
+                  className="w-full flex flex-col items-center justify-center text-center group lg:p-5 lg:w-[30vw] lg:flex-wrap"
+                  target="_blank"
+                  href="https://www.instagram.com/#/"
+                >
+                  <div className="w-[60px] h-[60px] flex justify-center items-center mb-3.5 relative btn__bordered_gradient cursor-pointer">
+                    <svg
+                      className="w-6 h-6"
+                      viewBox="0 0 27 26"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M14.756 0c2.497.004 2.987.022 4.206.078 1.383.063 2.328.283 3.155.604.855.333 1.58.777 2.303 1.5a6.372 6.372 0 0 1 1.5 2.303c.32.826.54 1.772.604 3.155.06 1.303.076 1.772.078 4.752v1.217c-.002 2.98-.019 3.449-.078 4.751-.063 1.384-.283 2.33-.605 3.156a6.372 6.372 0 0 1-1.5 2.303 6.373 6.373 0 0 1-2.302 1.5c-.827.32-1.772.54-3.155.604-1.261.057-1.742.075-4.471.078h-1.779c-2.73-.003-3.21-.02-4.47-.078-1.385-.063-2.33-.283-3.156-.604a6.374 6.374 0 0 1-2.303-1.5 6.373 6.373 0 0 1-1.5-2.303c-.321-.827-.54-1.772-.604-3.155-.056-1.22-.074-1.709-.077-4.206v-2.31C.605 9.348.623 8.86.679 7.64c.063-1.383.283-2.329.604-3.155a6.373 6.373 0 0 1 1.5-2.303 6.372 6.372 0 0 1 2.303-1.5C5.912.361 6.857.142 8.24.078 9.46.022 9.95.004 12.446 0h2.31Zm5.946 4.5a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2Zm-7.1 1.5a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm0 11.5a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9Z"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+                  </div>
+                  <span className="max-w-[90px] group-hover:text-white">
+                    Instagram
+                  </span>{" "}
+                </a>
+                <a
+                  className="w-full flex flex-col items-center justify-center text-center group lg:p-5 lg:w-[30vw] lg:flex-wrap"
+                  target="_blank"
+                  href="https://www.youtube.com/watch?v=NCc3ODAG8zk"
+                >
+                  <div className="w-[60px] h-[60px] flex justify-center items-center mb-3.5 relative btn__bordered_gradient cursor-pointer">
+                    <svg
+                      className="w-6 h-6"
+                      viewBox="0 0 34 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M32.82 3.755c-.38-1.468-1.495-2.626-2.908-3.021C27.329 0 17 0 17 0S6.67 0 4.088.706c-1.386.395-2.528 1.581-2.908 3.05C.5 6.437.5 12 .5 12s0 5.59.68 8.245c.38 1.468 1.494 2.625 2.908 3.02C6.698 24 17 24 17 24s10.33 0 12.912-.706c1.413-.395 2.528-1.553 2.909-3.021.679-2.683.679-8.245.679-8.245s.027-5.59-.68-8.273ZM13.71 17.14V6.86L22.3 12l-8.59 5.139Z"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+                  </div>
+                  <span className="max-w-[90px] group-hover:text-white">
+                    YouTube
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col items-center w-full text-[15px] leading-[25px] text-white-500">
+            <div className="flex justify-center bg-lightGray w-full">
+              <div className="flex justify-between items-center max-w-desktop-full w-full pt-[40px] pb-[40px] px-5 lg:pt-10 lg:flex-col lg:items-start lg:pb-5">
+                <div className="flex items-center space-x-[50px] lg:space-x-0 lg:flex-col">
+                  <div className="flex flex-col space-y-[5px] max-w-[250px] w-full lg:order-2">
+                    <span>© 2024 All Rights Reserved </span>
+                    <a
+                      className="text-white hover:text-white-900 hover:underline"
+                      href="docs/cryptoglobal.pdf"
+                    >
+                      Disclaimer
+                    </a>
+                  </div>
+                  <div className="flex space-x-3 lg:mb-10">
+                    <a
+                      className="flex justify-center items-center rounded-full bg-darkGray hover:bg-white-100 w-[40px] h-[40px]"
+                      target="_blank"
+                      href="https://t.me/#/"
+                    >
+                      <svg
+                        className="h-4"
+                        viewBox="0 0 32 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M28.788.94 1.102 11.92a1 1 0 0 0 .074 1.886l6.978 2.16 2.83 8.758a1 1 0 0 0 1.632.426l4.1-3.808 7.778 5.724a1 1 0 0 0 1.566-.578l5.414-23.234A2 2 0 0 0 28.788.941V.94ZM12.58 17.79l-.864 5.18-2-7.253 19.54-12.75-16.676 14.82v.002Z"
+                          fill="#fff"
+                        ></path>
+                      </svg>
+                    </a>
+                    <a
+                      className="flex justify-center items-center rounded-full bg-darkGray hover:bg-white-100 w-[40px] h-[40px]"
+                      target="_blank"
+                      href="https://t.me/#/"
+                    >
+                      <svg
+                        className="h-4"
+                        viewBox="0 0 32 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M28.788.94 1.102 11.92a1 1 0 0 0 .074 1.886l6.978 2.16 2.83 8.758a1 1 0 0 0 1.632.426l4.1-3.808 7.778 5.724a1 1 0 0 0 1.566-.578l5.414-23.234A2 2 0 0 0 28.788.941V.94ZM12.58 17.79l-.864 5.18-2-7.253 19.54-12.75-16.676 14.82v.002Z"
+                          fill="#fff"
+                        ></path>
+                      </svg>
+                    </a>
+                    <a
+                      className="flex justify-center items-center rounded-full bg-darkGray hover:bg-white-100 w-[40px] h-[40px]"
+                      target="_blank"
+                      href="https://twitter.com/#/"
+                    >
+                      <svg
+                        className="h-4"
+                        viewBox="0 0 30 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M29.494 2.845c-1.104.488-2.275.81-3.474.956a6.074 6.074 0 0 0 2.66-3.35c-1.168.694-2.46 1.2-3.842 1.468a6.052 6.052 0 0 0-10.312 5.52A17.148 17.148 0 0 1 2.05 1.107a6.058 6.058 0 0 0 1.88 8.088 5.93 5.93 0 0 1-2.75-.756v.074a6.056 6.056 0 0 0 4.856 5.938 6.11 6.11 0 0 1-1.592.212c-.388 0-.768-.036-1.138-.112a6.062 6.062 0 0 0 5.658 4.206A12.134 12.134 0 0 1 0 21.263a16.918 16.918 0 0 0 9.262 2.738c11.144 0 17.232-9.23 17.232-17.238 0-.262-.008-.524-.02-.78a12.32 12.32 0 0 0 3.02-3.138Z"
+                          fill="#fff"
+                        ></path>
+                      </svg>
+                    </a>
+                    <a
+                      className="flex justify-center items-center rounded-full bg-darkGray hover:bg-white-100 w-[40px] h-[40px]"
+                      target="_blank"
+                      href="https://www.instagram.com/#/"
+                    >
+                      <svg
+                        className="h-4"
+                        viewBox="0 0 27 26"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M14.756 0c2.497.004 2.987.022 4.206.078 1.383.063 2.328.283 3.155.604.855.333 1.58.777 2.303 1.5a6.372 6.372 0 0 1 1.5 2.303c.32.826.54 1.772.604 3.155.06 1.303.076 1.772.078 4.752v1.217c-.002 2.98-.019 3.449-.078 4.751-.063 1.384-.283 2.33-.605 3.156a6.372 6.372 0 0 1-1.5 2.303 6.373 6.373 0 0 1-2.302 1.5c-.827.32-1.772.54-3.155.604-1.261.057-1.742.075-4.471.078h-1.779c-2.73-.003-3.21-.02-4.47-.078-1.385-.063-2.33-.283-3.156-.604a6.374 6.374 0 0 1-2.303-1.5 6.373 6.373 0 0 1-1.5-2.303c-.321-.827-.54-1.772-.604-3.155-.056-1.22-.074-1.709-.077-4.206v-2.31C.605 9.348.623 8.86.679 7.64c.063-1.383.283-2.329.604-3.155a6.373 6.373 0 0 1 1.5-2.303 6.372 6.372 0 0 1 2.303-1.5C5.912.361 6.857.142 8.24.078 9.46.022 9.95.004 12.446 0h2.31Zm5.946 4.5a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2Zm-7.1 1.5a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm0 11.5a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9Z"
+                          fill="#fff"
+                        ></path>
+                      </svg>
+                    </a>
+                    <a
+                      className="flex justify-center items-center rounded-full bg-darkGray hover:bg-white-100 w-[40px] h-[40px]"
+                      target="_blank"
+                      href="https://www.youtube.com/watch?v=NCc3ODAG8zk"
+                    >
+                      <svg
+                        className="h-4"
+                        viewBox="0 0 34 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M32.82 3.755c-.38-1.468-1.495-2.626-2.908-3.021C27.329 0 17 0 17 0S6.67 0 4.088.706c-1.386.395-2.528 1.581-2.908 3.05C.5 6.437.5 12 .5 12s0 5.59.68 8.245c.38 1.468 1.494 2.625 2.908 3.02C6.698 24 17 24 17 24s10.33 0 12.912-.706c1.413-.395 2.528-1.553 2.909-3.021.679-2.683.679-8.245.679-8.245s.027-5.59-.68-8.273ZM13.71 17.14V6.86L22.3 12l-8.59 5.139Z"
+                          fill="#fff"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <div className="relative group min-w-[175px] lg:min-w-max sm:hidden">
+                  <div className="flex justify-between items-center cursor-pointer p-4 group-hover:text-white">
+                    <div className="flex items-center space-x-2">
+                      <img
+                        src="flags/en.svg"
+                        className="w-5 h-5 lg:mr-2.5"
+                        alt=""
+                      />
+                      <span className="lg:hidden">English</span>
+                    </div>
+                    <svg
+                      className="fill-current w-2.5 transition all easy-out group-hover:rotate-180"
+                      viewBox="0 0 8 4"
+                      fill="#8B8C8C"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M8 0H0l4 4 4-4Z"></path>
+                    </svg>
+                  </div>
+                  <ul className="w-full absolute bg-lightGray rounded-[15px] hidden group-hover:flex flex-col overflow-hidden drop-shadow-lg bottom-full !right-0">
+                    <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                      <img src="flags/en.svg" className="w-5 h-5" alt="" />
+                      <span className="lg:hidden">English</span>
+                    </li>
+                    <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                      <img src="flags/de.svg" className="w-5 h-5" alt="" />
+                      <span className="lg:hidden">German</span>
+                    </li>
+                    <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                      <img src="flags/es.svg" className="w-5 h-5" alt="" />
+                      <span className="lg:hidden">Spanish</span>
+                    </li>
+                    <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                      <img src="flags/ru.svg" className="w-5 h-5" alt="" />
+                      <span className="lg:hidden">Русский</span>
+                    </li>
+                    <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                      <img src="flags/fr.svg" className="w-5 h-5" alt="" />
+                      <span className="lg:hidden">French</span>
+                    </li>
+                    <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                      <img src="flags/es.svg" className="w-5 h-5" alt="" />
+                      <span className="lg:hidden">Spanish</span>
+                    </li>
+                    <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                      <img src="flags/it.svg" className="w-5 h-5" alt="" />
+                      <span className="lg:hidden">Italian</span>
+                    </li>
+                    <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                      <img src="flags/az.svg" className="w-5 h-5" alt="" />
+                      <span className="lg:hidden">AZƏRBAYCAN</span>
+                    </li>
+                    <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                      <img src="flags/ar.svg" className="w-5 h-5" alt="" />
+                      <span className="lg:hidden">العربية</span>
+                    </li>
+                    <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
+                      <img src="flags/he.svg" className="w-5 h-5" alt="" />
+                      <span className="lg:hidden">עִבְרִית</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="fixed bottom-5 right-5 flex flex-col items-end space-y-2.5 !z-30 sm:bottom-3 sm:right-3">
+            <button className="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] bg-purple-750 hover:bg-lightPurple active:bg-lightPurple !rounded-5 !py-2.5 !px-3.5 relative !z-40 drop-shadow-md min-h-[45px] overflow-hidden border border-white-50 fixed right-1 sm:right-[8px] bottom-20 rounded-br-[10px]">
+              <div className="absolute top-0 left-0 w-full h-full backdrop-blur bg-white-10"></div>
+              <a
+                className="flex items-center space-x-2.5 z-10"
+                target="_blank"
+                href="https://t.me/#/"
+              >
+                <svg
+                  className="w-5 h-5"
+                  viewBox="0 0 32 28"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M28.788.94 1.102 11.92a1 1 0 0 0 .074 1.886l6.978 2.16 2.83 8.758a1 1 0 0 0 1.632.426l4.1-3.808 7.778 5.724a1 1 0 0 0 1.566-.578l5.414-23.234A2 2 0 0 0 28.788.941V.94ZM12.58 17.79l-.864 5.18-2-7.253 19.54-12.75-16.676 14.82v.002Z"
+                    fill="#fff"
+                  ></path>
+                </svg>
+                <span>News</span>
+              </a>
+            </button>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

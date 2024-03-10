@@ -1,10 +1,14 @@
 import { useEffect } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
 export const AuthLayout = () => {
   const navigate = useNavigate();
 
-  useEffect(() => navigate("/login"), []);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (pathname === "/") navigate("/home");
+  }, [pathname]);
 
   return (
     <div>
