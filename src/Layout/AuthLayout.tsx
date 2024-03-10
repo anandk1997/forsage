@@ -1,10 +1,10 @@
-import { useLayoutEffect } from "react";
+import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 
 export const AuthLayout = () => {
   const navigate = useNavigate();
 
-  useLayoutEffect(() => navigate("/login"), []);
+  useEffect(() => navigate("/login"), []);
 
   return (
     <div>
