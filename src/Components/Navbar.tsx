@@ -28,6 +28,26 @@ export const Navbar = () => {
 
   const [isNavSm, setIsNavSm] = useReducer((open) => !open, false);
 
+  async function connectMetaMask() {
+    if (typeof window.ethereum !== "undefined") {
+      try {
+        let accounts = await window.ethereum.request({
+          method: "eth_requestAccounts",
+        });
+        console.log("accounts", accounts);
+        document.getElementById("wallet_address").value = accounts[0];
+        const walletAddress2 = document.getElementById("connectButton");
+        walletAddress2.style.display = "none";
+        const walletAddress = document.getElementById("loginBtn");
+        walletAddress.style.display = "block";
+      } catch (error) {
+        console.error("Error connecting to MetaMask:", error);
+      }
+    } else {
+      console.error("MetaMask is not installed.");
+    }
+  }
+
   return (
     <div className="fixed top-0 left-1/2 -translate-x-1/2 flex justify-center w-full px-10 py-2.5 z-40 lg:p-0 lg:max-h-screen z-999999">
       {isNavSm ? (
@@ -65,7 +85,10 @@ export const Navbar = () => {
                 </div>
               </div>
             </div>
-            <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-bg hover:bg-black-500 whitespace-nowrap lg:hidden">
+            <button
+              className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-bg hover:bg-black-500 whitespace-nowrap lg:hidden"
+              onClick={connectMetaMask}
+            >
               Connect wallet
             </button>
           </div>

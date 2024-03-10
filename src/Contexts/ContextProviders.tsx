@@ -1,10 +1,12 @@
-import { ReactNode, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { NavProvider } from "./useNavContext";
+import { ReactNode, Suspense } from "react";
 
 import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@emotion/react";
 import { red } from "@mui/material/colors";
+
+import { Loading } from "src/Components/Loading";
+import { NavProvider } from "./useNavContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -20,7 +22,7 @@ const ContextProviders = ({ children }: { children: ReactNode }) => {
     <>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider theme={theme}>
-          <Suspense fallback={<h1 className="text-black">Loading</h1>}>
+          <Suspense fallback={<Loading />}>
             <NavProvider>{children}</NavProvider>
           </Suspense>
         </ThemeProvider>

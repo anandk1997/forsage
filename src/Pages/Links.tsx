@@ -181,8 +181,8 @@ const Links = () => {
                             border-right-width: 6px;
                           }</style
                         > --> */}
-                        Total number of visitors by your link and last 24 hours
-                        change
+                        {/* Total number of visitors by your link and last 24 hours
+                        change */}
                       </div>
                     </div>
                   </div>
@@ -445,8 +445,8 @@ const Links = () => {
                         border-right-width: 6px;
                       }</style
                     > --> */}
-                    Invite your friends to Forsage BUSD and build your team by
-                    sharing your link
+                    {/* Invite your friends to Forsage BUSD and build your team by
+                    sharing your link */}
                   </div>
                 </div>
               </div>
@@ -583,8 +583,8 @@ const Links = () => {
                         border-right-width: 6px;
                       }</style
                     > --> */}
-                    Invite your friends to Forsage BUSD and build your team by
-                    sharing your link
+                    {/* Invite your friends to Forsage BUSD and build your team by
+                    sharing your link */}
                   </div>
                 </div>
               </div>
@@ -720,7 +720,7 @@ const Links = () => {
                         border-right-width: 6px;
                       }</style
                     > --> */}
-                    Invite your friends to Forsage BUSD and build your team by
+                    {/* Invite your friends to Forsage BUSD and build your team by */}
                     sharing your link
                   </div>
                 </div>

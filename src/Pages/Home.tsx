@@ -118,14 +118,14 @@ const Home = () => {
                       ></path>
                     </svg>
                   </button>
-                  <div
+                  {/* <div
                     className="__react_component_tooltip t64b24fba-5f51-471b-bf14-6b8a93a32fa7 place-bottom type-dark"
                     id="Personal link"
                     data-id="tooltip"
                   >
                     Invite your friends to Forsage BUSD and build your team by
                     sharing your link
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <span className="hidden sm:block text-main-blue text-base font-bold notranslate">
