@@ -1,63 +1,68 @@
-import { ReactNode } from "react";
+import { ReactNode, useReducer } from "react";
 
 const ProgramsLayout = ({ children }: { children: ReactNode }) => {
+  const [isFs, setIsFs] = useReducer((open) => !open, false);
   return (
     <main className="flex flex-col space-y-10 sm:space-y-7.5">
       <div className="flex flex-wrap justify-between notranslate">
-        <div className="fixed flex items-center justify-center z-[1111] left-[35%] lg:left-[20%] sm:left-0 sm:px-3 sm:w-full transition-all duration-1000 top-3">
-          <div className="bg-main-bg w-full h-[70px] rounded flex items-center p-2 space-x-5 !border-[1px] !border-solid !border-white-100 justify-between">
-            <a
-              className="bg-[#3EF6A2] flex items-center justify-center h-full rounded-[15px] px-4 space-x-2 sm:px-2 sm:justify-between"
-              target="_blank"
-              href="https://school.forsage.io/course2"
-            >
-              <svg
-                width="45"
-                height="30"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+        {!isFs && (
+          <div className="fixed flex items-center justify-center z-[1111] left-[35%] lg:left-[20%] sm:left-0 sm:px-3 sm:w-full transition-all duration-1000 top-3">
+            <div className="bg-main-bg w-full h-[70px] rounded flex items-center p-2 space-x-5 !border-[1px] !border-solid !border-white-100 justify-between">
+              <a
+                className="bg-[#3EF6A2] flex items-center justify-center h-full rounded-[15px] px-4 space-x-2 sm:px-2 sm:justify-between"
+                target="_blank"
+                href="https://school.forsage.io/course2"
               >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M37.68 5.851a.482.482 0 0 1 .615.296l.43 1.247s-1.852-.59-2.818-.777l1.773-.766Zm6.055 3.336c-.004 0-.195-.131-.297-.186l-3.111-1.586c-.965-.46-.752-.82-1.118-1.826a6.228 6.228 0 0 0-.549-1.127C36.884 3.62 31.836 3.817 31.354 0c0 0-1.884 1.236-2.227 3.5C9.227 1.98 0 12.96 0 12.96c3.706-1.476 7.705-2.176 11.704-2.362-7.603 5.851-9.997 14.666-9.997 14.666s6.16-5.982 15.419-9.318C14.702 19.37 13.298 23.963 13.872 30c0 0 4.763-18.177 27.361-13.78 0 0 .827-2.417 2.962-4.89.135-.152.211-.382.227-.645a1.735 1.735 0 0 0-.687-1.498Z"
-                  fill="#18191A"
-                ></path>
-              </svg>
-              <span className="text-lg font-montserrat font-bold sm:text-sm">
-                Forsage <br className="hidden sm:flex" />
-                School
-              </span>
-            </a>
-            <div className="">
-              <span className="text-white text-sm leading-none flex flex-col space-y-1 sm:hidden">
-                <span>Go to Forsage School and learn more</span>
-                <span>about how programs work</span>{" "}
-              </span>
-              <span className="text-white text-xs leading-none flex flex-col space-y-2.5 hidden sm:flex">
-                <span className="whitespace-nowrap">Learn more about</span>
-                <span className="whitespace-nowrap"> how programs work</span>
-              </span>
-            </div>
-            <button>
-              <div className="bg-white-100 w-[40px] h-[40px] sm:w-[20px] sm:h-[20px] rounded-full flex items-center justify-center mx-4">
                 <svg
-                  className="h-[25px] w-[25px] sm:h-[15px] sm:w-[15px]"
-                  viewBox="0 0 24 24"
+                  width="45"
+                  height="30"
                   fill="none"
-                  stroke="#fff"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M18 6 6 18M6 6l12 12"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M37.68 5.851a.482.482 0 0 1 .615.296l.43 1.247s-1.852-.59-2.818-.777l1.773-.766Zm6.055 3.336c-.004 0-.195-.131-.297-.186l-3.111-1.586c-.965-.46-.752-.82-1.118-1.826a6.228 6.228 0 0 0-.549-1.127C36.884 3.62 31.836 3.817 31.354 0c0 0-1.884 1.236-2.227 3.5C9.227 1.98 0 12.96 0 12.96c3.706-1.476 7.705-2.176 11.704-2.362-7.603 5.851-9.997 14.666-9.997 14.666s6.16-5.982 15.419-9.318C14.702 19.37 13.298 23.963 13.872 30c0 0 4.763-18.177 27.361-13.78 0 0 .827-2.417 2.962-4.89.135-.152.211-.382.227-.645a1.735 1.735 0 0 0-.687-1.498Z"
+                    fill="#18191A"
                   ></path>
                 </svg>
+                <span className="text-lg font-montserrat font-bold sm:text-sm">
+                  Forsage <br className="hidden sm:flex" />
+                  School
+                </span>
+              </a>
+              <div className="">
+                <span className="text-white text-sm leading-none flex flex-col space-y-1 sm:hidden">
+                  <span>Go to Forsage School and learn more</span>
+                  <span>about how programs work</span>{" "}
+                </span>
+                <span className="text-white text-xs leading-none flex flex-col space-y-2.5 hidden sm:flex">
+                  <span className="whitespace-nowrap">Learn more about</span>
+                  <span className="whitespace-nowrap"> how programs work</span>
+                </span>
               </div>
-            </button>
+
+              <button onClick={setIsFs}>
+                <div className="bg-white-100 w-[40px] h-[40px] sm:w-[20px] sm:h-[20px] rounded-full flex items-center justify-center mx-4">
+                  <svg
+                    className="h-[25px] w-[25px] sm:h-[15px] sm:w-[15px]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M18 6 6 18M6 6l12 12"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+            </div>
           </div>
-        </div>
+        )}
+
         <div className="flex flex-col flex-wrap w-full sm:px-5">
           <div className="notranslate"></div>
           <div className="flex items-center mb-1.5 sm:mb-2.5">
@@ -256,8 +261,8 @@ const ProgramsLayout = ({ children }: { children: ReactNode }) => {
                           d="M10 8.667A3.333 3.333 0 1 0 10 2a3.333 3.333 0 0 0 0 6.667Z"
                           fill="#fff"
                           stroke="#fff"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         ></path>
                         <path
                           d="M5 17v-1.667A3.333 3.333 0 0 1 8.333 12h3.334A3.333 3.333 0 0 1 15 15.333V17"
@@ -266,8 +271,8 @@ const ProgramsLayout = ({ children }: { children: ReactNode }) => {
                         <path
                           d="M5 17v-1.667A3.333 3.333 0 0 1 8.333 12h3.334A3.333 3.333 0 0 1 15 15.333V17H5Z"
                           stroke="#fff"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         ></path>
                       </svg>
                       <span className="absolute top-0 right-0 text-mini leading-3 text-white"></span>
@@ -355,8 +360,8 @@ const ProgramsLayout = ({ children }: { children: ReactNode }) => {
                           d="M10 8.667A3.333 3.333 0 1 0 10 2a3.333 3.333 0 0 0 0 6.667Z"
                           fill="#fff"
                           stroke="#fff"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         ></path>
                         <path
                           d="M5 17v-1.667A3.333 3.333 0 0 1 8.333 12h3.334A3.333 3.333 0 0 1 15 15.333V17"
@@ -365,8 +370,8 @@ const ProgramsLayout = ({ children }: { children: ReactNode }) => {
                         <path
                           d="M5 17v-1.667A3.333 3.333 0 0 1 8.333 12h3.334A3.333 3.333 0 0 1 15 15.333V17H5Z"
                           stroke="#fff"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         ></path>
                       </svg>
                       <span className="absolute top-0 right-0 text-mini leading-3 text-white"></span>
@@ -546,8 +551,8 @@ const ProgramsLayout = ({ children }: { children: ReactNode }) => {
                           d="M10 8.667A3.333 3.333 0 1 0 10 2a3.333 3.333 0 0 0 0 6.667Z"
                           fill="#fff"
                           stroke="#fff"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         ></path>
                         <path
                           d="M5 17v-1.667A3.333 3.333 0 0 1 8.333 12h3.334A3.333 3.333 0 0 1 15 15.333V17"
@@ -556,8 +561,8 @@ const ProgramsLayout = ({ children }: { children: ReactNode }) => {
                         <path
                           d="M5 17v-1.667A3.333 3.333 0 0 1 8.333 12h3.334A3.333 3.333 0 0 1 15 15.333V17H5Z"
                           stroke="#fff"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         ></path>
                       </svg>
                       <span className="absolute top-0 right-0 text-mini leading-3 text-white"></span>
@@ -645,8 +650,8 @@ const ProgramsLayout = ({ children }: { children: ReactNode }) => {
                           d="M10 8.667A3.333 3.333 0 1 0 10 2a3.333 3.333 0 0 0 0 6.667Z"
                           fill="#fff"
                           stroke="#fff"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         ></path>
                         <path
                           d="M5 17v-1.667A3.333 3.333 0 0 1 8.333 12h3.334A3.333 3.333 0 0 1 15 15.333V17"
@@ -655,8 +660,8 @@ const ProgramsLayout = ({ children }: { children: ReactNode }) => {
                         <path
                           d="M5 17v-1.667A3.333 3.333 0 0 1 8.333 12h3.334A3.333 3.333 0 0 1 15 15.333V17H5Z"
                           stroke="#fff"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         ></path>
                       </svg>
                       <span className="absolute top-0 right-0 text-mini leading-3 text-white"></span>
@@ -941,8 +946,8 @@ const ProgramsLayout = ({ children }: { children: ReactNode }) => {
                           d="M10 8.667A3.333 3.333 0 1 0 10 2a3.333 3.333 0 0 0 0 6.667Z"
                           fill="#fff"
                           stroke="#fff"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         ></path>
                         <path
                           d="M5 17v-1.667A3.333 3.333 0 0 1 8.333 12h3.334A3.333 3.333 0 0 1 15 15.333V17"
@@ -951,8 +956,8 @@ const ProgramsLayout = ({ children }: { children: ReactNode }) => {
                         <path
                           d="M5 17v-1.667A3.333 3.333 0 0 1 8.333 12h3.334A3.333 3.333 0 0 1 15 15.333V17H5Z"
                           stroke="#fff"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         ></path>
                       </svg>
                       <span className="absolute top-0 right-0 text-mini leading-3 text-white"></span>

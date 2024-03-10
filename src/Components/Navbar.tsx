@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   CalculatorIcon,
   DashboardIcon,
@@ -18,11 +18,13 @@ import {
   TeamIcon,
   ToolsIcon,
 } from "src/Assets/Icons";
-import { useNavContext } from "src/Contexts/useNavContext";
+// import { useNavContext } from "src/Contexts/useNavContext";
 import { Devider } from "./Sidebar";
 
 export const Navbar = () => {
-  const { hideNavbar } = useNavContext();
+  // const { hideNavbar } = useNavContext();
+
+  const navigate = useNavigate();
 
   const [isNavSm, setIsNavSm] = useReducer((open) => !open, false);
 
@@ -70,7 +72,8 @@ export const Navbar = () => {
           <div className="flex lg:justify-end lg:ml-auto lg:pr-10 sm:pr-5">
             <button
               className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-white-100 hover:bg-white-300 rounded-full lg:hidden w-10 h-10 !p-0 ml-5"
-              onClick={hideNavbar}
+              // onClick={hideNavbar}
+              onClick={() => navigate("/login")}
             >
               <svg
                 className="w-6 h-6 cursor-pointer"

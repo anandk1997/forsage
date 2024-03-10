@@ -17,14 +17,11 @@ import {
   ToolsIcon,
   DashboardIcon,
   TeamIcon,
-  DiscordIcon,
-  TelegramIcon,
-  TwitterIcon,
-  YoutubeIcon,
 } from "src/Assets/Icons";
 
 import { useNavContext } from "src/Contexts/useNavContext";
 import { cm } from "src/Hooks/useClassesMerge";
+import { Social } from "./Social";
 
 export const Sidebar = () => {
   const [isTeam, setIsTeam] = useReducer((open) => !open, false);
@@ -40,13 +37,13 @@ export const Sidebar = () => {
         <div
           className={cm(
             "flex flex-col min-h-screen w-full flex-shrink-0 pl-10 pr-5 overflow-auto",
-            isNavBar ? "pt-22" : ""
+            isNavBar ? "pt-22" : "",
           )}
         >
           <div className="flex-1 lg:pr-0 lg:pl-10 sm:pl-5">
             <div className="flex flex-1 flex-col h-full w-full overflow-y-auto space-y-2.5 lg:space-y-0">
               <div className="flex flex-1 flex-col w-full h-full overflow-y-auto space-y-2.5 lg:space-y-0 lg:mb-5 sm:mb-[50px]">
-                <NavLink className=" " to="/">
+                <NavLink className=" " to="/dashboard">
                   <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent bg-black-light lg:bg-transparent lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                     <div className="flex items-center text-left">
                       <DashboardIcon />
@@ -54,7 +51,9 @@ export const Sidebar = () => {
                       <span
                         className={cm(
                           "text-white-500 text-base ml-2.5",
-                          pathname === "/" ? "text-white-900" : "text-white-500"
+                          pathname === "/dashboard"
+                            ? "text-white-900"
+                            : "text-white-500",
                         )}
                       >
                         Dashboard
@@ -85,21 +84,21 @@ export const Sidebar = () => {
                         <NavigateButton
                           title="Partners"
                           icon={PartnersIcon}
-                          to="/partners"
+                          to="/dashboard/partners"
                           path={pathname}
                         />
 
                         <NavigateButton
                           title="Links"
                           icon={LinksIcon}
-                          to="/links"
+                          to="/dashboard/links"
                           path={pathname}
                         />
 
                         <NavigateButton
                           title="Stats"
                           icon={StatsIcon}
-                          to="/stats"
+                          to="/dashboard/stats"
                           path={pathname}
                         />
                       </div>
@@ -168,7 +167,7 @@ export const Sidebar = () => {
                         <NavigateButton
                           title="Instruction"
                           icon={InstructionsIcon}
-                          to="/instructions"
+                          to="/dashboard/instructions"
                           path={pathname}
                         />
 
@@ -183,14 +182,14 @@ export const Sidebar = () => {
                         <NavigateButton
                           title="Smart tools"
                           icon={ToolsIcon}
-                          to="/smartTools"
+                          to="/dashboard/smartTools"
                           path={pathname}
                         />
 
                         <NavigateButton
                           title="Ideas"
                           icon={IdeasIcon}
-                          to="/ideas"
+                          to="/dashboard/ideas"
                           path={pathname}
                         />
                       </div>
@@ -212,47 +211,7 @@ export const Sidebar = () => {
             </div>
           </div>
 
-          <div className="mt-auto">
-            <div className="pt-5 pb-10 w-full flex flex-col items-center justify-center">
-              <div className="flex space-x-4 w-full">
-                <a
-                  className="w-7 h-7 flex justify-center items-center rounded-full bg-white-100 hover:bg-white-300"
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://discord.gg/forsage/"
-                >
-                  <DiscordIcon />
-                </a>
-
-                <a
-                  className="w-7 h-7 flex justify-center items-center rounded-full bg-white-100 hover:bg-white-300"
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://t.me/forsageio_official/"
-                >
-                  <TelegramIcon />
-                </a>
-
-                <a
-                  className="w-7 h-7 flex justify-center items-center rounded-full bg-white-100 hover:bg-white-300"
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://www.youtube.com/@FORSAGECommunity/"
-                >
-                  <YoutubeIcon />
-                </a>
-
-                <a
-                  className="w-7 h-7 flex justify-center items-center rounded-full bg-white-100 hover:bg-white-300"
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://twitter.com/forsageofficial/"
-                >
-                  <TwitterIcon />
-                </a>
-              </div>
-            </div>
-          </div>
+          <Social />
         </div>
       </div>
     </div>
@@ -281,7 +240,7 @@ const NavigateButton = ({
     <NavLink className=" " to={to}>
       <button
         className={cm(
-          "relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent"
+          "relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent",
         )}
       >
         <div className="flex items-center text-left">
@@ -290,7 +249,7 @@ const NavigateButton = ({
           <span
             className={cm(
               "text-white-500 text-base ml-2.5 false",
-              path === to ? "text-white-900" : ""
+              path === to ? "text-white-900" : "",
             )}
           >
             {title}
