@@ -7,6 +7,7 @@ import { AuthLayout } from "src/Layout/AuthLayout";
 
 const Home = lazy(() => import("src/Pages/Home"));
 const Login = lazy(() => import("src/Pages/Login"));
+const Register = lazy(() => import("src/Pages/Register"));
 
 const Dashboard = lazy(() => import("src/Pages/Dashboard"));
 
@@ -36,6 +37,11 @@ export const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+
+      {
+        path: "/register",
+        element: <Register />,
       },
     ],
   },

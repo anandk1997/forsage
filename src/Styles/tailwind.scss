@@ -16269,8 +16269,8 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: url(/_next/static/media/triangle_down.72a2d218795ba71ff744d40bb5f0b51d.svg)
-    no-repeat 0;
+  // background: url(/_next/static/media/triangle_down.72a2d218795ba71ff744d40bb5f0b51d.svg)
+  //   no-repeat 0;
   background-position: calc(100% - 15px) 50%;
   background-size: 8px;
 }
@@ -16835,19 +16835,19 @@ select {
 }
 
 .nft-section-1 {
-  background-image: url(/nft/section-1-desktop.png);
+  // background-image: url(/nft/section-1-desktop.png);
   background-size: cover;
   box-shadow: 0 40px 40px -20px rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 767px) {
   .nft-section-1 {
-    background-image: url(/nft/section-1-mobile.png);
+    // background-image: url(/nft/section-1-mobile.png);
   }
 }
 
 .nft-section-2 {
-  background-image: url(/nft/section-2-desktop.png);
+  // background-image: url(/nft/section-2-desktop.png);
   background-size: cover;
 }
 
@@ -16858,24 +16858,24 @@ select {
 }
 
 .nft-section-3 {
-  background-image: url(/nft/section-3-desktop.png);
+  // background-image: url(/nft/section-3-desktop.png);
   background-size: cover;
   box-shadow: 0 -40px 40px -20px rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 767px) {
   .nft-section-3 {
-    background-image: url(/nft/section-3-mobile.png);
+    // background-image: url(/nft/section-3-mobile.png);
   }
 
   .nft-wrapper {
-    background-image: url(/nft/wrapper-mobile.png);
+    // background-image: url(/nft/wrapper-mobile.png);
     background-size: cover;
   }
 }
 
 .nft-binance-bg {
-  background-image: url(/nft/binance-bg.png);
+  // background-image: url(/nft/binance-bg.png);
   background-size: cover;
   background-position: 50%;
 }
@@ -17901,7 +17901,7 @@ select {
 }
 
 .invitexQore-wrapper {
-  background-image: url(/xQore/invite/backgrounds/all.png);
+  // background-image: url(/xQore/invite/backgrounds/all.png);
   background-size: cover;
 }
 
@@ -17912,13 +17912,13 @@ select {
 }
 
 .xQoreMainBanner-bg {
-  background-image: url(/xQore/main_banner_big_bg.png);
+  // background-image: url(/xQore/main_banner_big_bg.png);
   background-size: cover;
 }
 
 @media (max-width: 767px) {
   .xQoreMainBanner-bg {
-    background-image: url(/xQore/main_banner_small_bg.png);
+    // background-image: url(/xQore/main_banner_small_bg.png);
   }
 }
 
@@ -18006,13 +18006,13 @@ select {
 }
 
 .banners-notifybot-wrapper {
-  background-image: url(/banners/notifybot/background.png);
+  // background-image: url(/banners/notifybot/background.png);
   background-size: cover;
 }
 
 @media (max-width: 767px) {
   .banners-notifybot-wrapper {
-    background-image: url(/banners/notifybot/background-mobile.png);
+    // background-image: url(/banners/notifybot/background-mobile.png);
     background-size: cover;
     background-position: bottom;
   }
@@ -18355,14 +18355,14 @@ select {
 }
 
 .frgx-background {
-  background-image: url(/banners/frgx/bg.png);
+  // background-image: url(/banners/frgx/bg.png);
   background-size: cover;
   background-position: 100%;
 }
 
 @media (max-width: 767px) {
   .frgx-background {
-    background-image: url(/banners/frgx/bg-mobile.png);
+    // background-image: url(/banners/frgx/bg-mobile.png);
   }
 }
 

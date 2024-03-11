@@ -1,16 +1,19 @@
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import { Social } from "src/Components/Social";
+import { useWalletConnect } from "src/Hooks/useWalletConnect";
 
 const Login = () => {
   const navigate = useNavigate();
+
+  const { connectWallet, walletData } = useWalletConnect();
 
   return (
     <div className="flex relative bg-main-bg flex-col items-center justify-center w-full min-h-screen text-white-500 px-10 sm:px-0 overflow-hidden pt-16">
       <header className="fixed top-0 w-full pb-2.5 pt-2.5 px-10 z-[2147483602] bg-transparent sm:px-5 lg:border-b lg:border-white-100 z-[999]">
         <nav className="z-10 w-full max-w-desktop-preview-bar m-auto header-border-b">
           <div className="flex items-center justify-between">
-            <a href="/">
+            <NavLink to="/">
               <svg
                 className="hidden lg:block"
                 width="45"
@@ -25,6 +28,7 @@ const Login = () => {
                   fill="#fff"
                 ></path>
               </svg>
+
               <svg
                 className="block lg:hidden"
                 width="163"
@@ -39,10 +43,13 @@ const Login = () => {
                   fill="#fff"
                 ></path>
               </svg>
-            </a>
+            </NavLink>
             <div className="flex justify-end items-center ml-auto">
-              <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-2.5 bg-black-light hover:bg-line-gray active:bg-active-gray text-white font-normal rounded items-center">
-                Connect wallet
+              <button
+                className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-2.5 bg-black-light hover:bg-line-gray active:bg-active-gray text-white font-normal rounded items-center"
+                onClick={connectWallet}
+              >
+                {walletData}
               </button>
             </div>
           </div>
@@ -53,7 +60,7 @@ const Login = () => {
             // style="height: 972px"
           >
             <div className="flex justify-between items-center w-full px-10 sm:px-5">
-              <a href="/">
+              <NavLink to="/">
                 <svg
                   className="block mr-2.5"
                   width="163"
@@ -68,7 +75,7 @@ const Login = () => {
                     fill="#fff"
                   ></path>
                 </svg>
-              </a>
+              </NavLink>
               <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-0 py-0 bg-black-light rounded-full w-10 h-10 hover:bg-line-gray active:bg-active-gray hidden lg:flex flex-col">
                 <span className="w-4 border-t border-white -mb-px rotate-45"></span>
                 <span className="w-4 border-t border-white -rotate-45"></span>
@@ -77,8 +84,8 @@ const Login = () => {
             <div className="w-full h-full pl-10 pr-7.5 lg:pr-0 lg:pl-10 sm:pl-5 overflow-auto">
               <div className="flex flex-1 flex-col h-full w-full overflow-y-auto space-y-2.5 lg:space-y-0">
                 <div className="flex flex-1 flex-col w-full h-full overflow-y-auto space-y-2.5 lg:space-y-0 lg:mb-5 sm:mb-[50px]">
-                  <a className="undefined undefined" href="/dashboard">
-                    <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer undefined hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
+                  <a href="/dashboard">
+                    <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                       <div className="flex items-center text-left">
                         <svg
                           className="w-6 h-6 stroke-current text-white-500"
@@ -99,7 +106,7 @@ const Login = () => {
                       </div>
                     </button>
                   </a>
-                  <div className="undefined bg-black-light lg:bg-transparent lg:!pb-0 min-w-[186px] cursor-pointer hover:bg-black-light lg:hover:bg-transparent rounded-[10px] lg:border-b lg:border-white-300 lg:rounded-none lg:justify-between">
+                  <div className=" bg-black-light lg:bg-transparent lg:!pb-0 min-w-[186px] cursor-pointer hover:bg-black-light lg:hover:bg-transparent rounded-[10px] lg:border-b lg:border-white-300 lg:rounded-none lg:justify-between">
                     <div className="flex p-2.5 lg:px-0 lg:py-5">
                       <svg
                         className="w-6 h-6"
@@ -132,8 +139,8 @@ const Login = () => {
                     </div>
                     <div className="border-solid border-[1px] border-[#363738] lg:hidden mx-2.5"></div>
                     <div className="flex flex-col p-2.5 lg:py-0 lg:pr-0">
-                      <a className="undefined undefined" href="/partners">
-                        <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer undefined hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
+                      <a href="/partners">
+                        <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
                           <div className="flex items-center text-left">
                             <svg
                               className="w-6 h-6 stroke-current text-white-500"
@@ -155,8 +162,8 @@ const Login = () => {
                           </div>
                         </button>
                       </a>
-                      <a className="undefined undefined" href="/links">
-                        <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer undefined hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
+                      <a href="/links">
+                        <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
                           <div className="flex items-center text-left">
                             <svg
                               className="w-6 h-6 stroke-current text-white-500"
@@ -201,8 +208,8 @@ const Login = () => {
                           </div>
                         </button>
                       </a>
-                      <a className="undefined undefined" href="/stats">
-                        <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer undefined hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
+                      <a href="/stats">
+                        <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
                           <div className="flex items-center text-left">
                             <svg
                               className="w-6 h-6 stroke-current text-white-500"
@@ -228,8 +235,8 @@ const Login = () => {
                           </div>
                         </button>
                       </a>
-                      <a className="undefined undefined" href="/messages">
-                        <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer undefined hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
+                      <a href="/messages">
+                        <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
                           <div className="flex items-center text-left">
                             <svg
                               className="w-6 h-6 stroke-current text-white-500"
@@ -261,8 +268,8 @@ const Login = () => {
                       </a>
                     </div>
                   </div>
-                  <a className="undefined undefined" href="/MaxQoreMarathon">
-                    <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer undefined hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
+                  <a href="/MaxQoreMarathon">
+                    <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                       <div className="flex items-center text-left">
                         <svg
                           className="w-6 h-6 stroke-current text-white-500"
@@ -296,8 +303,8 @@ const Login = () => {
                       </div>
                     </button>
                   </a>
-                  <a className="undefined undefined" href="/social">
-                    <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer undefined hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
+                  <a href="/social">
+                    <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                       <div className="flex items-center text-left">
                         <svg
                           className="w-6 h-6 stroke-current text-white-500"
@@ -341,8 +348,8 @@ const Login = () => {
                       </div>
                     </button>
                   </a>
-                  <a className="undefined undefined" href="/nft">
-                    <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer undefined hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
+                  <a href="/nft">
+                    <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                       <div className="flex items-center text-left">
                         <svg
                           className="w-6 h-6 stroke-current text-white-500"
@@ -364,7 +371,7 @@ const Login = () => {
                       </div>
                     </button>
                   </a>
-                  <div className="undefined min-w-[186px] cursor-pointer hover:bg-black-light lg:hover:bg-transparent rounded-[10px] lg:border-b lg:border-white-300 lg:rounded-none lg:justify-between">
+                  <div className=" min-w-[186px] cursor-pointer hover:bg-black-light lg:hover:bg-transparent rounded-[10px] lg:border-b lg:border-white-300 lg:rounded-none lg:justify-between">
                     <div className="flex p-2.5 lg:px-0 lg:py-5">
                       <svg
                         className="w-6 h-6"
@@ -406,8 +413,8 @@ const Login = () => {
                       </svg>
                     </div>
                   </div>
-                  <a className="undefined undefined" href="/promo">
-                    <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer undefined hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
+                  <a href="/promo">
+                    <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                       <div className="flex items-center text-left">
                         <svg
                           className="w-6 h-6 stroke-current text-white-500 animate-bounce"
@@ -441,8 +448,8 @@ const Login = () => {
                       </div>
                     </button>
                   </a>
-                  <div className="hidden lg:block undefined">
-                    <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer undefined hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
+                  <div className="hidden lg:block ">
+                    <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                       <div className="flex items-center text-left">
                         <svg
                           className="w-6 h-6 stroke-current text-white-500"
@@ -478,8 +485,8 @@ const Login = () => {
                       </svg>
                     </button>
                   </div>
-                  <a className="hidden lg:block undefined" href="/">
-                    <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer undefined hover:bg-black-light lg:hover:bg-transparent bg-black-light lg:bg-transparent lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
+                  <NavLink className="hidden lg:block " to="/">
+                    <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent bg-black-light lg:bg-transparent lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                       <div className="flex items-center text-left">
                         <svg
                           className="w-6 h-6 stroke-current text-white-500"
@@ -500,7 +507,7 @@ const Login = () => {
                         </span>
                       </div>
                     </button>
-                  </a>
+                  </NavLink>
                 </div>
               </div>
             </div>
@@ -2340,7 +2347,7 @@ const Login = () => {
                         </div>
                       </div>
                       <span className="text-white text-2xl font-bold notranslate sm:text-xl false mt-5 sm:mt-2.5">
-                        1 674 556
+                        1674556
                       </span>
                     </div>
                     <div className="p-5 pt-0 flex text-green-light text-base items-baseline notranslate sm:text-sm">
@@ -2470,15 +2477,15 @@ const Login = () => {
                     </span>
                     <div className="flex flex-col py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
                       <span className="text-2xl text-white font-bold sm:text-xl">
-                        147 808 795.94 BUSD
+                        147808795.94 BUSD
                       </span>
                       <span className="text-green-light text-base items-baseline sm:text-sm">
-                        + 11 132.7 BUSD
+                        + 11132.7 BUSD
                       </span>
                     </div>
                     <div className="flex flex-col py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
                       <span className="text-2xl text-white font-bold sm:text-xl">
-                        22 517.2358 BNB
+                        22517.2358 BNB
                       </span>
                       <span className="text-green-light text-base items-baseline sm:text-sm">
                         + 1.582 BNB
@@ -2754,7 +2761,7 @@ const Login = () => {
                             Transactions made
                           </span>
                           <span className="text-2xl text-white font-bold sm:text-xl">
-                            5 862 804
+                            5862804
                           </span>
                           <span className="text-green-light text-base items-baseline sm:text-sm">
                             + 986
@@ -2768,10 +2775,10 @@ const Login = () => {
                             </span>
                           </span>
                           <span className="text-2xl text-white font-bold sm:text-xl">
-                            295 617 591.88
+                            295617591.88
                           </span>
                           <span className="text-green-light text-base items-baseline sm:text-sm">
-                            + 22 265.4
+                            + 22265.4
                           </span>
                         </div>
                       </div>

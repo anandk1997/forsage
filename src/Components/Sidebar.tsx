@@ -43,7 +43,7 @@ export const Sidebar = () => {
           <div className="flex-1 lg:pr-0 lg:pl-10 sm:pl-5">
             <div className="flex flex-1 flex-col h-full w-full overflow-y-auto space-y-2.5 lg:space-y-0">
               <div className="flex flex-1 flex-col w-full h-full overflow-y-auto space-y-2.5 lg:space-y-0 lg:mb-5 sm:mb-[50px]">
-                <NavLink className=" " to="/dashboard">
+                <NavLink to="/dashboard">
                   <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent bg-black-light lg:bg-transparent lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                     <div className="flex items-center text-left">
                       <DashboardIcon />
@@ -106,7 +106,7 @@ export const Sidebar = () => {
                   )}
                 </div>
 
-                <a className=" " href="/MaxQoreMarathon?user=1">
+                <a href="/MaxQoreMarathon?user=1">
                   <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                     <div className="flex items-center text-left">
                       <MarathonIcon />
@@ -118,7 +118,7 @@ export const Sidebar = () => {
                   </button>
                 </a>
 
-                <a className=" " href="/social?user=1">
+                <a href="/social?user=1">
                   <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                     <div className="flex items-center text-left">
                       <SocialIcon />
@@ -133,7 +133,7 @@ export const Sidebar = () => {
                   </button>
                 </a>
 
-                <a className=" " href="/nft?user=1">
+                <a href="/nft?user=1">
                   <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                     <div className="flex items-center text-left">
                       <NftsIcon />
@@ -196,7 +196,7 @@ export const Sidebar = () => {
                     </>
                   )}
                 </div>
-                <a className=" " href="/promo?user=1">
+                <a href="/promo?user=1">
                   <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                     <div className="flex items-center text-left">
                       <PromoIcon />
@@ -237,7 +237,7 @@ const NavigateButton = ({
 }) => {
   console.log(path === to);
   return (
-    <NavLink className=" " to={to}>
+    <NavLink to={to}>
       <button
         className={cm(
           "relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent",
