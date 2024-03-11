@@ -84,21 +84,21 @@ export const Sidebar = () => {
                         <NavigateButton
                           title="Partners"
                           icon={PartnersIcon}
-                          to="/dashboard/partners"
+                          to="partners"
                           path={pathname}
                         />
 
                         <NavigateButton
                           title="Links"
                           icon={LinksIcon}
-                          to="/dashboard/links"
+                          to="links"
                           path={pathname}
                         />
 
                         <NavigateButton
                           title="Stats"
                           icon={StatsIcon}
-                          to="/dashboard/stats"
+                          to="stats"
                           path={pathname}
                         />
                       </div>
@@ -106,7 +106,7 @@ export const Sidebar = () => {
                   )}
                 </div>
 
-                <a href="/MaxQoreMarathon?user=1">
+                <NavLink to="MaxQoreMarathon">
                   <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                     <div className="flex items-center text-left">
                       <MarathonIcon />
@@ -116,9 +116,9 @@ export const Sidebar = () => {
                       </span>
                     </div>
                   </button>
-                </a>
+                </NavLink>
 
-                <a href="/social?user=1">
+                <NavLink to="social">
                   <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                     <div className="flex items-center text-left">
                       <SocialIcon />
@@ -131,9 +131,9 @@ export const Sidebar = () => {
                       </span>
                     </div>
                   </button>
-                </a>
+                </NavLink>
 
-                <a href="/nft?user=1">
+                <NavLink to="nft">
                   <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                     <div className="flex items-center text-left">
                       <NftsIcon />
@@ -143,7 +143,7 @@ export const Sidebar = () => {
                       </span>
                     </div>
                   </button>
-                </a>
+                </NavLink>
 
                 <div className=" bg-black-light lg:bg-transparent lg:!pb-0 min-w-[186px] cursor-pointer hover:bg-black-light lg:hover:bg-transparent rounded-[10px] lg:border-b lg:border-white-300 lg:rounded-none lg:justify-between">
                   <div
@@ -167,14 +167,14 @@ export const Sidebar = () => {
                         <NavigateButton
                           title="Instruction"
                           icon={InstructionsIcon}
-                          to="/dashboard/instructions"
+                          to="instructions"
                           path={pathname}
                         />
 
                         <NavigateButton
                           title="Calculator"
                           icon={CalculatorIcon}
-                          to="/calculator"
+                          to="calculator"
                           path={pathname}
                           latest
                         />
@@ -182,21 +182,21 @@ export const Sidebar = () => {
                         <NavigateButton
                           title="Smart tools"
                           icon={ToolsIcon}
-                          to="/dashboard/smartTools"
+                          to="smartTools"
                           path={pathname}
                         />
 
                         <NavigateButton
                           title="Ideas"
                           icon={IdeasIcon}
-                          to="/dashboard/ideas"
+                          to="ideas"
                           path={pathname}
                         />
                       </div>
                     </>
                   )}
                 </div>
-                <a href="/promo?user=1">
+                <NavLink to="promo">
                   <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                     <div className="flex items-center text-left">
                       <PromoIcon />
@@ -206,7 +206,7 @@ export const Sidebar = () => {
                       </span>
                     </div>
                   </button>
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>

@@ -178,7 +178,7 @@ const NavbarSm = ({ close }: { close: () => void }) => {
                       <Devider />
 
                       <div className="flex flex-col p-2.5 lg:py-0 lg:pr-0">
-                        <NavLink to="/partners">
+                        <NavLink to="partners">
                           <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
                             <div className="flex items-center text-left">
                               <PartnersIcon />
@@ -190,7 +190,7 @@ const NavbarSm = ({ close }: { close: () => void }) => {
                           </button>
                         </NavLink>
 
-                        <NavLink to="/links">
+                        <NavLink to="links">
                           <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
                             <div className="flex items-center text-left">
                               <LinksIcon />
@@ -202,7 +202,7 @@ const NavbarSm = ({ close }: { close: () => void }) => {
                           </button>
                         </NavLink>
 
-                        <NavLink to="/stats">
+                        <NavLink to="stats">
                           <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
                             <div className="flex items-center text-left">
                               <StatsIcon />
@@ -218,7 +218,7 @@ const NavbarSm = ({ close }: { close: () => void }) => {
                   )}
                 </div>
 
-                <NavLink to="/MaxQoreMarathon">
+                <NavLink to="MaxQoreMarathon">
                   <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                     <div className="flex items-center text-left">
                       <MarathonIcon />
@@ -230,7 +230,7 @@ const NavbarSm = ({ close }: { close: () => void }) => {
                   </button>
                 </NavLink>
 
-                <NavLink to="/social">
+                <NavLink to="social">
                   <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                     <div className="flex items-center text-left">
                       <SocialIcon />
@@ -244,7 +244,7 @@ const NavbarSm = ({ close }: { close: () => void }) => {
                     </div>
                   </button>
                 </NavLink>
-                <NavLink to="/nft">
+                <NavLink to="nft">
                   <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                     <div className="flex items-center text-left">
                       <NftsIcon />
@@ -275,7 +275,7 @@ const NavbarSm = ({ close }: { close: () => void }) => {
                       <Devider />
 
                       <div className="flex flex-col p-2.5 lg:py-0 lg:pr-0">
-                        <NavLink to="/instruction">
+                        <NavLink to="instruction">
                           <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between  lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
                             <div className="flex items-center text-left">
                               <InstructionsIcon />
@@ -287,7 +287,7 @@ const NavbarSm = ({ close }: { close: () => void }) => {
                           </button>
                         </NavLink>
 
-                        <NavLink to="/calculator">
+                        <NavLink to="calculator">
                           <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between  lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
                             <div className="flex items-center text-left">
                               <CalculatorIcon />
@@ -303,7 +303,7 @@ const NavbarSm = ({ close }: { close: () => void }) => {
                           </button>
                         </NavLink>
 
-                        <NavLink to="/smartTools">
+                        <NavLink to="smartTools">
                           <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between  lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
                             <div className="flex items-center text-left">
                               <ToolsIcon />
@@ -315,7 +315,7 @@ const NavbarSm = ({ close }: { close: () => void }) => {
                           </button>
                         </NavLink>
 
-                        <NavLink to="/ideas">
+                        <NavLink to="ideas">
                           <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between  lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
                             <div className="flex items-center text-left">
                               <IdeasIcon />
@@ -331,7 +331,7 @@ const NavbarSm = ({ close }: { close: () => void }) => {
                   )}
                 </div>
 
-                <NavLink to="/promo">
+                <NavLink to="promo">
                   <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                     <div className="flex items-center text-left">
                       <PromoIcon />
