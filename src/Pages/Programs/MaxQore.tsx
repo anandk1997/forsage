@@ -76,7 +76,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
@@ -92,7 +92,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
@@ -139,7 +139,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
@@ -155,7 +155,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
@@ -202,7 +202,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
@@ -219,7 +219,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
@@ -272,7 +272,7 @@ const MaxQore = () => {
                     >
                       <path
                         d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
-                        stroke-width="1.333"
+                        strokeWidth="1.333"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       ></path>
@@ -290,7 +290,7 @@ const MaxQore = () => {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                         d="M6.354 3.818a7.25 7.25 0 0 1 10.808 5.28.5.5 0 1 1-.99.137A6.25 6.25 0 0 0 4.551 7h2.115a.5.5 0 0 1 0 1H3.333a.5.5 0 0 1-.5-.5V4.167a.5.5 0 1 1 1 0v2.086a7.25 7.25 0 0 1 2.521-2.435ZM3.265 10.338a.5.5 0 0 1 .564.427A6.25 6.25 0 0 0 15.449 13h-2.116a.5.5 0 1 1 0-1H16.667a.5.5 0 0 1 .5.5v3.333a.5.5 0 1 1-1 0v-2.086a7.25 7.25 0 0 1-13.329-2.845.5.5 0 0 1 .427-.564Z"
                       ></path>
                     </svg>
@@ -350,7 +350,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
@@ -366,7 +366,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
@@ -413,7 +413,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
@@ -429,7 +429,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
@@ -476,7 +476,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
@@ -493,7 +493,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
@@ -546,7 +546,7 @@ const MaxQore = () => {
                     >
                       <path
                         d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
-                        stroke-width="1.333"
+                        strokeWidth="1.333"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       ></path>
@@ -564,7 +564,7 @@ const MaxQore = () => {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                         d="M6.354 3.818a7.25 7.25 0 0 1 10.808 5.28.5.5 0 1 1-.99.137A6.25 6.25 0 0 0 4.551 7h2.115a.5.5 0 0 1 0 1H3.333a.5.5 0 0 1-.5-.5V4.167a.5.5 0 1 1 1 0v2.086a7.25 7.25 0 0 1 2.521-2.435ZM3.265 10.338a.5.5 0 0 1 .564.427A6.25 6.25 0 0 0 15.449 13h-2.116a.5.5 0 1 1 0-1H16.667a.5.5 0 0 1 .5.5v3.333a.5.5 0 1 1-1 0v-2.086a7.25 7.25 0 0 1-13.329-2.845.5.5 0 0 1 .427-.564Z"
                       ></path>
                     </svg>
@@ -624,7 +624,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
@@ -640,7 +640,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
@@ -687,7 +687,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
@@ -703,7 +703,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
@@ -750,7 +750,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
@@ -767,7 +767,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
@@ -820,7 +820,7 @@ const MaxQore = () => {
                     >
                       <path
                         d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
-                        stroke-width="1.333"
+                        strokeWidth="1.333"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       ></path>
@@ -838,7 +838,7 @@ const MaxQore = () => {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                         d="M6.354 3.818a7.25 7.25 0 0 1 10.808 5.28.5.5 0 1 1-.99.137A6.25 6.25 0 0 0 4.551 7h2.115a.5.5 0 0 1 0 1H3.333a.5.5 0 0 1-.5-.5V4.167a.5.5 0 1 1 1 0v2.086a7.25 7.25 0 0 1 2.521-2.435ZM3.265 10.338a.5.5 0 0 1 .564.427A6.25 6.25 0 0 0 15.449 13h-2.116a.5.5 0 1 1 0-1H16.667a.5.5 0 0 1 .5.5v3.333a.5.5 0 1 1-1 0v-2.086a7.25 7.25 0 0 1-13.329-2.845.5.5 0 0 1 .427-.564Z"
                       ></path>
                     </svg>
@@ -898,7 +898,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
@@ -914,7 +914,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
@@ -961,7 +961,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
@@ -977,7 +977,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
@@ -1024,7 +1024,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
@@ -1041,7 +1041,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
@@ -1094,7 +1094,7 @@ const MaxQore = () => {
                     >
                       <path
                         d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
-                        stroke-width="1.333"
+                        strokeWidth="1.333"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       ></path>
@@ -1112,7 +1112,7 @@ const MaxQore = () => {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                         d="M6.354 3.818a7.25 7.25 0 0 1 10.808 5.28.5.5 0 1 1-.99.137A6.25 6.25 0 0 0 4.551 7h2.115a.5.5 0 0 1 0 1H3.333a.5.5 0 0 1-.5-.5V4.167a.5.5 0 1 1 1 0v2.086a7.25 7.25 0 0 1 2.521-2.435ZM3.265 10.338a.5.5 0 0 1 .564.427A6.25 6.25 0 0 0 15.449 13h-2.116a.5.5 0 1 1 0-1H16.667a.5.5 0 0 1 .5.5v3.333a.5.5 0 1 1-1 0v-2.086a7.25 7.25 0 0 1-13.329-2.845.5.5 0 0 1 .427-.564Z"
                       ></path>
                     </svg>
@@ -1172,7 +1172,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
@@ -1188,7 +1188,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
@@ -1235,7 +1235,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
@@ -1251,7 +1251,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
@@ -1298,7 +1298,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
@@ -1315,7 +1315,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
@@ -1368,7 +1368,7 @@ const MaxQore = () => {
                     >
                       <path
                         d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
-                        stroke-width="1.333"
+                        strokeWidth="1.333"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       ></path>
@@ -1386,7 +1386,7 @@ const MaxQore = () => {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                         d="M6.354 3.818a7.25 7.25 0 0 1 10.808 5.28.5.5 0 1 1-.99.137A6.25 6.25 0 0 0 4.551 7h2.115a.5.5 0 0 1 0 1H3.333a.5.5 0 0 1-.5-.5V4.167a.5.5 0 1 1 1 0v2.086a7.25 7.25 0 0 1 2.521-2.435ZM3.265 10.338a.5.5 0 0 1 .564.427A6.25 6.25 0 0 0 15.449 13h-2.116a.5.5 0 1 1 0-1H16.667a.5.5 0 0 1 .5.5v3.333a.5.5 0 1 1-1 0v-2.086a7.25 7.25 0 0 1-13.329-2.845.5.5 0 0 1 .427-.564Z"
                       ></path>
                     </svg>
@@ -1446,7 +1446,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
@@ -1462,7 +1462,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
@@ -1509,7 +1509,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
@@ -1525,7 +1525,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
@@ -1572,7 +1572,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
@@ -1589,7 +1589,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
@@ -1642,7 +1642,7 @@ const MaxQore = () => {
                     >
                       <path
                         d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
-                        stroke-width="1.333"
+                        strokeWidth="1.333"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       ></path>
@@ -1660,7 +1660,7 @@ const MaxQore = () => {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                         d="M6.354 3.818a7.25 7.25 0 0 1 10.808 5.28.5.5 0 1 1-.99.137A6.25 6.25 0 0 0 4.551 7h2.115a.5.5 0 0 1 0 1H3.333a.5.5 0 0 1-.5-.5V4.167a.5.5 0 1 1 1 0v2.086a7.25 7.25 0 0 1 2.521-2.435ZM3.265 10.338a.5.5 0 0 1 .564.427A6.25 6.25 0 0 0 15.449 13h-2.116a.5.5 0 1 1 0-1H16.667a.5.5 0 0 1 .5.5v3.333a.5.5 0 1 1-1 0v-2.086a7.25 7.25 0 0 1-13.329-2.845.5.5 0 0 1 .427-.564Z"
                       ></path>
                     </svg>
@@ -1720,7 +1720,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
@@ -1736,7 +1736,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
@@ -1783,7 +1783,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
@@ -1799,7 +1799,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
@@ -1846,7 +1846,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
@@ -1863,7 +1863,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
@@ -1916,7 +1916,7 @@ const MaxQore = () => {
                     >
                       <path
                         d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
-                        stroke-width="1.333"
+                        strokeWidth="1.333"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       ></path>
@@ -1934,7 +1934,7 @@ const MaxQore = () => {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                         d="M6.354 3.818a7.25 7.25 0 0 1 10.808 5.28.5.5 0 1 1-.99.137A6.25 6.25 0 0 0 4.551 7h2.115a.5.5 0 0 1 0 1H3.333a.5.5 0 0 1-.5-.5V4.167a.5.5 0 1 1 1 0v2.086a7.25 7.25 0 0 1 2.521-2.435ZM3.265 10.338a.5.5 0 0 1 .564.427A6.25 6.25 0 0 0 15.449 13h-2.116a.5.5 0 1 1 0-1H16.667a.5.5 0 0 1 .5.5v3.333a.5.5 0 1 1-1 0v-2.086a7.25 7.25 0 0 1-13.329-2.845.5.5 0 0 1 .427-.564Z"
                       ></path>
                     </svg>
@@ -1994,7 +1994,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
@@ -2010,7 +2010,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
@@ -2057,7 +2057,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
@@ -2073,7 +2073,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
@@ -2120,7 +2120,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
@@ -2137,7 +2137,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
@@ -2190,7 +2190,7 @@ const MaxQore = () => {
                     >
                       <path
                         d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
-                        stroke-width="1.333"
+                        strokeWidth="1.333"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       ></path>
@@ -2208,7 +2208,7 @@ const MaxQore = () => {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                         d="M6.354 3.818a7.25 7.25 0 0 1 10.808 5.28.5.5 0 1 1-.99.137A6.25 6.25 0 0 0 4.551 7h2.115a.5.5 0 0 1 0 1H3.333a.5.5 0 0 1-.5-.5V4.167a.5.5 0 1 1 1 0v2.086a7.25 7.25 0 0 1 2.521-2.435ZM3.265 10.338a.5.5 0 0 1 .564.427A6.25 6.25 0 0 0 15.449 13h-2.116a.5.5 0 1 1 0-1H16.667a.5.5 0 0 1 .5.5v3.333a.5.5 0 1 1-1 0v-2.086a7.25 7.25 0 0 1-13.329-2.845.5.5 0 0 1 .427-.564Z"
                       ></path>
                     </svg>
@@ -2268,7 +2268,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
@@ -2284,7 +2284,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
@@ -2331,7 +2331,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
@@ -2347,7 +2347,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
@@ -2394,7 +2394,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
@@ -2411,7 +2411,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
@@ -2464,7 +2464,7 @@ const MaxQore = () => {
                     >
                       <path
                         d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
-                        stroke-width="1.333"
+                        strokeWidth="1.333"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       ></path>
@@ -2482,7 +2482,7 @@ const MaxQore = () => {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                         d="M6.354 3.818a7.25 7.25 0 0 1 10.808 5.28.5.5 0 1 1-.99.137A6.25 6.25 0 0 0 4.551 7h2.115a.5.5 0 0 1 0 1H3.333a.5.5 0 0 1-.5-.5V4.167a.5.5 0 1 1 1 0v2.086a7.25 7.25 0 0 1 2.521-2.435ZM3.265 10.338a.5.5 0 0 1 .564.427A6.25 6.25 0 0 0 15.449 13h-2.116a.5.5 0 1 1 0-1H16.667a.5.5 0 0 1 .5.5v3.333a.5.5 0 1 1-1 0v-2.086a7.25 7.25 0 0 1-13.329-2.845.5.5 0 0 1 .427-.564Z"
                       ></path>
                     </svg>
@@ -2542,7 +2542,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
@@ -2558,7 +2558,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
@@ -2605,7 +2605,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
@@ -2621,7 +2621,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
@@ -2668,7 +2668,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
@@ -2685,7 +2685,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
@@ -2738,7 +2738,7 @@ const MaxQore = () => {
                     >
                       <path
                         d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
-                        stroke-width="1.333"
+                        strokeWidth="1.333"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       ></path>
@@ -2756,7 +2756,7 @@ const MaxQore = () => {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                         d="M6.354 3.818a7.25 7.25 0 0 1 10.808 5.28.5.5 0 1 1-.99.137A6.25 6.25 0 0 0 4.551 7h2.115a.5.5 0 0 1 0 1H3.333a.5.5 0 0 1-.5-.5V4.167a.5.5 0 1 1 1 0v2.086a7.25 7.25 0 0 1 2.521-2.435ZM3.265 10.338a.5.5 0 0 1 .564.427A6.25 6.25 0 0 0 15.449 13h-2.116a.5.5 0 1 1 0-1H16.667a.5.5 0 0 1 .5.5v3.333a.5.5 0 1 1-1 0v-2.086a7.25 7.25 0 0 1-13.329-2.845.5.5 0 0 1 .427-.564Z"
                       ></path>
                     </svg>
@@ -2816,7 +2816,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
@@ -2832,7 +2832,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
@@ -2879,7 +2879,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
@@ -2895,7 +2895,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
@@ -2942,7 +2942,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
@@ -2959,7 +2959,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
@@ -3012,7 +3012,7 @@ const MaxQore = () => {
                     >
                       <path
                         d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
-                        stroke-width="1.333"
+                        strokeWidth="1.333"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       ></path>
@@ -3030,7 +3030,7 @@ const MaxQore = () => {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                         d="M6.354 3.818a7.25 7.25 0 0 1 10.808 5.28.5.5 0 1 1-.99.137A6.25 6.25 0 0 0 4.551 7h2.115a.5.5 0 0 1 0 1H3.333a.5.5 0 0 1-.5-.5V4.167a.5.5 0 1 1 1 0v2.086a7.25 7.25 0 0 1 2.521-2.435ZM3.265 10.338a.5.5 0 0 1 .564.427A6.25 6.25 0 0 0 15.449 13h-2.116a.5.5 0 1 1 0-1H16.667a.5.5 0 0 1 .5.5v3.333a.5.5 0 1 1-1 0v-2.086a7.25 7.25 0 0 1-13.329-2.845.5.5 0 0 1 .427-.564Z"
                       ></path>
                     </svg>
@@ -3090,7 +3090,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
@@ -3106,7 +3106,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
@@ -3153,7 +3153,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
@@ -3169,7 +3169,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
@@ -3216,7 +3216,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
@@ -3233,7 +3233,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
@@ -3286,7 +3286,7 @@ const MaxQore = () => {
                     >
                       <path
                         d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
-                        stroke-width="1.333"
+                        strokeWidth="1.333"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       ></path>
@@ -3304,7 +3304,7 @@ const MaxQore = () => {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                         d="M6.354 3.818a7.25 7.25 0 0 1 10.808 5.28.5.5 0 1 1-.99.137A6.25 6.25 0 0 0 4.551 7h2.115a.5.5 0 0 1 0 1H3.333a.5.5 0 0 1-.5-.5V4.167a.5.5 0 1 1 1 0v2.086a7.25 7.25 0 0 1 2.521-2.435ZM3.265 10.338a.5.5 0 0 1 .564.427A6.25 6.25 0 0 0 15.449 13h-2.116a.5.5 0 1 1 0-1H16.667a.5.5 0 0 1 .5.5v3.333a.5.5 0 1 1-1 0v-2.086a7.25 7.25 0 0 1-13.329-2.845.5.5 0 0 1 .427-.564Z"
                       ></path>
                     </svg>
@@ -3364,7 +3364,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
@@ -3380,7 +3380,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
@@ -3427,7 +3427,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
@@ -3443,7 +3443,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
@@ -3490,7 +3490,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
@@ -3507,7 +3507,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
@@ -3560,7 +3560,7 @@ const MaxQore = () => {
                     >
                       <path
                         d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
-                        stroke-width="1.333"
+                        strokeWidth="1.333"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       ></path>
@@ -3578,7 +3578,7 @@ const MaxQore = () => {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                         d="M6.354 3.818a7.25 7.25 0 0 1 10.808 5.28.5.5 0 1 1-.99.137A6.25 6.25 0 0 0 4.551 7h2.115a.5.5 0 0 1 0 1H3.333a.5.5 0 0 1-.5-.5V4.167a.5.5 0 1 1 1 0v2.086a7.25 7.25 0 0 1 2.521-2.435ZM3.265 10.338a.5.5 0 0 1 .564.427A6.25 6.25 0 0 0 15.449 13h-2.116a.5.5 0 1 1 0-1H16.667a.5.5 0 0 1 .5.5v3.333a.5.5 0 1 1-1 0v-2.086a7.25 7.25 0 0 1-13.329-2.845.5.5 0 0 1 .427-.564Z"
                       ></path>
                     </svg>
@@ -3638,7 +3638,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
@@ -3654,7 +3654,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
@@ -3701,7 +3701,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
@@ -3717,7 +3717,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
@@ -3764,7 +3764,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
@@ -3781,7 +3781,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
@@ -3834,7 +3834,7 @@ const MaxQore = () => {
                     >
                       <path
                         d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
-                        stroke-width="1.333"
+                        strokeWidth="1.333"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       ></path>
@@ -3852,7 +3852,7 @@ const MaxQore = () => {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                         d="M6.354 3.818a7.25 7.25 0 0 1 10.808 5.28.5.5 0 1 1-.99.137A6.25 6.25 0 0 0 4.551 7h2.115a.5.5 0 0 1 0 1H3.333a.5.5 0 0 1-.5-.5V4.167a.5.5 0 1 1 1 0v2.086a7.25 7.25 0 0 1 2.521-2.435ZM3.265 10.338a.5.5 0 0 1 .564.427A6.25 6.25 0 0 0 15.449 13h-2.116a.5.5 0 1 1 0-1H16.667a.5.5 0 0 1 .5.5v3.333a.5.5 0 1 1-1 0v-2.086a7.25 7.25 0 0 1-13.329-2.845.5.5 0 0 1 .427-.564Z"
                       ></path>
                     </svg>
@@ -3912,7 +3912,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
@@ -3928,7 +3928,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,86
       a 43,43 0 1 1 0,-86
     "
-                            stroke-width="14"
+                            strokeWidth="14"
                             fill-opacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
@@ -3975,7 +3975,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
@@ -3991,7 +3991,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,82
       a 41,41 0 1 1 0,-82
     "
-                                    stroke-width="18"
+                                    strokeWidth="18"
                                     fill-opacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
@@ -4038,7 +4038,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
@@ -4055,7 +4055,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,70
       a 35,35 0 1 1 0,-70
     "
-                                            stroke-width="30"
+                                            strokeWidth="30"
                                             fill-opacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
@@ -4108,7 +4108,7 @@ const MaxQore = () => {
                     >
                       <path
                         d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
-                        stroke-width="1.333"
+                        strokeWidth="1.333"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       ></path>
@@ -4126,7 +4126,7 @@ const MaxQore = () => {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                         d="M6.354 3.818a7.25 7.25 0 0 1 10.808 5.28.5.5 0 1 1-.99.137A6.25 6.25 0 0 0 4.551 7h2.115a.5.5 0 0 1 0 1H3.333a.5.5 0 0 1-.5-.5V4.167a.5.5 0 1 1 1 0v2.086a7.25 7.25 0 0 1 2.521-2.435ZM3.265 10.338a.5.5 0 0 1 .564.427A6.25 6.25 0 0 0 15.449 13h-2.116a.5.5 0 1 1 0-1H16.667a.5.5 0 0 1 .5.5v3.333a.5.5 0 1 1-1 0v-2.086a7.25 7.25 0 0 1-13.329-2.845.5.5 0 0 1 .427-.564Z"
                       ></path>
                     </svg>
@@ -4165,7 +4165,7 @@ const MaxQore = () => {
               >
                 <path
                   d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
-                  stroke-width="1.333"
+                  strokeWidth="1.333"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 ></path>
@@ -4181,7 +4181,7 @@ const MaxQore = () => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                   d="M6.354 3.818a7.25 7.25 0 0 1 10.808 5.28.5.5 0 1 1-.99.137A6.25 6.25 0 0 0 4.551 7h2.115a.5.5 0 0 1 0 1H3.333a.5.5 0 0 1-.5-.5V4.167a.5.5 0 1 1 1 0v2.086a7.25 7.25 0 0 1 2.521-2.435ZM3.265 10.338a.5.5 0 0 1 .564.427A6.25 6.25 0 0 0 15.449 13h-2.116a.5.5 0 1 1 0-1H16.667a.5.5 0 0 1 .5.5v3.333a.5.5 0 1 1-1 0v-2.086a7.25 7.25 0 0 1-13.329-2.845.5.5 0 0 1 .427-.564Z"
                 ></path>
               </svg>
@@ -4215,8 +4215,8 @@ const MaxQore = () => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M17 10a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Zm-8.07 1.15c.04.04.09.06.15.06h.99c.073 0 .13-.02.17-.06a.547.547 0 0 0 .11-.19c.007-.06.023-.173.05-.34a1.4 1.4 0 0 1 .23-.52c.12-.167.287-.363.5-.59.293-.32.513-.603.66-.85.153-.247.23-.537.23-.87a1.61 1.61 0 0 0-.25-.85c-.16-.273-.42-.497-.78-.67-.353-.18-.807-.27-1.36-.27-.533 0-.997.1-1.39.3-.393.193-.697.45-.91.77-.207.32-.317.663-.33 1.03 0 .073.02.133.06.18.047.047.103.07.17.07h.87c.147 0 .243-.077.29-.23.133-.647.523-.97 1.17-.97.287 0 .53.08.73.24.207.16.297.377.27.65a.864.864 0 0 1-.19.46 5.091 5.091 0 0 1-.5.56c-.293.293-.523.56-.69.8-.167.24-.267.517-.3.83-.007.073-.01.18-.01.32 0 .053.02.1.06.14Zm-.05 2.25c.047.047.103.07.17.07h.99a.244.244 0 0 0 .18-.07.231.231 0 0 0 .07-.17v-.89a.218.218 0 0 0-.08-.17.231.231 0 0 0-.17-.07h-.99a.231.231 0 0 0-.17.07.231.231 0 0 0-.07.17v.89c0 .067.023.123.07.17Z"
                 ></path>
               </svg>

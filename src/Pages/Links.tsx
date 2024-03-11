@@ -4154,7 +4154,7 @@ const Links = () => {
                     repeatCount="indefinite"
                   ></animate>
                   <animate
-                    attributeName="stroke-opacity"
+                    attributeName="strokeOpacity"
                     begin="0s"
                     dur="1.8s"
                     values="1; 0"
@@ -4176,7 +4176,7 @@ const Links = () => {
                     repeatCount="indefinite"
                   ></animate>
                   <animate
-                    attributeName="stroke-opacity"
+                    attributeName="strokeOpacity"
                     begin="-0.9s"
                     dur="1.8s"
                     values="1; 0"

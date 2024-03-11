@@ -1,13 +1,14 @@
+import toast from "react-hot-toast";
 import { NavLink } from "react-router-dom";
 
 const Dashboard = () => {
   const copyToClipboard = () => {
     navigator.clipboard
       .writeText("forsage.io/b/xqg1z8")
-      .then(() => alert("Text copied to clipboard!"))
+      .then(() => toast.success("Text copied to clipboard!"))
       .catch((err) => {
         console.error("Could not copy text: ", err);
-        alert("Failed to copy text to clipboard");
+        toast.error("Failed to copy text to clipboard");
       });
   };
 

@@ -1,3 +1,6 @@
+export { default as LogoGreen } from "./Logo_green.svg";
+export { default as LogoWhite } from "./Logo_white.svg";
+
 export const PartnersIcon = () => (
   <svg
     className="w-6 h-6 stroke-current text-white-500"

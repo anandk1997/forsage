@@ -37,13 +37,13 @@ export const Sidebar = () => {
         <div
           className={cm(
             "flex flex-col min-h-screen w-full flex-shrink-0 pl-10 pr-5 overflow-auto",
-            isNavBar ? "pt-22" : "",
+            isNavBar ? "pt-22" : ""
           )}
         >
           <div className="flex-1 lg:pr-0 lg:pl-10 sm:pl-5">
             <div className="flex flex-1 flex-col h-full w-full overflow-y-auto space-y-2.5 lg:space-y-0">
               <div className="flex flex-1 flex-col w-full h-full overflow-y-auto space-y-2.5 lg:space-y-0 lg:mb-5 sm:mb-[50px]">
-                <NavLink className=" " to="/dashboard">
+                <NavLink to="/dashboard">
                   <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent bg-black-light lg:bg-transparent lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                     <div className="flex items-center text-left">
                       <DashboardIcon />
@@ -53,7 +53,7 @@ export const Sidebar = () => {
                           "text-white-500 text-base ml-2.5",
                           pathname === "/dashboard"
                             ? "text-white-900"
-                            : "text-white-500",
+                            : "text-white-500"
                         )}
                       >
                         Dashboard
@@ -84,21 +84,21 @@ export const Sidebar = () => {
                         <NavigateButton
                           title="Partners"
                           icon={PartnersIcon}
-                          to="/dashboard/partners"
+                          to="partners"
                           path={pathname}
                         />
 
                         <NavigateButton
                           title="Links"
                           icon={LinksIcon}
-                          to="/dashboard/links"
+                          to="links"
                           path={pathname}
                         />
 
                         <NavigateButton
                           title="Stats"
                           icon={StatsIcon}
-                          to="/dashboard/stats"
+                          to="stats"
                           path={pathname}
                         />
                       </div>
@@ -106,7 +106,7 @@ export const Sidebar = () => {
                   )}
                 </div>
 
-                <a className=" " href="/MaxQoreMarathon?user=1">
+                <NavLink to="MaxQoreMarathon">
                   <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                     <div className="flex items-center text-left">
                       <MarathonIcon />
@@ -116,9 +116,9 @@ export const Sidebar = () => {
                       </span>
                     </div>
                   </button>
-                </a>
+                </NavLink>
 
-                <a className=" " href="/social?user=1">
+                <NavLink to="social">
                   <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                     <div className="flex items-center text-left">
                       <SocialIcon />
@@ -131,9 +131,9 @@ export const Sidebar = () => {
                       </span>
                     </div>
                   </button>
-                </a>
+                </NavLink>
 
-                <a className=" " href="/nft?user=1">
+                <NavLink to="nft">
                   <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                     <div className="flex items-center text-left">
                       <NftsIcon />
@@ -143,7 +143,7 @@ export const Sidebar = () => {
                       </span>
                     </div>
                   </button>
-                </a>
+                </NavLink>
 
                 <div className=" bg-black-light lg:bg-transparent lg:!pb-0 min-w-[186px] cursor-pointer hover:bg-black-light lg:hover:bg-transparent rounded-[10px] lg:border-b lg:border-white-300 lg:rounded-none lg:justify-between">
                   <div
@@ -167,14 +167,14 @@ export const Sidebar = () => {
                         <NavigateButton
                           title="Instruction"
                           icon={InstructionsIcon}
-                          to="/dashboard/instructions"
+                          to="instructions"
                           path={pathname}
                         />
 
                         <NavigateButton
                           title="Calculator"
                           icon={CalculatorIcon}
-                          to="/calculator"
+                          to="calculator"
                           path={pathname}
                           latest
                         />
@@ -182,21 +182,21 @@ export const Sidebar = () => {
                         <NavigateButton
                           title="Smart tools"
                           icon={ToolsIcon}
-                          to="/dashboard/smartTools"
+                          to="smartTools"
                           path={pathname}
                         />
 
                         <NavigateButton
                           title="Ideas"
                           icon={IdeasIcon}
-                          to="/dashboard/ideas"
+                          to="ideas"
                           path={pathname}
                         />
                       </div>
                     </>
                   )}
                 </div>
-                <a className=" " href="/promo?user=1">
+                <NavLink to="promo">
                   <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                     <div className="flex items-center text-left">
                       <PromoIcon />
@@ -206,7 +206,7 @@ export const Sidebar = () => {
                       </span>
                     </div>
                   </button>
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>
@@ -237,10 +237,10 @@ const NavigateButton = ({
 }) => {
   console.log(path === to);
   return (
-    <NavLink className=" " to={to}>
+    <NavLink to={to}>
       <button
         className={cm(
-          "relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent",
+          "relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent"
         )}
       >
         <div className="flex items-center text-left">
@@ -249,7 +249,7 @@ const NavigateButton = ({
           <span
             className={cm(
               "text-white-500 text-base ml-2.5 false",
-              path === to ? "text-white-900" : "",
+              path.includes(to) ? "text-white-900" : ""
             )}
           >
             {title}
