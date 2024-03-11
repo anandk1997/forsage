@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { LogoGreen } from "src/Assets/Svg";
 
 const Home = () => {
   return (
@@ -64,9 +65,9 @@ const Home = () => {
         <div className="flex justify-between items-center max-w-desktop-full w-full py-5 px-5">
           <div className="flex items-center space-x-20 lg:space-x-5">
             <NavLink to="/">
-              <img src="https://thecryptoglobal.io/stake/uploads/logo-new.png" />
+              <img src={LogoGreen} height={"10px"} width="40px" />
             </NavLink>
-            <div className="flex flex-start space-x-10 lg:space-x-5 font-medium sm:hidden">
+            <div className="flex flex-start ml-2 space-x-10 lg:space-x-5 font-medium sm:hidden">
               <a
                 className="hover:text-white"
                 target="_blank"
