@@ -275,7 +275,7 @@ const NavbarSm = ({ close }: { close: () => void }) => {
                       <Devider />
 
                       <div className="flex flex-col p-2.5 lg:py-0 lg:pr-0">
-                        <NavLink to="instruction">
+                        <NavLink to="instructions">
                           <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between  lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
                             <div className="flex items-center text-left">
                               <InstructionsIcon />
