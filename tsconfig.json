@@ -23,8 +23,7 @@
     /* Import Alias */
     "baseUrl": ".",
     "paths": {
-      "src/*": ["./src/*", "./dist/*", ""],
-      "public/*": ["public/*"]
+      "src/*": ["./src/*", "./dist/*", ""]
     }
   },
   "include": ["src"],
