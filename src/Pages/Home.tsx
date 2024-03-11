@@ -188,12 +188,13 @@ const Home = () => {
                 </div>
               </div>
               <div className="flex flex-col items-center w-full sm:space-y-2.5 sm:mt-10">
-                <a
-                  href="stake/enroll"
+                <NavLink
                   className="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] bg-purple hover:bg-lightPurple active:bg-lightPurple z-10 hidden sm:flex sm:max-w-full sm:w-full"
+                  to="/login"
                 >
                   signIn
-                </a>
+                </NavLink>
+
                 <button className="py-5 px-[40px] max-w-max flex justify-center items-center text-center text-base font-medium text-white rounded-[80px] sm:text-sm outline-none sm:py-4 sm:text-[14px] sm:leading-[17px] bg-purple hover:bg-lightPurple active:bg-lightPurple mt-[50px] z-10 sm:max-w-full sm:w-full">
                   Registration
                   <svg
