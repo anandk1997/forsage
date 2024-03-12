@@ -19,6 +19,9 @@ const XQore = lazy(() => import("src/Pages/Programs/XQore"));
 const MaxQore = lazy(() => import("src/Pages/Programs/MaxQore"));
 
 const ReferalIncome = lazy(() => import("src/Pages/ReferalIncome"));
+const LevelIncome = lazy(() => import("src/Pages/LevelIncome"));
+const NonWorkingIncome = lazy(() => import("src/Pages/NonWorkingIncome"));
+const RoyaltyIncome = lazy(() => import("src/Pages/RoyaltyIncome"));
 
 const Instructions = lazy(() => import("src/Pages/Instructions"));
 const Links = lazy(() => import("src/Pages/Links"));
@@ -95,17 +98,17 @@ export const router = createBrowserRouter([
 
       {
         path: "level-income",
-        element: <ReferalIncome />,
+        element: <LevelIncome />,
       },
 
       {
         path: "non-working-income",
-        element: <ReferalIncome />,
+        element: <NonWorkingIncome />,
       },
 
       {
         path: "royalty-income",
-        element: <ReferalIncome />,
+        element: <RoyaltyIncome />,
       },
 
       {
