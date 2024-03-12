@@ -29,7 +29,6 @@ export const Navbar = () => {
 
   const [isNavSm, setIsNavSm] = useReducer((open) => !open, false);
 
-  const { connectWallet, walletData } = useWalletConnect();
 
   return (
     <div className="fixed top-0 left-1/2 -translate-x-1/2 flex justify-center w-full px-10 py-2.5 z-40 lg:p-0 lg:max-h-screen z-999999">
@@ -54,12 +53,12 @@ export const Navbar = () => {
                 </div>
               </div>
             </div>
-            <button
+            <NavLink
+              to={"/login"}
               className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-bg hover:bg-black-500 whitespace-nowrap lg:hidden"
-              onClick={connectWallet}
             >
-              {walletData}
-            </button>
+              {"Connect Wallet"}
+            </NavLink>
           </div>
           <div className="flex lg:justify-end lg:ml-auto lg:pr-10 sm:pr-5">
             <button
