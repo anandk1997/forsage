@@ -1,56 +1,41 @@
-import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { LogoGreen } from "src/Assets/Svg";
 import { Logo } from "src/Components/Logo";
 
 import { Social } from "src/Components/Social";
-import { Web3 } from "web3";
+import { useWalletConnect } from "src/Hooks/useWalletConnect";
+
 const Login = () => {
   const navigate = useNavigate();
 
-  const [connectedAccount, setConnectedAccount] = useState("null");
-  async function connectMetamask() {
-    if (window.ethereum) {
-      const web3 = new Web3(window.ethereum);
-      await window.ethereum.request({ method: "eth_requestAccounts" });
-      const accounts = await web3.eth.getAccounts();
-      setConnectedAccount(accounts[0]);
-    } else {
-      alert("Please download metamask");
-    }
-  }
+  const { walletAddress, connectMetamask } = useWalletConnect();
 
   async function callLogin() {
     // address here
-    console.log("address", connectedAccount);
+    console.log("address", walletAddress);
     // call api for login
   }
 
-
-  useEffect(() => {
-    connectMetamask();
-  }, []);
   return (
-
     <div className="flex relative bg-main-bg flex-col items-center justify-center w-full min-h-screen text-white-500 px-10 sm:px-0 overflow-hidden pt-16">
       <header className="fixed top-0 w-full pb-2.5 pt-2.5 px-10 z-[2147483602] bg-transparent sm:px-5 lg:border-b lg:border-white-100 z-[999]">
         <nav className="z-10 w-full max-w-desktop-preview-bar m-auto header-border-b">
           <div className="flex items-center justify-between">
-            <NavLink to="/">
-              <svg
-                className="hidden lg:block"
-                width="45"
-                height="30"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M37.68 5.851a.482.482 0 0 1 .615.296l.43 1.247s-1.852-.59-2.818-.777l1.773-.766Zm6.055 3.336c-.004 0-.195-.131-.297-.186l-3.111-1.586c-.965-.46-.752-.82-1.118-1.826a6.228 6.228 0 0 0-.549-1.127C36.884 3.62 31.836 3.817 31.354 0c0 0-1.884 1.236-2.227 3.5C9.227 1.98 0 12.96 0 12.96c3.706-1.476 7.705-2.176 11.704-2.362-7.603 5.851-9.997 14.666-9.997 14.666s6.16-5.982 15.419-9.318C14.702 19.37 13.298 23.963 13.872 30c0 0 4.763-18.177 27.361-13.78 0 0 .827-2.417 2.962-4.89.135-.152.211-.382.227-.645a1.735 1.735 0 0 0-.687-1.498Z"
-                  fill="#fff"
-                ></path>
-              </svg>
+            {/* <NavLink to="/"> */}
+            <svg
+              className="hidden lg:block"
+              width="45"
+              height="30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M37.68 5.851a.482.482 0 0 1 .615.296l.43 1.247s-1.852-.59-2.818-.777l1.773-.766Zm6.055 3.336c-.004 0-.195-.131-.297-.186l-3.111-1.586c-.965-.46-.752-.82-1.118-1.826a6.228 6.228 0 0 0-.549-1.127C36.884 3.62 31.836 3.817 31.354 0c0 0-1.884 1.236-2.227 3.5C9.227 1.98 0 12.96 0 12.96c3.706-1.476 7.705-2.176 11.704-2.362-7.603 5.851-9.997 14.666-9.997 14.666s6.16-5.982 15.419-9.318C14.702 19.37 13.298 23.963 13.872 30c0 0 4.763-18.177 27.361-13.78 0 0 .827-2.417 2.962-4.89.135-.152.211-.382.227-.645a1.735 1.735 0 0 0-.687-1.498Z"
+                fill="#fff"
+              ></path>
+            </svg>
             <Logo src={LogoGreen} />
 
             <div className="flex justify-end items-center ml-auto">
@@ -58,8 +43,8 @@ const Login = () => {
                 className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-2.5 bg-black-light hover:bg-line-gray active:bg-active-gray text-white font-normal rounded items-center"
                 onClick={connectMetamask}
               >
-                {connectedAccount !== "null" && "Connected"}
-                {connectedAccount === "null" && "Connect wallet"}
+                {!!walletAddress && "Connected"}
+                {!!!walletAddress && "Connect wallet"}
               </button>
             </div>
           </div>
@@ -548,15 +533,16 @@ const Login = () => {
                 <div className="absolute bottom-0 left-0 right-0 -rotate-180 wallet-gradient-main h-11 hidden sm:block"></div>
               </div>
               <div className="flex space-x-5 sm:space-x-0 sm:space-y-3.5 sm:flex-col">
-                {connectedAccount === "null" && (
+                {!!!walletAddress && (
                   <button
                     onClick={connectMetamask}
                     className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-bg hover:bg-hover-main-bg active:bg-active-main-bg sm:w-full"
                   >
-                    {connectedAccount === "null" && "Connect now"}
+                    {!!!walletAddress && "Connect now"}
                   </button>
                 )}
-                {connectedAccount !== "null" && (
+
+                {!!walletAddress && (
                   <button
                     onClick={callLogin}
                     className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-bg hover:bg-hover-main-bg active:bg-active-main-bg sm:w-full"
@@ -567,7 +553,10 @@ const Login = () => {
                 <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-white-100 hover:bg-white-300 rounded-mini sm:w-full">
                   Watch tutorial
                 </button>
-                <NavLink to={'/register'} className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-white-100 hover:bg-white-300 rounded-mini sm:w-full">
+                <NavLink
+                  to={"/register"}
+                  className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-white-100 hover:bg-white-300 rounded-mini sm:w-full"
+                >
                   Join
                 </NavLink>
               </div>

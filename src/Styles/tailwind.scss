@@ -18383,7 +18383,6 @@ select {
     inset 0 0 4px 0 rgba(164, 233, 255, 0.25);
 }
 
-
 .dotted {
   width: 200px;
   white-space: nowrap;
@@ -18443,7 +18442,10 @@ button.btn.btn-info.btn-lg.bx {
   opacity: 0;
   visibility: hidden;
   transform: scale(1.1);
-  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+  transition:
+    visibility 0s linear 0.25s,
+    opacity 0.25s 0s,
+    transform 0.25s;
 }
 
 .modal-content {
@@ -18474,8 +18476,11 @@ button.btn.btn-info.btn-lg.bx {
 .show-modal {
   opacity: 1;
   visibility: visible;
-  transform: scale(1.0);
-  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+  transform: scale(1);
+  transition:
+    visibility 0s linear 0s,
+    opacity 0.25s 0s,
+    transform 0.25s;
 }
 
 .customButton {
@@ -18489,7 +18494,6 @@ button.btn.btn-info.btn-lg.bx {
   flex-direction: column;
   border-radius: 16px;
 }
-
 
 .mainText {
   display: none;

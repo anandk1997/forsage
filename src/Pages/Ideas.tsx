@@ -29,9 +29,10 @@ const Ideas = () => {
                 </span>
                 <span className="block max-h-[50px] overflow-hidden text-white-700 mt-1.5">
                   <p>
-                    thecryptoglobal.io is based on bnb chain and it's ( thecryptoglobal.io)
-                    doesn't have their own token. So,if thecryptoglobal.io able launch
-                    their own token that will be a real boost for them.
+                    thecryptoglobal.io is based on bnb chain and it's (
+                    thecryptoglobal.io) doesn't have their own token. So,if
+                    thecryptoglobal.io able launch their own token that will be
+                    a real boost for them.
                   </p>
                 </span>
               </div>
@@ -182,7 +183,10 @@ const Ideas = () => {
                 <span className="block max-h-[50px] overflow-hidden text-white-700 mt-1.5">
                   <p>Crypto Global are best platform for online earning.</p>
                   <p>New update for school Crypto Global lesson .</p>
-                  <p>All my bangladesh community waiting for Game in Crypto Global</p>
+                  <p>
+                    All my bangladesh community waiting for Game in Crypto
+                    Global
+                  </p>
                 </span>
               </div>
               <div className="flex flex-col space-y-5 mt-1.5">
@@ -208,7 +212,7 @@ const Ideas = () => {
                   </span>
                 </div>
                 <span className="max-h-[25px] block leading-[1.8rem] max-h-[5.4rem] truncate whitespace-normal text-white font-semibold">
-                Crypto Global
+                  Crypto Global
                 </span>
                 <span className="block max-h-[50px] overflow-hidden text-white-700 mt-1.5">
                   <p>I love Crypto Global 🥰❤️</p>
@@ -299,7 +303,7 @@ const Ideas = () => {
                   </span>
                 </div>
                 <span className="max-h-[25px] block leading-[1.8rem] max-h-[5.4rem] truncate whitespace-normal text-white font-semibold">
-                TheCryptoGlobal.io
+                  TheCryptoGlobal.io
                 </span>
                 <span className="block max-h-[50px] overflow-hidden text-white-700 mt-1.5">
                   <p>I love TheCryptoGlobal.io 💗💗💗💗💗</p>
