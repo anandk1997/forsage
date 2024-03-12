@@ -18,6 +18,8 @@ const XGold = lazy(() => import("src/Pages/Programs/XGold"));
 const XQore = lazy(() => import("src/Pages/Programs/XQore"));
 const MaxQore = lazy(() => import("src/Pages/Programs/MaxQore"));
 
+const ReferalIncome = lazy(() => import("src/Pages/ReferalIncome"));
+
 const Instructions = lazy(() => import("src/Pages/Instructions"));
 const Links = lazy(() => import("src/Pages/Links"));
 const Partners = lazy(() => import("src/Pages/Partners"));
@@ -84,6 +86,26 @@ export const router = createBrowserRouter([
       {
         path: "maxQore",
         element: <MaxQore />,
+      },
+
+      {
+        path: "referal-income",
+        element: <ReferalIncome />,
+      },
+
+      {
+        path: "level-income",
+        element: <ReferalIncome />,
+      },
+
+      {
+        path: "non-working-income",
+        element: <ReferalIncome />,
+      },
+
+      {
+        path: "royalty-income",
+        element: <ReferalIncome />,
       },
 
       {
