@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { LogoGreen } from "src/Assets/Svg";
+import { Logo } from "src/Components/Logo";
 
 const Home = () => {
   return (
@@ -64,17 +65,10 @@ const Home = () => {
             </div> */}
         <div className="flex justify-between items-center max-w-desktop-full w-full py-5 px-5">
           <div className="flex items-center space-x-20 lg:space-x-5">
-            <NavLink to="/">
-              <img src={LogoGreen} height={"10px"} width="40px" />
-            </NavLink>
+            <Logo src={LogoGreen} />
+
             <div className="flex flex-start ml-2 space-x-10 lg:space-x-5 font-medium sm:hidden">
-              <a
-                className="hover:text-white"
-                target="_blank"
-                href="https://support.cryptoglobal.io/"
-              >
-                Documentation
-              </a>
+              <span className="hover:text-white">Documentation</span>
             </div>
           </div>
           {/* <div className="relative group min-w-[175px] lg:min-w-max sm:hidden">
@@ -160,7 +154,7 @@ const Home = () => {
         </div>
       </div>
       <div className="relative mb-32 flex items-center flex-col h-[calc(100vh-150px)] first-overflow-wrapper">
-        <img
+        {/* <img
           src="img/logo/maxqore/left_ellipse.png"
           className="z-0 absolute top-1/2 left-0 -translate-y-1/2 sm:-left-1/3 sm:top-2/3 max-w-[50vw] sm:max-w-[90vw]"
           alt=""
@@ -169,7 +163,7 @@ const Home = () => {
           src="img/logo/maxqore/right_ellipse.png"
           className="z-0 absolute top-1/2 right-0 -translate-y-1/2 sm:-right-1/3 sm:top-1/3 max-w-[50vw] sm:max-w-[90vw]"
           alt=""
-        />
+        /> */}
         <div className="w-full flex flex-col items-center justify-center flex-1 max-w-desktop-full w-full pt-5 sm:pt-0 sm:px-5">
           <div className="flex flex-col items-center">
             <img
@@ -232,11 +226,11 @@ const Home = () => {
         </div>
       </div>
       <div className="pb-40 relative flex justify-center w-full px-5 sm:pb-8">
-        <img
+        {/* <img
           src="img/planet.png"
           className="absolute right-0 -top-44 z-0 sm:hidden"
           alt="cryptoglobalPlanet"
-        />
+        /> */}
         <div className="w-full flex flex-col max-w-desktop-full space-y-28">
           <div className="text-white text-[24px] leading-[40px] max-w-525px text-2xl z-10 sm:text-[20px] sm:leading-[30px]">
             decentralizedNetworkPlatform
@@ -296,10 +290,10 @@ const Home = () => {
                     </defs>
                   </svg>
                 </a>
-                <img
+                {/* <img
                   src="img/cards/book.png"
                   className="absolute right-1.5 bottom-1.5 !w-40 !h-40"
-                />
+                /> */}
               </div>
               <a
                 className="w-full flex justify-center items-center px-2.5 sm:px-0"
@@ -345,10 +339,10 @@ const Home = () => {
                     </defs>
                   </svg>
                 </a>
-                <img
+                {/* <img
                   src="img/cards/chat.png"
                   className="absolute right-1.5 bottom-1.5 !w-40 !h-40"
-                />
+                /> */}
               </div>
             </div>
             <div className="margin-item-carousel w-full hidden lg:flex lg:pb-8">
@@ -621,19 +615,19 @@ const Home = () => {
       <div className="relative flex justify-center w-full space-x-5 sm:space-x-0 mb-[-250px] z-[11] sm:mb-[-100px]">
         <div className="h-full absolute top-1/2 -translate-y-1/2 left-5 w-[280px] flex flex-col items-end justify-between sm:left-1">
           <div className="flex flex-col items-end space-y-10 w-full mt-4">
-            <img
+            {/* <img
               className="w-[170px] sm:w-[80px] sm:mr-auto"
               src="img/schoolIcon/hat.png"
             />
             <img
               className="w-[170px] mr-auto sm:w-[80px]"
               src="img/schoolIcon/magnifier.png"
-            />
+            /> */}
           </div>
-          <img
+          {/* <img
             className="w-[130px] sm:w-[60px] sm:mr-auto"
             src="img/schoolIcon/bulb.png"
-          />
+          /> */}
         </div>
         <div className="flex flex-col items-center text-center space-y-8 z-[10]">
           <div className="w-full max-w-[850px] sm:px-5">
@@ -661,19 +655,19 @@ const Home = () => {
         </div>
         <div className="h-full absolute top-1/2 -translate-y-1/2 right-5 w-[280px] flex flex-col justify-between sm:right-1">
           <div className="flex flex-col justify-start space-y-10 w-full">
-            <img
+            {/* <img
               className="w-[170px] sm:w-[80px] sm:ml-auto"
               src="img/schoolIcon/globe.png"
             />
             <img
               className="w-[170px] ml-auto sm:w-[80px]"
               src="img/schoolIcon/book.png"
-            />
+            /> */}
           </div>
-          <img
+          {/* <img
             className="w-[130px] sm:w-[60px] sm:ml-auto"
             src="img/schoolIcon/pencil.png"
-          />
+          /> */}
         </div>
       </div>
       <div className="flex flex-col items-center background-gradient pt-[220px] sm:pt-[250px] sm:pt-[100px]">
@@ -2217,11 +2211,11 @@ const Home = () => {
             </span>
           </div>
           <div className="relative flex justify-center items-center bg-gradient sm:mt-5">
-            <img
+            {/* <img
               src="img/cabinet_preview.png"
               className="max-w-full sm:max-w-[90vw]"
               alt="cabinet_preview_image"
-            />
+            /> */}
           </div>
         </div>
       </div>
@@ -2982,7 +2976,7 @@ const Home = () => {
                 </a>
               </div>
             </div>
-            <div className="relative group min-w-[175px] lg:min-w-max sm:hidden">
+            {/* <div className="relative group min-w-[175px] lg:min-w-max sm:hidden">
               <div className="flex justify-between items-center cursor-pointer p-4 group-hover:text-white">
                 <div className="flex items-center space-x-2">
                   <img
@@ -3043,7 +3037,7 @@ const Home = () => {
                   <span className="lg:hidden">עִבְרִית</span>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

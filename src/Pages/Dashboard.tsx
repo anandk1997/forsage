@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const Dashboard = () => {
   const copyToClipboard = () => {
     navigator.clipboard
-      .writeText("forsage.io/b/xqg1z8")
+      .writeText("b/xqg1z8")
       .then(() => toast.success("Text copied to clipboard!"))
       .catch((err) => {
         console.error("Could not copy text: ", err);
@@ -130,12 +130,12 @@ const Dashboard = () => {
                 </div>
               </div>
               <span className="hidden sm:block text-main-blue text-base font-bold notranslate">
-                forsage.io/b/xqg1z8
+                b/xqg1z8
               </span>
             </div>
             <div className="flex items-center justify-between w-full">
               <span className="text-main-blue text-xl font-bold notranslate sm:hidden">
-                forsage.io/b/xqg1z8
+                b/xqg1z8
               </span>
               <div className="flex space-x-2.5 sm:w-full">
                 <button
@@ -1051,14 +1051,14 @@ const Dashboard = () => {
                 ></path>
               </svg>
             </button>
-            <div
+            {/* <div
               className="__react_component_tooltip tf640bdb3-1443-45ec-bd66-7832b2e7572b place-bottom type-dark"
               id="Platform recent activity"
               data-id="tooltip"
             >
               Forsage BUSD real-time global events with links to transactions in
               blockchain
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="grid grid-cols-3 gap-10 mt-5 lg:grid-cols-1 lg:gap-0 z-10">
@@ -2015,14 +2015,14 @@ const Dashboard = () => {
                         ></path>
                       </svg>
                     </button>
-                    <div
+                    {/* <div
                       className="__react_component_tooltip tfea33235-5c88-4ea1-9f96-7ecb7903da56 place-bottom type-dark"
                       id="Members total"
                       data-id="tooltip"
                     >
                       Total number of members in Forsage BUSD and last 24 hours
                       change
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 <span className="text-white text-2xl font-bold notranslate sm:text-xl false mt-5 sm:mt-2.5">
@@ -2070,14 +2070,14 @@ const Dashboard = () => {
                       ></path>
                     </svg>
                   </button>
-                  <div
+                  {/* <div
                     className="__react_component_tooltip t7d926c16-0e54-402d-b1ed-1a57b630d327 place-bottom type-dark"
                     id="Members received"
                     data-id="tooltip"
                   >
                     Total amount received by all members of Forsage and last 24
                     hours change
-                  </div>
+                  </div> */}
                 </div>
               </span>
               <div className="flex flex-col py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">

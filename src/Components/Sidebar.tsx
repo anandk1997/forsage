@@ -2,19 +2,10 @@ import { useReducer } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
 import {
-  CalculatorIcon,
   DropdownIcon,
-  IdeasIcon,
   InfoIcon,
   InstructionsIcon,
-  LinksIcon,
-  MarathonIcon,
-  NftsIcon,
   PartnersIcon,
-  PromoIcon,
-  SocialIcon,
-  StatsIcon,
-  ToolsIcon,
   DashboardIcon,
   TeamIcon,
 } from "src/Assets/Icons";
@@ -37,7 +28,7 @@ export const Sidebar = () => {
         <div
           className={cm(
             "flex flex-col min-h-screen w-full flex-shrink-0 pl-10 pr-5 overflow-auto",
-            isNavBar ? "pt-22" : ""
+            isNavBar ? "pt-22" : "",
           )}
         >
           <div className="flex-1 lg:pr-0 lg:pl-10 sm:pl-5">
@@ -53,7 +44,7 @@ export const Sidebar = () => {
                           "text-white-500 text-base ml-2.5",
                           pathname === "/dashboard"
                             ? "text-white-900"
-                            : "text-white-500"
+                            : "text-white-500",
                         )}
                       >
                         Dashboard
@@ -88,7 +79,7 @@ export const Sidebar = () => {
                           path={pathname}
                         />
 
-                        <NavigateButton
+                        {/* <NavigateButton
                           title="Links"
                           icon={LinksIcon}
                           to="links"
@@ -100,13 +91,14 @@ export const Sidebar = () => {
                           icon={StatsIcon}
                           to="stats"
                           path={pathname}
-                        />
+                        /> */}
                       </div>
                     </>
                   )}
                 </div>
 
-                <NavLink to="MaxQoreMarathon">
+                <>
+                  {/* <NavLink to="MaxQoreMarathon">
                   <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                     <div className="flex items-center text-left">
                       <MarathonIcon />
@@ -143,7 +135,8 @@ export const Sidebar = () => {
                       </span>
                     </div>
                   </button>
-                </NavLink>
+                </NavLink> */}
+                </>
 
                 <div className=" bg-black-light lg:bg-transparent lg:!pb-0 min-w-[186px] cursor-pointer hover:bg-black-light lg:hover:bg-transparent rounded-[10px] lg:border-b lg:border-white-300 lg:rounded-none lg:justify-between">
                   <div
@@ -153,7 +146,7 @@ export const Sidebar = () => {
                     <InfoIcon />
 
                     <span className="text-[#8B8C8C] text-base ml-2.5 lg:text-white-500">
-                      Information
+                      Statement
                     </span>
 
                     <DropdownIcon show={isInfo} />
@@ -165,38 +158,38 @@ export const Sidebar = () => {
 
                       <div className="flex flex-col p-2.5 lg:py-0 lg:pr-0">
                         <NavigateButton
-                          title="Instruction"
+                          title="Referal Income"
                           icon={InstructionsIcon}
-                          to="instructions"
+                          to="referal-income"
                           path={pathname}
                         />
 
                         <NavigateButton
-                          title="Calculator"
-                          icon={CalculatorIcon}
-                          to="calculator"
-                          path={pathname}
-                          latest
-                        />
-
-                        <NavigateButton
-                          title="Smart tools"
-                          icon={ToolsIcon}
-                          to="smartTools"
+                          title="Level Income"
+                          icon={InstructionsIcon}
+                          to="level-income"
                           path={pathname}
                         />
 
                         <NavigateButton
-                          title="Ideas"
-                          icon={IdeasIcon}
-                          to="ideas"
+                          title="Non-Working Income"
+                          icon={InstructionsIcon}
+                          to="non-working-income"
+                          path={pathname}
+                        />
+
+                        <NavigateButton
+                          title="Royalty Income"
+                          icon={InstructionsIcon}
+                          to="royalty-income"
                           path={pathname}
                         />
                       </div>
                     </>
                   )}
                 </div>
-                <NavLink to="promo">
+
+                {/* <NavLink to="promo">
                   <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                     <div className="flex items-center text-left">
                       <PromoIcon />
@@ -206,7 +199,7 @@ export const Sidebar = () => {
                       </span>
                     </div>
                   </button>
-                </NavLink>
+                </NavLink> */}
               </div>
             </div>
           </div>
@@ -240,7 +233,7 @@ const NavigateButton = ({
     <NavLink to={to}>
       <button
         className={cm(
-          "relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent"
+          "relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent",
         )}
       >
         <div className="flex items-center text-left">
@@ -249,7 +242,7 @@ const NavigateButton = ({
           <span
             className={cm(
               "text-white-500 text-base ml-2.5 false",
-              path.includes(to) ? "text-white-900" : ""
+              path.includes(to) ? "text-white-900" : "",
             )}
           >
             {title}
