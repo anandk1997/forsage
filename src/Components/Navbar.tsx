@@ -20,7 +20,9 @@ import {
 } from "src/Assets/Icons";
 import { Devider } from "./Sidebar";
 
-import { LogoGreen } from "src/Assets/Svg";
+import { useWalletConnect } from "src/Hooks/useWalletConnect";
+import { LogoWhite } from "src/Assets/Svg";
+import { Logo } from "./Logo";
 
 export const Navbar = () => {
   const navigate = useNavigate();
@@ -37,9 +39,8 @@ export const Navbar = () => {
           <div className="flex w-full overflow-hidden items-center justify-between space-x-2.5 lg:items-start">
             <div className="w-full flex justify-start items-center space-x-5 lg:flex-col lg:h-full lg:items-start lg:space-x-0 lg:space-y-7.5">
               <div className="flex items-center false lg:w-full lg:pr-10 sm:pr-5">
-                <NavLink to="/">
-                  <img src={LogoGreen} height={"10px"} width="40px" />
-                </NavLink>
+                <Logo src={LogoWhite} />
+
                 <span className="text-base text-white whitespace-nowrap mr-5 notranslate lg:mr-0 false">
                   Preview ID
                   <span className="hidden lg:inline ml-1.5">1</span>

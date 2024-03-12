@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { LogoGreen } from "src/Assets/Svg";
+import { Logo } from "src/Components/Logo";
 
 import { Social } from "src/Components/Social";
 import { Web3 } from "web3";
@@ -50,10 +51,8 @@ const Login = () => {
                   fill="#fff"
                 ></path>
               </svg>
-              <NavLink to="/">
-                <img src={LogoGreen} height={"10px"} width="40px" />
-              </NavLink>
-            </NavLink>
+            <Logo src={LogoGreen} />
+
             <div className="flex justify-end items-center ml-auto">
               <button
                 className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-2.5 bg-black-light hover:bg-line-gray active:bg-active-gray text-white font-normal rounded items-center"

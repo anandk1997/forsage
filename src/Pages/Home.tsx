@@ -14,6 +14,7 @@ import {
   RightEllipse,
 } from "src/Assets/Images";
 import { LogoGreen } from "src/Assets/Svg";
+import { Logo } from "src/Components/Logo";
 
 const Home = () => {
   return (
@@ -21,17 +22,10 @@ const Home = () => {
       <div className="sticky top-0 flex flex-col items-center w-full z-50 bg-darkGray">
         <div className="flex justify-between items-center max-w-desktop-full w-full py-5 px-5">
           <div className="flex items-center space-x-20 lg:space-x-5">
-            <NavLink to="/">
-              <img src={LogoGreen} height={"10px"} width="40px" />
-            </NavLink>
+            <Logo src={LogoGreen} />
+
             <div className="flex flex-start ml-2 space-x-10 lg:space-x-5 font-medium sm:hidden">
-              <a
-                className="hover:text-white"
-                target="_blank"
-                href="https://support.cryptoglobal.io/"
-              >
-                Documentation
-              </a>
+              <span className="hover:text-white">Documentation</span>
             </div>
           </div>
 
@@ -65,7 +59,7 @@ const Home = () => {
           src={RightEllipse}
           className="z-0 absolute top-1/2 right-0 -translate-y-1/2 sm:-right-1/3 sm:top-1/3 max-w-[50vw] sm:max-w-[90vw]"
           alt=""
-        />
+        /> */}
         <div className="w-full flex flex-col items-center justify-center flex-1 max-w-desktop-full w-full pt-5 sm:pt-0 sm:px-5">
           <div className="flex flex-col items-center">
             <img
@@ -132,7 +126,7 @@ const Home = () => {
           src={Planet}
           className="absolute right-0 -top-44 z-0 sm:hidden"
           alt="cryptoglobalPlanet"
-        />
+        /> 
         <div className="w-full flex flex-col max-w-desktop-full space-y-28">
           <div className="text-white text-[24px] leading-[40px] max-w-525px text-2xl z-10 sm:text-[20px] sm:leading-[30px]">
             A decentralized networking platform based
@@ -563,7 +557,7 @@ const Home = () => {
         </div>
         <div className="h-full absolute top-1/2 -translate-y-1/2 right-5 w-[280px] flex flex-col justify-between sm:right-1">
           <div className="flex flex-col justify-start space-y-10 w-full">
-            <img
+             <img
               className="w-[170px] sm:w-[80px] sm:ml-auto"
               src={GlobeImage}
             />
@@ -2121,7 +2115,7 @@ const Home = () => {
               src={CabinetPreview}
               className="max-w-full sm:max-w-[90vw]"
               alt="cabinet_preview_image"
-            />
+            /> 
           </div>
         </div>
       </div>
@@ -2622,7 +2616,7 @@ const Home = () => {
                 </a>
               </div>
             </div>
-            <div className="relative group min-w-[175px] lg:min-w-max sm:hidden">
+            {/* <div className="relative group min-w-[175px] lg:min-w-max sm:hidden">
               <div className="flex justify-between items-center cursor-pointer p-4 group-hover:text-white">
                 <div className="flex items-center space-x-2">
                   <img
@@ -2683,7 +2677,7 @@ const Home = () => {
                   <span className="lg:hidden">עִבְרִית</span>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

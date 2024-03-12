@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { LogoGreen } from "src/Assets/Svg";
 import { Web3 } from "web3";
+import { Logo } from "src/Components/Logo";
+import { useWalletConnect } from "src/Hooks/useWalletConnect";
 
 const Register = () => {
   const [connectedAccount, setConnectedAccount] = useState("null");
