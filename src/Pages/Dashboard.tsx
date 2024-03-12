@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const Dashboard = () => {
   const copyToClipboard = () => {
     navigator.clipboard
-      .writeText("forsage.io/b/xqg1z8")
+      .writeText("b/xqg1z8")
       .then(() => toast.success("Text copied to clipboard!"))
       .catch((err) => {
         console.error("Could not copy text: ", err);
@@ -130,12 +130,12 @@ const Dashboard = () => {
                 </div>
               </div>
               <span className="hidden sm:block text-main-blue text-base font-bold notranslate">
-                forsage.io/b/xqg1z8
+                b/xqg1z8
               </span>
             </div>
             <div className="flex items-center justify-between w-full">
               <span className="text-main-blue text-xl font-bold notranslate sm:hidden">
-                forsage.io/b/xqg1z8
+                b/xqg1z8
               </span>
               <div className="flex space-x-2.5 sm:w-full">
                 <button
