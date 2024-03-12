@@ -21,14 +21,13 @@ import {
 import { Devider } from "./Sidebar";
 
 import { useWalletConnect } from "src/Hooks/useWalletConnect";
-import { LogoWhite } from "src/Assets/Svg";
+import { LogoGreen } from "src/Assets/Svg";
 import { Logo } from "./Logo";
 
 export const Navbar = () => {
   const navigate = useNavigate();
 
   const [isNavSm, setIsNavSm] = useReducer((open) => !open, false);
-
 
   return (
     <div className="fixed top-0 left-1/2 -translate-x-1/2 flex justify-center w-full px-10 py-2.5 z-40 lg:p-0 lg:max-h-screen z-999999">
@@ -39,7 +38,7 @@ export const Navbar = () => {
           <div className="flex w-full overflow-hidden items-center justify-between space-x-2.5 lg:items-start">
             <div className="w-full flex justify-start items-center space-x-5 lg:flex-col lg:h-full lg:items-start lg:space-x-0 lg:space-y-7.5">
               <div className="flex items-center false lg:w-full lg:pr-10 sm:pr-5">
-                <Logo src={LogoWhite} />
+                <Logo src={LogoGreen} />
 
                 <span className="text-base text-white whitespace-nowrap mr-5 notranslate lg:mr-0 false">
                   Preview ID

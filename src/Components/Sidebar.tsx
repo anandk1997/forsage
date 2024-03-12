@@ -6,8 +6,6 @@ import {
   InfoIcon,
   InstructionsIcon,
   PartnersIcon,
-  PromoIcon,
-  ToolsIcon,
   DashboardIcon,
   TeamIcon,
 } from "src/Assets/Icons";
@@ -85,7 +83,6 @@ export const Sidebar = () => {
                   )}
                 </div>
 
-
                 <div className=" bg-black-light lg:bg-transparent lg:!pb-0 min-w-[186px] cursor-pointer hover:bg-black-light lg:hover:bg-transparent rounded-[10px] lg:border-b lg:border-white-300 lg:rounded-none lg:justify-between">
                   <div
                     className="flex p-2.5 lg:px-0 lg:py-5"
@@ -114,7 +111,7 @@ export const Sidebar = () => {
 
                         <NavigateButton
                           title="Level Income"
-                          icon={CalculatorIcon}
+                          icon={InstructionsIcon}
                           to="level-income"
                           path={pathname}
                         />
@@ -176,7 +173,6 @@ const NavigateButton = ({
   path: string;
   latest?: boolean;
 }) => {
-  console.log(path === to);
   return (
     <NavLink to={to}>
       <button

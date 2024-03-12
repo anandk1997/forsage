@@ -8,7 +8,7 @@ export const AuthLayout = () => {
 
   useEffect(() => {
     if (pathname === "/") navigate("/home");
-  }, [pathname]);
+  }, [pathname, navigate]);
 
   return (
     <div>

@@ -1,52 +1,25 @@
-import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { LogoGreen } from "src/Assets/Svg";
-import { Web3 } from "web3";
 import { Logo } from "src/Components/Logo";
 import { useWalletConnect } from "src/Hooks/useWalletConnect";
 
 const Register = () => {
-  const [connectedAccount, setConnectedAccount] = useState("null");
-  async function connectMetamask() {
-    if (window.ethereum) {
-      const web3 = new Web3(window.ethereum);
-      await window.ethereum.request({ method: "eth_requestAccounts" });
-      const accounts = await web3.eth.getAccounts();
-      setConnectedAccount(accounts[0]);
-    } else {
-      alert("Please download metamask");
-    }
-  }
+  const { walletAddress, connectMetamask } = useWalletConnect();
 
-  useEffect(() => {
-    connectMetamask();
-  }, []);
   return (
     <div className="flex relative overflow-hidden flex-col items-center justify-center w-screen min-h-screen text-white-500 pt-15">
       <header className="fixed top-0 w-full pb-2.5 pt-2.5 px-10 z-[2147483602] bg-transparent sm:px-5 lg:border-b lg:border-white-100 z-[999]">
         <nav className="z-10 w-full max-w-desktop-preview-bar m-auto header-border-b">
           <div className="flex items-center justify-between">
-            <NavLink to="/">
-              <img
-                className="hidden lg:block"
-                src={LogoGreen}
-                height={"10px"}
-                width="40px"
-              />
-              <img
-                className="block lg:hidden"
-                src={LogoGreen}
-                height={"10px"}
-                width="40px"
-              />
-            </NavLink>
+            <Logo src={LogoGreen} />
+
             <div className="flex justify-end items-center ml-auto">
               <button
                 className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-2.5 bg-black-light hover:bg-line-gray active:bg-active-gray text-white font-normal rounded items-center"
                 onClick={connectMetamask}
               >
-                {connectedAccount !== "null" && "Connected"}
-                {connectedAccount === "null" && "Connect wallet"}
+                {!!walletAddress && "Connected"}
+                {!!!walletAddress && "Connect wallet"}
               </button>
             </div>
           </div>
@@ -558,10 +531,7 @@ const Register = () => {
                           (”Discover” button in Tokenpoket) or with Metamask
                           extension installed.
                         </span>
-                        <a
-                          target="_blank"
-                          href="#"
-                        >
+                        <a target="_blank" href="#">
                           <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none bg-red text-white py-2.5 px-5 hover:bg-hover-red active:bg-active-red p-5 rounded-large sm:rounded-mini mt-5 sm:mt-4 sm:w-full">
                             Read guide
                           </button>
@@ -675,10 +645,7 @@ const Register = () => {
                     Access the website via cryptowallet dapp browser (”Discover”
                     button in Tokenpoket) or with Metamask extension installed.
                   </span>
-                  <a
-                    target="_blank"
-                    href="#"
-                  >
+                  <a target="_blank" href="#">
                     <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none bg-red text-white py-2.5 px-5 hover:bg-hover-red active:bg-active-red p-5 rounded-large sm:rounded-mini mt-5 sm:mt-4 sm:w-full">
                       Read guide
                     </button>

@@ -94,8 +94,8 @@ const Instructions = () => {
                       <b className="inline text-white font-medium">
                         1. Fixed Cost.
                       </b>
-                      Your The Crypto Global performance is no longer affected by rate
-                      fluctuations and market corrections.
+                      Your The Crypto Global performance is no longer affected
+                      by rate fluctuations and market corrections.
                     </span>
                   </li>
                   <li className="flex">
@@ -144,7 +144,8 @@ const Instructions = () => {
           <div className="flex flex-col rounded bg-black-light text-base w-full p-7.5 sm:text-sm sm:p-5">
             <span className="text-2xl text-white font-medium mb-5 sm:text-xl">
               <span>
-                <span className="notranslate mr-1.5">The Crypto Global</span> marketing
+                <span className="notranslate mr-1.5">The Crypto Global</span>{" "}
+                marketing
               </span>
             </span>
             <div className="flex">
@@ -159,7 +160,9 @@ const Instructions = () => {
                 <div className="space-y-2.5">
                   <span>
                     <b className="inline text-white font-medium">
-                      <span className="notranslate mr-1.5">The Crypto Global</span>{" "}
+                      <span className="notranslate mr-1.5">
+                        The Crypto Global
+                      </span>{" "}
                       marketing
                     </b>
                     is implemented on the Smart Chain blockchain smart contract
@@ -265,14 +268,17 @@ const Instructions = () => {
           <div className="flex flex-col rounded bg-black-light text-base w-full p-7.5 sm:text-sm sm:p-5">
             <span className="text-2xl text-white font-medium mb-5 sm:text-xl">
               <span>
-                <span className="notranslate mr-1.5">The Crypto Global</span> marketing
+                <span className="notranslate mr-1.5">The Crypto Global</span>{" "}
+                marketing
               </span>
             </span>
             <div className="flex">
               <div className="space-y-2.5">
                 <span className="mb-2.5">
                   <b className="inline text-white font-medium">
-                    <span className="notranslate mr-1.5">The Crypto Global</span>{" "}
+                    <span className="notranslate mr-1.5">
+                      The Crypto Global
+                    </span>{" "}
                     marketing
                   </b>
                   is a matrix system based on decentralized smart contract
@@ -435,7 +441,8 @@ const Instructions = () => {
           <div className="flex flex-col rounded bg-black-light text-base w-full p-7.5 sm:text-sm sm:p-5">
             <span className="text-2xl text-white font-medium mb-5 sm:text-xl">
               <span>
-                <span className="notranslate mr-1.5">The Crypto Global</span> programs
+                <span className="notranslate mr-1.5">The Crypto Global</span>{" "}
+                programs
               </span>
             </span>
             <div className="flex">
@@ -2247,13 +2254,16 @@ const Instructions = () => {
                     <b className="inline text-white font-medium">
                       Smart Contract.
                     </b>
-                    <span className="notranslate mr-1.5">The Crypto Global</span> platform
-                    is based on smart contract technology. The Crypto Global smart
-                    contracts are programmed in such a way, that they never
-                    store participants' funds, their balance is always zero. The
-                    purpose of the smart contract is to automatically redirect
-                    funds from incoming transactions to the wallets of other
-                    participants, according to marketing program rules.
+                    <span className="notranslate mr-1.5">
+                      The Crypto Global
+                    </span>{" "}
+                    platform is based on smart contract technology. The Crypto
+                    Global smart contracts are programmed in such a way, that
+                    they never store participants' funds, their balance is
+                    always zero. The purpose of the smart contract is to
+                    automatically redirect funds from incoming transactions to
+                    the wallets of other participants, according to marketing
+                    program rules.
                   </div>
                   <div>
                     <b className="inline text-white font-medium">
@@ -2937,10 +2947,15 @@ const Instructions = () => {
                   <div>
                     <b className="inline text-white font-medium">
                       Registration in
-                      <span className="notranslate ml-1.5">The Crypto Global BUSD</span>
+                      <span className="notranslate ml-1.5">
+                        The Crypto Global BUSD
+                      </span>
                     </b>
                     is the activation of first levels in
-                    <span className="notranslate mx-1.5">The Crypto Global matrix</span> and
+                    <span className="notranslate mx-1.5">
+                      The Crypto Global matrix
+                    </span>{" "}
+                    and
                     <span className="notranslate mx-1.5">x4</span> programs,
                     which cost 5{" "}
                     <span className="notranslate mx-1.5">BUSD</span> each. In

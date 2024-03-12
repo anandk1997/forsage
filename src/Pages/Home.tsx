@@ -59,7 +59,7 @@ const Home = () => {
           src={RightEllipse}
           className="z-0 absolute top-1/2 right-0 -translate-y-1/2 sm:-right-1/3 sm:top-1/3 max-w-[50vw] sm:max-w-[90vw]"
           alt=""
-        /> */}
+        />
         <div className="w-full flex flex-col items-center justify-center flex-1 max-w-desktop-full w-full pt-5 sm:pt-0 sm:px-5">
           <div className="flex flex-col items-center">
             <img
@@ -126,7 +126,7 @@ const Home = () => {
           src={Planet}
           className="absolute right-0 -top-44 z-0 sm:hidden"
           alt="cryptoglobalPlanet"
-        /> 
+        />
         <div className="w-full flex flex-col max-w-desktop-full space-y-28">
           <div className="text-white text-[24px] leading-[40px] max-w-525px text-2xl z-10 sm:text-[20px] sm:leading-[30px]">
             A decentralized networking platform based
@@ -146,10 +146,11 @@ const Home = () => {
               alt="cryptoglobalPlanet"
             />
             <div className="flex w-full lg:hidden">
-              <a
-                className="w-full flex justify-center items-center px-2.5 sm:px-0"
-                target="_blank"
-                href="https://support.cryptoglobal.io/"
+              <div
+                className="w-full flex justify-center items-center px-2.5 sm:px-0 cursor-pointer"
+                onClick={() =>
+                  window.open("https://support.cryptoglobal.io/", "_blank")
+                }
               >
                 <div className="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">
                   <a
@@ -195,11 +196,12 @@ const Home = () => {
                     className="absolute right-1.5 bottom-1.5 !w-40 !h-40"
                   />
                 </div>
-              </a>
-              <a
-                className="w-full flex justify-center items-center px-2.5 sm:px-0"
-                target="_blank"
-                href="https://t.me/smartpeoplechat/"
+              </div>
+              <div
+                className="w-full flex justify-center items-center px-2.5 sm:px-0 cursor-pointer"
+                onClick={() =>
+                  window.open("https://t.me/smartpeoplechat/", "_blank")
+                }
               >
                 <div className="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">
                   <a
@@ -245,7 +247,7 @@ const Home = () => {
                     className="absolute right-1.5 bottom-1.5 !w-40 !h-40"
                   />
                 </div>
-              </a>
+              </div>
             </div>
             <div className="margin-item-carousel w-full hidden lg:flex lg:pb-8">
               <div className="carousel-root">
@@ -557,7 +559,7 @@ const Home = () => {
         </div>
         <div className="h-full absolute top-1/2 -translate-y-1/2 right-5 w-[280px] flex flex-col justify-between sm:right-1">
           <div className="flex flex-col justify-start space-y-10 w-full">
-             <img
+            <img
               className="w-[170px] sm:w-[80px] sm:ml-auto"
               src={GlobeImage}
             />
@@ -615,7 +617,7 @@ const Home = () => {
                               fillRule="evenodd"
                               clipRule="evenodd"
                               d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                              fill-opacity=".5"
+                              fillOpacity=".5"
                             ></path>
                             <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
                             <path
@@ -707,7 +709,7 @@ const Home = () => {
                               fillRule="evenodd"
                               clipRule="evenodd"
                               d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                              fill-opacity=".5"
+                              fillOpacity=".5"
                             ></path>
                             <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
                             <path
@@ -799,7 +801,7 @@ const Home = () => {
                               fillRule="evenodd"
                               clipRule="evenodd"
                               d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                              fill-opacity=".5"
+                              fillOpacity=".5"
                             ></path>
                             <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
                             <path
@@ -891,7 +893,7 @@ const Home = () => {
                               fillRule="evenodd"
                               clipRule="evenodd"
                               d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                              fill-opacity=".5"
+                              fillOpacity=".5"
                             ></path>
                             <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
                             <path
@@ -983,7 +985,7 @@ const Home = () => {
                               fillRule="evenodd"
                               clipRule="evenodd"
                               d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                              fill-opacity=".5"
+                              fillOpacity=".5"
                             ></path>
                             <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
                             <path
@@ -1075,7 +1077,7 @@ const Home = () => {
                               fillRule="evenodd"
                               clipRule="evenodd"
                               d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                              fill-opacity=".5"
+                              fillOpacity=".5"
                             ></path>
                             <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
                             <path
@@ -1167,7 +1169,7 @@ const Home = () => {
                               fillRule="evenodd"
                               clipRule="evenodd"
                               d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                              fill-opacity=".5"
+                              fillOpacity=".5"
                             ></path>
                             <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
                             <path
@@ -1259,7 +1261,7 @@ const Home = () => {
                               fillRule="evenodd"
                               clipRule="evenodd"
                               d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                              fill-opacity=".5"
+                              fillOpacity=".5"
                             ></path>
                             <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
                             <path
@@ -1351,7 +1353,7 @@ const Home = () => {
                               fillRule="evenodd"
                               clipRule="evenodd"
                               d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                              fill-opacity=".5"
+                              fillOpacity=".5"
                             ></path>
                             <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
                             <path
@@ -1443,7 +1445,7 @@ const Home = () => {
                               fillRule="evenodd"
                               clipRule="evenodd"
                               d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                              fill-opacity=".5"
+                              fillOpacity=".5"
                             ></path>
                             <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
                             <path
@@ -1674,9 +1676,9 @@ const Home = () => {
               </span>
               <span className="font-light text-white-700 text-[18px] leading-[30px] font-semibold max-w-[770px] sm:text-[14px] sm:leading-[22px]">
                 Decentralized marketing is powered by the revolutionary
-                technology of smart contracts and NFTs. The The Crypto Global smart
-                contract code is completely open. You can be sure of its safety
-                and long-term performance
+                technology of smart contracts and NFTs. The The Crypto Global
+                smart contract code is completely open. You can be sure of its
+                safety and long-term performance
               </span>
             </div>
             <div className="">
@@ -2115,7 +2117,7 @@ const Home = () => {
               src={CabinetPreview}
               className="max-w-full sm:max-w-[90vw]"
               alt="cabinet_preview_image"
-            /> 
+            />
           </div>
         </div>
       </div>
@@ -2137,7 +2139,7 @@ const Home = () => {
                 <path
                   d="M8.551 63.978c0-2.69.187-5.239.561-7.65.467-2.41 1.495-4.682 3.084-6.815 1.589-2.225 4.066-4.219 7.43-5.98a146.221 146.221 0 0 1 4.346-2.226 47.366 47.366 0 0 0 5.888-3.338c1.962-1.298 3.598-2.735 4.906-4.311 1.402-1.67 2.103-3.477 2.103-5.424 0-2.133-.841-3.802-2.523-5.007-1.682-1.298-3.645-1.947-5.888-1.947s-4.112.556-5.607 1.668a14.35 14.35 0 0 0-3.505 3.617c-.841 1.298-1.636 2.41-2.383 3.338L0 17.942c2.43-5.656 6.262-10.06 11.495-13.213C16.73 1.576 22.71 0 29.44 0c3.552 0 7.103.51 10.654 1.53a30.12 30.12 0 0 1 9.954 4.868c2.99 2.225 5.374 5.146 7.15 8.762C59.064 18.776 60 23.18 60 28.373c0 4.45-.841 8.53-2.523 12.239-1.683 3.616-4.58 6.815-8.692 9.597a53.935 53.935 0 0 1-8.411 4.728c-2.804 1.299-5.187 2.643-7.15 4.034-1.962 1.298-2.944 2.967-2.944 5.007H8.551ZM8.972 100V77.19h21.729V100H8.972Z"
                   fill="#fff"
-                  fill-opacity=".1"
+                  fillOpacity=".1"
                 ></path>
               </svg>
               <svg
@@ -2149,7 +2151,7 @@ const Home = () => {
                 <path
                   d="M8.551 63.978c0-2.69.187-5.239.561-7.65.467-2.41 1.495-4.682 3.084-6.815 1.589-2.225 4.066-4.219 7.43-5.98a146.221 146.221 0 0 1 4.346-2.226 47.366 47.366 0 0 0 5.888-3.338c1.962-1.298 3.598-2.735 4.906-4.311 1.402-1.67 2.103-3.477 2.103-5.424 0-2.133-.841-3.802-2.523-5.007-1.682-1.298-3.645-1.947-5.888-1.947s-4.112.556-5.607 1.668a14.35 14.35 0 0 0-3.505 3.617c-.841 1.298-1.636 2.41-2.383 3.338L0 17.942c2.43-5.656 6.262-10.06 11.495-13.213C16.73 1.576 22.71 0 29.44 0c3.552 0 7.103.51 10.654 1.53a30.12 30.12 0 0 1 9.954 4.868c2.99 2.225 5.374 5.146 7.15 8.762C59.064 18.776 60 23.18 60 28.373c0 4.45-.841 8.53-2.523 12.239-1.683 3.616-4.58 6.815-8.692 9.597a53.935 53.935 0 0 1-8.411 4.728c-2.804 1.299-5.187 2.643-7.15 4.034-1.962 1.298-2.944 2.967-2.944 5.007H8.551ZM8.972 100V77.19h21.729V100H8.972Z"
                   fill="#fff"
-                  fill-opacity=".1"
+                  fillOpacity=".1"
                 ></path>
               </svg>
               <div
@@ -2175,7 +2177,8 @@ const Home = () => {
                     >
                       <div className="flex items-center justify-between space-x-2.5">
                         <span className="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]">
-                          Why is The Crypto Global the best alternative to trading?
+                          Why is The Crypto Global the best alternative to
+                          trading?
                         </span>
                         <div className="flex-shrink-0 flex justify-center items-center cursor-pointer rounded-full border border-purple w-[40px] h-[40px] transition duration-500   sm:w-[30px] sm:h-[30px]">
                           <svg
@@ -2187,7 +2190,7 @@ const Home = () => {
                             <path
                               d="m1 1 6 6 6-6"
                               stroke="#fff"
-                              stroke-width="2"
+                              strokeWidth="2"
                             ></path>
                           </svg>
                         </div>

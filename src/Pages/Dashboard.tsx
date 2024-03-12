@@ -1,6 +1,6 @@
 import toast from "react-hot-toast";
 import { NavLink } from "react-router-dom";
-import {  LogoWhite } from "src/Assets/Svg";
+import { LogoWhite } from "src/Assets/Svg";
 
 const Dashboard = () => {
   const copyToClipboard = () => {
@@ -113,7 +113,6 @@ const Dashboard = () => {
                       ></path>
                     </svg>
                   </button>
-                 
                 </div>
               </div>
               <span className="hidden sm:block text-main-blue text-base font-bold notranslate">
@@ -122,7 +121,7 @@ const Dashboard = () => {
             </div>
             <div className="flex items-center justify-between w-full">
               <span className="text-main-blue text-xl font-bold notranslate sm:hidden">
-              thecryptoglobal.io/b/xqg1z8
+                thecryptoglobal.io/b/xqg1z8
               </span>
               <div className="flex space-x-2.5 sm:w-full">
                 <button
