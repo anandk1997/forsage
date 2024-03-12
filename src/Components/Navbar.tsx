@@ -20,7 +20,6 @@ import {
 } from "src/Assets/Icons";
 import { Devider } from "./Sidebar";
 
-import { useWalletConnect } from "src/Hooks/useWalletConnect";
 import { LogoGreen } from "src/Assets/Svg";
 import { Logo } from "./Logo";
 
