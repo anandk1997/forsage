@@ -4,16 +4,10 @@ import { NavLink, useLocation } from "react-router-dom";
 import {
   CalculatorIcon,
   DropdownIcon,
-  IdeasIcon,
   InfoIcon,
   InstructionsIcon,
-  LinksIcon,
-  MarathonIcon,
-  NftsIcon,
   PartnersIcon,
   PromoIcon,
-  SocialIcon,
-  StatsIcon,
   ToolsIcon,
   DashboardIcon,
   TeamIcon,
@@ -87,63 +81,11 @@ export const Sidebar = () => {
                           to="partners"
                           path={pathname}
                         />
-
-                        <NavigateButton
-                          title="Links"
-                          icon={LinksIcon}
-                          to="links"
-                          path={pathname}
-                        />
-
-                        <NavigateButton
-                          title="Stats"
-                          icon={StatsIcon}
-                          to="stats"
-                          path={pathname}
-                        />
                       </div>
                     </>
                   )}
                 </div>
 
-                <NavLink to="MaxQoreMarathon">
-                  <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
-                    <div className="flex items-center text-left">
-                      <MarathonIcon />
-
-                      <span className="text-white-500 text-base ml-2.5 false">
-                        Marathon
-                      </span>
-                    </div>
-                  </button>
-                </NavLink>
-
-                <NavLink to="social">
-                  <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
-                    <div className="flex items-center text-left">
-                      <SocialIcon />
-
-                      <span className="text-white-500 text-base ml-2.5 false">
-                        Social
-                      </span>
-                      <span className="absolute top-1 right-1.5 text-green text-sm lg:bg-green-200 lg:px-2.5 lg:py-1 lg:rounded lg:top-1/2 lg:-translate-y-1/2 lg:right-5">
-                        New
-                      </span>
-                    </div>
-                  </button>
-                </NavLink>
-
-                <NavLink to="nft">
-                  <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
-                    <div className="flex items-center text-left">
-                      <NftsIcon />
-
-                      <span className="text-white-500 text-base ml-2.5 false">
-                        NFTs
-                      </span>
-                    </div>
-                  </button>
-                </NavLink>
 
                 <div className=" bg-black-light lg:bg-transparent lg:!pb-0 min-w-[186px] cursor-pointer hover:bg-black-light lg:hover:bg-transparent rounded-[10px] lg:border-b lg:border-white-300 lg:rounded-none lg:justify-between">
                   <div
@@ -153,7 +95,7 @@ export const Sidebar = () => {
                     <InfoIcon />
 
                     <span className="text-[#8B8C8C] text-base ml-2.5 lg:text-white-500">
-                      Information
+                      Statements
                     </span>
 
                     <DropdownIcon show={isInfo} />
@@ -165,14 +107,14 @@ export const Sidebar = () => {
 
                       <div className="flex flex-col p-2.5 lg:py-0 lg:pr-0">
                         <NavigateButton
-                          title="Instruction"
+                          title="Referal Income"
                           icon={InstructionsIcon}
                           to="instructions"
                           path={pathname}
                         />
 
                         <NavigateButton
-                          title="Calculator"
+                          title="Level Income"
                           icon={CalculatorIcon}
                           to="calculator"
                           path={pathname}
@@ -180,18 +122,12 @@ export const Sidebar = () => {
                         />
 
                         <NavigateButton
-                          title="Smart tools"
+                          title="Non Working Income"
                           icon={ToolsIcon}
                           to="smartTools"
                           path={pathname}
                         />
-
-                        <NavigateButton
-                          title="Ideas"
-                          icon={IdeasIcon}
-                          to="ideas"
-                          path={pathname}
-                        />
+                       
                       </div>
                     </>
                   )}

@@ -1,82 +1,56 @@
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { useWalletConnect } from "src/Hooks/useWalletConnect";
+import { LogoGreen } from "src/Assets/Svg";
+import { Web3 } from "web3";
 
 const Register = () => {
-  const { connectWallet, walletData } = useWalletConnect();
+  const [connectedAccount, setConnectedAccount] = useState("null");
+  async function connectMetamask() {
+    if (window.ethereum) {
+      const web3 = new Web3(window.ethereum);
+      await window.ethereum.request({ method: "eth_requestAccounts" });
+      const accounts = await web3.eth.getAccounts();
+      setConnectedAccount(accounts[0]);
+    } else {
+      alert("Please download metamask");
+    }
+  }
 
+  useEffect(() => {
+    connectMetamask();
+  }, []);
   return (
-    <div
-      className="flex relative overflow-hidden flex-col items-center justify-center w-screen min-h-screen text-white-500 pt-15"
-      // style="
-      //   background-image: url(&quot;/blurs/registration/blue-blur.png&quot;);
-      //   background-repeat: round;
-      //   background-size: cover;
-      // "
-    >
+    <div className="flex relative overflow-hidden flex-col items-center justify-center w-screen min-h-screen text-white-500 pt-15">
       <header className="fixed top-0 w-full pb-2.5 pt-2.5 px-10 z-[2147483602] bg-transparent sm:px-5 lg:border-b lg:border-white-100 z-[999]">
         <nav className="z-10 w-full max-w-desktop-preview-bar m-auto header-border-b">
           <div className="flex items-center justify-between">
             <NavLink to="/">
-              <svg
+              <img
                 className="hidden lg:block"
-                width="45"
-                height="30"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M37.68 5.851a.482.482 0 0 1 .615.296l.43 1.247s-1.852-.59-2.818-.777l1.773-.766Zm6.055 3.336c-.004 0-.195-.131-.297-.186l-3.111-1.586c-.965-.46-.752-.82-1.118-1.826a6.228 6.228 0 0 0-.549-1.127C36.884 3.62 31.836 3.817 31.354 0c0 0-1.884 1.236-2.227 3.5C9.227 1.98 0 12.96 0 12.96c3.706-1.476 7.705-2.176 11.704-2.362-7.603 5.851-9.997 14.666-9.997 14.666s6.16-5.982 15.419-9.318C14.702 19.37 13.298 23.963 13.872 30c0 0 4.763-18.177 27.361-13.78 0 0 .827-2.417 2.962-4.89.135-.152.211-.382.227-.645a1.735 1.735 0 0 0-.687-1.498Z"
-                  fill="#fff"
-                ></path>
-              </svg>
-              <svg
+                src={LogoGreen}
+                height={"10px"}
+                width="40px"
+              />
+              <img
                 className="block lg:hidden"
-                width="163"
-                height="30"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M46.732 21.907h2.61l2.062-4.44h11.08l1.097-2.374H49.894l-3.162 6.814ZM65.558 10.839h-13.69L50.772 13.2H64.46l1.097-2.362ZM143.239 21.874v.033l13.689-.033 1.097-2.362h-11.061l.947-2.046h11.08l1.096-2.373H146.4l-3.161 6.78ZM148.375 10.839l-1.097 2.362h13.69l1.096-2.362h-13.689ZM77.976 13.2l-2.91 6.311-8.473-.01 2.924-6.3h8.459Zm2.617 0a1.663 1.663 0 0 0-1.513-2.361h-8.474c-1.59 0-3.033.918-3.703 2.362l-2.066 4.451h.008l-.858 1.86h-.005a1.665 1.665 0 0 0 1.514 2.362h8.474c1.59 0 3.034-.919 3.703-2.363l2.913-6.31h.007ZM127.333 10.839h-8.474c-1.59 0-3.033.918-3.703 2.362h11.073l-.906 1.968h-11.08l-1.151 2.483-.855 1.86s-1.075 2.318-1.091 2.35l-.006.012h2.61l1.096-2.363.914-1.968h8.47l-2.004 4.33h2.57l4.044-8.672h.008a1.665 1.665 0 0 0-1.515-2.362ZM135.174 15.093l-1.096 2.373h6.254l-.519 1.116c-.259.569-.823.93-1.444.93l-6.602-.011a.537.537 0 0 1-.493-.766l2.138-4.615c.26-.558.822-.919 1.44-.919l10.067-.01c.498-1.105 0 0 1.108-2.352H134.93c-1.59 0-3.038.919-3.708 2.362l-2.061 4.452h.003l-.858 1.859a1.663 1.663 0 0 0 1.513 2.362h8.47a4.08 4.08 0 0 0 3.706-2.362l2.037-4.418h-8.858ZM109.652 15.17h-8.914l.915-1.97h11.076c1.115-2.361-.007 0 1.115-2.361h-11.098A4.076 4.076 0 0 0 99.04 13.2l-1.094 2.417a1.356 1.356 0 0 0 1.228 1.925h8.938l-.91 1.968H96.119c-.509 1.105 0 0-1.134 2.363h11.12a4.077 4.077 0 0 0 3.704-2.363s1.173-2.504 1.195-2.592a1.4 1.4 0 0 0-1.352-1.75ZM95.15 10.839H84.032L82.948 13.2h11.094l-.907 1.968h-11.09l-1.137 2.483-1.952 4.222h2.61l2.007-4.331h4.939l1.597 4.364h2.582l-1.565-4.364h1.195a3.605 3.605 0 0 0 3.282-2.133l1.05-2.209h.007a1.662 1.662 0 0 0-1.51-2.362ZM37.68 5.851a.482.482 0 0 1 .615.296l.43 1.247s-1.852-.59-2.818-.777l1.773-.766Zm6.055 3.336c-.004 0-.195-.131-.297-.186l-3.111-1.586c-.965-.46-.752-.82-1.118-1.826a6.228 6.228 0 0 0-.549-1.127C36.884 3.62 31.836 3.817 31.354 0c0 0-1.884 1.236-2.227 3.5C9.227 1.98 0 12.96 0 12.96c3.706-1.476 7.705-2.176 11.704-2.362-7.603 5.851-9.997 14.666-9.997 14.666s6.16-5.982 15.419-9.318C14.702 19.37 13.298 23.963 13.872 30c0 0 4.763-18.177 27.361-13.78 0 0 .827-2.417 2.962-4.89.135-.152.211-.382.227-.645a1.735 1.735 0 0 0-.687-1.498Z"
-                  fill="#fff"
-                ></path>
-              </svg>
+                src={LogoGreen}
+                height={"10px"}
+                width="40px"
+              />
             </NavLink>
             <div className="flex justify-end items-center ml-auto">
               <button
                 className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-2.5 bg-black-light hover:bg-line-gray active:bg-active-gray text-white font-normal rounded items-center"
-                onClick={connectWallet}
+                onClick={connectMetamask}
               >
-                {walletData}
-              </button>
-              <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-0 py-0 bg-black-light rounded-full w-10 h-10 hover:bg-line-gray active:bg-active-gray ml-5 px-0 py-0 false sm:ml-2.5">
-                <svg
-                  className="ml-1"
-                  width="24"
-                  height="24"
-                  stroke="#fff"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14 8V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2v-2M7 12h14m0 0-3-3m3 3-3 3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  ></path>
-                </svg>
+                {connectedAccount !== "null" && "Connected"}
+                {connectedAccount === "null" && "Connect wallet"}
               </button>
             </div>
           </div>
         </nav>
         <div className="hidden justify-start items-start bg-main-bg pb-5 pt-7.5 transition duration-500 ease-in-out bg-main-bg absolute top-0 left-0 z-20 inset-0 h-screen w-screen z-999999 -translate-x-120% lg:flex flex-col lg:py-2.5">
-          <div
-            className="w-full flex flex-col flex-1"
-            // style="height: 797px"
-          >
+          <div className="w-full flex flex-col flex-1">
             <div className="flex justify-between items-center w-full px-10 sm:px-5">
               <NavLink to="/">
                 <svg
@@ -293,23 +267,7 @@ const Register = () => {
                           className="w-6 h-6 stroke-current text-white-500"
                           viewBox="0 0 24 24"
                         >
-                          {/* <style>
-                              .st1 {
-                                fill: none;
-                                stroke: #adadad;
-                                strokeLinecap: round;
-                                strokeLinejoin: round;
-                                strokeMiterlimit: 10;
-                              }
-                            </style> */}
-                          <path
-                            d="m11.6 3.4 8.6 9.1c.7.7.4 1.9-.5 2.3L5.7 21c-.6.3-1.2.1-1.7-.4l-1.4-1.5c-.4-.4-.5-1.1-.2-1.6L9.2 3.8c.4-.9 1.7-1.1 2.4-.4z"
-                            //   style="
-                            //     fill: none;
-                            //     stroke: rgb(173, 173, 173);
-                            //     strokeMiterlimit: 10;
-                            //   "
-                          ></path>
+                          <path d="m11.6 3.4 8.6 9.1c.7.7.4 1.9-.5 2.3L5.7 21c-.6.3-1.2.1-1.7-.4l-1.4-1.5c-.4-.4-.5-1.1-.2-1.6L9.2 3.8c.4-.9 1.7-1.1 2.4-.4z"></path>
                           <path
                             className="st1"
                             d="m15.6 3.7.6-1.9M19.7 7.8h2M18 5.4 20.4 3M7.5 20.4c.6 1.2 1.8 2 3.2 2 2 0 3.6-1.6 3.6-3.6 0-.4-.1-.9-.2-1.3"
@@ -438,23 +396,7 @@ const Register = () => {
                           className="w-6 h-6 stroke-current text-white-500 animate-bounce"
                           viewBox="0 0 24 24"
                         >
-                          {/* <style>
-                              .st1 {
-                                fill: none;
-                                stroke: #adadad;
-                                strokeLinecap: round;
-                                strokeLinejoin: round;
-                                strokeMiterlimit: 10;
-                              }
-                            </style> */}
-                          <path
-                            d="m11.6 3.4 8.6 9.1c.7.7.4 1.9-.5 2.3L5.7 21c-.6.3-1.2.1-1.7-.4l-1.4-1.5c-.4-.4-.5-1.1-.2-1.6L9.2 3.8c.4-.9 1.7-1.1 2.4-.4z"
-                            //   style="
-                            //     fill: none;
-                            //     stroke: rgb(173, 173, 173);
-                            //     strokeMiterlimit: 10;
-                            //   "
-                          ></path>
+                          <path d="m11.6 3.4 8.6 9.1c.7.7.4 1.9-.5 2.3L5.7 21c-.6.3-1.2.1-1.7-.4l-1.4-1.5c-.4-.4-.5-1.1-.2-1.6L9.2 3.8c.4-.9 1.7-1.1 2.4-.4z"></path>
                           <path
                             className="st1"
                             d="m15.6 3.7.6-1.9M19.7 7.8h2M18 5.4 20.4 3M7.5 20.4c.6 1.2 1.8 2 3.2 2 2 0 3.6-1.6 3.6-3.6 0-.4-.1-.9-.2-1.3"
@@ -483,7 +425,7 @@ const Register = () => {
                           ></path>
                         </svg>
                         <span className="text-white-500 text-base ml-2.5 false">
-                          Forsage Account search
+                          The Crypto Global Account search
                         </span>
                       </div>
                       <svg
@@ -538,7 +480,7 @@ const Register = () => {
             <div className="flex flex-col sm:flex-1">
               <span className="inline-block text-two-half text-white mb-10 sm:mb-7.5 sm:text-2xl">
                 Registration <br />
-                in <span className="notranslate">Forsage BUSD</span>
+                in <span className="notranslate">The Crypto Global USDT</span>
               </span>
               <div className="flex flex-col mb-10 sm:mb-7.5">
                 <div className="w-full relative flex flex-col flex-grow-0 flex-shrink-0">
@@ -616,7 +558,7 @@ const Register = () => {
                         </span>
                         <a
                           target="_blank"
-                          href="https://support.forsage.io/article/wallet"
+                          href="#"
                         >
                           <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none bg-red text-white py-2.5 px-5 hover:bg-hover-red active:bg-active-red p-5 rounded-large sm:rounded-mini mt-5 sm:mt-4 sm:w-full">
                             Read guide
@@ -700,85 +642,7 @@ const Register = () => {
                     className="__react_component_tooltip tad81e448-a7cb-4322-9db6-b0608debb763 place-bottom type-dark"
                     id="Registration fee"
                     data-id="tooltip"
-                  >
-                    {/* <style aria-hidden="true">
-                        .tad81e448-a7cb-4322-9db6-b0608debb763 {
-                          color: #fff;
-                          background: #222;
-                          border: 1px solid transparent;
-                        }
-
-                        .tad81e448-a7cb-4322-9db6-b0608debb763.place-top {
-                          margin-top: -10px;
-                        }
-                        .tad81e448-a7cb-4322-9db6-b0608debb763.place-top::before {
-                          border-top: 8px solid transparent;
-                        }
-                        .tad81e448-a7cb-4322-9db6-b0608debb763.place-top::after {
-                          border-left: 8px solid transparent;
-                          border-right: 8px solid transparent;
-                          bottom: -6px;
-                          left: 50%;
-                          margin-left: -8px;
-                          border-top-color: #222;
-                          border-top-style: solid;
-                          border-top-width: 6px;
-                        }
-
-                        .tad81e448-a7cb-4322-9db6-b0608debb763.place-bottom {
-                          margin-top: 10px;
-                        }
-                        .tad81e448-a7cb-4322-9db6-b0608debb763.place-bottom::before {
-                          border-bottom: 8px solid transparent;
-                        }
-                        .tad81e448-a7cb-4322-9db6-b0608debb763.place-bottom::after {
-                          border-left: 8px solid transparent;
-                          border-right: 8px solid transparent;
-                          top: -6px;
-                          left: 50%;
-                          margin-left: -8px;
-                          border-bottom-color: #222;
-                          border-bottom-style: solid;
-                          border-bottom-width: 6px;
-                        }
-
-                        .tad81e448-a7cb-4322-9db6-b0608debb763.place-left {
-                          margin-left: -10px;
-                        }
-                        .tad81e448-a7cb-4322-9db6-b0608debb763.place-left::before {
-                          border-left: 8px solid transparent;
-                        }
-                        .tad81e448-a7cb-4322-9db6-b0608debb763.place-left::after {
-                          border-top: 5px solid transparent;
-                          border-bottom: 5px solid transparent;
-                          right: -6px;
-                          top: 50%;
-                          margin-top: -4px;
-                          border-left-color: #222;
-                          border-left-style: solid;
-                          border-left-width: 6px;
-                        }
-
-                        .tad81e448-a7cb-4322-9db6-b0608debb763.place-right {
-                          margin-left: 10px;
-                        }
-                        .tad81e448-a7cb-4322-9db6-b0608debb763.place-right::before {
-                          border-right: 8px solid transparent;
-                        }
-                        .tad81e448-a7cb-4322-9db6-b0608debb763.place-right::after {
-                          border-top: 5px solid transparent;
-                          border-bottom: 5px solid transparent;
-                          left: -6px;
-                          top: 50%;
-                          margin-top: -4px;
-                          border-right-color: #222;
-                          border-right-style: solid;
-                          border-right-width: 6px;
-                        }</style> */}
-                    {/* Registration fee is charged once when enrolling on the
-                      platform and is allocated to the maintenance and
-                      development of the Forsage ecosystem */}
-                  </div>
+                  ></div>
                 </div>
               </div>
             </div>
@@ -811,7 +675,7 @@ const Register = () => {
                   </span>
                   <a
                     target="_blank"
-                    href="https://support.forsage.io/article/wallet"
+                    href="#"
                   >
                     <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none bg-red text-white py-2.5 px-5 hover:bg-hover-red active:bg-active-red p-5 rounded-large sm:rounded-mini mt-5 sm:mt-4 sm:w-full">
                       Read guide
@@ -823,11 +687,10 @@ const Register = () => {
             <div className="mt-3.5">
               <iframe
                 className="bg-black w-full mb-7.5 h-180px"
-                src="https://www.youtube.com/embed/YAYAKIp5JeE"
-                //   srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/YAYAKIp5JeE?autoplay=1><img src=https://img.youtube.com/vi/YAYAKIp5JeE/hqdefault.jpg><span>▶</span></a>"
-                //   frameborder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                //   allowfullscreen=""
+                src="https://www.youtube-nocookie.com/embed/eeKwImXmlBM?si=5JCl92kLdkT8nuh-"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               ></iframe>
               <button className="flex items-start">
                 <svg
@@ -855,7 +718,7 @@ const Register = () => {
                 <span className="text-white text-left">
                   Need help with registration? <br />
                   Talk to experts in the
-                  <b>support chat</b>
+                  <b> support chat</b>
                 </span>
               </button>
             </div>

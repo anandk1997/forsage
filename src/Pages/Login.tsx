@@ -1,14 +1,36 @@
+import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { LogoGreen } from "src/Assets/Svg";
 
 import { Social } from "src/Components/Social";
-import { useWalletConnect } from "src/Hooks/useWalletConnect";
-
+import { Web3 } from "web3";
 const Login = () => {
   const navigate = useNavigate();
 
-  const { connectWallet, walletData } = useWalletConnect();
+  const [connectedAccount, setConnectedAccount] = useState("null");
+  async function connectMetamask() {
+    if (window.ethereum) {
+      const web3 = new Web3(window.ethereum);
+      await window.ethereum.request({ method: "eth_requestAccounts" });
+      const accounts = await web3.eth.getAccounts();
+      setConnectedAccount(accounts[0]);
+    } else {
+      alert("Please download metamask");
+    }
+  }
 
+  async function callLogin() {
+    // address here
+    console.log("address", connectedAccount);
+    // call api for login
+  }
+
+
+  useEffect(() => {
+    connectMetamask();
+  }, []);
   return (
+
     <div className="flex relative bg-main-bg flex-col items-center justify-center w-full min-h-screen text-white-500 px-10 sm:px-0 overflow-hidden pt-16">
       <header className="fixed top-0 w-full pb-2.5 pt-2.5 px-10 z-[2147483602] bg-transparent sm:px-5 lg:border-b lg:border-white-100 z-[999]">
         <nav className="z-10 w-full max-w-desktop-preview-bar m-auto header-border-b">
@@ -28,28 +50,17 @@ const Login = () => {
                   fill="#fff"
                 ></path>
               </svg>
-
-              <svg
-                className="block lg:hidden"
-                width="163"
-                height="30"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M46.732 21.907h2.61l2.062-4.44h11.08l1.097-2.374H49.894l-3.162 6.814ZM65.558 10.839h-13.69L50.772 13.2H64.46l1.097-2.362ZM143.239 21.874v.033l13.689-.033 1.097-2.362h-11.061l.947-2.046h11.08l1.096-2.373H146.4l-3.161 6.78ZM148.375 10.839l-1.097 2.362h13.69l1.096-2.362h-13.689ZM77.976 13.2l-2.91 6.311-8.473-.01 2.924-6.3h8.459Zm2.617 0a1.663 1.663 0 0 0-1.513-2.361h-8.474c-1.59 0-3.033.918-3.703 2.362l-2.066 4.451h.008l-.858 1.86h-.005a1.665 1.665 0 0 0 1.514 2.362h8.474c1.59 0 3.034-.919 3.703-2.363l2.913-6.31h.007ZM127.333 10.839h-8.474c-1.59 0-3.033.918-3.703 2.362h11.073l-.906 1.968h-11.08l-1.151 2.483-.855 1.86s-1.075 2.318-1.091 2.35l-.006.012h2.61l1.096-2.363.914-1.968h8.47l-2.004 4.33h2.57l4.044-8.672h.008a1.665 1.665 0 0 0-1.515-2.362ZM135.174 15.093l-1.096 2.373h6.254l-.519 1.116c-.259.569-.823.93-1.444.93l-6.602-.011a.537.537 0 0 1-.493-.766l2.138-4.615c.26-.558.822-.919 1.44-.919l10.067-.01c.498-1.105 0 0 1.108-2.352H134.93c-1.59 0-3.038.919-3.708 2.362l-2.061 4.452h.003l-.858 1.859a1.663 1.663 0 0 0 1.513 2.362h8.47a4.08 4.08 0 0 0 3.706-2.362l2.037-4.418h-8.858ZM109.652 15.17h-8.914l.915-1.97h11.076c1.115-2.361-.007 0 1.115-2.361h-11.098A4.076 4.076 0 0 0 99.04 13.2l-1.094 2.417a1.356 1.356 0 0 0 1.228 1.925h8.938l-.91 1.968H96.119c-.509 1.105 0 0-1.134 2.363h11.12a4.077 4.077 0 0 0 3.704-2.363s1.173-2.504 1.195-2.592a1.4 1.4 0 0 0-1.352-1.75ZM95.15 10.839H84.032L82.948 13.2h11.094l-.907 1.968h-11.09l-1.137 2.483-1.952 4.222h2.61l2.007-4.331h4.939l1.597 4.364h2.582l-1.565-4.364h1.195a3.605 3.605 0 0 0 3.282-2.133l1.05-2.209h.007a1.662 1.662 0 0 0-1.51-2.362ZM37.68 5.851a.482.482 0 0 1 .615.296l.43 1.247s-1.852-.59-2.818-.777l1.773-.766Zm6.055 3.336c-.004 0-.195-.131-.297-.186l-3.111-1.586c-.965-.46-.752-.82-1.118-1.826a6.228 6.228 0 0 0-.549-1.127C36.884 3.62 31.836 3.817 31.354 0c0 0-1.884 1.236-2.227 3.5C9.227 1.98 0 12.96 0 12.96c3.706-1.476 7.705-2.176 11.704-2.362-7.603 5.851-9.997 14.666-9.997 14.666s6.16-5.982 15.419-9.318C14.702 19.37 13.298 23.963 13.872 30c0 0 4.763-18.177 27.361-13.78 0 0 .827-2.417 2.962-4.89.135-.152.211-.382.227-.645a1.735 1.735 0 0 0-.687-1.498Z"
-                  fill="#fff"
-                ></path>
-              </svg>
+              <NavLink to="/">
+                <img src={LogoGreen} height={"10px"} width="40px" />
+              </NavLink>
             </NavLink>
             <div className="flex justify-end items-center ml-auto">
               <button
                 className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-2.5 bg-black-light hover:bg-line-gray active:bg-active-gray text-white font-normal rounded items-center"
-                onClick={connectWallet}
+                onClick={connectMetamask}
               >
-                {walletData}
+                {connectedAccount !== "null" && "Connected"}
+                {connectedAccount === "null" && "Connect wallet"}
               </button>
             </div>
           </div>
@@ -465,7 +476,7 @@ const Login = () => {
                           ></path>
                         </svg>
                         <span className="text-white-500 text-base ml-2.5 false">
-                          Forsage Account search
+                          The Crypto Global Account search
                         </span>
                       </div>
                       <svg
@@ -522,7 +533,7 @@ const Login = () => {
               <div className="flex items-start sm:items-center mb-5 sm:mb-2.5">
                 <div className="flex items-center">
                   <span className="text-white font-medium text-two-half leading-48px sm:text-xl">
-                    Welcome to Forsage BUSD
+                    Welcome to The Crypto Global
                   </span>
                 </div>
               </div>
@@ -538,12 +549,28 @@ const Login = () => {
                 <div className="absolute bottom-0 left-0 right-0 -rotate-180 wallet-gradient-main h-11 hidden sm:block"></div>
               </div>
               <div className="flex space-x-5 sm:space-x-0 sm:space-y-3.5 sm:flex-col">
-                <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-bg hover:bg-hover-main-bg active:bg-active-main-bg sm:w-full">
-                  Connect now
-                </button>
+                {connectedAccount === "null" && (
+                  <button
+                    onClick={connectMetamask}
+                    className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-bg hover:bg-hover-main-bg active:bg-active-main-bg sm:w-full"
+                  >
+                    {connectedAccount === "null" && "Connect now"}
+                  </button>
+                )}
+                {connectedAccount !== "null" && (
+                  <button
+                    onClick={callLogin}
+                    className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-bg hover:bg-hover-main-bg active:bg-active-main-bg sm:w-full"
+                  >
+                    Login
+                  </button>
+                )}
                 <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-white-100 hover:bg-white-300 rounded-mini sm:w-full">
                   Watch tutorial
                 </button>
+                <NavLink to={'/register'} className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-white-100 hover:bg-white-300 rounded-mini sm:w-full">
+                  Join
+                </NavLink>
               </div>
             </div>
             <div
@@ -561,388 +588,12 @@ const Login = () => {
             </div>
           </div>
           <div className="carousel-root">
-            <div
-              className="carousel carousel-slider"
-              //   style="width: 100%"
-            >
-              <ul className="control-dots">
-                <li
-                  className="dot"
-                  // value="0"
-                  role="button"
-                  // tabindex="0"
-                  aria-label="slide item 1"
-                ></li>
-                <li
-                  className="dot"
-                  // value="1"
-                  role="button"
-                  // tabindex="0"
-                  aria-label="slide item 2"
-                ></li>
-                <li
-                  className="dot selected"
-                  // value="2"
-                  role="button"
-                  // tabindex="0"
-                  aria-label="slide item 3"
-                ></li>
-                <li
-                  className="dot"
-                  // value="3"
-                  role="button"
-                  // tabindex="0"
-                  aria-label="slide item 4"
-                ></li>
-                <li
-                  className="dot"
-                  // value="4"
-                  role="button"
-                  // tabindex="0"
-                  aria-label="slide item 5"
-                ></li>
-                <li
-                  className="dot"
-                  // value="5"
-                  role="button"
-                  // tabindex="0"
-                  aria-label="slide item 6"
-                ></li>
-              </ul>
+            <div className="carousel carousel-slider">
               <button
                 type="button"
                 aria-label="previous slide / item"
                 className="control-arrow control-prev control-disabled"
               ></button>
-              <div className="slider-wrapper axis-horizontal">
-                <ul
-                  className="slider animated"
-                  // style="
-                  //   transform: translate3d(-300%, 0px, 0px);
-                  //   transition-duration: 350ms;
-                  // "
-                >
-                  <li className="slide">
-                    <div className="!flex !relative sm:px-5 sm:h-full sm:flex-col">
-                      <div className="w-full relative flex !items-center !justify-between fix-alertGradient rounded sm:flex-col sm:p-0 pl-7.5 mb-15 sm:mr-auto sm:ml-auto sm:rounded py-8.5 h-[225px] sm:h-full">
-                        <div className="!flex !flex-col sm:w-full">
-                          <div className="flex flex-col mb-5 sm:p-5 sm:mb-6 sm:pb-0">
-                            <div className="leading-[40px] text-[40px] sm:text-2xl font-medium text-white leading-1 text-left">
-                              How to fix <br className="sm:hidden" />
-                              scanner alert
-                            </div>
-                            <div className="h-auto sm:h-[16px] text-white-500 text-left"></div>
-                          </div>
-                          <div className="flex items-center justify-center w-full">
-                            <img
-                              className="!hidden sm:!block h-[250px] !w-[370px] !flex !items-center !justify-center"
-                              src="/fixAlert/fix.png"
-                              alt=""
-                            />
-                          </div>
-                          <div className="sm:p-5">
-                            <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none py-3 px-5 text-main-blue bg-white-900 hover:bg-main-blue hover:text-white sm:w-full">
-                              <a
-                                target="_blank"
-                                href="https://t.me/forsageio_official/342"
-                              >
-                                Tutorial
-                              </a>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                      <img
-                        className="!absolute !h-[110%] !w-[500px] !bottom-1 !right-0 sm:!hidden"
-                        src="/fixAlert/fix.png"
-                      />
-                    </div>
-                  </li>
-                  <li className="slide">
-                    <div className="!flex !relative sm:px-5 sm:flex-col">
-                      <div className="w-full relative flex !items-center frgx-background !justify-between maxQore_main_banner overflow-hidden rounded sm:flex-col sm:p-0 pl-7.5 mb-15 sm:mb-0 sm:mr-auto sm:ml-auto sm:rounded h-[225px] sm:h-[440px]">
-                        <div className="flex flex-col h-full justify-between py-7.5 sm:py-0 sm:w-full z-[11]">
-                          <div className="flex flex-col sm:pt-5 sm:px-5 sm:space-y-1">
-                            <div className="text-[40px] sm:text-2xl font-normal text-white text-left whitespace-nowrap">
-                              FRGX Token
-                            </div>
-                          </div>
-                          <div className="sm:p-5">
-                            <a
-                              className="block frgx-buy-border p-[1px] w-max rounded-[10px] sm:w-full"
-                              target="_blank"
-                              href="https://frgx.finance/"
-                            >
-                              <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-blue hover:bg-hover-main-blue active:bg-active-main-blue sm:w-full sm:max-w-full bg-[#090A0A] hover:bg-[#090A0A] hover:opacity-75 active:bg-[#090A0A] active:opacity-50">
-                                More about FRGX
-                              </button>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="slide previous">
-                    <div className="!flex !relative sm:px-5 sm:flex-col">
-                      <div className="w-full relative flex !items-center !justify-between maxQore_main_banner overflow-hidden rounded sm:flex-col sm:p-0 pl-7.5 mb-15 sm:mb-0 sm:mr-auto sm:ml-auto sm:rounded h-[225px] sm:h-[440px]">
-                        <div className="flex flex-col h-full justify-between py-7.5 sm:py-0 sm:w-full z-[11]">
-                          <div className="flex flex-col sm:pt-5 sm:px-5 sm:space-y-1">
-                            <div className="text-[40px] sm:text-2xl font-normal text-white text-left whitespace-nowrap">
-                              MaxQore Game
-                            </div>
-                            <div className="text-[16px] text-white-500 text-left font-light">
-                              Play every day and get rewards in BNB
-                            </div>
-                          </div>
-                        </div>
-                        <div className="absolute right-25 top-[-10px] sm:right-auto sm:top-auto sm:left-[-70px] sm:bottom-0 z-[2]">
-                          <img
-                            className="h-"
-                            src="/maxQoreGameBanner/puma.png"
-                          />
-                        </div>
-                        <div className="absolute top-[-15px] right-[280px] sm:right-[100px] z-[1] floating-animation">
-                          <img
-                            className="h-full"
-                            src="/maxQoreGameBanner/blueMeteorites/1.png"
-                          />
-                        </div>
-                        <div className="absolute top-10 right-8 sm:right-[-8px] sm:top-20 z-[1] floating-animation">
-                          <img
-                            className="h-full"
-                            src="/maxQoreGameBanner/blueMeteorites/2.png"
-                          />
-                        </div>
-                        <div className="absolute bottom-[-15px] right-2 sm:right-[70px] sm:bottom-[90px] z-[1] floating-animation">
-                          <img
-                            className="h-full"
-                            src="/maxQoreGameBanner/blueMeteorites/3.png"
-                          />
-                        </div>
-                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 pl-[70px] sm:pl-0 sm:left-[120px] z-[1] floating-animation">
-                          <img
-                            className="h-full"
-                            src="/maxQoreGameBanner/blueMeteorites/4.png"
-                          />
-                        </div>
-                        <div className="absolute top-5 left-1/2 -translate-x-1/2 pr-[180px] sm:hidden h-[26px] floating-animation">
-                          <img
-                            className="h-full"
-                            src="/maxQoreGameBanner/blueMeteorites/3.png"
-                          />
-                        </div>
-                        <div className="absolute bottom-[10px] top-[-230px] left-1/2 -translate-x-1/2 z-[1] ml-10 sm:ml-0 sm:left-auto sm:-translate-x-0 sm:bottom-[150px] sm:right-[-40px] sm:top-auto sm:w-[275px] z-[1]">
-                          <img
-                            className="h-full"
-                            src="/maxQoreGameBanner/PlayEarn.png"
-                          />
-                        </div>
-                        <div className="absolute left-[200px] top-[-150px] sm:left-[-200px] sm:top-[50px]">
-                          <img
-                            className="h-full"
-                            src="/maxQoreGameBanner/bg1.png"
-                          />
-                        </div>
-                        <div className="absolute right-[-70px] top-[-300px] sm:bottom-[-100px] sm:right-[-300px]">
-                          <img
-                            className="h-full"
-                            src="/maxQoreGameBanner/bg2.png"
-                          />
-                        </div>
-                        <div className="absolute right-0 sm:hidden">
-                          <img
-                            className="h-full"
-                            src="/maxQoreGameBanner/meteor.png"
-                          />
-                        </div>
-                        <div className="absolute right-0 top-0 hidden sm:flex z-[0]">
-                          <img
-                            className="h-full"
-                            src="/maxQoreGameBanner/meteorMob.png"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="slide selected">
-                    <div className="!flex !relative sm:px-5 sm:flex-col">
-                      <div className="w-full relative flex !items-center !justify-between maxQore_main_banner overflow-hidden rounded sm:flex-col sm:p-0 pl-7.5 mb-15 sm:mb-0 sm:mr-auto sm:ml-auto sm:rounded h-[225px] sm:h-[440px]">
-                        <div className="flex flex-col sm:w-full z-[11]">
-                          <div className="flex flex-col mb-12 sm:pt-5 sm:px-5 sm:mb-6 sm:space-y-1">
-                            <div className="text-[40px] sm:text-2xl font-normal text-white text-left whitespace-nowrap">
-                              MaxQore
-                            </div>
-                            <div className="text-[16px] text-white-500 text-left font-light">
-                              Meet MaxQore, the largest
-                              <br className="hidden sm:flex" />
-                              Forsage program ever!
-                            </div>
-                          </div>
-                        </div>
-                        <div className="sm:hidden absolute w-full h-full">
-                          <img
-                            className="h-full"
-                            src="/maxQoreMainBanner/bg.png"
-                            alt=""
-                          />
-                        </div>
-                        <div className="hidden sm:flex absolute w-full h-full">
-                          <img
-                            className=""
-                            src="/maxQoreMainBanner/bgMob.png"
-                            alt=""
-                          />
-                        </div>
-                        <div className="hidden sm:flex absolute w-full top-1/2 -translate-y-1/2">
-                          <img className="" src="/maxQoreMainBanner/logo.png" />
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="slide">
-                    <div className="!flex !relative sm:px-5 sm:h-full sm:flex-col">
-                      <div className="w-full relative flex !items-center !justify-between fix-alertGradient rounded sm:flex-col sm:p-0 pl-7.5 mb-15 sm:mr-auto sm:ml-auto sm:rounded py-8.5 h-[225px] sm:h-full">
-                        <div className="flex flex-col sm:w-full z-[10] justify-between h-full">
-                          <div className="flex flex-col mb-5 sm:p-5 sm:pb-0 sm:mb-6">
-                            <div className="text-[40px] sm:text-2xl font-medium text-white leading-1 text-left lg:text-[30px]">
-                              Forsage Social is here
-                            </div>
-                            <span className="text-[16px] text-white-500 text-left">
-                              Meet our native Web3 social network.
-                              <span className="hidden sm:inline">
-                                To log in, you need only your Forsage ID!
-                              </span>
-                            </span>
-                          </div>
-                          <div className="flex flex-col sm:w-full justify-end">
-                            <div className="flex items-center justify-center w-full sm:mt-5">
-                              <img
-                                className="!hidden sm:!block max-w-[80%] sm:max-h-[250px] sm:h-full sm:max-w-full !flex !items-center !justify-center"
-                                src="/loginBanner/socialNotice/main.png"
-                                alt=""
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <img
-                          className="absolute !h-[100%] !w-[500px] bottom-[-2.5px] !right-0 sm:!hidden"
-                          src="/loginBanner/socialNotice/main.png"
-                        />
-                      </div>
-                    </div>
-                  </li>
-                  <li className="slide">
-                    <div className="!flex !relative sm:px-5 sm:flex-col">
-                      <div className="w-full relative flex !items-center !justify-between bg-[#141414] overflow-hidden rounded sm:flex-col sm:p-0 pl-7.5 mb-15 sm:mb-0 sm:mr-auto sm:ml-auto sm:rounded h-[225px] sm:h-full">
-                        <div className="flex flex-col sm:w-full z-[11]">
-                          <div className="flex flex-col mb-5 sm:pt-5 sm:px-5 sm:mb-6">
-                            <div className="text-[40px] sm:text-2xl font-medium text-white text-left whitespace-nowrap">
-                              Forsage school
-                            </div>
-                            <div className="text-[16px] text-white-500 text-left">
-                              New Opportunities For Your Business
-                            </div>
-                          </div>
-                          <div className="relative w-full hidden sm:flex sm:flex-1 items-center !justify-center">
-                            <img
-                              className="absolute right-0 !h-[150px] !w-[100px] top-0"
-                              src="/mainBanner/mobile/1.png"
-                            />
-                            <img
-                              className="absolute right-5 bottom-[-30px] h-[200px] !w-[200px] z-[-1]"
-                              src="/mainBanner/mobile/2.png"
-                            />
-                            <img
-                              className="h-[250px] !w-[250px]"
-                              src="/mainBanner/mobile/mainPic.png"
-                              alt=""
-                            />
-                          </div>
-                          <img
-                            className="!bottom-0 !left-0 h-[100%] z-[-1] !rounded absolute !hidden sm:!flex"
-                            src="mainBanner/mobile/shadow.png"
-                          />
-                          <div className="sm:p-5">
-                            <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-blue hover:bg-hover-main-blue active:bg-active-main-blue sm:w-full sm:max-w-full bg-[#00DB83] hover:bg-[#00DB83] hover:opacity-75 active:bg-[#00DB83] active:opacity-50">
-                              <a
-                                target="_blank"
-                                href="https://school.forsage.io/"
-                              >
-                                Go to school
-                              </a>
-                            </button>
-                          </div>
-                        </div>
-                        <img
-                          className="sm:!hidden rounded"
-                          src="/mainBanner/rightImg.png"
-                          alt="schoolBanner"
-                        />
-                      </div>
-                    </div>
-                  </li>
-                  <li className="slide">
-                    <div className="!flex !relative sm:px-5 sm:h-full sm:flex-col">
-                      <div className="w-full relative flex !items-center !justify-between fix-alertGradient rounded sm:flex-col sm:p-0 pl-7.5 mb-15 sm:mr-auto sm:ml-auto sm:rounded py-8.5 h-[225px] sm:h-full">
-                        <div className="!flex !flex-col sm:w-full">
-                          <div className="flex flex-col mb-5 sm:p-5 sm:mb-6 sm:pb-0">
-                            <div className="leading-[40px] text-[40px] sm:text-2xl font-medium text-white leading-1 text-left">
-                              How to fix <br className="sm:hidden" />
-                              scanner alert
-                            </div>
-                            <div className="h-auto sm:h-[16px] text-white-500 text-left"></div>
-                          </div>
-                          <div className="flex items-center justify-center w-full">
-                            <img
-                              className="!hidden sm:!block h-[250px] !w-[370px] !flex !items-center !justify-center"
-                              src="/fixAlert/fix.png"
-                              alt=""
-                            />
-                          </div>
-                          <div className="sm:p-5">
-                            <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none py-3 px-5 text-main-blue bg-white-900 hover:bg-main-blue hover:text-white sm:w-full">
-                              <a
-                                target="_blank"
-                                href="https://t.me/forsageio_official/342"
-                              >
-                                Tutorial
-                              </a>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                      <img
-                        className="!absolute !h-[110%] !w-[500px] !bottom-1 !right-0 sm:!hidden"
-                        src="/fixAlert/fix.png"
-                      />
-                    </div>
-                  </li>
-                  <li className="slide">
-                    <div className="!flex !relative sm:px-5 sm:flex-col">
-                      <div className="w-full relative flex !items-center frgx-background !justify-between maxQore_main_banner overflow-hidden rounded sm:flex-col sm:p-0 pl-7.5 mb-15 sm:mb-0 sm:mr-auto sm:ml-auto sm:rounded h-[225px] sm:h-[440px]">
-                        <div className="flex flex-col h-full justify-between py-7.5 sm:py-0 sm:w-full z-[11]">
-                          <div className="flex flex-col sm:pt-5 sm:px-5 sm:space-y-1">
-                            <div className="text-[40px] sm:text-2xl font-normal text-white text-left whitespace-nowrap">
-                              FRGX Token
-                            </div>
-                          </div>
-                          <div className="sm:p-5">
-                            <a
-                              className="block frgx-buy-border p-[1px] w-max rounded-[10px] sm:w-full"
-                              target="_blank"
-                              href="https://frgx.finance/"
-                            >
-                              <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-blue hover:bg-hover-main-blue active:bg-active-main-blue sm:w-full sm:max-w-full bg-[#090A0A] hover:bg-[#090A0A] hover:opacity-75 active:bg-[#090A0A] active:opacity-50">
-                                More about FRGX
-                              </button>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
               <button
                 type="button"
                 aria-label="next slide / item"
@@ -958,9 +609,11 @@ const Login = () => {
                 </span>
                 <span className="text-white-500 text-base mt-1 mb-7.5">
                   Look up any
-                  <span className="notranslate mx-1.5">Forsage BUSD</span>{" "}
+                  <span className="notranslate mx-1.5">
+                    The Crypto Global USDT
+                  </span>{" "}
                   member account in preview mode. Enter ID or
-                  <span className="notranslate mx-1.5">BUSD</span> address to
+                  <span className="notranslate mx-1.5">USDT</span> address to
                   preview or click Demo to view a random account.
                 </span>
               </div>
@@ -968,7 +621,7 @@ const Login = () => {
                 <div className="flex flex-col flex-1 justify-between sm:w-full bg-main-blue-200 rounded sm:rounded-none p-7.5 sm:p-5 mr-10 sm:mr-0 sm:mb-5">
                   <span className="text-white mb-3">
                     Enter <span className="notranslate mx-1">ID</span> or
-                    <span className="notranslate mx-1">BUSD</span>wallet
+                    <span className="notranslate mx-1">USDT</span>wallet
                   </span>
                   <div className="flex sm:flex-col">
                     <input
@@ -995,228 +648,7 @@ const Login = () => {
                         Check demo
                       </button>
                     </a>
-                    <svg
-                      className="absolute top-1/2 right-0 transform -translate-y-1/2 fill-current text-white-100"
-                      width="113"
-                      height="121"
-                      fill="#406AFF"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M35.987 32.963c-1.348-.492-2.812.247-3.278 1.664l-2.3 7.024s9.884-3.326 15.036-4.374l-9.458-4.314Zm-32.3 18.791c.024 0 1.04-.74 1.582-1.048l16.6-8.933c5.146-2.589 4.012-4.621 5.96-10.289a35.974 35.974 0 0 1 2.93-6.346C40.234 20.393 67.166 21.503 69.738 0c0 0 10.047 6.962 11.878 19.716C187.781 11.153 237 73.01 237 73.01c-19.772-8.317-41.103-12.26-62.439-13.307 40.561 32.961 53.332 82.619 53.332 82.619s-32.86-33.7-82.254-52.492c12.929 19.286 20.421 45.161 17.358 79.17 0 0-25.408-102.396-145.965-77.63 0 0-4.411-13.615-15.8-27.54-.718-.863-1.125-2.156-1.207-3.635a10.002 10.002 0 0 1 3.662-8.44Z"
-                      ></path>
-                    </svg>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col text-left space-y-[50px] lg:space-y-5 sm:px-5 pb-5 sm:pb-2.5">
-            <span className="text-white text-3xl font-bold">Roadmap</span>
-            <div className="grid grid-cols-3 sm:grid-cols-1 !mt-0">
-              <div className="relative flex flex-col items-center space-y-2.5 p-10 sm:p-0 sm:py-3">
-                <div className="absolute bottom-2.5 border-t-2 border-white-900 h-[1px] sm:left-1/2 sm:right-auto sm:-translate-x-1/2 sm:bottom-0 sm:top-1 sm:border-none w-full mobile-width-line"></div>
-                <div className="hidden sm:block sm:!hidden absolute bottom-[-95.5%] right-0 sm:right-6 rounded-r-[15px] border-2 border-l-0 border-white-900 h-[101%] w-[15px] sm:w-[16px] sm:h-[101.5%] sm:bottom-[95%]"></div>
-                <div className="sm:flex-row-reverse flex flex-col bg-black-light p-2.5 sm:p-0 rounded w-full items-center sm:items-start space-y-2.5 sm:rounded-[20px] sm:space-y-0 sm:h-[80px] sm:justify-center">
-                  <div className="h-[75px] flex items-center">
-                    <img
-                      className="max-h-full sm:min-w-[65px] sm:absolute sm:right-3"
-                      src="/roadmap/social.png"
-                      alt=""
-                    />
-                  </div>
-                  <span className="text-white min-h-[16px] font-medium sm:font-light sm:text-xl sm:pt-4">
-                    Social
-                  </span>
-                </div>
-                <span className="absolute bottom-[-34px] sm:bottom-5 text-white">
-                  21.08
-                </span>
-                <div className="sm:left-2.5 absolute bottom-[-5px] sm:bottom-0 sm:top-[43%] sm:-translate-y-1/2 z-[10] w-7.5 h-7.5 bg-white rounded-full flex items-center justify-center">
-                  <svg
-                    className="absolute w-7.5 h-7.5"
-                    viewBox="0 0 120 120"
-                    fill="#00FF38"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M105 35 45 95 17.5 67.5l7.05-7.05L45 80.85l52.95-52.9L105 35Z"></path>
-                  </svg>
-                </div>
-              </div>
-              <div className="relative flex flex-col items-center space-y-2.5 p-10 sm:p-0 sm:py-3">
-                <div className="absolute bottom-2.5 border-t-2 border-white-900 h-[1px] sm:left-1/2 sm:right-auto sm:-translate-x-1/2 sm:bottom-0 sm:top-1 w-full mobile-width-line"></div>
-                <div className="hidden sm:block sm:!hidden absolute bottom-[-95.5%] left-0 sm:left-6 rounded-l-[15px] border-2 border-r-0 border-white-900 h-[101%] w-[15px] sm:w-[16px] sm:h-[101.5%] sm:bottom-[95%]"></div>
-                <div className="sm:flex-row flex flex-col bg-black-light p-2.5 sm:p-0 rounded w-full items-center sm:items-start space-y-2.5 sm:rounded-[20px] sm:space-y-0 sm:h-[80px] sm:justify-center">
-                  <div className="h-[75px] flex items-center">
-                    <img
-                      className="max-h-full sm:max-w-[65px] sm:absolute sm:left-3"
-                      src="/roadmap/achievements.png"
-                      alt=""
-                    />
-                  </div>
-                  <span className="text-white min-h-[16px] font-medium sm:font-light sm:text-xl sm:pt-4">
-                    Achievements
-                  </span>
-                </div>
-                <span className="absolute bottom-[-34px] sm:bottom-5 text-white">
-                  28.08
-                </span>
-                <div className="sm:right-2.5 absolute bottom-[-5px] sm:bottom-0 sm:top-[43%] sm:-translate-y-1/2 z-[10] w-7.5 h-7.5 bg-white rounded-full flex items-center justify-center">
-                  <svg
-                    className="absolute w-7.5 h-7.5"
-                    viewBox="0 0 120 120"
-                    fill="#00FF38"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M105 35 45 95 17.5 67.5l7.05-7.05L45 80.85l52.95-52.9L105 35Z"></path>
-                  </svg>
-                </div>
-              </div>
-              <div className="relative flex flex-col items-center space-y-2.5 p-10 sm:p-0 sm:py-3">
-                <div className="absolute bottom-2.5 border-t-2 border-white-900 h-[1px] sm:left-1/2 sm:right-auto sm:-translate-x-1/2 sm:bottom-0 sm:top-1 !w-[96%] left-0 sm:left-1/2 sm:-translate-x-1/2 w-full mobile-width-line"></div>
-                <div className="absolute bottom-[-95.5%] right-0 sm:right-6 rounded-r-[15px] border-2 border-l-0 border-white-900 h-[101%] w-[15px] sm:w-[16px] sm:h-[101.5%] sm:bottom-[95%]"></div>
-                <div className="sm:flex-row-reverse flex flex-col bg-black-light p-2.5 sm:p-0 rounded w-full items-center sm:items-start space-y-2.5 sm:rounded-[20px] sm:space-y-0 sm:h-[80px] sm:justify-center">
-                  <div className="h-[75px] flex items-center">
-                    <img
-                      className="max-h-full sm:max-w-[50px] sm:absolute sm:right-3"
-                      src="/roadmap/bigRefferalСontest.png"
-                      alt=""
-                    />
-                  </div>
-                  <span className="text-white min-h-[16px] font-medium sm:font-light sm:text-xl sm:pt-4">
-                    Cycle Rally Marathon
-                  </span>
-                </div>
-                <span className="absolute bottom-[-34px] sm:bottom-5 text-white">
-                  4.09
-                </span>
-                <div className="sm:left-2.5 absolute bottom-[-5px] sm:bottom-0 sm:top-[43%] sm:-translate-y-1/2 z-[10] w-7.5 h-7.5 bg-white rounded-full flex items-center justify-center">
-                  <svg
-                    className="absolute w-7.5 h-7.5"
-                    viewBox="0 0 120 120"
-                    fill="#00FF38"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M105 35 45 95 17.5 67.5l7.05-7.05L45 80.85l52.95-52.9L105 35Z"></path>
-                  </svg>
-                </div>
-              </div>
-              <div className="relative flex flex-col items-center space-y-2.5 p-10 sm:p-0 sm:py-3">
-                <div className="absolute bottom-2.5 border-t-2 border-white-900 h-[1px] sm:left-1/2 sm:right-auto sm:-translate-x-1/2 sm:bottom-0 sm:top-1 !w-[96%] right-0 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 w-full mobile-width-line"></div>
-                <div className="absolute bottom-[-95.5%] left-0 sm:left-6 rounded-l-[15px] border-2 border-r-0 border-white-900 h-[101%] w-[15px] sm:w-[16px] sm:h-[101.5%] sm:bottom-[95%]"></div>
-                <div className="sm:flex-row flex flex-col bg-black-light p-2.5 sm:p-0 rounded w-full items-center sm:items-start space-y-2.5 sm:rounded-[20px] sm:space-y-0 sm:h-[80px] sm:justify-center">
-                  <div className="h-[75px] flex items-center">
-                    <img
-                      className="max-h-full max-w-[75px] sm:max-w-[60px] sm:absolute sm:left-3"
-                      src="/roadmap/games.png"
-                      alt=""
-                    />
-                  </div>
-                  <span className="text-white min-h-[16px] font-medium sm:font-light sm:text-xl sm:pt-4">
-                    Forsage Games
-                  </span>
-                </div>
-                <span className="absolute bottom-[-34px] sm:bottom-5 text-white">
-                  21.11
-                </span>
-                <div className="sm:right-2.5 absolute bottom-[-5px] sm:bottom-0 sm:top-[43%] sm:-translate-y-1/2 z-[10] w-7.5 h-7.5 bg-white rounded-full flex items-center justify-center">
-                  <svg
-                    className="absolute w-7.5 h-7.5"
-                    viewBox="0 0 120 120"
-                    fill="#00FF38"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M105 35 45 95 17.5 67.5l7.05-7.05L45 80.85l52.95-52.9L105 35Z"></path>
-                  </svg>
-                </div>
-              </div>
-              <div className="relative flex flex-col items-center space-y-2.5 p-10 sm:p-0 sm:py-3">
-                <div className="absolute bottom-2.5 border-t-2 border-white-900 h-[1px] sm:left-1/2 sm:right-auto sm:-translate-x-1/2 sm:bottom-0 sm:top-1 w-full mobile-width-line"></div>
-                <div className="hidden sm:block absolute bottom-[-95.5%] right-0 sm:right-6 rounded-r-[15px] border-2 border-l-0 border-white-900 h-[101%] w-[15px] sm:w-[16px] sm:h-[101.5%] sm:bottom-[95%]"></div>
-                <div className="sm:flex-row-reverse flex flex-col bg-black-light p-2.5 sm:p-0 rounded w-full items-center sm:items-start space-y-2.5 sm:rounded-[20px] sm:space-y-0 sm:h-[80px] sm:justify-center">
-                  <div className="h-[75px] flex items-center">
-                    <img
-                      className="max-h-full sm:max-w-[70px] sm:absolute sm:right-3"
-                      src="/roadmap/customInvitePdf.png"
-                      alt=""
-                    />
-                  </div>
-                  <span className="text-white min-h-[16px] font-medium sm:font-light sm:text-xl sm:pt-4">
-                    Custom invite page
-                  </span>
-                </div>
-                <span className="absolute bottom-[-34px] sm:bottom-5 text-white">
-                  12.10
-                </span>
-                <div className="sm:left-2.5 absolute bottom-[-5px] sm:bottom-0 sm:top-[43%] sm:-translate-y-1/2 z-[10] w-7.5 h-7.5 bg-white rounded-full flex items-center justify-center">
-                  <svg
-                    className="absolute w-7.5 h-7.5"
-                    viewBox="0 0 120 120"
-                    fill="#00FF38"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M105 35 45 95 17.5 67.5l7.05-7.05L45 80.85l52.95-52.9L105 35Z"></path>
-                  </svg>
-                </div>
-              </div>
-              <div className="relative flex flex-col items-center space-y-2.5 p-10 sm:p-0 sm:py-3">
-                <div className="absolute bottom-2.5 border-t-2 border-white-900 h-[1px] sm:left-1/2 sm:right-auto sm:-translate-x-1/2 sm:bottom-0 sm:top-1 !w-[96%] left-0 sm:left-1/2 sm:-translate-x-1/2 w-full mobile-width-line"></div>
-                <div className="hidden sm:block absolute bottom-[-95.5%] left-0 sm:left-6 rounded-l-[15px] border-2 border-r-0 border-white-900 h-[101%] w-[15px] sm:w-[16px] sm:h-[101.5%] sm:bottom-[95%]"></div>
-                <div className="sm:flex-row flex flex-col bg-black-light p-2.5 sm:p-0 rounded w-full items-center sm:items-start space-y-2.5 sm:rounded-[20px] sm:space-y-0 sm:h-[80px] sm:justify-center">
-                  <div className="h-[75px] flex items-center">
-                    <img
-                      className="max-h-full max-w-[100px] sm:max-w-[75px] sm:absolute sm:left-3"
-                      src="/roadmap/maxqore.png"
-                      alt=""
-                    />
-                  </div>
-                  <span className="text-white min-h-[16px] font-medium sm:font-light sm:text-xl sm:pt-4">
-                    New program
-                  </span>
-                </div>
-                <span className="absolute bottom-[-34px] sm:bottom-5 text-white">
-                  3.10
-                </span>
-                <div className="sm:right-2.5 absolute bottom-[-5px] sm:bottom-0 sm:top-[43%] sm:-translate-y-1/2 z-[10] w-7.5 h-7.5 bg-white rounded-full flex items-center justify-center">
-                  <svg
-                    className="absolute w-7.5 h-7.5"
-                    viewBox="0 0 120 120"
-                    fill="#00FF38"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M105 35 45 95 17.5 67.5l7.05-7.05L45 80.85l52.95-52.9L105 35Z"></path>
-                  </svg>
-                </div>
-              </div>
-              <div className="relative flex flex-col items-center space-y-2.5 p-10 sm:p-0 sm:py-3">
-                <div className="absolute bottom-2.5 border-t-2 border-white-900 h-[1px] sm:left-1/2 sm:right-auto sm:-translate-x-1/2 sm:bottom-0 sm:top-1 !w-[96%] right-0 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 w-full mobile-width-line"></div>
-                <div className="hidden sm:block absolute bottom-[-95.5%] right-0 sm:right-6 rounded-r-[15px] border-2 border-l-0 border-white-900 h-[101%] w-[15px] sm:w-[16px] sm:h-[101.5%] sm:bottom-[95%]"></div>
-                <div className="sm:flex-row-reverse flex flex-col bg-black-light p-2.5 sm:p-0 rounded w-full items-center sm:items-start space-y-2.5 sm:rounded-[20px] sm:space-y-0 sm:h-[80px] sm:justify-center">
-                  <div className="h-[75px] flex items-center">
-                    <img
-                      className="max-h-full max-w-[75px] sm:absolute sm:right-3"
-                      src="/roadmap/token.png"
-                      alt=""
-                    />
-                  </div>
-                  <span className="text-white min-h-[16px] font-medium sm:font-light sm:text-xl sm:pt-4">
-                    Token
-                  </span>
-                </div>
-                <span className="absolute bottom-[-34px] sm:bottom-5 text-white">
-                  20.12 2023
-                </span>
-                <div className="sm:left-2.5 absolute bottom-[-5px] sm:bottom-0 sm:top-[43%] sm:-translate-y-1/2 z-[10] w-7.5 h-7.5 bg-white rounded-full flex items-center justify-center">
-                  <svg
-                    className="absolute w-7.5 h-7.5"
-                    viewBox="0 0 120 120"
-                    fill="#00FF38"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M105 35 45 95 17.5 67.5l7.05-7.05L45 80.85l52.95-52.9L105 35Z"></path>
-                  </svg>
                 </div>
               </div>
             </div>
@@ -1253,81 +685,7 @@ const Login = () => {
                     id="Platform recent activity"
                     data-id="tooltip"
                   >
-                    {/* <style aria-hidden="true">
-                        .t8ee316fe-23a6-484e-9790-840bbf796800 {
-                          color: #fff;
-                          background: #222;
-                          border: 1px solid transparent;
-                        }
-
-                        .t8ee316fe-23a6-484e-9790-840bbf796800.place-top {
-                          margin-top: -10px;
-                        }
-                        .t8ee316fe-23a6-484e-9790-840bbf796800.place-top::before {
-                          border-top: 8px solid transparent;
-                        }
-                        .t8ee316fe-23a6-484e-9790-840bbf796800.place-top::after {
-                          border-left: 8px solid transparent;
-                          border-right: 8px solid transparent;
-                          bottom: -6px;
-                          left: 50%;
-                          margin-left: -8px;
-                          border-top-color: #222;
-                          border-top-style: solid;
-                          border-top-width: 6px;
-                        }
-
-                        .t8ee316fe-23a6-484e-9790-840bbf796800.place-bottom {
-                          margin-top: 10px;
-                        }
-                        .t8ee316fe-23a6-484e-9790-840bbf796800.place-bottom::before {
-                          border-bottom: 8px solid transparent;
-                        }
-                        .t8ee316fe-23a6-484e-9790-840bbf796800.place-bottom::after {
-                          border-left: 8px solid transparent;
-                          border-right: 8px solid transparent;
-                          top: -6px;
-                          left: 50%;
-                          margin-left: -8px;
-                          border-bottom-color: #222;
-                          border-bottom-style: solid;
-                          border-bottom-width: 6px;
-                        }
-
-                        .t8ee316fe-23a6-484e-9790-840bbf796800.place-left {
-                          margin-left: -10px;
-                        }
-                        .t8ee316fe-23a6-484e-9790-840bbf796800.place-left::before {
-                          border-left: 8px solid transparent;
-                        }
-                        .t8ee316fe-23a6-484e-9790-840bbf796800.place-left::after {
-                          border-top: 5px solid transparent;
-                          border-bottom: 5px solid transparent;
-                          right: -6px;
-                          top: 50%;
-                          margin-top: -4px;
-                          border-left-color: #222;
-                          border-left-style: solid;
-                          border-left-width: 6px;
-                        }
-
-                        .t8ee316fe-23a6-484e-9790-840bbf796800.place-right {
-                          margin-left: 10px;
-                        }
-                        .t8ee316fe-23a6-484e-9790-840bbf796800.place-right::before {
-                          border-right: 8px solid transparent;
-                        }
-                        .t8ee316fe-23a6-484e-9790-840bbf796800.place-right::after {
-                          border-top: 5px solid transparent;
-                          border-bottom: 5px solid transparent;
-                          left: -6px;
-                          top: 50%;
-                          margin-top: -4px;
-                          border-right-color: #222;
-                          border-right-style: solid;
-                          border-right-width: 6px;
-                        }</style> */}
-                    Forsage BUSD real-time global events with links to
+                    The Crypto Global USDT real-time global events with links to
                     transactions in blockchain
                   </div>
                 </div>
@@ -1338,20 +696,9 @@ const Login = () => {
                     <div className="flex items-center justify-between py-5 border-line-gray border-b first:pt-0 w-full sm:py-5 sm:items-start">
                       <div className="flex items-center sm:items-start justify-start sm:w-full">
                         <div className="bg-white-100 flex w-10 h-10 items-center justify-center rounded-full flex-shrink-0 sm:w-7.5 sm:h-7.5">
-                          <svg
-                            className="fill-current text-white w-5 h-5"
-                            width="20"
-                            height="20"
-                            fill="#fff"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path d="M7.5 9.167a3.333 3.333 0 1 0 0-6.667 3.333 3.333 0 0 0 0 6.667ZM2.5 17.5v-2.667A3.333 3.333 0 0 1 5.833 11.5h3.334a3.333 3.333 0 0 1 3.333 3.333V17.5"></path>
-                            <path
-                              fillRule="evenodd"
-                              clipRule="evenodd"
-                              d="M15.833 6.167a.5.5 0 0 1 .5.5v2h2a.5.5 0 1 1 0 1h-2v2a.5.5 0 1 1-1 0v-2h-2a.5.5 0 0 1 0-1h2v-2a.5.5 0 0 1 .5-.5Z"
-                            ></path>
-                          </svg>
+                          <NavLink to="/">
+                            <img src={LogoGreen} height={"10px"} width="40px" />
+                          </NavLink>
                         </div>
                         <div className="flex ml-5 items-center sm:w-full flex-wrap sm:ml-2.5">
                           <a
@@ -1443,7 +790,7 @@ const Login = () => {
                               +
                             </span>
                             <span className="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">
-                              5 BUSD{" "}
+                              5 USDT{" "}
                             </span>
                             <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
                               in
@@ -1530,7 +877,7 @@ const Login = () => {
                               +
                             </span>
                             <span className="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">
-                              5 BUSD{" "}
+                              5 USDT{" "}
                             </span>
                             <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
                               in
@@ -1617,7 +964,7 @@ const Login = () => {
                               +
                             </span>
                             <span className="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">
-                              20 BUSD{" "}
+                              20 USDT{" "}
                             </span>
                             <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
                               in
@@ -1772,7 +1119,7 @@ const Login = () => {
                               +
                             </span>
                             <span className="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">
-                              5 BUSD{" "}
+                              5 USDT{" "}
                             </span>
                             <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
                               in
@@ -1859,7 +1206,7 @@ const Login = () => {
                               +
                             </span>
                             <span className="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">
-                              5 BUSD{" "}
+                              5 USDT{" "}
                             </span>
                             <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
                               in
@@ -2014,7 +1361,7 @@ const Login = () => {
                               +
                             </span>
                             <span className="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">
-                              5 BUSD{" "}
+                              5 USDT{" "}
                             </span>
                             <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
                               in
@@ -2101,7 +1448,7 @@ const Login = () => {
                               +
                             </span>
                             <span className="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">
-                              5 BUSD{" "}
+                              5 USDT{" "}
                             </span>
                             <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
                               in
@@ -2266,84 +1613,7 @@ const Login = () => {
                             className="__react_component_tooltip tf6a3a088-87a8-4214-afaf-02665dc79090 place-bottom type-dark"
                             id="Members total"
                             data-id="tooltip"
-                          >
-                            {/* <style aria-hidden="true">
-                                .tf6a3a088-87a8-4214-afaf-02665dc79090 {
-                                  color: #fff;
-                                  background: #222;
-                                  border: 1px solid transparent;
-                                }
-
-                                .tf6a3a088-87a8-4214-afaf-02665dc79090.place-top {
-                                  margin-top: -10px;
-                                }
-                                .tf6a3a088-87a8-4214-afaf-02665dc79090.place-top::before {
-                                  border-top: 8px solid transparent;
-                                }
-                                .tf6a3a088-87a8-4214-afaf-02665dc79090.place-top::after {
-                                  border-left: 8px solid transparent;
-                                  border-right: 8px solid transparent;
-                                  bottom: -6px;
-                                  left: 50%;
-                                  margin-left: -8px;
-                                  border-top-color: #222;
-                                  border-top-style: solid;
-                                  border-top-width: 6px;
-                                }
-
-                                .tf6a3a088-87a8-4214-afaf-02665dc79090.place-bottom {
-                                  margin-top: 10px;
-                                }
-                                .tf6a3a088-87a8-4214-afaf-02665dc79090.place-bottom::before {
-                                  border-bottom: 8px solid transparent;
-                                }
-                                .tf6a3a088-87a8-4214-afaf-02665dc79090.place-bottom::after {
-                                  border-left: 8px solid transparent;
-                                  border-right: 8px solid transparent;
-                                  top: -6px;
-                                  left: 50%;
-                                  margin-left: -8px;
-                                  border-bottom-color: #222;
-                                  border-bottom-style: solid;
-                                  border-bottom-width: 6px;
-                                }
-
-                                .tf6a3a088-87a8-4214-afaf-02665dc79090.place-left {
-                                  margin-left: -10px;
-                                }
-                                .tf6a3a088-87a8-4214-afaf-02665dc79090.place-left::before {
-                                  border-left: 8px solid transparent;
-                                }
-                                .tf6a3a088-87a8-4214-afaf-02665dc79090.place-left::after {
-                                  border-top: 5px solid transparent;
-                                  border-bottom: 5px solid transparent;
-                                  right: -6px;
-                                  top: 50%;
-                                  margin-top: -4px;
-                                  border-left-color: #222;
-                                  border-left-style: solid;
-                                  border-left-width: 6px;
-                                }
-
-                                .tf6a3a088-87a8-4214-afaf-02665dc79090.place-right {
-                                  margin-left: 10px;
-                                }
-                                .tf6a3a088-87a8-4214-afaf-02665dc79090.place-right::before {
-                                  border-right: 8px solid transparent;
-                                }
-                                .tf6a3a088-87a8-4214-afaf-02665dc79090.place-right::after {
-                                  border-top: 5px solid transparent;
-                                  border-bottom: 5px solid transparent;
-                                  left: -6px;
-                                  top: 50%;
-                                  margin-top: -4px;
-                                  border-right-color: #222;
-                                  border-right-style: solid;
-                                  border-right-width: 6px;
-                                }</style> */}
-                            Total number of members in Forsage BUSD and last 24
-                            hours change
-                          </div>
+                          ></div>
                         </div>
                       </div>
                       <span className="text-white text-2xl font-bold notranslate sm:text-xl false mt-5 sm:mt-2.5">
@@ -2375,7 +1645,6 @@ const Login = () => {
                           className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none ml-1.5"
                           data-tip="true"
                           data-for="Members received"
-                          // currentitem="false"
                         >
                           <span></span>
                           <svg
@@ -2395,92 +1664,15 @@ const Login = () => {
                           className="__react_component_tooltip t758b7c69-4162-40a0-b8be-21be4ca2e424 place-bottom type-dark"
                           id="Members received"
                           data-id="tooltip"
-                        >
-                          {/* <style aria-hidden="true">
-                              .t758b7c69-4162-40a0-b8be-21be4ca2e424 {
-                                color: #fff;
-                                background: #222;
-                                border: 1px solid transparent;
-                              }
-
-                              .t758b7c69-4162-40a0-b8be-21be4ca2e424.place-top {
-                                margin-top: -10px;
-                              }
-                              .t758b7c69-4162-40a0-b8be-21be4ca2e424.place-top::before {
-                                border-top: 8px solid transparent;
-                              }
-                              .t758b7c69-4162-40a0-b8be-21be4ca2e424.place-top::after {
-                                border-left: 8px solid transparent;
-                                border-right: 8px solid transparent;
-                                bottom: -6px;
-                                left: 50%;
-                                margin-left: -8px;
-                                border-top-color: #222;
-                                border-top-style: solid;
-                                border-top-width: 6px;
-                              }
-
-                              .t758b7c69-4162-40a0-b8be-21be4ca2e424.place-bottom {
-                                margin-top: 10px;
-                              }
-                              .t758b7c69-4162-40a0-b8be-21be4ca2e424.place-bottom::before {
-                                border-bottom: 8px solid transparent;
-                              }
-                              .t758b7c69-4162-40a0-b8be-21be4ca2e424.place-bottom::after {
-                                border-left: 8px solid transparent;
-                                border-right: 8px solid transparent;
-                                top: -6px;
-                                left: 50%;
-                                margin-left: -8px;
-                                border-bottom-color: #222;
-                                border-bottom-style: solid;
-                                border-bottom-width: 6px;
-                              }
-
-                              .t758b7c69-4162-40a0-b8be-21be4ca2e424.place-left {
-                                margin-left: -10px;
-                              }
-                              .t758b7c69-4162-40a0-b8be-21be4ca2e424.place-left::before {
-                                border-left: 8px solid transparent;
-                              }
-                              .t758b7c69-4162-40a0-b8be-21be4ca2e424.place-left::after {
-                                border-top: 5px solid transparent;
-                                border-bottom: 5px solid transparent;
-                                right: -6px;
-                                top: 50%;
-                                margin-top: -4px;
-                                border-left-color: #222;
-                                border-left-style: solid;
-                                border-left-width: 6px;
-                              }
-
-                              .t758b7c69-4162-40a0-b8be-21be4ca2e424.place-right {
-                                margin-left: 10px;
-                              }
-                              .t758b7c69-4162-40a0-b8be-21be4ca2e424.place-right::before {
-                                border-right: 8px solid transparent;
-                              }
-                              .t758b7c69-4162-40a0-b8be-21be4ca2e424.place-right::after {
-                                border-top: 5px solid transparent;
-                                border-bottom: 5px solid transparent;
-                                left: -6px;
-                                top: 50%;
-                                margin-top: -4px;
-                                border-right-color: #222;
-                                border-right-style: solid;
-                                border-right-width: 6px;
-                              }</style> */}
-                          Total amount received by all members of Forsage and
-                          last 24 hours change
-                        </div>
+                        ></div>
                       </div>
                     </span>
                     <div className="flex flex-col py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
                       <span className="text-2xl text-white font-bold sm:text-xl">
-                        147808795.94 BUSD
+                        147808795.94 USDT
                       </span>
                       <span className="text-green-light text-base items-baseline sm:text-sm">
-                        + 11132.7 BUSD
+                        + 11132.7 USDT
                       </span>
                     </div>
                     <div className="flex flex-col py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
@@ -2494,7 +1686,7 @@ const Login = () => {
                   </div>
                   <div className="bg-gray rounded p-5 flex flex-col flex-1 max-w-full">
                     <div className="flex justify-between items-center text-base text-white-500 sm:text-sm">
-                      <span>Forsage BUSD Contracts</span>
+                      <span>Crypto Global USDT Contracts</span>
                       <button className="rounded-full h-5 w-5 justify-center items-center bg-main-blue hidden lg:flex">
                         <svg
                           className="stroke-current text-white"
@@ -2511,7 +1703,7 @@ const Login = () => {
                       <div className="flex flex-col border-t border-b border-white-100 pb-2.5 mt-2.5">
                         <div className="flex justify-between items-center py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
                           <span className="text-base text-white-500 notranslate sm:text-sm">
-                            x3/x4
+                            Matrix
                           </span>
                           <div className="flex justify-end items-center space-x-2.5">
                             <span className="text-base text-white notranslate sm:text-sm">
@@ -2560,7 +1752,7 @@ const Login = () => {
                         </div>
                         <div className="flex justify-between items-center py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
                           <span className="text-base text-white-500 notranslate sm:text-sm">
-                            xXx
+                            Working
                           </span>
                           <div className="flex justify-end items-center space-x-2.5">
                             <span className="text-base text-white notranslate sm:text-sm">
@@ -2607,153 +1799,6 @@ const Login = () => {
                             </a>
                           </div>
                         </div>
-                        <div className="flex justify-between items-center py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
-                          <span className="text-base text-white-500 notranslate sm:text-sm">
-                            xGold
-                          </span>
-                          <div className="flex justify-end items-center space-x-2.5">
-                            <span className="text-base text-white notranslate sm:text-sm">
-                              0x988...7C5
-                            </span>
-                            <button>
-                              <svg
-                                className="h-18px w-18px"
-                                viewBox="0 0 20 20"
-                                fill="#fff"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path d="M15 6.667H8.332c-.92 0-1.667.746-1.667 1.666V15c0 .92.746 1.667 1.667 1.667h6.666c.92 0 1.667-.747 1.667-1.667V8.333c0-.92-.746-1.666-1.667-1.666Z"></path>
-                                <path
-                                  fillRule="evenodd"
-                                  clipRule="evenodd"
-                                  d="M3.469 3.468A2.167 2.167 0 0 1 5 2.833h6.666A2.167 2.167 0 0 1 13.834 5v1.667a.5.5 0 0 1-1 0V5a1.167 1.167 0 0 0-1.167-1.167H5.001A1.167 1.167 0 0 0 3.834 5v6.667a1.167 1.167 0 0 0 1.167 1.166h1.666a.5.5 0 1 1 0 1H5.001a2.167 2.167 0 0 1-2.167-2.166V5c0-.575.228-1.126.635-1.532Z"
-                                ></path>
-                              </svg>
-                            </button>
-                            <a
-                              target="_blank"
-                              href="https://bscscan.com/address/0x98872a66D0749C720D8Dc1A80d496b24B04ff7C5"
-                            >
-                              <svg
-                                className="h-18px w-18px"
-                                viewBox="0 0 20 20"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  fillRule="evenodd"
-                                  clipRule="evenodd"
-                                  d="M11.314 3.813a3.446 3.446 0 1 1 4.873 4.874l-3.331 3.331a3.418 3.418 0 0 1-4.88-.001.5.5 0 0 1 .715-.7 2.417 2.417 0 0 0 3.452 0l.004-.004L15.48 7.98a2.446 2.446 0 1 0-3.46-3.46l-.416.417a.5.5 0 1 1-.707-.707l.417-.417Z"
-                                  fill="#fff"
-                                ></path>
-                                <path
-                                  fillRule="evenodd"
-                                  clipRule="evenodd"
-                                  d="M8.26 7.225a3.417 3.417 0 0 1 3.765.758.5.5 0 0 1-.715.7 2.417 2.417 0 0 0-3.452 0l-.003.004L4.52 12.02a2.446 2.446 0 0 0 3.46 3.46l.416-.417a.5.5 0 1 1 .708.707l-.417.417a3.446 3.446 0 1 1-4.874-4.874l3.332-3.332a3.417 3.417 0 0 1 1.115-.756Z"
-                                  fill="#fff"
-                                ></path>
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <div className="flex justify-between items-center py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
-                          <span className="text-base text-white-500 notranslate sm:text-sm">
-                            xQore
-                          </span>
-                          <div className="flex justify-end items-center space-x-2.5">
-                            <span className="text-base text-white notranslate sm:text-sm">
-                              0x1ee...a78
-                            </span>
-                            <button>
-                              <svg
-                                className="h-18px w-18px"
-                                viewBox="0 0 20 20"
-                                fill="#fff"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path d="M15 6.667H8.332c-.92 0-1.667.746-1.667 1.666V15c0 .92.746 1.667 1.667 1.667h6.666c.92 0 1.667-.747 1.667-1.667V8.333c0-.92-.746-1.666-1.667-1.666Z"></path>
-                                <path
-                                  fillRule="evenodd"
-                                  clipRule="evenodd"
-                                  d="M3.469 3.468A2.167 2.167 0 0 1 5 2.833h6.666A2.167 2.167 0 0 1 13.834 5v1.667a.5.5 0 0 1-1 0V5a1.167 1.167 0 0 0-1.167-1.167H5.001A1.167 1.167 0 0 0 3.834 5v6.667a1.167 1.167 0 0 0 1.167 1.166h1.666a.5.5 0 1 1 0 1H5.001a2.167 2.167 0 0 1-2.167-2.166V5c0-.575.228-1.126.635-1.532Z"
-                                ></path>
-                              </svg>
-                            </button>
-                            <a
-                              target="_blank"
-                              href="https://bscscan.com/address/0x1ee4A7a62726fDd1EDe780f90fd2a77f53F5Ba78"
-                            >
-                              <svg
-                                className="h-18px w-18px"
-                                viewBox="0 0 20 20"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  fillRule="evenodd"
-                                  clipRule="evenodd"
-                                  d="M11.314 3.813a3.446 3.446 0 1 1 4.873 4.874l-3.331 3.331a3.418 3.418 0 0 1-4.88-.001.5.5 0 0 1 .715-.7 2.417 2.417 0 0 0 3.452 0l.004-.004L15.48 7.98a2.446 2.446 0 1 0-3.46-3.46l-.416.417a.5.5 0 1 1-.707-.707l.417-.417Z"
-                                  fill="#fff"
-                                ></path>
-                                <path
-                                  fillRule="evenodd"
-                                  clipRule="evenodd"
-                                  d="M8.26 7.225a3.417 3.417 0 0 1 3.765.758.5.5 0 0 1-.715.7 2.417 2.417 0 0 0-3.452 0l-.003.004L4.52 12.02a2.446 2.446 0 0 0 3.46 3.46l.416-.417a.5.5 0 1 1 .708.707l-.417.417a3.446 3.446 0 1 1-4.874-4.874l3.332-3.332a3.417 3.417 0 0 1 1.115-.756Z"
-                                  fill="#fff"
-                                ></path>
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                        <div className="flex justify-between items-center py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
-                          <span className="text-base text-white-500 notranslate sm:text-sm">
-                            maxQore
-                          </span>
-                          <div className="flex justify-end items-center space-x-2.5">
-                            <span className="text-base text-white notranslate sm:text-sm">
-                              0x27D...260
-                            </span>
-                            <button>
-                              <svg
-                                className="h-18px w-18px"
-                                viewBox="0 0 20 20"
-                                fill="#fff"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path d="M15 6.667H8.332c-.92 0-1.667.746-1.667 1.666V15c0 .92.746 1.667 1.667 1.667h6.666c.92 0 1.667-.747 1.667-1.667V8.333c0-.92-.746-1.666-1.667-1.666Z"></path>
-                                <path
-                                  fillRule="evenodd"
-                                  clipRule="evenodd"
-                                  d="M3.469 3.468A2.167 2.167 0 0 1 5 2.833h6.666A2.167 2.167 0 0 1 13.834 5v1.667a.5.5 0 0 1-1 0V5a1.167 1.167 0 0 0-1.167-1.167H5.001A1.167 1.167 0 0 0 3.834 5v6.667a1.167 1.167 0 0 0 1.167 1.166h1.666a.5.5 0 1 1 0 1H5.001a2.167 2.167 0 0 1-2.167-2.166V5c0-.575.228-1.126.635-1.532Z"
-                                ></path>
-                              </svg>
-                            </button>
-                            <a
-                              target="_blank"
-                              href="https://bscscan.com/address/0x27D6bBaC9112D2097FafA3B14Ae367539A7B1260"
-                            >
-                              <svg
-                                className="h-18px w-18px"
-                                viewBox="0 0 20 20"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  fillRule="evenodd"
-                                  clipRule="evenodd"
-                                  d="M11.314 3.813a3.446 3.446 0 1 1 4.873 4.874l-3.331 3.331a3.418 3.418 0 0 1-4.88-.001.5.5 0 0 1 .715-.7 2.417 2.417 0 0 0 3.452 0l.004-.004L15.48 7.98a2.446 2.446 0 1 0-3.46-3.46l-.416.417a.5.5 0 1 1-.707-.707l.417-.417Z"
-                                  fill="#fff"
-                                ></path>
-                                <path
-                                  fillRule="evenodd"
-                                  clipRule="evenodd"
-                                  d="M8.26 7.225a3.417 3.417 0 0 1 3.765.758.5.5 0 0 1-.715.7 2.417 2.417 0 0 0-3.452 0l-.003.004L4.52 12.02a2.446 2.446 0 0 0 3.46 3.46l.416-.417a.5.5 0 1 1 .708.707l-.417.417a3.446 3.446 0 1 1-4.874-4.874l3.332-3.332a3.417 3.417 0 0 1 1.115-.756Z"
-                                  fill="#fff"
-                                ></path>
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
                       </div>
                       <div className="flex flex-col pt-2.5 mt-auto">
                         <div className="flex flex-col py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
@@ -2771,7 +1816,7 @@ const Login = () => {
                           <span className="text-base text-white-500 sm:text-sm">
                             <span>
                               Turnover,{" "}
-                              <span className="notranslate">BUSD</span>
+                              <span className="notranslate">USDT</span>
                             </span>
                           </span>
                           <span className="text-2xl text-white font-bold sm:text-xl">
@@ -2825,7 +1870,7 @@ const Login = () => {
                 <span className="text-left block text-3xl font-medium text-white">
                   Official <span className="text-yellow">Notify Bot</span>
                   <br className="sm:hidden" />
-                  for busd.forsage.io users
+                  for USDT.thecryptoglobal.io users
                 </span>
                 <span className="text-white font-light">
                   Here you can get notifications about all the events in your
@@ -2844,7 +1889,8 @@ const Login = () => {
               Need help with using the platform?{" "}
             </span>
             <span className="mb-7.5">
-              Get qualified support from Forsage experts via online chat{" "}
+              Get qualified support from The Crypto Global experts via online
+              chat{" "}
             </span>
             <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-blue hover:bg-hover-main-blue active:bg-active-main-blue font-medium rounded-mini sm:w-full">
               Contact support

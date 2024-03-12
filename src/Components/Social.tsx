@@ -14,7 +14,7 @@ export const Social = () => {
             className="w-7 h-7 flex justify-center items-center rounded-full bg-white-100 hover:bg-white-300"
             target="_blank"
             rel="noreferrer"
-            href="https://discord.gg/forsage/"
+            href="https://discord.gg/#/"
           >
             <DiscordIcon />
           </a>
@@ -23,7 +23,7 @@ export const Social = () => {
             className="w-7 h-7 flex justify-center items-center rounded-full bg-white-100 hover:bg-white-300"
             target="_blank"
             rel="noreferrer"
-            href="https://t.me/forsageio_official/"
+            href="https://t.me/#/"
           >
             <TelegramIcon />
           </a>
@@ -32,7 +32,7 @@ export const Social = () => {
             className="w-7 h-7 flex justify-center items-center rounded-full bg-white-100 hover:bg-white-300"
             target="_blank"
             rel="noreferrer"
-            href="https://www.youtube.com/@FORSAGECommunity/"
+            href="https://www.youtube.com/@#/"
           >
             <YoutubeIcon />
           </a>
@@ -41,7 +41,7 @@ export const Social = () => {
             className="w-7 h-7 flex justify-center items-center rounded-full bg-white-100 hover:bg-white-300"
             target="_blank"
             rel="noreferrer"
-            href="https://twitter.com/forsageofficial/"
+            href="https://twitter.com/#/"
           >
             <TwitterIcon />
           </a>

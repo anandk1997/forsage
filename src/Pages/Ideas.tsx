@@ -29,8 +29,8 @@ const Ideas = () => {
                 </span>
                 <span className="block max-h-[50px] overflow-hidden text-white-700 mt-1.5">
                   <p>
-                    Forsage.io is based on bnb chain and it's ( Forsage.io)
-                    doesn't have their own token. So,if Forsage.io able launch
+                    thecryptoglobal.io is based on bnb chain and it's ( thecryptoglobal.io)
+                    doesn't have their own token. So,if thecryptoglobal.io able launch
                     their own token that will be a real boost for them.
                   </p>
                 </span>
@@ -90,7 +90,7 @@ const Ideas = () => {
                   </span>
                 </div>
                 <span className="max-h-[25px] block leading-[1.8rem] max-h-[5.4rem] truncate whitespace-normal text-white font-semibold">
-                  I love 🖤forsage
+                  I love Crypto Global
                 </span>
                 <span className="block max-h-[50px] overflow-hidden text-white-700 mt-1.5">
                   <p>It's very grateful</p>
@@ -119,7 +119,7 @@ const Ideas = () => {
                   </span>
                 </div>
                 <span className="max-h-[25px] block leading-[1.8rem] max-h-[5.4rem] truncate whitespace-normal text-white font-semibold">
-                  I love 💕 forsage
+                  I love 💕 Crypto Global
                 </span>
                 <span className="block max-h-[50px] overflow-hidden text-white-700 mt-1.5">
                   <p>Life change</p>
@@ -148,7 +148,7 @@ const Ideas = () => {
                   </span>
                 </div>
                 <span className="max-h-[25px] block leading-[1.8rem] max-h-[5.4rem] truncate whitespace-normal text-white font-semibold">
-                  I love forsage .io
+                  I love Crypto Global .io
                 </span>
                 <span className="block max-h-[50px] overflow-hidden text-white-700 mt-1.5">
                   <p>Love</p>
@@ -180,9 +180,9 @@ const Ideas = () => {
                   Foresage
                 </span>
                 <span className="block max-h-[50px] overflow-hidden text-white-700 mt-1.5">
-                  <p>Forsage are best platform for online earning.</p>
-                  <p>New update for school forsage lesson .</p>
-                  <p>All my bangladesh community waiting for Game in forsage</p>
+                  <p>Crypto Global are best platform for online earning.</p>
+                  <p>New update for school Crypto Global lesson .</p>
+                  <p>All my bangladesh community waiting for Game in Crypto Global</p>
                 </span>
               </div>
               <div className="flex flex-col space-y-5 mt-1.5">
@@ -208,10 +208,10 @@ const Ideas = () => {
                   </span>
                 </div>
                 <span className="max-h-[25px] block leading-[1.8rem] max-h-[5.4rem] truncate whitespace-normal text-white font-semibold">
-                  Forsage
+                Crypto Global
                 </span>
                 <span className="block max-h-[50px] overflow-hidden text-white-700 mt-1.5">
-                  <p>I love forsage 🥰❤️</p>
+                  <p>I love Crypto Global 🥰❤️</p>
                 </span>
               </div>
               <div className="flex flex-col space-y-5 mt-1.5">
@@ -237,12 +237,12 @@ const Ideas = () => {
                   </span>
                 </div>
                 <span className="max-h-[25px] block leading-[1.8rem] max-h-[5.4rem] truncate whitespace-normal text-white font-semibold">
-                  Forsage.io
+                  CryptoGlobal.io
                 </span>
                 <span className="block max-h-[50px] overflow-hidden text-white-700 mt-1.5">
                   <ul>
                     <li>
-                      <p>Forsage.io is the best</p>
+                      <p>CryptoGlobal.io is the best</p>
                     </li>
                   </ul>
                 </span>
@@ -270,10 +270,10 @@ const Ideas = () => {
                   </span>
                 </div>
                 <span className="max-h-[25px] block leading-[1.8rem] max-h-[5.4rem] truncate whitespace-normal text-white font-semibold">
-                  Forsage.io is best income platform
+                  TheCryptoGlobal.io is best income platform
                 </span>
                 <span className="block max-h-[50px] overflow-hidden text-white-700 mt-1.5">
-                  <p>Forsage.io is very very good earning platform</p>
+                  <p>TheCryptoGlobal.io is very very good earning platform</p>
                 </span>
               </div>
               <div className="flex flex-col space-y-5 mt-1.5">
@@ -299,10 +299,10 @@ const Ideas = () => {
                   </span>
                 </div>
                 <span className="max-h-[25px] block leading-[1.8rem] max-h-[5.4rem] truncate whitespace-normal text-white font-semibold">
-                  Forsage.io
+                TheCryptoGlobal.io
                 </span>
                 <span className="block max-h-[50px] overflow-hidden text-white-700 mt-1.5">
-                  <p>I love forsage.io 💗💗💗💗💗</p>
+                  <p>I love TheCryptoGlobal.io 💗💗💗💗💗</p>
                 </span>
               </div>
               <div className="flex flex-col space-y-5 mt-1.5">

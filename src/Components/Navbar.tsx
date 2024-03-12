@@ -21,6 +21,7 @@ import {
 import { Devider } from "./Sidebar";
 
 import { useWalletConnect } from "src/Hooks/useWalletConnect";
+import { LogoGreen } from "src/Assets/Svg";
 
 export const Navbar = () => {
   const navigate = useNavigate();
@@ -39,20 +40,7 @@ export const Navbar = () => {
             <div className="w-full flex justify-start items-center space-x-5 lg:flex-col lg:h-full lg:items-start lg:space-x-0 lg:space-y-7.5">
               <div className="flex items-center false lg:w-full lg:pr-10 sm:pr-5">
                 <NavLink to="/">
-                  <svg
-                    className="block mr-2.5"
-                    width="45"
-                    height="30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M37.68 5.851a.482.482 0 0 1 .615.296l.43 1.247s-1.852-.59-2.818-.777l1.773-.766Zm6.055 3.336c-.004 0-.195-.131-.297-.186l-3.111-1.586c-.965-.46-.752-.82-1.118-1.826a6.228 6.228 0 0 0-.549-1.127C36.884 3.62 31.836 3.817 31.354 0c0 0-1.884 1.236-2.227 3.5C9.227 1.98 0 12.96 0 12.96c3.706-1.476 7.705-2.176 11.704-2.362-7.603 5.851-9.997 14.666-9.997 14.666s6.16-5.982 15.419-9.318C14.702 19.37 13.298 23.963 13.872 30c0 0 4.763-18.177 27.361-13.78 0 0 .827-2.417 2.962-4.89.135-.152.211-.382.227-.645a1.735 1.735 0 0 0-.687-1.498Z"
-                      fill="#fff"
-                    ></path>
-                  </svg>
+                  <img src={LogoGreen} height={"10px"} width="40px" />
                 </NavLink>
                 <span className="text-base text-white whitespace-nowrap mr-5 notranslate lg:mr-0 false">
                   Preview ID
@@ -66,12 +54,12 @@ export const Navbar = () => {
                 </div>
               </div>
             </div>
-            <button
+            <NavLink
+              to={"/login"}
               className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-bg hover:bg-black-500 whitespace-nowrap lg:hidden"
-              onClick={connectWallet}
             >
-              {walletData}
-            </button>
+              {"Connect Wallet"}
+            </NavLink>
           </div>
           <div className="flex lg:justify-end lg:ml-auto lg:pr-10 sm:pr-5">
             <button

@@ -11,7 +11,7 @@ const ProgramsLayout = ({ children }: { children: ReactNode }) => {
               <a
                 className="bg-[#3EF6A2] flex items-center justify-center h-full rounded-[15px] px-4 space-x-2 sm:px-2 sm:justify-between"
                 target="_blank"
-                href="https://school.forsage.io/course2"
+                href="#"
               >
                 <svg
                   width="45"
@@ -27,13 +27,13 @@ const ProgramsLayout = ({ children }: { children: ReactNode }) => {
                   ></path>
                 </svg>
                 <span className="text-lg font-montserrat font-bold sm:text-sm">
-                  Forsage <br className="hidden sm:flex" />
+                  Crypto Global <br className="hidden sm:flex" />
                   School
                 </span>
               </a>
               <div className="">
                 <span className="text-white text-sm leading-none flex flex-col space-y-1 sm:hidden">
-                  <span>Go to Forsage School and learn more</span>
+                  <span>Go to Crypto Global School and learn more</span>
                   <span>about how programs work</span>{" "}
                 </span>
                 <span className="text-white text-xs leading-none flex flex-col space-y-2.5 hidden sm:flex">
@@ -75,7 +75,7 @@ const ProgramsLayout = ({ children }: { children: ReactNode }) => {
               </a>
             </div>
             <span className="text text-white whitespace-nowrap sm:text-sm">
-              Forsage x3
+            Crypto Global Matrix
             </span>
             <span className="text text-white whitespace-nowrap ml-1.5 sm:text-sm">
               (<span className="inline sm:hidden">12 out of 12 levels</span>
@@ -85,7 +85,7 @@ const ProgramsLayout = ({ children }: { children: ReactNode }) => {
           <div className="w-full flex justify-between flex-wrap">
             <div className="flex flex-wrap items-center">
               <span className="text-two-half text-white font-medium mr-2 sm:text-2xl sm:max-w-[170px]">
-                Forsage x3
+              Crypto Global matrix
               </span>
             </div>
             <div className="flex flex-col items-end">
@@ -125,7 +125,7 @@ const ProgramsLayout = ({ children }: { children: ReactNode }) => {
             <span className="text-left block text-3xl font-medium text-white">
               Official <span className="text-yellow">Notify Bot</span>
               <br className="sm:hidden" />
-              for busd.forsage.io users
+              for busd.thecryptoglobal.io users
             </span>
             <span className="text-white font-light">
               Here you can get notifications about all the events in your

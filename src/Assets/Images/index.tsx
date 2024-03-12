@@ -1,0 +1,12 @@
+export { default as LeftEllipse } from "./left_ellipse.png";
+export { default as RightEllipse } from "./right_ellipse.png";
+export { default as Planet } from "./planet.png";
+export { default as BookImage } from "./book.png";
+export { default as Book2Image } from "./book2.png";
+export { default as ChatImage } from "./chat.png";
+export { default as BlubImage } from "./bulb.png";
+export { default as GlobeImage } from "./globe.png";
+export { default as HatImage } from "./hat.png";
+export { default as MagnifierImage } from "./magnifier.png";
+export { default as PencilImage } from "./pencil.png";
+export { default as CabinetPreview } from "./cabinet_preview.png";
