@@ -8,6 +8,7 @@ import {
   PartnersIcon,
   DashboardIcon,
   TeamIcon,
+  PromoIcon,
 } from "src/Assets/Icons";
 
 import { useNavContext } from "src/Contexts/useNavContext";
@@ -134,7 +135,7 @@ export const Sidebar = () => {
                   )}
                 </div>
 
-                {/* <NavLink to="promo">
+                <NavLink to="promo">
                   <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                     <div className="flex items-center text-left">
                       <PromoIcon />
@@ -144,7 +145,7 @@ export const Sidebar = () => {
                       </span>
                     </div>
                   </button>
-                </NavLink> */}
+                </NavLink>
               </div>
             </div>
           </div>
