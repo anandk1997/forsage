@@ -20,7 +20,6 @@ import {
 } from "src/Assets/Icons";
 import { Devider } from "./Sidebar";
 
-import { useWalletConnect } from "src/Hooks/useWalletConnect";
 import { LogoGreen } from "src/Assets/Svg";
 
 export const Navbar = () => {
@@ -28,7 +27,6 @@ export const Navbar = () => {
 
   const [isNavSm, setIsNavSm] = useReducer((open) => !open, false);
 
-  const { connectWallet, walletData } = useWalletConnect();
 
   return (
     <div className="fixed top-0 left-1/2 -translate-x-1/2 flex justify-center w-full px-10 py-2.5 z-40 lg:p-0 lg:max-h-screen z-999999">

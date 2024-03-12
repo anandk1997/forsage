@@ -2167,7 +2167,7 @@ const Home = () => {
                     data-accordion-component="AccordionItemHeading"
                     role="heading"
                     className="accordion__heading"
-                    aria-level="3"
+                    aria-level={3}
                   >
                     <div
                       className="accordion__button"

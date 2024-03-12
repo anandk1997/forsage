@@ -1,6 +1,6 @@
 import toast from "react-hot-toast";
 import { NavLink } from "react-router-dom";
-import { LogoGreen, LogoWhite } from "src/Assets/Svg";
+import {  LogoWhite } from "src/Assets/Svg";
 
 const Dashboard = () => {
   const copyToClipboard = () => {
