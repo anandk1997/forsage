@@ -1,20 +1,17 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
+import { CircularProgress } from "@mui/material";
+
+import { useWalletConnect } from "src/Hooks/useWalletConnect";
+import { Social } from "src/Components/Social";
 import { LogoGreen } from "src/Assets/Svg";
 import { Logo } from "src/Components/Logo";
-
-import { Social } from "src/Components/Social";
-import { useWalletConnect } from "src/Hooks/useWalletConnect";
+import { useLogin } from "src/Hooks/useLogin";
 
 const Login = () => {
-  const navigate = useNavigate();
-
   const { walletAddress, connectMetamask } = useWalletConnect();
 
-  async function callLogin() {
-    // address here
-    console.log("address", walletAddress);
-    // call api for login
-  }
+  const { isPending, handleSubmit } = useLogin();
 
   return (
     <div className="flex relative bg-main-bg flex-col items-center justify-center w-full min-h-screen text-white-500 px-10 sm:px-0 overflow-hidden pt-16">
@@ -528,13 +525,25 @@ const Login = () => {
                 )}
 
                 {!!walletAddress && (
-                  <button
-                    onClick={callLogin}
-                    className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-bg hover:bg-hover-main-bg active:bg-active-main-bg sm:w-full"
-                  >
-                    Login
-                  </button>
+                  <form onSubmit={(e) => handleSubmit(e, "address")}>
+                    <button
+                      // onClick={callLogin}
+                      className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-bg hover:bg-hover-main-bg active:bg-active-main-bg sm:w-full h-[48px]"
+                      style={{ height: "48px" }}
+                      type="submit"
+                      disabled={isPending}
+                    >
+                      {isPending ? (
+                        <CircularProgress
+                          sx={{ scale: ".5", color: "white" }}
+                        />
+                      ) : (
+                        "Login"
+                      )}
+                    </button>
+                  </form>
                 )}
+
                 <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-white-100 hover:bg-white-300 rounded-mini sm:w-full">
                   Watch tutorial
                 </button>
@@ -591,36 +600,49 @@ const Login = () => {
                 </span>
               </div>
               <div className="flex sm:flex-col">
-                <div className="flex flex-col flex-1 justify-between sm:w-full bg-main-blue-200 rounded sm:rounded-none p-7.5 sm:p-5 mr-10 sm:mr-0 sm:mb-5">
-                  <span className="text-white mb-3">
-                    Enter <span className="notranslate mx-1">ID</span> or
-                    <span className="notranslate mx-1">USDT</span>wallet
-                  </span>
-                  <div className="flex sm:flex-col">
-                    <input
-                      className="w-full bg-white-100 border-2 border-transparent rounded-mini py-3 px-5 text-white outline-none focus:border-2 focus:border-main-blue focus:bg-transparent flex-1 mr-5 sm:mr-0 sm:mb-3.5 py-2"
-                      type="text"
-                      placeholder="example: 87381"
-                    />
-                    <button
-                      className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-blue hover:bg-hover-main-blue active:bg-active-main-blue rounded-mini"
-                      onClick={() => navigate("/dashboard")}
-                    >
-                      Preview
-                    </button>
+                <form onSubmit={(e) => handleSubmit(e, "id")}>
+                  <div className="flex flex-col flex-1 justify-between sm:w-full bg-main-blue-200 rounded sm:rounded-none p-7.5 sm:p-5 mr-10 sm:mr-0 sm:mb-5">
+                    <span className="text-white mb-3">
+                      Enter <span className="notranslate mx-1">ID</span> or
+                      <span className="notranslate mx-1">USDT</span>wallet
+                    </span>
+                    <div className="flex sm:flex-col">
+                      <input
+                        className="w-full bg-white-100 border-2 border-transparent rounded-mini py-3 px-5 text-white outline-none focus:border-2 focus:border-main-blue focus:bg-transparent flex-1 mr-5 sm:mr-0 sm:mb-3.5 py-2"
+                        type="text"
+                        placeholder="example: 87381"
+                        name="address"
+                      />
+                      <button
+                        className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-blue hover:bg-hover-main-blue active:bg-active-main-blue rounded-mini h-[44px]"
+                        style={{ height: "44px" }}
+                        disabled={isPending}
+                        type="submit"
+                      >
+                        {isPending ? (
+                          <CircularProgress
+                            sx={{ scale: ".5", color: "white" }}
+                          />
+                        ) : (
+                          "Preview"
+                        )}
+                      </button>
+                    </div>
                   </div>
-                </div>
+                </form>
+
                 <div className="w-1/3 min-w-320px sm:w-full sm:px-5">
                   <div className="flex flex-col w-full rounded bg-black-light p-7.5 relative">
                     <span className="text-white mb-3">
                       Don’t know any
                       <span className="notranslate ml-1.5">ID?</span>
                     </span>
-                    <a href="/dashboard?user=1192">
+
+                    <NavLink to="/dashboard">
                       <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-white-100 hover:bg-white-300 rounded-mini w-max">
                         Check demo
                       </button>
-                    </a>
+                    </NavLink>
                   </div>
                 </div>
               </div>
