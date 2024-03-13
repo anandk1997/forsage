@@ -258,14 +258,14 @@ const Home = () => {
                   <ul className="control-dots">
                     <li
                       className="dot selected"
-                      value="0"
+                      // value="0"
                       role="button"
                       //   tabindex="0"
                       aria-label="slide item 1"
                     ></li>
                     <li
                       className="dot"
-                      value="1"
+                      // value="1"
                       role="button"
                       //   tabindex="0"
                       aria-label="slide item 2"
@@ -1744,42 +1744,42 @@ const Home = () => {
                     <ul className="control-dots">
                       <li
                         className="dot selected"
-                        value="0"
+                        // value="0"
                         role="button"
                         // tabindex="0"
                         aria-label="slide item 1"
                       ></li>
                       <li
                         className="dot"
-                        value="1"
+                        // value="1"
                         role="button"
                         // tabindex="0"
                         aria-label="slide item 2"
                       ></li>
                       <li
                         className="dot"
-                        value="2"
+                        // value="2"
                         role="button"
                         // tabindex="0"
                         aria-label="slide item 3"
                       ></li>
                       <li
                         className="dot"
-                        value="3"
+                        // value="3"
                         role="button"
                         // tabindex="0"
                         aria-label="slide item 4"
                       ></li>
                       <li
                         className="dot"
-                        value="4"
+                        // value="4"
                         role="button"
                         // tabindex="0"
                         aria-label="slide item 5"
                       ></li>
                       <li
                         className="dot"
-                        value="5"
+                        // value="5"
                         role="button"
                         // tabindex="0"
                         aria-label="slide item 6"

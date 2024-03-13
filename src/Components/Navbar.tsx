@@ -1,22 +1,13 @@
 import { useReducer } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import {
-  CalculatorIcon,
   DashboardIcon,
   DropdownIcon,
-  ForsageIcon,
-  IdeasIcon,
   InfoIcon,
   InstructionsIcon,
-  LinksIcon,
-  MarathonIcon,
-  NftsIcon,
   PartnersIcon,
   PromoIcon,
-  SocialIcon,
-  StatsIcon,
   TeamIcon,
-  ToolsIcon,
 } from "src/Assets/Icons";
 import { Devider } from "./Sidebar";
 
@@ -105,18 +96,15 @@ const NavbarSm = ({ close }: { close: () => void }) => {
       <div className="flex w-full overflow-hidden items-center justify-between space-x-2.5 lg:items-start lg:order-2 lg:flex-col lg:pt-10 lg:items-start lg:space-y-7.5 lg:flex-1 lg:h-full">
         <div className="w-full flex justify-start items-center space-x-5 lg:flex-col lg:h-full lg:items-start lg:space-x-0 lg:space-y-7.5">
           <div className="flex items-center lg:flex-col lg:items-start lg:w-full lg:pr-10 sm:pr-5">
-            <NavLink to="/">
-              <ForsageIcon />
-            </NavLink>
+            <div className="absolute top-4 left-7">
+              <Logo src={LogoGreen} />
+            </div>
 
             <span className="text-base text-white whitespace-nowrap mr-5 notranslate lg:mr-0 lg:text-2xl lg:text-medium lg:mb-7.5">
               Preview ID<span className="hidden lg:inline ml-1.5">1</span>
             </span>
             <div className="flex justify-between items-center space-x-2.5 lg:space-x-5 lg:w-full lg:flex">
-              <input
-                className="px-4 py-3 rounded-mini leading-5 bg-white-100 text-white text-base outline-none lg:w-full lg:flex-1"
-                value="1"
-              />
+              <input className="px-4 py-3 rounded-mini leading-5 bg-white-100 text-white text-base outline-none lg:w-full lg:flex-1" />
               <button
                 // disabled=""
                 className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none bg-white-100 py-3 px-5 cursor-not-allowed lg:px-10"
@@ -126,9 +114,12 @@ const NavbarSm = ({ close }: { close: () => void }) => {
             </div>
           </div>
           <div className="w-full pr-5 lg:pr-10 sm:pr-5 !mt-4">
-            <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-bg hover:bg-black-500 whitespace-nowrap hidden lg:flex w-full">
+            <NavLink
+              to="/login"
+              className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-bg hover:bg-black-500 whitespace-nowrap hidden lg:flex w-full"
+            >
               Exit preview mode
-            </button>
+            </NavLink>
           </div>
           <div className="overflow-auto w-full hidden lg:flex">
             <div className="flex flex-1 flex-col h-full w-full overflow-y-auto space-y-2.5 lg:space-y-0">
@@ -174,72 +165,10 @@ const NavbarSm = ({ close }: { close: () => void }) => {
                             </div>
                           </button>
                         </NavLink>
-
-                        <NavLink to="links">
-                          <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
-                            <div className="flex items-center text-left">
-                              <LinksIcon />
-
-                              <span className="text-white-500 text-base ml-2.5 false">
-                                Links
-                              </span>
-                            </div>
-                          </button>
-                        </NavLink>
-
-                        <NavLink to="stats">
-                          <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
-                            <div className="flex items-center text-left">
-                              <StatsIcon />
-
-                              <span className="text-white-500 text-base ml-2.5 false">
-                                Stats
-                              </span>
-                            </div>
-                          </button>
-                        </NavLink>
                       </div>
                     </>
                   )}
                 </div>
-
-                <NavLink to="MaxQoreMarathon">
-                  <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
-                    <div className="flex items-center text-left">
-                      <MarathonIcon />
-
-                      <span className="text-white-500 text-base ml-2.5 false">
-                        Marathon
-                      </span>
-                    </div>
-                  </button>
-                </NavLink>
-
-                <NavLink to="social">
-                  <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
-                    <div className="flex items-center text-left">
-                      <SocialIcon />
-
-                      <span className="text-white-500 text-base ml-2.5 false">
-                        Social
-                      </span>
-                      <span className="absolute top-1 right-1.5 text-green text-sm lg:bg-green-200 lg:px-2.5 lg:py-1 lg:rounded lg:top-1/2 lg:-translate-y-1/2 lg:right-5">
-                        New
-                      </span>
-                    </div>
-                  </button>
-                </NavLink>
-                <NavLink to="nft">
-                  <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
-                    <div className="flex items-center text-left">
-                      <NftsIcon />
-
-                      <span className="text-white-500 text-base ml-2.5 false">
-                        NFTs
-                      </span>
-                    </div>
-                  </button>
-                </NavLink>
 
                 <div className=" bg-black-light lg:bg-transparent lg:!pb-0  min-w-[186px] cursor-pointer hover:bg-black-light lg:hover:bg-transparent rounded-[10px] lg:border-b lg:border-white-300 lg:rounded-none lg:justify-between">
                   <div
@@ -249,7 +178,7 @@ const NavbarSm = ({ close }: { close: () => void }) => {
                     <InfoIcon />
 
                     <span className="text-[#8B8C8C] text-base ml-2.5 lg:text-white-500">
-                      Information
+                      Statements
                     </span>
 
                     <DropdownIcon show={isInfo} />
@@ -260,53 +189,53 @@ const NavbarSm = ({ close }: { close: () => void }) => {
                       <Devider />
 
                       <div className="flex flex-col p-2.5 lg:py-0 lg:pr-0">
-                        <NavLink to="instructions">
+                        <NavLink to="referal-income">
                           <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between  lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
                             <div className="flex items-center text-left">
                               <InstructionsIcon />
 
                               <span className="text-white-500 text-base ml-2.5 false">
-                                Instruction
+                                Referal Income
                               </span>
                             </div>
                           </button>
                         </NavLink>
 
-                        <NavLink to="calculator">
+                        <NavLink to="level-income">
                           <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between  lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
                             <div className="flex items-center text-left">
-                              <CalculatorIcon />
+                              <InstructionsIcon />
 
                               <span className="text-white-500 text-base ml-2.5 false">
-                                Calculator
+                                Level Income
                               </span>
 
-                              <span className="absolute top-1 right-1.5 text-green text-sm lg:bg-green-200 lg:px-2.5 lg:py-1 lg:rounded lg:top-1/2 lg:-translate-y-1/2 lg:right-5">
+                              {/* <span className="absolute top-1 right-1.5 text-green text-sm lg:bg-green-200 lg:px-2.5 lg:py-1 lg:rounded lg:top-1/2 lg:-translate-y-1/2 lg:right-5">
                                 New
+                              </span> */}
+                            </div>
+                          </button>
+                        </NavLink>
+
+                        <NavLink to="non-working-income">
+                          <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between  lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
+                            <div className="flex items-center text-left">
+                              <InstructionsIcon />
+
+                              <span className="text-white-500 text-base ml-2.5 false">
+                                Non-Working Income
                               </span>
                             </div>
                           </button>
                         </NavLink>
 
-                        <NavLink to="smartTools">
+                        <NavLink to="royalty-income">
                           <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between  lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
                             <div className="flex items-center text-left">
-                              <ToolsIcon />
+                              <InstructionsIcon />
 
                               <span className="text-white-500 text-base ml-2.5 false">
-                                Smart tools
-                              </span>
-                            </div>
-                          </button>
-                        </NavLink>
-
-                        <NavLink to="ideas">
-                          <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between  lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
-                            <div className="flex items-center text-left">
-                              <IdeasIcon />
-
-                              <span className="text-white-500 text-base ml-2.5 false">
-                                Ideas
+                                Royalty Income
                               </span>
                             </div>
                           </button>
