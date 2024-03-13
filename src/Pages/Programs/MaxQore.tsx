@@ -77,7 +77,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -93,7 +93,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -140,7 +140,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -156,7 +156,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -203,7 +203,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -220,7 +220,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -351,7 +351,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -367,7 +367,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -414,7 +414,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -430,7 +430,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -477,7 +477,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -494,7 +494,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -625,7 +625,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -641,7 +641,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -688,7 +688,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -704,7 +704,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -751,7 +751,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -768,7 +768,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -899,7 +899,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -915,7 +915,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -962,7 +962,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -978,7 +978,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -1025,7 +1025,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -1042,7 +1042,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -1173,7 +1173,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -1189,7 +1189,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -1236,7 +1236,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -1252,7 +1252,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -1299,7 +1299,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -1316,7 +1316,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -1447,7 +1447,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -1463,7 +1463,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -1510,7 +1510,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -1526,7 +1526,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -1573,7 +1573,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -1590,7 +1590,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -1721,7 +1721,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -1737,7 +1737,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -1784,7 +1784,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -1800,7 +1800,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -1847,7 +1847,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -1864,7 +1864,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -1995,7 +1995,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -2011,7 +2011,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -2058,7 +2058,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -2074,7 +2074,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -2121,7 +2121,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -2138,7 +2138,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -2269,7 +2269,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -2285,7 +2285,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -2332,7 +2332,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -2348,7 +2348,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -2395,7 +2395,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -2412,7 +2412,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -2543,7 +2543,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -2559,7 +2559,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -2606,7 +2606,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -2622,7 +2622,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -2669,7 +2669,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -2686,7 +2686,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -2817,7 +2817,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -2833,7 +2833,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -2880,7 +2880,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -2896,7 +2896,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -2943,7 +2943,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -2960,7 +2960,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -3091,7 +3091,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -3107,7 +3107,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -3154,7 +3154,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -3170,7 +3170,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -3217,7 +3217,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -3234,7 +3234,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -3365,7 +3365,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -3381,7 +3381,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -3428,7 +3428,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -3444,7 +3444,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -3491,7 +3491,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -3508,7 +3508,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -3639,7 +3639,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -3655,7 +3655,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -3702,7 +3702,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -3718,7 +3718,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -3765,7 +3765,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -3782,7 +3782,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -3913,7 +3913,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(93, 129, 255);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -3929,7 +3929,7 @@ const MaxQore = () => {
       a 43,43 0 1 1 0,-86
     "
                             strokeWidth="14"
-                            fill-opacity="0"
+                            fillOpacity="0"
                             //     style="
                             //     stroke: rgb(178, 191, 239);
                             //     stroke-dasharray: 270.177px, 270.177px;
@@ -3976,7 +3976,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(93, 129, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -3992,7 +3992,7 @@ const MaxQore = () => {
       a 41,41 0 1 1 0,-82
     "
                                     strokeWidth="18"
-                                    fill-opacity="0"
+                                    fillOpacity="0"
                                     //     style="
                                     //     stroke: rgb(255, 255, 255);
                                     //     stroke-dasharray: 257.611px, 257.611px;
@@ -4039,7 +4039,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(93, 129, 255);
                                             //     stroke-dasharray: 219.911px,
@@ -4056,7 +4056,7 @@ const MaxQore = () => {
       a 35,35 0 1 1 0,-70
     "
                                             strokeWidth="30"
-                                            fill-opacity="0"
+                                            fillOpacity="0"
                                             //     style="
                                             //     stroke: rgb(223, 230, 255);
                                             //     stroke-dasharray: 219.911px,

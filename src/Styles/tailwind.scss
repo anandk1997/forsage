@@ -11430,7 +11430,7 @@ video {
 }
 
 .desktop-infoblock-base {
-  min-width: 170px;
+  min-width: 300px;
   min-height: 140px;
 }
 
@@ -18381,4 +18381,140 @@ select {
   box-shadow:
     0 0 10px 0 rgba(122, 231, 255, 0.25),
     inset 0 0 4px 0 rgba(164, 233, 255, 0.25);
+}
+
+.dotted {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dottedForMobile {
+  width: 218px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tree____ {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  width: 100%;
+}
+
+a.aTag {
+  text-decoration: none !important;
+  color: white !important;
+}
+
+button.btn.btn-info.btn-lg.bx {
+  background: #f3ba2f;
+  width: 90%;
+  min-height: 60px;
+  margin: 8px;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+.trigger {
+  text-align: center;
+  padding: 7px 13px;
+  background: #3e3e3e;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-family: cursive;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition:
+    visibility 0s linear 0.25s,
+    opacity 0.25s 0s,
+    transform 0.25s;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  width: 24rem;
+  border-radius: 0.5rem;
+}
+
+.close-button {
+  float: right;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: lightgray;
+}
+
+.close-button:hover {
+  background-color: darkgray;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition:
+    visibility 0s linear 0s,
+    opacity 0.25s 0s,
+    transform 0.25s;
+}
+
+.customButton {
+  background: #f3ba2f;
+  width: 86%;
+  min-height: 46px;
+  margin: 0px;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  flex-direction: column;
+  border-radius: 16px;
+}
+
+.mainText {
+  display: none;
+  color: white;
+}
+
+.mainText2 {
+  display: none;
+  color: white;
+}
+
+.addNewClass {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button.btn.btn-info.btn-lg.bx.activated {
+  background: #6688ff;
+}
+
+.displayNone {
+  display: none;
 }

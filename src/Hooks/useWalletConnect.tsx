@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import toast from "react-hot-toast";
 import { useStore } from "src/Store/Store";
+import Web3 from "web3";
 
 declare global {
   interface Window {
@@ -10,6 +11,16 @@ declare global {
 
 export const useWalletConnect = () => {
   const { walletAddress, setWalletAddress } = useStore((state) => state);
+
+  const installMeta = useCallback(() => {
+    if (!window.ethereum) {
+      setWalletAddress("");
+
+      toast.error("Please install MetaMask");
+      console.log("Please install MetaMask");
+      return true;
+    }
+  }, [setWalletAddress]);
 
   useEffect(() => {
     const getCurrentWalletConnected = async () => {
@@ -40,17 +51,7 @@ export const useWalletConnect = () => {
 
     getCurrentWalletConnected();
     addWalletListener();
-  }, [walletAddress]);
-
-  const installMeta = () => {
-    if (!window.ethereum) {
-      setWalletAddress("");
-
-      toast.error("Please install MetaMask");
-      console.log("Please install MetaMask");
-      return true;
-    }
-  };
+  }, [installMeta, walletAddress, setWalletAddress]);
 
   const connectWallet = async () => {
     if (installMeta()) return;
@@ -74,5 +75,26 @@ export const useWalletConnect = () => {
       ? `Connected: ${walletAddress.substring(0, 6)}...${walletAddress.substring(38)}`
       : "Connect Wallet";
 
-  return { connectWallet, walletAddress, walletData };
+  const connectMetamask = useCallback(async () => {
+    if (installMeta()) return;
+    if (!!walletAddress) return;
+
+    try {
+      const web3 = new Web3(window.ethereum);
+      await window.ethereum.request({ method: "eth_requestAccounts" });
+      const accounts = await web3.eth.getAccounts();
+
+      setWalletAddress(accounts[0]);
+      toast.success("Connected Successfully");
+    } catch (error: any) {
+      toast.error(error.message);
+      console.log(error);
+    }
+  }, [installMeta, setWalletAddress, walletAddress]);
+
+  useEffect(() => {
+    connectMetamask();
+  }, [connectMetamask]);
+
+  return { connectWallet, walletAddress, walletData, connectMetamask };
 };

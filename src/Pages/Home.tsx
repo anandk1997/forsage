@@ -1,4 +1,18 @@
 import { NavLink } from "react-router-dom";
+import {
+  BlubImage,
+  Book2Image,
+  BookImage,
+  CabinetPreview,
+  ChatImage,
+  GlobeImage,
+  HatImage,
+  LeftEllipse,
+  MagnifierImage,
+  PencilImage,
+  Planet,
+  RightEllipse,
+} from "src/Assets/Images";
 import { LogoGreen } from "src/Assets/Svg";
 import { Logo } from "src/Components/Logo";
 
@@ -6,63 +20,6 @@ const Home = () => {
   return (
     <div className="flex flex-col w-full">
       <div className="sticky top-0 flex flex-col items-center w-full z-50 bg-darkGray">
-        {/* <div className="flex justify-center border-b border-white-200 w-full bg-black">
-              <div className="flex justify-center items-center py-3 space-x-5 max-w-desktop-full w-full px-5 text-[12px] leading-[14px] overflow-auto sm:max-w-auto">
-                <svg
-                  className="w-[18px] h-[18px]"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 44 44"
-                  stroke="#fff"
-                >
-                  <g fill="none" fillRule="evenodd" strokeWidth="2">
-                    <circle cx="22" cy="22" r="1">
-                      <animate
-                        attributeName="r"
-                        begin="0s"
-                        dur="1.8s"
-                        values="1; 20"
-                        calcMode="spline"
-                        keyTimes="0; 1"
-                        keySplines="0.165, 0.84, 0.44, 1"
-                        repeatCount="indefinite"
-                      ></animate>
-                      <animate
-                        attributeName="strokeOpacity"
-                        begin="0s"
-                        dur="1.8s"
-                        values="1; 0"
-                        calcMode="spline"
-                        keyTimes="0; 1"
-                        keySplines="0.3, 0.61, 0.355, 1"
-                        repeatCount="indefinite"
-                      ></animate>
-                    </circle>
-                    <circle cx="22" cy="22" r="1">
-                      <animate
-                        attributeName="r"
-                        begin="-0.9s"
-                        dur="1.8s"
-                        values="1; 20"
-                        calcMode="spline"
-                        keyTimes="0; 1"
-                        keySplines="0.165, 0.84, 0.44, 1"
-                        repeatCount="indefinite"
-                      ></animate>
-                      <animate
-                        attributeName="strokeOpacity"
-                        begin="-0.9s"
-                        dur="1.8s"
-                        values="1; 0"
-                        calcMode="spline"
-                        keyTimes="0; 1"
-                        keySplines="0.3, 0.61, 0.355, 1"
-                        repeatCount="indefinite"
-                      ></animate>
-                    </circle>
-                  </g>
-                </svg>
-              </div>
-            </div> */}
         <div className="flex justify-between items-center max-w-desktop-full w-full py-5 px-5">
           <div className="flex items-center space-x-20 lg:space-x-5">
             <Logo src={LogoGreen} />
@@ -71,68 +28,7 @@ const Home = () => {
               <span className="hover:text-white">Documentation</span>
             </div>
           </div>
-          {/* <div className="relative group min-w-[175px] lg:min-w-max sm:hidden">
-              <div className="flex justify-between items-center cursor-pointer p-4 group-hover:text-white">
-                <div className="flex items-center space-x-2">
-                  <img
-                    src="flags/en.svg"
-                    className="w-5 h-5 lg:mr-2.5"
-                    alt=""
-                  />
-                  <span className="lg:hidden">English</span>
-                </div>
-                <svg
-                  className="fill-current w-2.5 transition all easy-out group-hover:rotate-180"
-                  viewBox="0 0 8 4"
-                  fill="#8B8C8C"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M8 0H0l4 4 4-4Z"></path>
-                </svg>
-              </div>
-              <ul className="w-full absolute bg-lightGray rounded-[15px] hidden group-hover:flex flex-col overflow-hidden drop-shadow-lg top-[50px]">
-                <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                  <img src="flags/en.svg" className="w-5 h-5" alt="" />
-                  <span className="lg:hidden">English</span>
-                </li>
-                <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                  <img src="flags/de.svg" className="w-5 h-5" alt="" />
-                  <span className="lg:hidden">German</span>
-                </li>
-                <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                  <img src="flags/es.svg" className="w-5 h-5" alt="" />
-                  <span className="lg:hidden">Spanish</span>
-                </li>
-                <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                  <img src="flags/ru.svg" className="w-5 h-5" alt="" />
-                  <span className="lg:hidden">Русский</span>
-                </li>
-                <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                  <img src="flags/fr.svg" className="w-5 h-5" alt="" />
-                  <span className="lg:hidden">French</span>
-                </li>
-                <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                  <img src="flags/es.svg" className="w-5 h-5" alt="" />
-                  <span className="lg:hidden">Spanish</span>
-                </li>
-                <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                  <img src="flags/it.svg" className="w-5 h-5" alt="" />
-                  <span className="lg:hidden">Italian</span>
-                </li>
-                <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                  <img src="flags/az.svg" className="w-5 h-5" alt="" />
-                  <span className="lg:hidden">AZƏRBAYCAN</span>
-                </li>
-                <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                  <img src="flags/ar.svg" className="w-5 h-5" alt="" />
-                  <span className="lg:hidden">العربية</span>
-                </li>
-                <li className="cursor-pointer flex items-center lg:justify-center space-x-2 hover:text-white p-4 border-b border-white-100 last:border-b-0 hover:bg-lightGray2">
-                  <img src="flags/he.svg" className="w-5 h-5" alt="" />
-                  <span className="lg:hidden">עִבְרִית</span>
-                </li>
-              </ul>
-            </div> */}
+
           <div className="flex justify-end space-x-10 lg:space-x-0 sm:hidden">
             <NavLink
               to="/login"
@@ -154,16 +50,16 @@ const Home = () => {
         </div>
       </div>
       <div className="relative mb-32 flex items-center flex-col h-[calc(100vh-150px)] first-overflow-wrapper">
-        {/* <img
-          src="img/logo/maxqore/left_ellipse.png"
+        <img
+          src={LeftEllipse}
           className="z-0 absolute top-1/2 left-0 -translate-y-1/2 sm:-left-1/3 sm:top-2/3 max-w-[50vw] sm:max-w-[90vw]"
           alt=""
         />
         <img
-          src="img/logo/maxqore/right_ellipse.png"
+          src={RightEllipse}
           className="z-0 absolute top-1/2 right-0 -translate-y-1/2 sm:-right-1/3 sm:top-1/3 max-w-[50vw] sm:max-w-[90vw]"
           alt=""
-        /> */}
+        />
         <div className="w-full flex flex-col items-center justify-center flex-1 max-w-desktop-full w-full pt-5 sm:pt-0 sm:px-5">
           <div className="flex flex-col items-center">
             <img
@@ -226,18 +122,22 @@ const Home = () => {
         </div>
       </div>
       <div className="pb-40 relative flex justify-center w-full px-5 sm:pb-8">
-        {/* <img
-          src="img/planet.png"
+        <img
+          src={Planet}
           className="absolute right-0 -top-44 z-0 sm:hidden"
           alt="cryptoglobalPlanet"
-        /> */}
+        />
         <div className="w-full flex flex-col max-w-desktop-full space-y-28">
           <div className="text-white text-[24px] leading-[40px] max-w-525px text-2xl z-10 sm:text-[20px] sm:leading-[30px]">
-            decentralizedNetworkPlatform
-            <span className="text-gradient mx-1.5">bringsPeopleTogether</span>
-            fromAllTheWorld
-            <span className="text-gradient mx-1.5">opensUpEndless</span>
-            newEconomicFinancial systems
+            A decentralized networking platform based
+            <span className="text-gradient mx-1.5">
+              on smart contracts, together with NFT{" "}
+            </span>
+            technology, whichbrings people
+            <span className="text-gradient mx-1.5">
+              together from all over the world
+            </span>
+            andopens up endless possibilitiesnew economic financial systems
           </div>
           <div className="relative flex w-full z-10">
             <img
@@ -246,103 +146,107 @@ const Home = () => {
               alt="cryptoglobalPlanet"
             />
             <div className="flex w-full lg:hidden">
-              <a
-                className="w-full flex justify-center items-center px-2.5 sm:px-0"
-                target="_blank"
-                href="https://support.cryptoglobal.io/"
-              ></a>
-              <div className="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">
-                <a
-                  className="w-full flex justify-center items-center px-2.5 sm:px-0"
-                  target="_blank"
-                  href="https://support.cryptoglobal.io/"
-                >
-                  <div className="flex flex-col items-start text-left flex-1 space-y-2.5">
-                    <span className="text-white text-2xl">Documentation</span>
-                    <span>participantLearningPlatform</span>
-                  </div>{" "}
-                </a>
-                <a className="flex items-center text-white" href="#">
-                  <span>startLearning</span>
-                  <svg
-                    className="ml-1 w-5 h-5"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+              <div
+                className="w-full flex justify-center items-center px-2.5 sm:px-0 cursor-pointer"
+                onClick={() =>
+                  window.open("https://support.cryptoglobal.io/", "_blank")
+                }
+              >
+                <div className="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">
+                  <a
+                    className="w-full flex justify-center items-center px-2.5 sm:px-0"
+                    target="_blank"
+                    href="https://support.cryptoglobal.io/"
                   >
-                    <g
-                      clipPath="url(#a)"
-                      stroke="#fff"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                    <div className="flex flex-col items-start text-left flex-1 space-y-2.5">
+                      <span className="text-white text-2xl">Documentation</span>
+                      <span>Participant learning platform</span>
+                    </div>{" "}
+                  </a>
+                  <a className="flex items-center text-white" href="#">
+                    <span>Start Learning</span>
+                    <svg
+                      className="ml-1 w-5 h-5"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path d="M19 12H5M13 18l6-6M13 6l6 6"></path>
-                    </g>
-                    <defs>
-                      <clipPath id="a">
-                        <path
-                          fill="#fff"
-                          transform="rotate(90 12 12)"
-                          d="M0 0h24v24H0z"
-                        ></path>
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </a>
-                {/* <img
-                  src="img/cards/book.png"
-                  className="absolute right-1.5 bottom-1.5 !w-40 !h-40"
-                /> */}
+                      <g
+                        clipPath="url(#a)"
+                        stroke="#fff"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M19 12H5M13 18l6-6M13 6l6 6"></path>
+                      </g>
+                      <defs>
+                        <clipPath id="a">
+                          <path
+                            fill="#fff"
+                            transform="rotate(90 12 12)"
+                            d="M0 0h24v24H0z"
+                          ></path>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </a>
+                  <img
+                    src={BookImage}
+                    className="absolute right-1.5 bottom-1.5 !w-40 !h-40"
+                  />
+                </div>
               </div>
-              <a
-                className="w-full flex justify-center items-center px-2.5 sm:px-0"
-                target="_blank"
-                href="https://t.me/smartpeoplechat/"
-              ></a>
-              <div className="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">
-                <a
-                  className="w-full flex justify-center items-center px-2.5 sm:px-0"
-                  target="_blank"
-                  href="https://t.me/smartpeoplechat/"
-                >
-                  <div className="flex flex-col items-start text-left flex-1 space-y-2.5">
-                    <span className="text-white text-2xl">liveChat</span>
-                    <span>platformWhereYouCanAsk</span>
-                  </div>{" "}
-                </a>
-                <a className="flex items-center text-white" href="#">
-                  <span>findMentor</span>
-                  <svg
-                    className="ml-1 w-5 h-5"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+              <div
+                className="w-full flex justify-center items-center px-2.5 sm:px-0 cursor-pointer"
+                onClick={() =>
+                  window.open("https://t.me/smartpeoplechat/", "_blank")
+                }
+              >
+                <div className="relative flex flex-col flex-1 gray-gradient h-240px rounded-3xl p-7.5 cursor-pointer">
+                  <a
+                    className="w-full flex justify-center items-center px-2.5 sm:px-0"
+                    target="_blank"
+                    href="https://t.me/smartpeoplechat/"
                   >
-                    <g
-                      clipPath="url(#a)"
-                      stroke="#fff"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                    <div className="flex flex-col items-start text-left flex-1 space-y-2.5">
+                      <span className="text-white text-2xl">liveChat</span>
+                      <span>platformWhereYouCanAsk</span>
+                    </div>{" "}
+                  </a>
+                  <a className="flex items-center text-white" href="#">
+                    <span>Find a Mentor</span>
+                    <svg
+                      className="ml-1 w-5 h-5"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path d="M19 12H5M13 18l6-6M13 6l6 6"></path>
-                    </g>
-                    <defs>
-                      <clipPath id="a">
-                        <path
-                          fill="#fff"
-                          transform="rotate(90 12 12)"
-                          d="M0 0h24v24H0z"
-                        ></path>
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </a>
-                {/* <img
-                  src="img/cards/chat.png"
-                  className="absolute right-1.5 bottom-1.5 !w-40 !h-40"
-                /> */}
+                      <g
+                        clipPath="url(#a)"
+                        stroke="#fff"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M19 12H5M13 18l6-6M13 6l6 6"></path>
+                      </g>
+                      <defs>
+                        <clipPath id="a">
+                          <path
+                            fill="#fff"
+                            transform="rotate(90 12 12)"
+                            d="M0 0h24v24H0z"
+                          ></path>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </a>
+                  <img
+                    src={ChatImage}
+                    className="absolute right-1.5 bottom-1.5 !w-40 !h-40"
+                  />
+                </div>
               </div>
             </div>
             <div className="margin-item-carousel w-full hidden lg:flex lg:pb-8">
@@ -403,11 +307,14 @@ const Home = () => {
                               <span className="text-white text-2xl">
                                 liveChat
                               </span>
-                              <span>platformWhereYouCanAsk</span>
+                              <span>
+                                Platform where you can ask a question to
+                                experienced participants
+                              </span>
                             </div>{" "}
                           </a>
                           <a className="flex items-center text-white" href="#">
-                            <span>findMentor</span>
+                            <span>Find a Mentor</span>
                             <svg
                               className="ml-1 w-5 h-5"
                               viewBox="0 0 24 24"
@@ -435,7 +342,7 @@ const Home = () => {
                             </svg>
                           </a>
                           <img
-                            src="img/cards/chat.png"
+                            src={ChatImage}
                             className="absolute right-1.5 bottom-1.5 !w-40 !h-40"
                           />
                         </div>
@@ -456,11 +363,11 @@ const Home = () => {
                               <span className="text-white text-2xl">
                                 Documentation
                               </span>
-                              <span>participantLearningPlatform</span>
+                              <span>Participant learning platform</span>
                             </div>{" "}
                           </a>
                           <a className="flex items-center text-white" href="#">
-                            <span>startLearning</span>
+                            <span>Start Learning</span>
                             <svg
                               className="ml-1 w-5 h-5"
                               viewBox="0 0 24 24"
@@ -488,7 +395,7 @@ const Home = () => {
                             </svg>
                           </a>
                           <img
-                            src="img/cards/book.png"
+                            src={BookImage}
                             className="absolute right-1.5 bottom-1.5 !w-40 !h-40"
                           />
                         </div>
@@ -509,11 +416,14 @@ const Home = () => {
                               <span className="text-white text-2xl">
                                 liveChat
                               </span>
-                              <span>platformWhereYouCanAsk</span>
+                              <span>
+                                Platform where you can ask a question to
+                                experienced participants
+                              </span>
                             </div>{" "}
                           </a>
                           <a className="flex items-center text-white" href="#">
-                            <span>findMentor</span>
+                            <span>Find a Mentor</span>
                             <svg
                               className="ml-1 w-5 h-5"
                               viewBox="0 0 24 24"
@@ -541,7 +451,7 @@ const Home = () => {
                             </svg>
                           </a>
                           <img
-                            src="img/cards/chat.png"
+                            src={ChatImage}
                             className="absolute right-1.5 bottom-1.5 !w-40 !h-40"
                           />
                         </div>
@@ -562,11 +472,11 @@ const Home = () => {
                               <span className="text-white text-2xl">
                                 Documentation
                               </span>
-                              <span>participantLearningPlatform</span>
+                              <span>Participant learning platform</span>
                             </div>{" "}
                           </a>
                           <a className="flex items-center text-white" href="#">
-                            <span>startLearning</span>
+                            <span>Start Learning</span>
                             <svg
                               className="ml-1 w-5 h-5"
                               viewBox="0 0 24 24"
@@ -594,7 +504,7 @@ const Home = () => {
                             </svg>
                           </a>
                           <img
-                            src="img/cards/book.png"
+                            src={BookImage}
                             className="absolute right-1.5 bottom-1.5 !w-40 !h-40"
                           />
                         </div>
@@ -615,19 +525,13 @@ const Home = () => {
       <div className="relative flex justify-center w-full space-x-5 sm:space-x-0 mb-[-250px] z-[11] sm:mb-[-100px]">
         <div className="h-full absolute top-1/2 -translate-y-1/2 left-5 w-[280px] flex flex-col items-end justify-between sm:left-1">
           <div className="flex flex-col items-end space-y-10 w-full mt-4">
-            {/* <img
-              className="w-[170px] sm:w-[80px] sm:mr-auto"
-              src="img/schoolIcon/hat.png"
-            />
+            <img className="w-[170px] sm:w-[80px] sm:mr-auto" src={HatImage} />
             <img
               className="w-[170px] mr-auto sm:w-[80px]"
-              src="img/schoolIcon/magnifier.png"
-            /> */}
+              src={MagnifierImage}
+            />
           </div>
-          {/* <img
-            className="w-[130px] sm:w-[60px] sm:mr-auto"
-            src="img/schoolIcon/bulb.png"
-          /> */}
+          <img className="w-[130px] sm:w-[60px] sm:mr-auto" src={BlubImage} />
         </div>
         <div className="flex flex-col items-center text-center space-y-8 z-[10]">
           <div className="w-full max-w-[850px] sm:px-5">
@@ -655,19 +559,13 @@ const Home = () => {
         </div>
         <div className="h-full absolute top-1/2 -translate-y-1/2 right-5 w-[280px] flex flex-col justify-between sm:right-1">
           <div className="flex flex-col justify-start space-y-10 w-full">
-            {/* <img
-              className="w-[170px] sm:w-[80px] sm:ml-auto"
-              src="img/schoolIcon/globe.png"
-            />
             <img
-              className="w-[170px] ml-auto sm:w-[80px]"
-              src="img/schoolIcon/book.png"
-            /> */}
+              className="w-[170px] sm:w-[80px] sm:ml-auto"
+              src={GlobeImage}
+            />
+            <img className="w-[170px] ml-auto sm:w-[80px]" src={Book2Image} />
           </div>
-          {/* <img
-            className="w-[130px] sm:w-[60px] sm:ml-auto"
-            src="img/schoolIcon/pencil.png"
-          /> */}
+          <img className="w-[130px] sm:w-[60px] sm:ml-auto" src={PencilImage} />
         </div>
       </div>
       <div className="flex flex-col items-center background-gradient pt-[220px] sm:pt-[250px] sm:pt-[100px]">
@@ -675,10 +573,10 @@ const Home = () => {
           <div className="flex flex-col align-middle">
             <div className="flex flex-col mb-10 items-center sm:items-start px-5 sm:mb-5">
               <span className="max-w-[870px] text-white text-[48px] leading-[60px] font-bold mb-[30px] sm:mb-5 sm:text-[30px] sm:leading-[36px]">
-                platformRecentActivity
+                Platform Recent Activity
               </span>
               <span className="text-white-700 text-[18px] sm:text-sm">
-                realTimeGlobalEventsCryptoglobal
+                Real-time global events of the The Crypto Global Platform
               </span>
             </div>
             <div className="flex flex-col mt-2.5 ml-auto mr-auto max-w-[970px] w-full z-10 px-5 sm:px-0">
@@ -719,7 +617,7 @@ const Home = () => {
                               fillRule="evenodd"
                               clipRule="evenodd"
                               d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                              fill-opacity=".5"
+                              fillOpacity=".5"
                             ></path>
                             <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
                             <path
@@ -811,7 +709,7 @@ const Home = () => {
                               fillRule="evenodd"
                               clipRule="evenodd"
                               d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                              fill-opacity=".5"
+                              fillOpacity=".5"
                             ></path>
                             <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
                             <path
@@ -903,7 +801,7 @@ const Home = () => {
                               fillRule="evenodd"
                               clipRule="evenodd"
                               d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                              fill-opacity=".5"
+                              fillOpacity=".5"
                             ></path>
                             <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
                             <path
@@ -995,7 +893,7 @@ const Home = () => {
                               fillRule="evenodd"
                               clipRule="evenodd"
                               d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                              fill-opacity=".5"
+                              fillOpacity=".5"
                             ></path>
                             <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
                             <path
@@ -1087,7 +985,7 @@ const Home = () => {
                               fillRule="evenodd"
                               clipRule="evenodd"
                               d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                              fill-opacity=".5"
+                              fillOpacity=".5"
                             ></path>
                             <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
                             <path
@@ -1179,7 +1077,7 @@ const Home = () => {
                               fillRule="evenodd"
                               clipRule="evenodd"
                               d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                              fill-opacity=".5"
+                              fillOpacity=".5"
                             ></path>
                             <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
                             <path
@@ -1271,7 +1169,7 @@ const Home = () => {
                               fillRule="evenodd"
                               clipRule="evenodd"
                               d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                              fill-opacity=".5"
+                              fillOpacity=".5"
                             ></path>
                             <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
                             <path
@@ -1363,7 +1261,7 @@ const Home = () => {
                               fillRule="evenodd"
                               clipRule="evenodd"
                               d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                              fill-opacity=".5"
+                              fillOpacity=".5"
                             ></path>
                             <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
                             <path
@@ -1455,7 +1353,7 @@ const Home = () => {
                               fillRule="evenodd"
                               clipRule="evenodd"
                               d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                              fill-opacity=".5"
+                              fillOpacity=".5"
                             ></path>
                             <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
                             <path
@@ -1547,7 +1445,7 @@ const Home = () => {
                               fillRule="evenodd"
                               clipRule="evenodd"
                               d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                              fill-opacity=".5"
+                              fillOpacity=".5"
                             ></path>
                             <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
                             <path
@@ -1774,10 +1672,13 @@ const Home = () => {
           <div className="flex flex-col text-center space-y-[50px] lg:space-y-5">
             <div className="flex flex-col items-center text-center sm:text-left sm:items-start">
               <span className="max-w-[870px] text-white text-[48px] leading-[60px] font-bold mb-[30px] sm:mb-5 sm:text-[30px] sm:leading-[36px]">
-                technologyOfSmartContracts
+                Technology of smart contracts and non-fungible tokens
               </span>
               <span className="font-light text-white-700 text-[18px] leading-[30px] font-semibold max-w-[770px] sm:text-[14px] sm:leading-[22px]">
-                decentralizedMarketing
+                Decentralized marketing is powered by the revolutionary
+                technology of smart contracts and NFTs. The The Crypto Global
+                smart contract code is completely open. You can be sure of its
+                safety and long-term performance
               </span>
             </div>
             <div className="">
@@ -1809,7 +1710,7 @@ const Home = () => {
                       Autonomy
                     </span>
                     <span className="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">
-                      CryptoglobalEcosystemAroundTechnology
+                      Crypto Global Ecosystem Around Technology
                     </span>
                   </div>
                 </div>
@@ -1818,13 +1719,13 @@ const Home = () => {
                     Autonomy
                   </div>
                   <div className="flex justify-center items-center w-full px-[30px] py-4 rounded-[30px] border-2 border-transparent font-bold text-[18px] leading-[24px] cursor-pointer text-white-700">
-                    unchangingConditions
+                    Unchanging Conditions
                   </div>
                   <div className="flex justify-center items-center w-full px-[30px] py-4 rounded-[30px] border-2 border-transparent font-bold text-[18px] leading-[24px] cursor-pointer text-white-700">
                     Transparency
                   </div>
                   <div className="flex justify-center items-center w-full px-[30px] py-4 rounded-[30px] border-2 border-transparent font-bold text-[18px] leading-[24px] cursor-pointer text-white-700">
-                    fullAutomation
+                    Full Automation
                   </div>
                   <div className="flex justify-center items-center w-full px-[30px] py-4 rounded-[30px] border-2 border-transparent font-bold text-[18px] leading-[24px] cursor-pointer text-white-700">
                     Decentralization
@@ -2007,7 +1908,7 @@ const Home = () => {
                             </div>
                             <div className="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5">
                               <span className="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">
-                                unchangingConditions
+                                Unchanging Conditions
                               </span>
                               <span className="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">
                                 algorithmStoredBlockchain
@@ -2079,7 +1980,7 @@ const Home = () => {
                             </div>
                             <div className="flex flex-col max-w-[385px] space-y-5 sm:max-w-full sm:space-y-2.5">
                               <span className="text-white text-[24px] leading-[30px] font-bold sm:text-5 sm:leading-[24px]">
-                                fullAutomation
+                                Full Automation
                               </span>
                               <span className="text-white-700 text-[18px] leading-[28px] font-light sm:text-[14px] sm:leading-5">
                                 transactionsBetweenCommunityMembers
@@ -2204,18 +2105,19 @@ const Home = () => {
         <div className="py-[100px] flex flex-col max-w-desktop-full w-full lg:py-[40px] px-5">
           <div className="flex flex-col items-center text-center sm:text-left sm:items-start">
             <span className="max-w-[870px] text-white text-[48px] leading-[60px] font-bold mb-[30px] sm:mb-5 sm:text-[30px] sm:leading-[36px]">
-              convenientOffice
+              Convenient Office
             </span>
             <span className="font-light text-white-700 text-[18px] leading-[30px] font-semibold max-w-[770px] sm:text-[14px] sm:leading-[22px]">
-              interactiveOnlineVisualization
+              Interactive online visualization of active slots showing your
+              unique NFT collection and your financial progress.
             </span>
           </div>
           <div className="relative flex justify-center items-center bg-gradient sm:mt-5">
-            {/* <img
-              src="img/cabinet_preview.png"
+            <img
+              src={CabinetPreview}
               className="max-w-full sm:max-w-[90vw]"
               alt="cabinet_preview_image"
-            /> */}
+            />
           </div>
         </div>
       </div>
@@ -2223,7 +2125,7 @@ const Home = () => {
         <div className="py-[100px] flex flex-col max-w-desktop-full w-full lg:py-[40px] px-5">
           <div className="flex flex-col items-center text-center sm:text-left sm:items-start">
             <span className="max-w-[870px] text-white text-[48px] leading-[60px] font-bold mb-[60px] sm:mb-5 sm:text-[30px] sm:leading-[36px]">
-              frequentlyAskedQuestions
+              Frequently asked Questions
             </span>
           </div>
           <div data-accordion-component="Accordion" className="accordion">
@@ -2237,7 +2139,7 @@ const Home = () => {
                 <path
                   d="M8.551 63.978c0-2.69.187-5.239.561-7.65.467-2.41 1.495-4.682 3.084-6.815 1.589-2.225 4.066-4.219 7.43-5.98a146.221 146.221 0 0 1 4.346-2.226 47.366 47.366 0 0 0 5.888-3.338c1.962-1.298 3.598-2.735 4.906-4.311 1.402-1.67 2.103-3.477 2.103-5.424 0-2.133-.841-3.802-2.523-5.007-1.682-1.298-3.645-1.947-5.888-1.947s-4.112.556-5.607 1.668a14.35 14.35 0 0 0-3.505 3.617c-.841 1.298-1.636 2.41-2.383 3.338L0 17.942c2.43-5.656 6.262-10.06 11.495-13.213C16.73 1.576 22.71 0 29.44 0c3.552 0 7.103.51 10.654 1.53a30.12 30.12 0 0 1 9.954 4.868c2.99 2.225 5.374 5.146 7.15 8.762C59.064 18.776 60 23.18 60 28.373c0 4.45-.841 8.53-2.523 12.239-1.683 3.616-4.58 6.815-8.692 9.597a53.935 53.935 0 0 1-8.411 4.728c-2.804 1.299-5.187 2.643-7.15 4.034-1.962 1.298-2.944 2.967-2.944 5.007H8.551ZM8.972 100V77.19h21.729V100H8.972Z"
                   fill="#fff"
-                  fill-opacity=".1"
+                  fillOpacity=".1"
                 ></path>
               </svg>
               <svg
@@ -2249,7 +2151,7 @@ const Home = () => {
                 <path
                   d="M8.551 63.978c0-2.69.187-5.239.561-7.65.467-2.41 1.495-4.682 3.084-6.815 1.589-2.225 4.066-4.219 7.43-5.98a146.221 146.221 0 0 1 4.346-2.226 47.366 47.366 0 0 0 5.888-3.338c1.962-1.298 3.598-2.735 4.906-4.311 1.402-1.67 2.103-3.477 2.103-5.424 0-2.133-.841-3.802-2.523-5.007-1.682-1.298-3.645-1.947-5.888-1.947s-4.112.556-5.607 1.668a14.35 14.35 0 0 0-3.505 3.617c-.841 1.298-1.636 2.41-2.383 3.338L0 17.942c2.43-5.656 6.262-10.06 11.495-13.213C16.73 1.576 22.71 0 29.44 0c3.552 0 7.103.51 10.654 1.53a30.12 30.12 0 0 1 9.954 4.868c2.99 2.225 5.374 5.146 7.15 8.762C59.064 18.776 60 23.18 60 28.373c0 4.45-.841 8.53-2.523 12.239-1.683 3.616-4.58 6.815-8.692 9.597a53.935 53.935 0 0 1-8.411 4.728c-2.804 1.299-5.187 2.643-7.15 4.034-1.962 1.298-2.944 2.967-2.944 5.007H8.551ZM8.972 100V77.19h21.729V100H8.972Z"
                   fill="#fff"
-                  fill-opacity=".1"
+                  fillOpacity=".1"
                 ></path>
               </svg>
               <div
@@ -2257,11 +2159,11 @@ const Home = () => {
                 className="accordion__item"
               >
                 <div className="flex flex-col w-full pt-[36px] pb-[30px] border-b border-white-200 sm:pt-5 sm:pb-5">
-                  {/* <div
+                  <div
                     data-accordion-component="AccordionItemHeading"
                     role="heading"
                     className="accordion__heading"
-                    aria-level="3"
+                    aria-level={3}
                   >
                     <div
                       className="accordion__button"
@@ -2270,20 +2172,15 @@ const Home = () => {
                       aria-expanded="false"
                       aria-controls="accordion__panel-raa-7"
                       role="button"
-                    //   tabindex="0"
+                      tabIndex={0}
                       data-accordion-component="AccordionItemButton"
                     >
-                      <div
-                        className="flex items-center justify-between space-x-2.5"
-                      >
-                        <span
-                          className="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]"
-                          >why Is Crypto global The Best Alternative To
-                          Trading</span
-                        >
-                        <div
-                          className="flex-shrink-0 flex justify-center items-center cursor-pointer rounded-full border border-purple w-[40px] h-[40px] transition duration-500 sm:w-[30px] sm:h-[30px]"
-                        >
+                      <div className="flex items-center justify-between space-x-2.5">
+                        <span className="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]">
+                          Why is The Crypto Global the best alternative to
+                          trading?
+                        </span>
+                        <div className="flex-shrink-0 flex justify-center items-center cursor-pointer rounded-full border border-purple w-[40px] h-[40px] transition duration-500   sm:w-[30px] sm:h-[30px]">
                           <svg
                             className="w-3.5 sm:w-2.5"
                             viewBox="0 0 14 9"
@@ -2299,30 +2196,34 @@ const Home = () => {
                         </div>
                       </div>
                     </div>
-                  </div> */}
+                  </div>
                   <div
                     data-accordion-component="AccordionItemPanel"
                     className="accordion__panel"
                     aria-hidden="true"
                     id="accordion__panel-raa-7"
-                    // hidden=""
                   >
                     <div className="font-light text-white-700 text-[18px] leading-[28px] transition-all mt-5 sm:mt-2.5 duration-500 ease-in-out sm:text-[14px] sm:leading-[22px]">
                       <span className="transition-opacity duration-500 ease-in-out">
                         <div className="space-y-1.5">
-                          theCryptocurrencyRateHasNoEffectOnTheSustainabilityOfTheRewards
+                          The cryptocurrency rate has no effect on the
+                          sustainability of the rewards.
                           <ul className="space-y-1.5">
                             <li>
-                              theMinimumEntryThresholdIsEqualToJustACoupleOfCupsOfCoffee
+                              The minimum entry threshold is equal to just a
+                              couple of cups of coffee.
                             </li>
                             <li>
-                              thereIsNoNeedToWaitForPayoutsFundsComeInstantlyToYourWallet
+                              There is no need to wait for payouts - funds come
+                              instantly to your wallet.
                             </li>
                             <li>
-                              rewardsAlwaysDependOnlyOnTheActionsOfTheParticipant
+                              Rewards always depend only on the actions of the
+                              participant.
                             </li>
                             <li>
-                              theParticipantCanReceiveTheRewardIndefinitelyAsLongAsHeExpandsHisTeam
+                              The participant can receive the reward
+                              indefinitely, as long as he expands his team.
                             </li>
                           </ul>
                         </div>
@@ -2336,54 +2237,11 @@ const Home = () => {
                 className="accordion__item"
               >
                 <div className="flex flex-col w-full pt-[36px] pb-[30px] border-b border-white-200 sm:pt-5 sm:pb-5">
-                  {/* <div
-                    data-accordion-component="AccordionItemHeading"
-                    role="heading"
-                    className="accordion__heading"
-                    aria-level="3"
-                  >
-                    <div
-                      className="accordion__button"
-                      id="accordion__heading-raa-8"
-                      aria-disabled="false"
-                      aria-expanded="false"
-                      aria-controls="accordion__panel-raa-8"
-                      role="button"
-                    //   tabindex="0"
-                      data-accordion-component="AccordionItemButton"
-                    >
-                      <div
-                        className="flex items-center justify-between space-x-2.5"
-                      >
-                        <span
-                          className="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]"
-                          >Is Crypto global Safe</span
-                        >
-                        <div
-                          className="flex-shrink-0 flex justify-center items-center cursor-pointer rounded-full border border-purple w-[40px] h-[40px] transition duration-500 sm:w-[30px] sm:h-[30px]"
-                        >
-                          <svg
-                            className="w-3.5 sm:w-2.5"
-                            viewBox="0 0 14 9"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m1 1 6 6 6-6"
-                              stroke="#fff"
-                              strokeWidth="2"
-                            ></path>
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div> */}
                   <div
                     data-accordion-component="AccordionItemPanel"
                     className="accordion__panel"
                     aria-hidden="true"
                     id="accordion__panel-raa-8"
-                    // hidden=""
                   >
                     <div className="font-light text-white-700 text-[18px] leading-[28px] transition-all mt-5 sm:mt-2.5 duration-500 ease-in-out sm:text-[14px] sm:leading-[22px]">
                       <span className="transition-opacity duration-500 ease-in-out">
@@ -2398,49 +2256,6 @@ const Home = () => {
                 className="accordion__item"
               >
                 <div className="flex flex-col w-full pt-[36px] pb-[30px] border-b border-white-200 sm:pt-5 sm:pb-5">
-                  {/* <div
-                    data-accordion-component="AccordionItemHeading"
-                    role="heading"
-                    className="accordion__heading"
-                    aria-level="3"
-                  >
-                    <div
-                      className="accordion__button"
-                      id="accordion__heading-raa-9"
-                      aria-disabled="false"
-                      aria-expanded="false"
-                      aria-controls="accordion__panel-raa-9"
-                      role="button"
-                    //   tabindex="0"
-                      data-accordion-component="AccordionItemButton"
-                    >
-                      <div
-                        className="flex items-center justify-between space-x-2.5"
-                      >
-                        <span
-                          className="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]"
-                          >how Much Does It Cost To Participate In Crypto
-                          global USDT</span
-                        >
-                        <div
-                          className="flex-shrink-0 flex justify-center items-center cursor-pointer rounded-full border border-purple w-[40px] h-[40px] transition duration-500 sm:w-[30px] sm:h-[30px]"
-                        >
-                          <svg
-                            className="w-3.5 sm:w-2.5"
-                            viewBox="0 0 14 9"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m1 1 6 6 6-6"
-                              stroke="#fff"
-                              strokeWidth="2"
-                            ></path>
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div> */}
                   <div
                     data-accordion-component="AccordionItemPanel"
                     className="accordion__panel"
@@ -2464,55 +2279,11 @@ const Home = () => {
                 className="accordion__item"
               >
                 <div className="flex flex-col w-full pt-[36px] pb-[30px] border-b border-white-200 sm:pt-5 sm:pb-5">
-                  {/* <div
-                    data-accordion-component="AccordionItemHeading"
-                    role="heading"
-                    className="accordion__heading"
-                    aria-level="3"
-                  >
-                    <div
-                      className="accordion__button"
-                      id="accordion__heading-raa-10"
-                      aria-disabled="false"
-                      aria-expanded="false"
-                      aria-controls="accordion__panel-raa-10"
-                      role="button"
-                    //   tabindex="0"
-                      data-accordion-component="AccordionItemButton"
-                    >
-                      <div
-                        className="flex items-center justify-between space-x-2.5"
-                      >
-                        <span
-                          className="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]"
-                          >what Do I Need To Get Started In Crypto global
-                          USDT</span
-                        >
-                        <div
-                          className="flex-shrink-0 flex justify-center items-center cursor-pointer rounded-full border border-purple w-[40px] h-[40px] transition duration-500 sm:w-[30px] sm:h-[30px]"
-                        >
-                          <svg
-                            className="w-3.5 sm:w-2.5"
-                            viewBox="0 0 14 9"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m1 1 6 6 6-6"
-                              stroke="#fff"
-                              strokeWidth="2"
-                            ></path>
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div> */}
                   <div
                     data-accordion-component="AccordionItemPanel"
                     className="accordion__panel"
                     aria-hidden="true"
                     id="accordion__panel-raa-10"
-                    // hidden=""
                   >
                     <div className="font-light text-white-700 text-[18px] leading-[28px] transition-all mt-5 sm:mt-2.5 duration-500 ease-in-out sm:text-[14px] sm:leading-[22px]">
                       <span className="transition-opacity duration-500 ease-in-out">
@@ -2530,54 +2301,11 @@ const Home = () => {
                 className="accordion__item"
               >
                 <div className="flex flex-col w-full pt-[36px] pb-[30px] border-b border-white-200 sm:pt-5 sm:pb-5">
-                  {/* <div
-                    data-accordion-component="AccordionItemHeading"
-                    role="heading"
-                    className="accordion__heading"
-                    aria-level="3"
-                  >
-                    <div
-                      className="accordion__button"
-                      id="accordion__heading-raa-11"
-                      aria-disabled="false"
-                      aria-expanded="false"
-                      aria-controls="accordion__panel-raa-11"
-                      role="button"
-                    //   tabindex="0"
-                      data-accordion-component="AccordionItemButton"
-                    >
-                      <div
-                        className="flex items-center justify-between space-x-2.5"
-                      >
-                        <span
-                          className="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]"
-                          >howDoIStart</span
-                        >
-                        <div
-                          className="flex-shrink-0 flex justify-center items-center cursor-pointer rounded-full border border-purple w-[40px] h-[40px] transition duration-500 sm:w-[30px] sm:h-[30px]"
-                        >
-                          <svg
-                            className="w-3.5 sm:w-2.5"
-                            viewBox="0 0 14 9"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m1 1 6 6 6-6"
-                              stroke="#fff"
-                              strokeWidth="2"
-                            ></path>
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div> */}
                   <div
                     data-accordion-component="AccordionItemPanel"
                     className="accordion__panel"
                     aria-hidden="true"
                     id="accordion__panel-raa-11"
-                    // hidden=""
                   >
                     <div className="font-light text-white-700 text-[18px] leading-[28px] transition-all mt-5 sm:mt-2.5 duration-500 ease-in-out sm:text-[14px] sm:leading-[22px]">
                       <span className="transition-opacity duration-500 ease-in-out">
@@ -2611,48 +2339,6 @@ const Home = () => {
                 className="accordion__item"
               >
                 <div className="flex flex-col w-full pt-[36px] pb-[30px] border-b border-white-200 sm:pt-5 sm:pb-5">
-                  {/* <div
-                    data-accordion-component="AccordionItemHeading"
-                    role="heading"
-                    className="accordion__heading"
-                    aria-level="3"
-                  >
-                    <div
-                      className="accordion__button"
-                      id="accordion__heading-raa-12"
-                      aria-disabled="false"
-                      aria-expanded="false"
-                      aria-controls="accordion__panel-raa-12"
-                      role="button"
-                    //   tabindex="0"
-                      data-accordion-component="AccordionItemButton"
-                    >
-                      <div
-                        className="flex items-center justify-between space-x-2.5"
-                      >
-                        <span
-                          className="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]"
-                          >whereWillMyProfitComeFrom</span
-                        >
-                        <div
-                          className="flex-shrink-0 flex justify-center items-center cursor-pointer rounded-full border border-purple w-[40px] h-[40px] transition duration-500 sm:w-[30px] sm:h-[30px]"
-                        >
-                          <svg
-                            className="w-3.5 sm:w-2.5"
-                            viewBox="0 0 14 9"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m1 1 6 6 6-6"
-                              stroke="#fff"
-                              strokeWidth="2"
-                            ></path>
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div> */}
                   <div
                     data-accordion-component="AccordionItemPanel"
                     className="accordion__panel"
@@ -2675,54 +2361,11 @@ const Home = () => {
                 className="accordion__item"
               >
                 <div className="flex flex-col w-full pt-[36px] pb-[30px] border-b border-white-200 sm:pt-5 sm:pb-5">
-                  {/* <div
-                    data-accordion-component="AccordionItemHeading"
-                    role="heading"
-                    className="accordion__heading"
-                    aria-level="3"
-                  >
-                    <div
-                      className="accordion__button"
-                      id="accordion__heading-raa-13"
-                      aria-disabled="false"
-                      aria-expanded="false"
-                      aria-controls="accordion__panel-raa-13"
-                      role="button"
-                    //   tabindex="0"
-                      data-accordion-component="AccordionItemButton"
-                    >
-                      <div
-                        className="flex items-center justify-between space-x-2.5"
-                      >
-                        <span
-                          className="font-bold text-white text-[22px] leading-[28px] sm:text-[16px] sm:leading-[26px]"
-                          >whatRoleDoNFTTokensPlayInCrypto global</span
-                        >
-                        <div
-                          className="flex-shrink-0 flex justify-center items-center cursor-pointer rounded-full border border-purple w-[40px] h-[40px] transition duration-500 sm:w-[30px] sm:h-[30px]"
-                        >
-                          <svg
-                            className="w-3.5 sm:w-2.5"
-                            viewBox="0 0 14 9"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m1 1 6 6 6-6"
-                              stroke="#fff"
-                              strokeWidth="2"
-                            ></path>
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div> */}
                   <div
                     data-accordion-component="AccordionItemPanel"
                     className="accordion__panel"
                     aria-hidden="true"
                     id="accordion__panel-raa-13"
-                    // hidden=""
                   >
                     <div className="font-light text-white-700 text-[18px] leading-[28px] transition-all mt-5 sm:mt-2.5 duration-500 ease-in-out sm:text-[14px] sm:leading-[22px]">
                       <span className="transition-opacity duration-500 ease-in-out">
@@ -2742,7 +2385,7 @@ const Home = () => {
         <div className="py-[100px] flex flex-col max-w-desktop-full w-full lg:py-[40px] px-5">
           <div className="flex flex-col items-center text-center sm:text-left sm:items-start">
             <span className="max-w-[870px] text-white text-[48px] leading-[60px] font-bold mb-[60px] sm:mb-5 sm:text-[30px] sm:leading-[36px]">
-              officialChannels
+              Official channels
             </span>
           </div>
           <div className="flex items-start w-full justify-evenly lg:flex-wrap sm:justify-around">

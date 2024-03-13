@@ -1,10 +1,11 @@
 import toast from "react-hot-toast";
 import { NavLink } from "react-router-dom";
+import { LogoWhite } from "src/Assets/Svg";
 
 const Dashboard = () => {
   const copyToClipboard = () => {
     navigator.clipboard
-      .writeText("b/xqg1z8")
+      .writeText("thecryptoglobal.io/b/xqg1z8")
       .then(() => toast.success("Text copied to clipboard!"))
       .catch((err) => {
         console.error("Could not copy text: ", err);
@@ -26,17 +27,10 @@ const Dashboard = () => {
                 />
               </div>
               <div className="flex justify-center items-center w-10 h-10 sm:w-7.5 sm:h-7.5 bg-status-gold rounded-full w-[36px] h-[36px] z-10 absolute right-0 bottom-2.5">
-                <svg
+                <img
                   className="h-5 sm:h-3.5 fill-current text-gray"
-                  fill="none"
-                  viewBox="0 0 21 14"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    clipRule="evenodd"
-                    d="M17.205 3.531a.207.207 0 0 1 .264.128l.186.54s-.797-.255-1.213-.336l.763-.332Zm2.606 1.446c-.002 0-.084-.057-.128-.08l-1.34-.688c-.414-.2-.323-.356-.48-.792a2.705 2.705 0 0 0-.236-.488c-.765-.365-2.937-.28-3.144-1.933 0 0-.811.535-.959 1.516C4.961 1.854.99 6.612.99 6.612c1.595-.64 3.316-.943 5.037-1.024-3.272 2.536-4.302 6.355-4.302 6.355s2.65-2.592 6.635-4.037c-1.043 1.483-1.647 3.474-1.4 6.09 0 0 2.05-7.877 11.774-5.972 0 0 .356-1.047 1.274-2.118a.466.466 0 0 0 .098-.28.754.754 0 0 0-.296-.65Z"
-                  ></path>
-                </svg>
+                  src={LogoWhite}
+                />
               </div>
             </div>
           </div>
@@ -119,23 +113,15 @@ const Dashboard = () => {
                       ></path>
                     </svg>
                   </button>
-                  {/* <div
-                    className="__react_component_tooltip t64b24fba-5f51-471b-bf14-6b8a93a32fa7 place-bottom type-dark"
-                    id="Personal link"
-                    data-id="tooltip"
-                  >
-                    Invite your friends to Forsage BUSD and build your team by
-                    sharing your link
-                  </div> */}
                 </div>
               </div>
               <span className="hidden sm:block text-main-blue text-base font-bold notranslate">
-                b/xqg1z8
+                thecryptoglobal.io/b/xqg1z8
               </span>
             </div>
             <div className="flex items-center justify-between w-full">
               <span className="text-main-blue text-xl font-bold notranslate sm:hidden">
-                b/xqg1z8
+                thecryptoglobal.io/b/xqg1z8
               </span>
               <div className="flex space-x-2.5 sm:w-full">
                 <button
@@ -145,50 +131,6 @@ const Dashboard = () => {
                   Copy
                 </button>
               </div>
-            </div>
-          </div>
-          <div className="cursor-pointer h-[75px] w-full rounded z-[1] relative flex items-end justify-end sm:pt-4 sm:h-[55px] hover:opacity-70">
-            <div className="w-full h-[75px] rounded relative overflow-hidden bg-[#1E1E1E] sm:h-[55px]">
-              <div className="flex items-center justify-end w-full h-full space-x-[14px] pr-8 sm:pr-6 sm:space-x-2">
-                <span className="text-white z-[11] text-lg font-medium ml-7.5 sm:ml-0 font-poppins sm:text-sm whitespace-nowrap">
-                  FRGX Token
-                </span>
-                <div className="flex items-center justify-center frgx-banner-border h-[40px] w-[150px] rounded-2xl p-[1px] z-[11] sm:w-[120px] sm:h-[35px]">
-                  <div className="flex items-center justify-center w-full h-full bg-black rounded-2xl">
-                    <span className="text-lg text-white font-poppins sm:text-sm !text-xs text-center">
-                      Login to show balance
-                    </span>
-                  </div>
-                </div>
-                <img
-                  className="absolute right-0"
-                  src="https://busd.forsage.io/dashboardUnderRef/Token/buttonShadow.png"
-                />
-              </div>
-              <img
-                className="absolute w-[full] right-0 left-0 top-0 h-full z-[0] bottom-0"
-                src="https://busd.forsage.io/dashboardUnderRef/Token/frgx.png"
-              />
-              <svg
-                className="absolute right-1 top-1"
-                width="20"
-                height="20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M14.52 5.48a.5.5 0 0 1 0 .707L6.187 14.52a.5.5 0 0 1-.707-.707l8.333-8.333a.5.5 0 0 1 .707 0Z"
-                  fill="#fff"
-                ></path>
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M6.167 5.833a.5.5 0 0 1 .5-.5h7.5a.5.5 0 0 1 .5.5v7.5a.5.5 0 1 1-1 0v-7h-7a.5.5 0 0 1-.5-.5Z"
-                  fill="#fff"
-                ></path>
-              </svg>
             </div>
           </div>
         </div>
@@ -278,46 +220,6 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="lg:flex-grow sm:max-w-full sm:!min-h-0 sm:!flex-row flex flex-col bg-black-light rounded relative z-[11] overflow-hidden desktop-infoblock-base sm:mobile-infoblock-base">
-              <img
-                className="h-[70%] sm:h-3/4 absolute bottom-0 right-0 z-[-11] h-[70%] right-0 sm:h-full absolute bottom-0 sm:left-1/4 sm:-translate-x-1/2 z-[-11]"
-                src="https://busd.forsage.io/Ratio.png"
-              />
-              <div className="flex flex-col px-5 pt-5 w-full relative sm:!flex-row sm:!justify-between sm:!items-center sm:!px-2 sm:!py-0">
-                <div className="flex items-center z-[10]">
-                  <span className="text-white-500 text-base sm:text-sm sm:whitespace-nowrap">
-                    Ratio
-                  </span>
-                </div>
-                <span className="text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
-                  2653 %
-                </span>
-              </div>
-              <div className="flex p-2.5 w-full">
-                <div className="w-full bg-white-100 text-white rounded p-2 flex text-base items-center justify-between notranslate sm:text-sm">
-                  <div className="flex items-center justify-start">
-                    <svg
-                      className="stroke-current mr-1.5"
-                      width="8"
-                      height="11"
-                      stroke="#2CFF4E"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4 10V1m0 0L1 4m3-3 3 3"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      ></path>
-                    </svg>
-                    0 %
-                  </div>
-                  <img
-                    src="https://busd.forsage.io/icons/activity_white.png"
-                    className="ml-2.5 w-6 h-6"
-                  />
-                </div>
-              </div>
-            </div>
           </div>
           <div className="flex flex-1 lg:flex-0 sm:flex-0 h-full sm:max-w-full overflow-hidden w-full relative justify-start items-end bg-black-light rounded lg:max-w-full desktop-infoblock-chart-base">
             <div className="flex-shrink-0 relative flex flex-col bg-black-light rounded w-full">
@@ -334,7 +236,7 @@ const Dashboard = () => {
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex flex-1 w-full text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
-                    1116069 BUSD
+                    1116069 USDT
                   </div>
                   <div className="flex p-1.5">
                     <div className="w-full text-green-light flex text-base items-center justify-end notranslate sm:text-sm">
@@ -357,31 +259,6 @@ const Dashboard = () => {
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
-                    363.7599 BNB
-                  </span>
-                  <div className="flex p-1.5">
-                    <div className="w-full text-white flex text-base items-center justify-end notranslate sm:text-sm">
-                      <div className="flex items-center justify-start">
-                        <svg
-                          className="stroke-current mr-1.5"
-                          width="8"
-                          height="11"
-                          stroke="#2CFF4E"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M4 10V1m0 0L1 4m3-3 3 3"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          ></path>
-                        </svg>
-                        0
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -390,80 +267,171 @@ const Dashboard = () => {
           <span>00:00:00:00</span>
         </div>
       </div>
-      <div className="min-h-[125px] mt-10 px-2.5 py-1.5 sm:pb-5 w-full rounded bg-white-30 items-center justify-between flex flex-row sm:w-full sm:flex-col sm:rounded-none relative sm:space-y-2.5">
-        <div className="flex items-center justify-evenly w-full">
-          <img
-            src="https://busd.forsage.io/achievements/cup.svg"
-            className="w-[110px] sm:w-20"
-            alt=""
-          />
-          <img
-            src="https://busd.forsage.io/achievements/cup.svg"
-            className="w-[110px] sm:w-20"
-            alt=""
-          />
-          <img
-            src="https://busd.forsage.io/achievements/cup.svg"
-            className="w-[110px] sm:w-20"
-            alt=""
-          />
-          <img
-            src="https://busd.forsage.io/achievements/cup.svg"
-            className="w-[110px] sm:w-20"
-            alt=""
-          />
-        </div>
-        <div className="flex flex-row cursor-pointer pr-5 sm:w-full">
-          <a className="w-full p-2.5" href="/achievements?user=1">
-            <div className="flex space-x-2.5 items-center justify-center sm:w-full">
-              <span className="text-base text-white-500 font-semibold whitespace-nowrap sm:text-sm">
-                Show all{" "}
-              </span>
-              <svg
-                className="h-7.5 sm:h-5"
-                viewBox="0 0 30 28"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M20.364 0c1.526 0 2.936.814 3.7 2.136l5.364 9.291a4.272 4.272 0 0 1 0 4.271l-5.365 9.292a4.271 4.271 0 0 1-3.699 2.135H9.636a4.271 4.271 0 0 1-3.7-2.135L.573 15.698a4.271 4.271 0 0 1 0-4.271l5.365-9.291A4.271 4.271 0 0 1 9.636 0h10.728Z"
-                  fill="#406AFF"
-                ></path>
-                <path
-                  d="m13 8 5 5-5 5"
-                  stroke="#fff"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                ></path>
-              </svg>
+      <div className="mainTreeBox">
+        <h3 className="mainText2">
+          Please don't refresh or go back until your transaction is Successfully
+          submitted. We are not responsible for any financial lose{" "}
+        </h3>
+        <span className="text-white text-3xl font-bold sm:text-2xl mr-2.5">
+          <span className="notranslate mr-1.5">Working Program</span>
+        </span>
+        <div className="min-h-[125px] mt-10 px-2.5 py-1.5 sm:pb-5 w-full rounded bg-white-30 items-center justify-between flex flex-row sm:w-full sm:flex-col sm:rounded-none relative sm:space-y-2.5">
+          <div className="flex items-center justify-evenly w-full">
+            <div className="tree____">
+              <a className="aTag">
+                <button
+                  type="button"
+                  className="btn btn-info btn-lg bx activated"
+                  data-toggle="modal"
+                  data-target="#myModal2"
+                >
+                  <span> $ 20 </span>
+                </button>
+              </a>
+
+              <a className="aTag">
+                <button
+                  type="button"
+                  className="btn btn-info btn-lg bx activated"
+                  data-toggle="modal"
+                  data-target="#myModal2"
+                >
+                  <span> $ 50 </span>
+                </button>
+              </a>
+
+              <a className="aTag">
+                <button
+                  type="button"
+                  className="btn btn-info btn-lg bx activated"
+                  data-toggle="modal"
+                  data-target="#myModal2"
+                >
+                  <span> $ 100 </span>
+                </button>
+              </a>
+
+              <a className="aTag">
+                <button
+                  type="button"
+                  className="btn btn-info btn-lg bx activated"
+                  data-toggle="modal"
+                  data-target="#myModal2"
+                >
+                  <span> $ 200 </span>
+                </button>
+              </a>
+
+              <a className="aTag">
+                <button
+                  type="button"
+                  className="btn btn-info btn-lg bx activated"
+                  data-toggle="modal"
+                  data-target="#myModal2"
+                >
+                  <span> $ 500 </span>
+                </button>
+              </a>
             </div>
-          </a>
+          </div>
+        </div>
+
+        <h3 className="mainText">
+          Please don't refresh or go back until your transaction is Successfully
+          submitted. We are not responsible for any financial lose{" "}
+        </h3>
+        <span className="text-white text-3xl font-bold sm:text-2xl mr-2.5">
+          <span className="notranslate mr-1.5">Matrix Program</span>
+        </span>
+        <div className="min-h-[125px] mt-10 px-2.5 py-1.5 sm:pb-5 w-full rounded bg-white-30 items-center justify-between flex flex-row sm:w-full sm:flex-col sm:rounded-none relative sm:space-y-2.5">
+          <div className="flex items-center justify-evenly w-full">
+            <input
+              type="hidden"
+              className="form-control"
+              id="wallet_addresss"
+              name="wallet_addresss"
+            />
+            <div className="tree____">
+              <a className="aTag">
+                <button
+                  type="button"
+                  className="btn btn-info btn-lg bx activated"
+                  data-toggle="modal"
+                  data-target="#myModal2"
+                >
+                  <span> $ 10 </span>
+                </button>
+              </a>
+
+              <a className="aTag">
+                <button
+                  type="button"
+                  className="btn btn-info btn-lg bx activated"
+                  data-toggle="modal"
+                  data-target="#myModal2"
+                >
+                  <span> $ 50 </span>
+                </button>
+              </a>
+
+              <a className="aTag">
+                <button
+                  type="button"
+                  className="btn btn-info btn-lg bx activated"
+                  data-toggle="modal"
+                  data-target="#myModal2"
+                >
+                  <span> $ 100 </span>
+                </button>
+              </a>
+
+              <a className="aTag">
+                <button
+                  type="button"
+                  className="btn btn-info btn-lg bx activated"
+                  data-toggle="modal"
+                  data-target="#myModal2"
+                >
+                  <span> $ 200 </span>
+                </button>
+              </a>
+
+              <a className="aTag">
+                <button
+                  type="button"
+                  className="btn btn-info btn-lg bx activated"
+                  data-toggle="modal"
+                  data-target="#myModal2"
+                >
+                  <span> $ 500 </span>
+                </button>
+              </a>
+            </div>
+
+            <div className="modal">
+              <div className="modal-content">
+                <span className="close-button">×</span>
+                <h1>
+                  {" "}
+                  <a href="https://thecryptoglobal.io/stake/Dashboard/Activation">
+                    <button className="customButton">
+                      Please activate Your Account First
+                    </button>
+                  </a>
+                </h1>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="notranslate flex flex-col mt-15 sm:px-5">
         <div className="flex items-center false">
           <span className="text-white text-3xl font-bold sm:text-2xl mr-2.5">
             <span>
-              <span className="notranslate mr-1.5">Forsage</span>
-              Programs
+              <span className="notranslate mr-1.5"> The Crypto Global </span>
+              Program
             </span>
           </span>
-          <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none py-0 px-2.5 bg-main-blue text-white rounded !leading-30px hover:bg-hover-main-blue active:bg-active-main-blue font-normal sm:items-center py-1">
-            <svg
-              className="w-5 h-5 mr-1.5"
-              viewBox="0 0 20 20"
-              fill="#fff"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M17 10a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Zm-8.07 1.15c.04.04.09.06.15.06h.99c.073 0 .13-.02.17-.06a.547.547 0 0 0 .11-.19c.007-.06.023-.173.05-.34a1.4 1.4 0 0 1 .23-.52c.12-.167.287-.363.5-.59.293-.32.513-.603.66-.85.153-.247.23-.537.23-.87a1.61 1.61 0 0 0-.25-.85c-.16-.273-.42-.497-.78-.67-.353-.18-.807-.27-1.36-.27-.533 0-.997.1-1.39.3-.393.193-.697.45-.91.77-.207.32-.317.663-.33 1.03 0 .073.02.133.06.18.047.047.103.07.17.07h.87c.147 0 .243-.077.29-.23.133-.647.523-.97 1.17-.97.287 0 .53.08.73.24.207.16.297.377.27.65a.864.864 0 0 1-.19.46 5.091 5.091 0 0 1-.5.56c-.293.293-.523.56-.69.8-.167.24-.267.517-.3.83-.007.073-.01.18-.01.32 0 .053.02.1.06.14Zm-.05 2.25c.047.047.103.07.17.07h.99a.244.244 0 0 0 .18-.07.231.231 0 0 0 .07-.17v-.89a.218.218 0 0 0-.08-.17.231.231 0 0 0-.17-.07h-.99a.231.231 0 0 0-.17.07.231.231 0 0 0-.07.17v.89c0 .067.023.123.07.17Z"
-              ></path>
-            </svg>
-            <span className="text-base sm:text-sm"> Info </span>
-          </button>
         </div>
         <div className="grid w-full gap-10 mt-8 grid-cols-2 sm:grid-cols-1">
           <NavLink
@@ -548,182 +516,6 @@ const Dashboard = () => {
               className="absolute w-full h-full inset-0"
               style={{
                 backgroundImage: "url('/blurs/dashboard/blue-blur.png')",
-                backgroundRepeat: "round",
-                backgroundSize: "cover",
-              }}
-            ></div>
-          </NavLink>
-
-          <NavLink
-            to="/dashboard/x4"
-            className="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
-          >
-            <svg
-              className="absolute top-2 right-2 sm:top-1 sm:right-1"
-              width="20"
-              height="20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M14.52 5.48a.5.5 0 0 1 0 .707L6.187 14.52a.5.5 0 0 1-.707-.707l8.333-8.333a.5.5 0 0 1 .707 0Z"
-                fill="#fff"
-              ></path>
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M6.167 5.833a.5.5 0 0 1 .5-.5h7.5a.5.5 0 0 1 .5.5v7.5a.5.5 0 1 1-1 0v-7h-7a.5.5 0 0 1-.5-.5Z"
-                fill="#fff"
-              ></path>
-            </svg>
-            <div className="flex justify-between w-full z-10">
-              <div className="flex items-center">
-                <span className="text-white text-2xl notranslate font-bold justify-start sm:text-xl false">
-                  x4
-                </span>
-              </div>
-              <span className="text-white text-2xl font-bold justify-end text-right notranslate sm:text-xl">
-                410970 BUSD
-              </span>
-            </div>
-            <div className="flex justify-between h-full w-full">
-              <div className="flex justify-between w-full z-10 sm:flex-col mt-5 w-full items-end">
-                <div className="flex w-5/12 h-full flex-col items-start justify-end sm:w-full flex-wrap sm:mb-7.5">
-                  <div className="flex flex-wrap -m-1">
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                  </div>
-                </div>
-                <div className="flex flex-col h-full relative justify-end sm:w-full sm:items-center">
-                  <div className="flex sm:w-full">
-                    <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-light-purple hover:bg-hover-purple active:bg-active-purple z-0 sm:w-full pointer-events-none text-white">
-                      <div className="flex flex-col space-y-1 items-start">
-                        <div className="flex items-center">
-                          Preview
-                          <svg
-                            className="ml-3 fill-current"
-                            width="16"
-                            height="16"
-                            fill="#fff"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              clipRule="evenodd"
-                              d="M15.5 8a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Zm-4.646-2.854A.5.5 0 0 1 11 5.5v5a.5.5 0 0 1-1 0V6.707l-4.146 4.147a.5.5 0 0 1-.708-.708L9.293 6H5.5a.5.5 0 0 1 0-1h5c.138 0 .263.056.354.146Z"
-                            ></path>
-                          </svg>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="absolute w-full h-full inset-0"
-              style={{
-                backgroundImage: "url('/blurs/dashboard/purple-blur.png')",
-                backgroundRepeat: "round",
-                backgroundSize: "cover",
-              }}
-            ></div>
-          </NavLink>
-
-          <NavLink
-            to="/dashboard/xxx"
-            className="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
-          >
-            <svg
-              className="absolute top-2 right-2 sm:top-1 sm:right-1"
-              width="20"
-              height="20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M14.52 5.48a.5.5 0 0 1 0 .707L6.187 14.52a.5.5 0 0 1-.707-.707l8.333-8.333a.5.5 0 0 1 .707 0Z"
-                fill="#fff"
-              ></path>
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M6.167 5.833a.5.5 0 0 1 .5-.5h7.5a.5.5 0 0 1 .5.5v7.5a.5.5 0 1 1-1 0v-7h-7a.5.5 0 0 1-.5-.5Z"
-                fill="#fff"
-              ></path>
-            </svg>
-            <div className="flex justify-between w-full z-10">
-              <div className="flex items-center">
-                <span className="text-white text-2xl notranslate font-bold justify-start sm:text-xl false">
-                  xXx
-                </span>
-              </div>
-              <span className="text-white text-2xl font-bold justify-end text-right notranslate sm:text-xl">
-                174249 BUSD
-              </span>
-            </div>
-            <div className="flex justify-between h-full w-full">
-              <div className="flex justify-between w-full z-10 sm:flex-col mt-5 w-full items-end">
-                <div className="flex w-5/12 h-full flex-col items-start justify-end sm:w-full flex-wrap sm:mb-7.5">
-                  <div className="flex flex-wrap -m-1">
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                  </div>
-                </div>
-                <div className="flex flex-col h-full relative justify-end sm:w-full sm:items-center">
-                  <div className="flex sm:w-full">
-                    <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-dark-pink hover:bg-hover-pink active:bg-active-pink z-0 sm:w-full pointer-events-none text-white">
-                      <div className="flex flex-col space-y-1 items-start">
-                        <div className="flex items-center">
-                          Preview
-                          <svg
-                            className="ml-3 fill-current"
-                            width="16"
-                            height="16"
-                            fill="#fff"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              clipRule="evenodd"
-                              d="M15.5 8a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Zm-4.646-2.854A.5.5 0 0 1 11 5.5v5a.5.5 0 0 1-1 0V6.707l-4.146 4.147a.5.5 0 0 1-.708-.708L9.293 6H5.5a.5.5 0 0 1 0-1h5c.138 0 .263.056.354.146Z"
-                            ></path>
-                          </svg>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="absolute w-full h-full inset-0"
-              style={{
-                backgroundImage: "url('/blurs/dashboard/pink-blur.png')",
                 backgroundRepeat: "round",
                 backgroundSize: "cover",
               }}
@@ -820,211 +612,9 @@ const Dashboard = () => {
               }}
             ></div>
           </NavLink>
-
-          <NavLink
-            to="/dashboard/xQore"
-            className="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
-          >
-            <svg
-              className="absolute top-2 right-2 sm:top-1 sm:right-1"
-              width="20"
-              height="20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M14.52 5.48a.5.5 0 0 1 0 .707L6.187 14.52a.5.5 0 0 1-.707-.707l8.333-8.333a.5.5 0 0 1 .707 0Z"
-                fill="#fff"
-              ></path>
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M6.167 5.833a.5.5 0 0 1 .5-.5h7.5a.5.5 0 0 1 .5.5v7.5a.5.5 0 1 1-1 0v-7h-7a.5.5 0 0 1-.5-.5Z"
-                fill="#fff"
-              ></path>
-            </svg>
-            <div className="flex justify-between w-full z-10">
-              <div className="flex items-center">
-                <span className="text-white text-2xl notranslate font-bold justify-start sm:text-xl false">
-                  xQore
-                </span>
-              </div>
-              <span className="text-white text-2xl font-bold justify-end text-right notranslate sm:text-xl">
-                136.2655 BNB
-              </span>
-            </div>
-            <div className="flex justify-between h-full w-full">
-              <div className="flex justify-between w-full z-10 sm:flex-col mt-5 w-full items-end">
-                <div className="flex w-5/12 h-full flex-col items-start justify-end sm:w-full flex-wrap sm:mb-7.5">
-                  <div className="flex flex-wrap -m-1">
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                  </div>
-                </div>
-                <div className="flex flex-col h-full relative justify-end sm:w-full sm:items-center">
-                  <div className="flex sm:w-full">
-                    <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-cyan-300 hover:bg-hover-cyan-300 active:bg-active-cyan-300 z-0 sm:w-full pointer-events-none text-white">
-                      <div className="flex flex-col space-y-1 items-start">
-                        <div className="flex items-center">
-                          Preview
-                          <svg
-                            className="ml-3 fill-current"
-                            width="16"
-                            height="16"
-                            fill="#fff"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              clipRule="evenodd"
-                              d="M15.5 8a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Zm-4.646-2.854A.5.5 0 0 1 11 5.5v5a.5.5 0 0 1-1 0V6.707l-4.146 4.147a.5.5 0 0 1-.708-.708L9.293 6H5.5a.5.5 0 0 1 0-1h5c.138 0 .263.056.354.146Z"
-                            ></path>
-                          </svg>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="absolute w-full h-full inset-0"
-              style={{
-                backgroundImage: "url('/blurs/dashboard/tiffany-blur.png')",
-                backgroundRepeat: "round",
-                backgroundSize: "cover",
-              }}
-            ></div>
-          </NavLink>
-
-          <NavLink
-            to="/dashboard/maxQore"
-            className="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
-          >
-            <svg
-              className="absolute top-2 right-2 sm:top-1 sm:right-1"
-              width="20"
-              height="20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M14.52 5.48a.5.5 0 0 1 0 .707L6.187 14.52a.5.5 0 0 1-.707-.707l8.333-8.333a.5.5 0 0 1 .707 0Z"
-                fill="#fff"
-              ></path>
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M6.167 5.833a.5.5 0 0 1 .5-.5h7.5a.5.5 0 0 1 .5.5v7.5a.5.5 0 1 1-1 0v-7h-7a.5.5 0 0 1-.5-.5Z"
-                fill="#fff"
-              ></path>
-            </svg>
-            <div className="flex justify-between w-full z-10">
-              <div className="flex items-center">
-                <span className="text-white text-2xl notranslate font-bold justify-start sm:text-xl false">
-                  maxQore
-                </span>
-              </div>
-              <span className="text-white text-2xl font-bold justify-end text-right notranslate sm:text-xl">
-                227.49 BNB
-              </span>
-            </div>
-            <div className="flex justify-between h-full w-full">
-              <div className="flex justify-between w-full z-10 sm:flex-col mt-5 w-full items-end">
-                <div className="flex w-5/12 h-full flex-col items-start justify-end sm:w-full flex-wrap sm:mb-7.5">
-                  <div className="flex flex-wrap -m-1">
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                  </div>
-                </div>
-                <div className="flex flex-col h-full relative justify-end sm:w-full sm:items-center">
-                  <div className="flex sm:w-full flex-col space-y-1.5 sm:flex-row-reverse sm:space-y-0">
-                    <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-program-green hover:bg-program-green-600 active:bg-program-green-600 z-0 sm:w-full pointer-events-none text-white">
-                      <div className="flex flex-col space-y-1 items-start">
-                        <div className="flex items-center">
-                          Preview
-                          <svg
-                            className="ml-3 fill-current"
-                            width="16"
-                            height="16"
-                            fill="#fff"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              clipRule="evenodd"
-                              d="M15.5 8a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Zm-4.646-2.854A.5.5 0 0 1 11 5.5v5a.5.5 0 0 1-1 0V6.707l-4.146 4.147a.5.5 0 0 1-.708-.708L9.293 6H5.5a.5.5 0 0 1 0-1h5c.138 0 .263.056.354.146Z"
-                            ></path>
-                          </svg>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="absolute w-full h-full inset-0"
-              style={{
-                backgroundImage: "url('/blurs/dashboard/green-blur.png')",
-                backgroundRepeat: "round",
-                backgroundSize: "cover",
-              }}
-            ></div>
-          </NavLink>
         </div>
       </div>
 
-      <div className="sm:px-5">
-        <div className="ambassador-buttonGradient rounded p-[1px]">
-          <div className="overflow-hidden bg-darkBlack rounded h-[140px] sm:h-auto w-full flex items-center justify-between space-x-5 sm:space-x-0 sm:flex-col sm:px-5 sm:py-[30px]">
-            <div className="pl-5 h-full flex items-center sm:order-3 sm:w-full sm:pl-0">
-              <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none ambassador-buttonGradient rounded-[100px] px-0 py-0 text-white py-[8px] px-[30px] sm:w-full sm:max-w-full sm:py-2.5">
-                Go to Program
-              </button>
-            </div>
-            <div className="py-[25px] h-full flex items-center justify-center sm:order-2 sm:py-[30px]">
-              <img
-                src="https://busd.forsage.io/ambassador/text-logo.svg"
-                className="max-h-[60px] sm:max-h-[50px] h-full"
-                alt=""
-              />
-            </div>
-            <img
-              src="https://busd.forsage.io/ambassador/logo-full.png"
-              className="pr-5 sm:pr-0 h-[130%] sm:h-[125px] sm:order-1"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
       <div className="flex flex-col">
         <div className="flex items-center sm:px-5">
           <span className="text-white text-3xl font-bold sm:text-2xl">
@@ -1033,9 +623,10 @@ const Dashboard = () => {
           <div className="relative group">
             <button
               className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none ml-1.5"
-              data-tip="true"
+              data-tip="false"
               data-for="Platform recent activity"
-              // currentitem="false"
+              title="The Crypto Global USDT real-time global events with links to transactions in
+              blockchain"
             >
               <span></span>
               <svg
@@ -1051,6 +642,7 @@ const Dashboard = () => {
                 ></path>
               </svg>
             </button>
+
             {/* <div
               className="__react_component_tooltip tf640bdb3-1443-45ec-bd66-7832b2e7572b place-bottom type-dark"
               id="Platform recent activity"
@@ -1999,7 +1591,8 @@ const Dashboard = () => {
                       className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none ml-1.5"
                       data-tip="true"
                       data-for="Members total"
-                      // currentitem="false"
+                      title="Total number of members in The Crypto Global USDT and last 24 hours
+                      change"
                     >
                       <span></span>
                       <svg
@@ -2015,6 +1608,7 @@ const Dashboard = () => {
                         ></path>
                       </svg>
                     </button>
+
                     {/* <div
                       className="__react_component_tooltip tfea33235-5c88-4ea1-9f96-7ecb7903da56 place-bottom type-dark"
                       id="Members total"
@@ -2054,7 +1648,8 @@ const Dashboard = () => {
                     className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none ml-1.5"
                     data-tip="true"
                     data-for="Members received"
-                    // currentitem="false"
+                    title="Total amount received by all members of The Crypto Global
+                   and last 24 hours change"
                   >
                     <span></span>
                     <svg
@@ -2070,6 +1665,7 @@ const Dashboard = () => {
                       ></path>
                     </svg>
                   </button>
+
                   {/* <div
                     className="__react_component_tooltip t7d926c16-0e54-402d-b1ed-1a57b630d327 place-bottom type-dark"
                     id="Members received"
@@ -2099,7 +1695,7 @@ const Dashboard = () => {
             </div>
             <div className="bg-gray rounded p-5 flex flex-col flex-1 max-w-full">
               <div className="flex justify-between items-center text-base text-white-500 sm:text-sm">
-                <span>Forsage BUSD Contracts</span>
+                <span>The Crypto Global USDT Contracts</span>
                 <button className="rounded-full h-5 w-5 justify-center items-center bg-main-blue hidden lg:flex">
                   <svg
                     className="stroke-current text-white"
@@ -2116,7 +1712,7 @@ const Dashboard = () => {
                 <div className="flex flex-col border-t border-b border-white-100 pb-2.5 mt-2.5">
                   <div className="flex justify-between items-center py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
                     <span className="text-base text-white-500 notranslate sm:text-sm">
-                      x3/x4
+                      Matrix
                     </span>
                     <div className="flex justify-end items-center space-x-2.5">
                       <span className="text-base text-white notranslate sm:text-sm">
@@ -2165,7 +1761,7 @@ const Dashboard = () => {
                   </div>
                   <div className="flex justify-between items-center py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
                     <span className="text-base text-white-500 notranslate sm:text-sm">
-                      xXx
+                      Working
                     </span>
                     <div className="flex justify-end items-center space-x-2.5">
                       <span className="text-base text-white notranslate sm:text-sm">
@@ -2189,153 +1785,6 @@ const Dashboard = () => {
                       <a
                         target="_blank"
                         href="https://bscscan.com/address/0x2caa4694cb7daf7d49a198dc1103c06d4991ae52"
-                      >
-                        <svg
-                          className="h-18px w-18px"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M11.314 3.813a3.446 3.446 0 1 1 4.873 4.874l-3.331 3.331a3.418 3.418 0 0 1-4.88-.001.5.5 0 0 1 .715-.7 2.417 2.417 0 0 0 3.452 0l.004-.004L15.48 7.98a2.446 2.446 0 1 0-3.46-3.46l-.416.417a.5.5 0 1 1-.707-.707l.417-.417Z"
-                            fill="#fff"
-                          ></path>
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M8.26 7.225a3.417 3.417 0 0 1 3.765.758.5.5 0 0 1-.715.7 2.417 2.417 0 0 0-3.452 0l-.003.004L4.52 12.02a2.446 2.446 0 0 0 3.46 3.46l.416-.417a.5.5 0 1 1 .708.707l-.417.417a3.446 3.446 0 1 1-4.874-4.874l3.332-3.332a3.417 3.417 0 0 1 1.115-.756Z"
-                            fill="#fff"
-                          ></path>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
-                    <span className="text-base text-white-500 notranslate sm:text-sm">
-                      xGold
-                    </span>
-                    <div className="flex justify-end items-center space-x-2.5">
-                      <span className="text-base text-white notranslate sm:text-sm">
-                        0x988...7C5
-                      </span>
-                      <button>
-                        <svg
-                          className="h-18px w-18px"
-                          viewBox="0 0 20 20"
-                          fill="#fff"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M15 6.667H8.332c-.92 0-1.667.746-1.667 1.666V15c0 .92.746 1.667 1.667 1.667h6.666c.92 0 1.667-.747 1.667-1.667V8.333c0-.92-.746-1.666-1.667-1.666Z"></path>
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M3.469 3.468A2.167 2.167 0 0 1 5 2.833h6.666A2.167 2.167 0 0 1 13.834 5v1.667a.5.5 0 0 1-1 0V5a1.167 1.167 0 0 0-1.167-1.167H5.001A1.167 1.167 0 0 0 3.834 5v6.667a1.167 1.167 0 0 0 1.167 1.166h1.666a.5.5 0 1 1 0 1H5.001a2.167 2.167 0 0 1-2.167-2.166V5c0-.575.228-1.126.635-1.532Z"
-                          ></path>
-                        </svg>
-                      </button>
-                      <a
-                        target="_blank"
-                        href="https://bscscan.com/address/0x98872a66D0749C720D8Dc1A80d496b24B04ff7C5"
-                      >
-                        <svg
-                          className="h-18px w-18px"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M11.314 3.813a3.446 3.446 0 1 1 4.873 4.874l-3.331 3.331a3.418 3.418 0 0 1-4.88-.001.5.5 0 0 1 .715-.7 2.417 2.417 0 0 0 3.452 0l.004-.004L15.48 7.98a2.446 2.446 0 1 0-3.46-3.46l-.416.417a.5.5 0 1 1-.707-.707l.417-.417Z"
-                            fill="#fff"
-                          ></path>
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M8.26 7.225a3.417 3.417 0 0 1 3.765.758.5.5 0 0 1-.715.7 2.417 2.417 0 0 0-3.452 0l-.003.004L4.52 12.02a2.446 2.446 0 0 0 3.46 3.46l.416-.417a.5.5 0 1 1 .708.707l-.417.417a3.446 3.446 0 1 1-4.874-4.874l3.332-3.332a3.417 3.417 0 0 1 1.115-.756Z"
-                            fill="#fff"
-                          ></path>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
-                    <span className="text-base text-white-500 notranslate sm:text-sm">
-                      xQore
-                    </span>
-                    <div className="flex justify-end items-center space-x-2.5">
-                      <span className="text-base text-white notranslate sm:text-sm">
-                        0x1ee...a78
-                      </span>
-                      <button>
-                        <svg
-                          className="h-18px w-18px"
-                          viewBox="0 0 20 20"
-                          fill="#fff"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M15 6.667H8.332c-.92 0-1.667.746-1.667 1.666V15c0 .92.746 1.667 1.667 1.667h6.666c.92 0 1.667-.747 1.667-1.667V8.333c0-.92-.746-1.666-1.667-1.666Z"></path>
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M3.469 3.468A2.167 2.167 0 0 1 5 2.833h6.666A2.167 2.167 0 0 1 13.834 5v1.667a.5.5 0 0 1-1 0V5a1.167 1.167 0 0 0-1.167-1.167H5.001A1.167 1.167 0 0 0 3.834 5v6.667a1.167 1.167 0 0 0 1.167 1.166h1.666a.5.5 0 1 1 0 1H5.001a2.167 2.167 0 0 1-2.167-2.166V5c0-.575.228-1.126.635-1.532Z"
-                          ></path>
-                        </svg>
-                      </button>
-                      <a
-                        target="_blank"
-                        href="https://bscscan.com/address/0x1ee4A7a62726fDd1EDe780f90fd2a77f53F5Ba78"
-                      >
-                        <svg
-                          className="h-18px w-18px"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M11.314 3.813a3.446 3.446 0 1 1 4.873 4.874l-3.331 3.331a3.418 3.418 0 0 1-4.88-.001.5.5 0 0 1 .715-.7 2.417 2.417 0 0 0 3.452 0l.004-.004L15.48 7.98a2.446 2.446 0 1 0-3.46-3.46l-.416.417a.5.5 0 1 1-.707-.707l.417-.417Z"
-                            fill="#fff"
-                          ></path>
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M8.26 7.225a3.417 3.417 0 0 1 3.765.758.5.5 0 0 1-.715.7 2.417 2.417 0 0 0-3.452 0l-.003.004L4.52 12.02a2.446 2.446 0 0 0 3.46 3.46l.416-.417a.5.5 0 1 1 .708.707l-.417.417a3.446 3.446 0 1 1-4.874-4.874l3.332-3.332a3.417 3.417 0 0 1 1.115-.756Z"
-                            fill="#fff"
-                          ></path>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
-                    <span className="text-base text-white-500 notranslate sm:text-sm">
-                      maxQore
-                    </span>
-                    <div className="flex justify-end items-center space-x-2.5">
-                      <span className="text-base text-white notranslate sm:text-sm">
-                        0x27D...260
-                      </span>
-                      <button>
-                        <svg
-                          className="h-18px w-18px"
-                          viewBox="0 0 20 20"
-                          fill="#fff"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M15 6.667H8.332c-.92 0-1.667.746-1.667 1.666V15c0 .92.746 1.667 1.667 1.667h6.666c.92 0 1.667-.747 1.667-1.667V8.333c0-.92-.746-1.666-1.667-1.666Z"></path>
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M3.469 3.468A2.167 2.167 0 0 1 5 2.833h6.666A2.167 2.167 0 0 1 13.834 5v1.667a.5.5 0 0 1-1 0V5a1.167 1.167 0 0 0-1.167-1.167H5.001A1.167 1.167 0 0 0 3.834 5v6.667a1.167 1.167 0 0 0 1.167 1.166h1.666a.5.5 0 1 1 0 1H5.001a2.167 2.167 0 0 1-2.167-2.166V5c0-.575.228-1.126.635-1.532Z"
-                          ></path>
-                        </svg>
-                      </button>
-                      <a
-                        target="_blank"
-                        href="https://bscscan.com/address/0x27D6bBaC9112D2097FafA3B14Ae367539A7B1260"
                       >
                         <svg
                           className="h-18px w-18px"
