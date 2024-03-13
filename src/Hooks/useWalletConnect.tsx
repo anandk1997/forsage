@@ -22,37 +22,6 @@ export const useWalletConnect = () => {
     }
   }, [setWalletAddress]);
 
-  useEffect(() => {
-    const getCurrentWalletConnected = async () => {
-      if (installMeta()) return;
-
-      try {
-        const accounts = await window.ethereum.request({
-          method: "eth_accounts",
-        });
-        if (accounts.length > 0) {
-          setWalletAddress(accounts[0]);
-          console.log(accounts[0]);
-        }
-      } catch (err: any) {
-        toast.error(err.message);
-        console.error(err.message);
-      }
-    };
-
-    const addWalletListener = async () => {
-      if (installMeta()) return;
-
-      window.ethereum.on("accountsChanged", (accounts: string[]) => {
-        setWalletAddress(accounts[0]);
-        console.log(accounts[0]);
-      });
-    };
-
-    getCurrentWalletConnected();
-    addWalletListener();
-  }, [installMeta, walletAddress, setWalletAddress]);
-
   const connectWallet = async () => {
     if (installMeta()) return;
     if (walletAddress?.length > 0) return;
@@ -93,8 +62,35 @@ export const useWalletConnect = () => {
   }, [installMeta, setWalletAddress, walletAddress]);
 
   useEffect(() => {
+    if (installMeta()) return;
+
+    const getCurrentWalletConnected = async () => {
+      try {
+        const accounts = await window.ethereum.request({
+          method: "eth_accounts",
+        });
+        if (accounts.length > 0) {
+          setWalletAddress(accounts[0]);
+          console.log(accounts[0]);
+        }
+      } catch (err: any) {
+        toast.error(err.message);
+        console.error(err.message);
+      }
+    };
+
+    const addWalletListener = async () => {
+      window.ethereum.on("accountsChanged", (accounts: string[]) => {
+        setWalletAddress(accounts[0]);
+        console.log(accounts[0]);
+      });
+    };
+
+    getCurrentWalletConnected();
+    addWalletListener();
+
     connectMetamask();
-  }, [connectMetamask]);
+  }, [installMeta, walletAddress, setWalletAddress, connectMetamask]);
 
   return { connectWallet, walletAddress, walletData, connectMetamask };
 };
