@@ -8,10 +8,13 @@ export function cn(...inputs: ClassValue[]) {
 
 export const authToken = () => {
   const token = localStorage.getItem("user");
+  if (!token) return;
+
+  const [, tokenPart] = token.split('"');
 
   return {
     headers: {
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${tokenPart}`,
     },
   };
 };
