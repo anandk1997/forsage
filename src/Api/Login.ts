@@ -1,11 +1,11 @@
-import axios, { AxiosResponse } from "axios";
-import { API_URL } from "src/Env";
+import { AxiosResponse } from "axios";
+import { axiosInstance } from "src/Lib/utils";
 
 export const loginApi = async (
   payload: IPayload,
 ): Promise<AxiosResponse<LoginResponse>> => {
   try {
-    const response = await axios.post(`${API_URL}api/v1/auth/signin`, payload);
+    const response = await axiosInstance.post("api/v1/auth/signin", payload);
     return response;
   } catch (error: any) {
     console.log(error);
