@@ -1,16 +1,18 @@
 import { create } from "zustand";
 
-export const useStore = create<IStoreState>((set) => ({
+const initialState = {
   walletAddress: "",
-  setWalletAddress: (newAddress: string) => set({ walletAddress: newAddress }),
-
   page: 0,
-  setPage: (newPage: number) => set({ page: newPage }),
-
   skip: 0,
-  setSkip: (newSkip: number) => set({ skip: newSkip }),
-
   pageCount: 0,
+};
+
+export const useStore = create<IStoreState>((set) => ({
+  ...initialState,
+
+  setWalletAddress: (newAddress: string) => set({ walletAddress: newAddress }),
+  setPage: (newPage: number) => set({ page: newPage }),
+  setSkip: (newSkip: number) => set({ skip: newSkip }),
   setPageCount: (newPageCount: number) => set({ pageCount: newPageCount }),
 }));
 
