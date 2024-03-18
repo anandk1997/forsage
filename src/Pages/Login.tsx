@@ -25,8 +25,8 @@ const Login = () => {
                 className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-2.5 bg-black-light hover:bg-line-gray active:bg-active-gray text-white font-normal rounded items-center"
                 onClick={connectMetamask}
               >
-                {!!walletAddress && "Connected"}
-                {!!!walletAddress && "Connect wallet"}
+                {walletAddress && "Connected"}
+                {!walletAddress && "Connect wallet"}
               </button>
             </div>
           </div>
@@ -515,16 +515,16 @@ const Login = () => {
                 <div className="absolute bottom-0 left-0 right-0 -rotate-180 wallet-gradient-main h-11 hidden sm:block"></div>
               </div>
               <div className="flex space-x-5 sm:space-x-0 sm:space-y-3.5 sm:flex-col">
-                {!!!walletAddress && (
+                {walletAddress && (
                   <button
                     onClick={connectMetamask}
                     className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-bg hover:bg-hover-main-bg active:bg-active-main-bg sm:w-full"
                   >
-                    {!!!walletAddress && "Connect now"}
+                    {!walletAddress && "Connect now"}
                   </button>
                 )}
 
-                {!!walletAddress && (
+                {walletAddress && (
                   <form onSubmit={(e) => handleSubmit(e, "address")}>
                     <button
                       // onClick={callLogin}

@@ -4,6 +4,9 @@ export const useStore = create<IStoreState>((set) => ({
   walletAddress: "",
   setWalletAddress: (newAddress: string) => set({ walletAddress: newAddress }),
 
+  dashboardData: "",
+  setDashboardData: (newDashboarData: string) => set({ dashboardData: newDashboarData }),
+
   page: 0,
   setPage: (newPage: number) => set({ page: newPage }),
 
@@ -17,6 +20,9 @@ export const useStore = create<IStoreState>((set) => ({
 interface IStoreState {
   walletAddress: string;
   setWalletAddress: (newAddress: string) => void;
+  
+  dashboardData: string;
+  setDashboardData: (newDashboarData: string) => void;
 
   page: number;
   setPage: (newPageCount: number) => void;
