@@ -1,7 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { FormEvent } from "react";
 
 import { useStore } from "src/Store/Store";
 import { signupApi } from "src/Api/Signup";
@@ -25,25 +24,30 @@ export const useSignup = () => {
     },
   });
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  // const handleSubmit = (e: FormEvent<HTMLFormElement>, ) => {
+  const handleSubmit = (
+    sponsorId: FormDataEntryValue,
+    uniqueId: string,
+    transactionHash: string
+  ) => {
+    // e.preventDefault();
 
-    if (!!!walletAddress) {
-      toast.error("Please connect to your wallet");
-      return;
-    }
+    // if (!!!walletAddress) {
+    //   toast.error("Please connect to your wallet");
+    //   return;
+    // }
 
-    const formData = new FormData(e.target as HTMLFormElement);
-    const sponsorId = formData.get("sponsorId");
+    // const formData = new FormData(e.target as HTMLFormElement);
+    // const sponsorId = formData.get("sponsorId");
 
-    if (!sponsorId) {
-      toast.error("Please enter id");
-      return;
-    }
+    // if (!sponsorId) {
+    //   toast.error("Please enter id");
+    //   return;
+    // }
 
-    mutate({ address: walletAddress, sponsorId });
+    mutate({ address: walletAddress, sponsorId, uniqueId, transactionHash });
 
-    (e.target as HTMLFormElement).reset();
+    // (e.target as HTMLFormElement).reset();
   };
 
   return { isPending, handleSubmit };
