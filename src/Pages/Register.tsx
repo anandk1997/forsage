@@ -610,7 +610,7 @@ const Register = () => {
         <div className="flex flex-1 items-stretch justify-between w-full sm:flex-col">
           <form
             onSubmit={(e) => {
-              sendUSDTTransactionForWorking(e, 10);
+              sendUSDTTransactionForWorking(e, 20);
               // handleSubmit(e);
             }}
           >
