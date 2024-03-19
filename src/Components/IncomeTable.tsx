@@ -46,11 +46,11 @@ const IncomeTable = () => {
                 </td>
                 <td className="p-4 text-left whitespace-nowrap sm:p-3">
                   <div className="text-white-500 text-sm">
-                    {item?.description}
+                    {item?.remarks}
                   </div>
                 </td>
                 <td className="p-4 text-left whitespace-nowrap sm:p-3">
-                  <div className="text-white-500 text-sm">{item?.date}</div>
+                  <div className="text-white-500 text-sm">{item?.createdAt}</div>
                 </td>
               </tr>
             ))}
