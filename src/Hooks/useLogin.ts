@@ -15,7 +15,7 @@ export const useLogin = () => {
     mutationFn: loginApi,
 
     onSuccess: (res) => {
-      localStorage.setItem("user", JSON.stringify(res?.data?.data?.token));
+      localStorage.setItem("token", res?.data?.data?.token);
       toast.success(res?.data?.statusMessage);
       navigate("/dashboard");
     },

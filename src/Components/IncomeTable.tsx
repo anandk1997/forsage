@@ -17,7 +17,7 @@ const IncomeTable = () => {
     );
 
   return (
-    <div className="sm:rounded-none flex flex-1 flex-col w-full bg-black-light rounded overflow-hidden h-full min-h-90 sm:max-h-3/4">
+    <div className="sm:rounded-none flex flex-1 flex-col w-full bg-black-light rounded overflow-hidden max-h-[90vh] sm:max-h-3/4">
       <div className="overflow-auto max-h-[80vh] sm:max-h-[75vh]">
         <table className="min-w-max w-full table-auto border-white-100">
           <thead>
