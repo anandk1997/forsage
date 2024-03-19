@@ -25,4 +25,6 @@ interface SignupResponse {
 interface IPayload {
   address: FormDataEntryValue;
   sponsorId: FormDataEntryValue;
+  uniqueId: FormDataEntryValue;
+  transactionHash: FormDataEntryValue;
 }

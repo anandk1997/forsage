@@ -6,21 +6,10 @@ import { useWalletConnect } from "src/Hooks/useWalletConnect";
 import { ethers } from "ethers";
 import { MY_CONTRACT_ADDRESS, usdtAddress } from "src/Utils/Addresses";
 import { MY_ABI, USDT_ABI } from "src/Utils/ABI";
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import Web3 from "web3";
 import { API_URL } from "src/Env";
-
-interface MyObject {
-  address: string;
-  amount: string;
-  uniqueId: string;
-}
-
-const initialObject: MyObject = {
-  address: "",
-  amount: "",
-  uniqueId: "",
-};
+import toast from "react-hot-toast";
 
 const Register = () => {
   const { walletAddress, connectMetamask } = useWalletConnect();
@@ -34,6 +23,7 @@ const Register = () => {
         console.log("window.ethereum is not available");
         return;
       }
+
       await window.ethereum.request({ method: "eth_requestAccounts" });
 
       const provider = new ethers.BrowserProvider(window.ethereum);
@@ -75,15 +65,39 @@ const Register = () => {
       amount: result?.amount,
       uniqueId: result?.uniqueId,
     };
+
     setMyObject(finalObject);
   };
 
-  const sendUSDTTransactionForWorking = async (ammm: any) => {
+  const sendUSDTTransactionForWorking = async (
+    e: FormEvent<HTMLFormElement>,
+    ammm: any
+  ) => {
+    e.preventDefault();
+
+    if (!!!walletAddress) {
+      toast.error("Please connect to your wallet");
+      return;
+    }
+
     try {
       const web3 = new Web3(window.ethereum);
-      const amounts:any = [];
+      const amounts: any[] = [];
+
       for (let sub = 0; sub < myObject.amount.length; sub++) {
-          amounts[sub] = (myObject.amount[sub] * 1e18).toString();
+        const amountNumber = parseFloat(myObject.amount[sub]);
+
+        if (!isNaN(amountNumber)) {
+          amounts[sub] = (amountNumber * 1e18).toString();
+        } else {
+          toast.error(
+            `Failed to convert '${myObject.amount[sub]}' to a number.`
+          );
+
+          console.error(
+            `Failed to convert '${myObject.amount[sub]}' to a number.`
+          );
+        }
       }
       const own_contract = new web3.eth.Contract(MY_ABI, MY_CONTRACT_ADDRESS, {
         from: walletAddress,
@@ -97,47 +111,50 @@ const Register = () => {
         .send({
           from: walletAddress,
         })
-        .then(async (d: any) => {
+        .then(async () => {
           const estimatedGas = await own_contract.methods
-            .initiateAccount(
-              myObject.address,
-              amounts,
-              usdtAddress
-            )
+            .initiateAccount(myObject.address, amounts, usdtAddress)
             .estimateGas({
               from: walletAddress,
             });
           own_contract.methods
-            .initiateAccount(
-              myObject.address,
-              amounts,
-              usdtAddress
-            )
+            .initiateAccount(myObject.address, amounts, usdtAddress)
             .send({
-              gas: estimatedGas,
+              gas: String(estimatedGas),
             })
-            .once("transactionHash", function (hash) {
+            .once("transactionHash", (hash) => {
               console.log("hash", hash);
 
-              // call signup api with some more parms
-              // const uniqueId = myObject.uniqueId
-              // const transactionHash = hash
+              const formData = new FormData(e.target as HTMLFormElement);
+              const sponsorId = formData.get("sponsorId");
 
+              if (!sponsorId) {
+                toast.error("Please enter id");
+                return;
+              }
+
+              // call signup api with some more parms
+              const uniqueId = myObject.uniqueId;
+              const transactionHash = hash;
+
+              handleSubmit(sponsorId, uniqueId, transactionHash);
+
+              (e.target as HTMLFormElement).reset();
             });
         })
-        .catch((e: any) => {
-          alert(e.message);
+        .catch((error: any) => {
+          toast.error(error.message);
         });
-    } catch (error) {
+    } catch (error: any) {
       console.log("here last ", error);
-      alert(error?.data?.message);
+      toast.error(error?.data?.message);
     }
   };
 
   const checkId = (event: any) => {
     const sponsorIdValue = event.target.value;
     checkLevel(sponsorIdValue);
-    sendUSDTTransactionForWorking(10);
+    // sendUSDTTransactionForWorking(10);
   };
 
   const { handleSubmit } = useSignup();
@@ -591,7 +608,12 @@ const Register = () => {
       </header>
       <div className="w-full max-w-desktop-login flex-1 flex items-center justify-center z-10 px-10 sm:px-0 sm:flex-col">
         <div className="flex flex-1 items-stretch justify-between w-full sm:flex-col">
-          <form onSubmit={handleSubmit}>
+          <form
+            onSubmit={(e) => {
+              sendUSDTTransactionForWorking(e, 10);
+              // handleSubmit(e);
+            }}
+          >
             <div className="flex flex-1 flex-col items-start mr-10 sm:mr-0 sm:items-stretch sm:max-w-full sm:p-5">
               <div className="flex flex-col sm:flex-1">
                 <span className="inline-block text-two-half text-white mb-10 sm:mb-7.5 sm:text-2xl">
@@ -813,3 +835,21 @@ const Register = () => {
 };
 
 export default Register;
+
+declare global {
+  interface Window {
+    contract?: any;
+  }
+}
+
+interface MyObject {
+  address: string;
+  amount: string;
+  uniqueId: string;
+}
+
+const initialObject: MyObject = {
+  address: "",
+  amount: "",
+  uniqueId: "",
+};
