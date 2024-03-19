@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 
 import "src/Styles/tailwind.scss";
+import "src/Styles/pagination.scss";
 
 import ContextProviders from "./Contexts/ContextProviders";
 

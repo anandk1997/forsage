@@ -1,11 +1,11 @@
-import axios, { AxiosResponse } from "axios";
-import { API_URL } from "src/Env";
+import { AxiosResponse } from "axios";
+import { axiosInstance } from "src/Lib/utils";
 
 export const signupApi = async (
-  payload: IPayload
+  payload: IPayload,
 ): Promise<AxiosResponse<SignupResponse>> => {
   try {
-    const response = await axios.post(`${API_URL}api/v1/auth/signup`, payload);
+    const response = await axiosInstance.post("api/v1/auth/signup", payload);
     return response;
   } catch (error: any) {
     console.log(error);
@@ -25,4 +25,6 @@ interface SignupResponse {
 interface IPayload {
   address: FormDataEntryValue;
   sponsorId: FormDataEntryValue;
+  uniqueId: FormDataEntryValue;
+  transactionHash: FormDataEntryValue;
 }

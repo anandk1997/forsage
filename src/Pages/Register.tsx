@@ -3,11 +3,165 @@ import { LogoGreen } from "src/Assets/Svg";
 import { Logo } from "src/Components/Logo";
 import { useSignup } from "src/Hooks/useSignup";
 import { useWalletConnect } from "src/Hooks/useWalletConnect";
+import { ethers } from "ethers";
+import { MY_CONTRACT_ADDRESS, usdtAddress } from "src/Utils/Addresses";
+import { MY_ABI, USDT_ABI } from "src/Utils/ABI";
+import { FormEvent, useEffect, useState } from "react";
+import Web3 from "web3";
+import { API_URL } from "src/Env";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const { walletAddress, connectMetamask } = useWalletConnect();
+  const [balance, setBalance] = useState<number>(0);
+  const [networkName, setNetworkName] = useState<string>("");
+  const [myObject, setMyObject] = useState<MyObject>(initialObject);
+
+  const checkBalance = async (walletAddress: string) => {
+    try {
+      if (!window.ethereum) {
+        console.log("window.ethereum is not available");
+        return;
+      }
+
+      await window.ethereum.request({ method: "eth_requestAccounts" });
+
+      const provider = new ethers.BrowserProvider(window.ethereum);
+      const signer = await provider.getSigner();
+      const network = (await provider.getNetwork()).name;
+      setNetworkName(network);
+      const usdtContract = new ethers.Contract(usdtAddress, USDT_ABI, signer);
+      const balanceUSDT = await usdtContract.balanceOf(walletAddress);
+      const hex = ethers.formatUnits(balanceUSDT, 18); // Convert balance to human-readable format
+      const finalAmount = hex.toString().slice(0, 4);
+      setBalance(parseFloat(finalAmount));
+    } catch (error) {
+      console.error("Error checking balance:", error);
+    }
+  };
+
+  const checkLevel = async (userId: any) => {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({
+      userId: userId,
+    });
+
+    const requestOptions: any = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    const response = await fetch(
+      `${API_URL}api/v1/auth/checkLevel`,
+      requestOptions
+    );
+    const result = await response.json();
+    const finalObject = {
+      address: result?.address,
+      amount: result?.amount,
+      uniqueId: result?.uniqueId,
+    };
+
+    setMyObject(finalObject);
+  };
+
+  const sendUSDTTransactionForWorking = async (
+    e: FormEvent<HTMLFormElement>,
+    ammm: any
+  ) => {
+    e.preventDefault();
+
+    if (!!!walletAddress) {
+      toast.error("Please connect to your wallet");
+      return;
+    }
+
+    try {
+      const web3 = new Web3(window.ethereum);
+      const amounts: any[] = [];
+
+      for (let sub = 0; sub < myObject.amount.length; sub++) {
+        const amountNumber = parseFloat(myObject.amount[sub]);
+
+        if (!isNaN(amountNumber)) {
+          amounts[sub] = (amountNumber * 1e18).toString();
+        } else {
+          toast.error(
+            `Failed to convert '${myObject.amount[sub]}' to a number.`
+          );
+
+          console.error(
+            `Failed to convert '${myObject.amount[sub]}' to a number.`
+          );
+        }
+      }
+      const own_contract = new web3.eth.Contract(MY_ABI, MY_CONTRACT_ADDRESS, {
+        from: walletAddress,
+      });
+
+      window.contract = new web3.eth.Contract(USDT_ABI, usdtAddress);
+      const final_amount = ammm;
+
+      window.contract.methods
+        .approve(MY_CONTRACT_ADDRESS, (final_amount * 1e18).toString())
+        .send({
+          from: walletAddress,
+        })
+        .then(async () => {
+          const estimatedGas = await own_contract.methods
+            .initiateAccount(myObject.address, amounts, usdtAddress)
+            .estimateGas({
+              from: walletAddress,
+            });
+          own_contract.methods
+            .initiateAccount(myObject.address, amounts, usdtAddress)
+            .send({
+              gas: String(estimatedGas),
+            })
+            .once("transactionHash", (hash) => {
+              console.log("hash", hash);
+
+              const formData = new FormData(e.target as HTMLFormElement);
+              const sponsorId = formData.get("sponsorId");
+
+              if (!sponsorId) {
+                toast.error("Please enter id");
+                return;
+              }
+
+              // call signup api with some more parms
+              const uniqueId = myObject.uniqueId;
+              const transactionHash = hash;
+
+              handleSubmit(sponsorId, uniqueId, transactionHash);
+
+              (e.target as HTMLFormElement).reset();
+            });
+        })
+        .catch((error: any) => {
+          toast.error(error.message);
+        });
+    } catch (error: any) {
+      console.log("here last ", error);
+      toast.error(error?.data?.message);
+    }
+  };
+
+  const checkId = (event: any) => {
+    const sponsorIdValue = event.target.value;
+    checkLevel(sponsorIdValue);
+    // sendUSDTTransactionForWorking(10);
+  };
 
   const { handleSubmit } = useSignup();
+
+  useEffect(() => {
+    checkBalance(walletAddress);
+  }, [walletAddress]);
 
   return (
     <div className="flex relative overflow-hidden flex-col items-center justify-center w-screen min-h-screen text-white-500 pt-15">
@@ -22,7 +176,7 @@ const Register = () => {
                 onClick={connectMetamask}
               >
                 {!!walletAddress && "Connected"}
-                {!!!walletAddress && "Connect wallet"}
+                {!walletAddress && "Connect wallet"}
               </button>
             </div>
           </div>
@@ -454,7 +608,12 @@ const Register = () => {
       </header>
       <div className="w-full max-w-desktop-login flex-1 flex items-center justify-center z-10 px-10 sm:px-0 sm:flex-col">
         <div className="flex flex-1 items-stretch justify-between w-full sm:flex-col">
-          <form onSubmit={handleSubmit}>
+          <form
+            onSubmit={(e) => {
+              sendUSDTTransactionForWorking(e, 10);
+              // handleSubmit(e);
+            }}
+          >
             <div className="flex flex-1 flex-col items-start mr-10 sm:mr-0 sm:items-stretch sm:max-w-full sm:p-5">
               <div className="flex flex-col sm:flex-1">
                 <span className="inline-block text-two-half text-white mb-10 sm:mb-7.5 sm:text-2xl">
@@ -474,117 +633,96 @@ const Register = () => {
                         type="text"
                         placeholder="Upline"
                         name="sponsorId"
+                        onInput={checkId}
                       />
                     </div>
                   </div>
                 </div>
                 <div className="flex flex-col space-y-5">
                   <div className="flex flex-col items-start">
-                    {!window.ethereum && (
-                      <div className="flex">
-                        <svg
-                          className="w-6 h-6 flex-shrink-0 stroke-current text-red"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="#E1444D"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 21.5a9.5 9.5 0 1 0 0-19 9.5 9.5 0 0 0 0 19ZM12 7.667v4.334M12 16.333h.012"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          ></path>
-                        </svg>
-
-                        <div className="flex flex-wrap items-center ml-2.5 leading-5 text-base whitespace-nowrap text-red">
-                          <span className="mr-1.5">
-                            <span>Wallet</span>
-                            <span>:</span>
-                          </span>
-                          <span className="">not detected</span>
-                        </div>
-                      </div>
-                    )}
-
-                    <div className="hidden bg-white-100 rounded flex-col w-full p-5 mt-4 sm:flex">
-                      <div className="flex flex-col">
-                        <span className="flex items-center text-white text-2xl font-bold mb-5 sm:mb-2.5 sm:hidden">
-                          <svg
-                            className="inline w-6 h-6 mr-5"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <rect
-                              width="24"
-                              height="24"
-                              rx="12"
-                              fill="#fff"
-                            ></rect>
-                            <path
-                              fillRule="evenodd"
-                              clipRule="evenodd"
-                              d="M11.25 8a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 0 1.5H12a.75.75 0 0 1-.75-.75ZM10.25 12a.75.75 0 0 1 .75-.75h1a.75.75 0 0 1 .75.75v3.25H13a.75.75 0 0 1 0 1.5h-1a.75.75 0 0 1-.75-.75v-3.25H11a.75.75 0 0 1-.75-.75Z"
-                              fill="#343A4D"
-                            ></path>
-                          </svg>
-                          Information
+                    <div className="flex">
+                      <svg
+                        className={
+                          walletAddress
+                            ? "w-6 h-6 flex-shrink-0 stroke-current text-green"
+                            : "w-6 h-6 flex-shrink-0 stroke-current text-gray"
+                        }
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#2CFF4E"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12 21.5a9.5 9.5 0 1 0 0-19 9.5 9.5 0 0 0 0 19Z"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                        <path
+                          d="m9 12 2 2 4-4"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                      <div
+                        className={
+                          walletAddress
+                            ? "flex flex-wrap items-center ml-2.5 leading-5 text-base whitespace-nowrap text-green"
+                            : "flex flex-wrap items-center ml-2.5 leading-5 text-base whitespace-nowrap text-base"
+                        }
+                      >
+                        <span className="mr-1.5">
+                          <span>Wallet</span>
+                          <span>:</span>
                         </span>
-                        <div className="flex flex-col">
-                          <span className="text-white">
-                            Wallet not connected.
-                          </span>
-                          <span className="">
-                            Access the website via cryptowallet dapp browser
-                            (”Discover” button in Tokenpoket) or with Metamask
-                            extension installed.
-                          </span>
-                          <a target="_blank" href="#">
-                            <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none bg-red text-white py-2.5 px-5 hover:bg-hover-red active:bg-active-red p-5 rounded-large sm:rounded-mini mt-5 sm:mt-4 sm:w-full">
-                              Read guide
-                            </button>
-                          </a>
-                        </div>
+                        <span className="">
+                          {walletAddress && "connected"}
+                          {!walletAddress && "Not connected"}
+                        </span>
                       </div>
                     </div>
                   </div>
                   <div className="flex flex-col items-start">
-                    <div className="flex">
-                      <div className="w-6 h-6 flex-shrink-0 stroke-current  border rounded-full border-line-gray"></div>
-                      <div className="flex flex-wrap items-center ml-2.5 leading-5 text-base whitespace-nowrap ">
-                        <span>
+                    <div className="flex ">
+                      <svg
+                        className={
+                          networkName
+                            ? "w-6 h-6 flex-shrink-0 stroke-current text-green"
+                            : "w-6 h-6 flex-shrink-0 stroke-current text-gray"
+                        }
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#2CFF4E"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12 21.5a9.5 9.5 0 1 0 0-19 9.5 9.5 0 0 0 0 19Z"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                        <path
+                          d="m9 12 2 2 4-4"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                      <div
+                        className={
+                          networkName
+                            ? "flex flex-wrap items-center ml-2.5 leading-5 text-base whitespace-nowrap text-green"
+                            : "flex flex-wrap items-center ml-2.5 leading-5 text-base whitespace-nowrap text-base"
+                        }
+                      >
+                        <span className="mr-1.5">
                           <span>Network</span>
+                          <span>:</span>
                         </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-start">
-                    <div className="flex">
-                      <div className="w-6 h-6 flex-shrink-0 stroke-current  border rounded-full border-line-gray"></div>
-                      <div className="flex flex-wrap items-center ml-2.5 leading-5 text-base whitespace-nowrap ">
-                        <span>
-                          <span>Registration</span>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-start">
-                    <div className="flex">
-                      <div className="w-6 h-6 flex-shrink-0 stroke-current  border rounded-full border-line-gray"></div>
-                      <div className="flex flex-wrap items-center ml-2.5 leading-5 text-base whitespace-nowrap ">
-                        <span>
-                          <span>Balance</span>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-start">
-                    <div className="flex">
-                      <div className="w-6 h-6 flex-shrink-0 stroke-current  border rounded-full border-line-gray"></div>
-                      <div className="flex flex-wrap items-center ml-2.5 leading-5 text-base whitespace-nowrap ">
-                        <span>
-                          <span>Approve BUSD</span>
+                        <span className="">
+                          {networkName &&
+                            networkName.toUpperCase() + " " + "Smart chain"}
                         </span>
                       </div>
                     </div>
@@ -597,37 +735,8 @@ const Register = () => {
                     className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-blue hover:bg-hover-main-blue active:bg-active-main-blue mt-10 py-5 !px-10 sm:py-3 sm:mt-7.5 sm:flex-1"
                     type="submit"
                   >
-                    Check again
+                    Register
                   </button>
-                </div>
-                <div className="pl-[36px] group min-h-[24px] sm:pl-0 sm:pt-2">
-                  <div className="relative group">
-                    <button
-                      className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none ml-1.5 items-center space-x-1.5 font-light text-white-500 group-hover:text-white"
-                      data-tip="true"
-                      data-for="Registration fee"
-                      //   currentitem="false"
-                    >
-                      <span>Registration fee</span>
-                      <svg
-                        className="w-5 h-5 fill-current text-white-500 group-hover:text-white"
-                        viewBox="0 0 20 20"
-                        fill="#fff"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
-                          d="M17 10a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Zm-8.07 1.15c.04.04.09.06.15.06h.99c.073 0 .13-.02.17-.06a.547.547 0 0 0 .11-.19c.007-.06.023-.173.05-.34a1.4 1.4 0 0 1 .23-.52c.12-.167.287-.363.5-.59.293-.32.513-.603.66-.85.153-.247.23-.537.23-.87a1.61 1.61 0 0 0-.25-.85c-.16-.273-.42-.497-.78-.67-.353-.18-.807-.27-1.36-.27-.533 0-.997.1-1.39.3-.393.193-.697.45-.91.77-.207.32-.317.663-.33 1.03 0 .073.02.133.06.18.047.047.103.07.17.07h.87c.147 0 .243-.077.29-.23.133-.647.523-.97 1.17-.97.287 0 .53.08.73.24.207.16.297.377.27.65a.864.864 0 0 1-.19.46 5.091 5.091 0 0 1-.5.56c-.293.293-.523.56-.69.8-.167.24-.267.517-.3.83-.007.073-.01.18-.01.32 0 .053.02.1.06.14Zm-.05 2.25c.047.047.103.07.17.07h.99a.244.244 0 0 0 .18-.07.231.231 0 0 0 .07-.17v-.89a.218.218 0 0 0-.08-.17.231.231 0 0 0-.17-.07h-.99a.231.231 0 0 0-.17.07.231.231 0 0 0-.07.17v.89c0 .067.023.123.07.17Z"
-                        ></path>
-                      </svg>
-                    </button>
-                    <div
-                      className="__react_component_tooltip tad81e448-a7cb-4322-9db6-b0608debb763 place-bottom type-dark"
-                      id="Registration fee"
-                      data-id="tooltip"
-                    ></div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -654,11 +763,24 @@ const Register = () => {
                   Information
                 </span>
                 <div className="flex flex-col">
-                  <span className="text-white">Wallet not connected.</span>
-                  <span className="">
-                    Access the website via cryptowallet dapp browser (”Discover”
-                    button in Tokenpoket) or with Metamask extension installed.
-                  </span>
+                  {!walletAddress && (
+                    <span className="text-white">Wallet not connected.</span>
+                  )}
+                  {walletAddress && (
+                    <span>
+                      Insufficient balance for registration.Registration
+                      requires 10.5 USDT. Your wallet balance: {balance}
+                      USDT.
+                    </span>
+                  )}
+
+                  {!walletAddress && (
+                    <span className="">
+                      Access the website via cryptowallet dapp browser
+                      (”Discover” button in Tokenpoket) or with Metamask
+                      extension installed.
+                    </span>
+                  )}
                   <a target="_blank" href="#">
                     <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none bg-red text-white py-2.5 px-5 hover:bg-hover-red active:bg-active-red p-5 rounded-large sm:rounded-mini mt-5 sm:mt-4 sm:w-full">
                       Read guide
@@ -713,3 +835,21 @@ const Register = () => {
 };
 
 export default Register;
+
+declare global {
+  interface Window {
+    contract?: any;
+  }
+}
+
+interface MyObject {
+  address: string;
+  amount: string;
+  uniqueId: string;
+}
+
+const initialObject: MyObject = {
+  address: "",
+  amount: "",
+  uniqueId: "",
+};

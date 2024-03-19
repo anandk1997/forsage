@@ -465,7 +465,7 @@ const Dashboard = () => {
                 </span>
               </div>
               <span className="text-white text-2xl font-bold justify-end text-right notranslate sm:text-xl">
-                368715 BUSD
+                368715 USDT
               </span>
             </div>
             <div className="flex justify-between h-full w-full">
@@ -553,7 +553,7 @@ const Dashboard = () => {
                 </span>
               </div>
               <span className="text-white text-2xl font-bold justify-end text-right notranslate sm:text-xl">
-                162135 BUSD
+                162135 USDT
               </span>
             </div>
             <div className="flex justify-between h-full w-full">
@@ -642,15 +642,6 @@ const Dashboard = () => {
                 ></path>
               </svg>
             </button>
-
-            {/* <div
-              className="__react_component_tooltip tf640bdb3-1443-45ec-bd66-7832b2e7572b place-bottom type-dark"
-              id="Platform recent activity"
-              data-id="tooltip"
-            >
-              Forsage BUSD real-time global events with links to transactions in
-              blockchain
-            </div> */}
           </div>
         </div>
         <div className="grid grid-cols-3 gap-10 mt-5 lg:grid-cols-1 lg:gap-0 z-10">
@@ -937,7 +928,7 @@ const Dashboard = () => {
                         +
                       </span>
                       <span className="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">
-                        5 BUSD{" "}
+                        5 USDT{" "}
                       </span>
                       <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
                         in
@@ -1025,7 +1016,7 @@ const Dashboard = () => {
                         +
                       </span>
                       <span className="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">
-                        5 BUSD{" "}
+                        5 USDT{" "}
                       </span>
                       <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
                         in
@@ -1427,7 +1418,7 @@ const Dashboard = () => {
                         +
                       </span>
                       <span className="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">
-                        5 BUSD{" "}
+                        5 USDT{" "}
                       </span>
                       <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
                         in
@@ -1515,7 +1506,7 @@ const Dashboard = () => {
                         +
                       </span>
                       <span className="text-white text-base sm:text-sm mx-1 notranslate sm:leading-30px">
-                        5 BUSD{" "}
+                        5 USDT{" "}
                       </span>
                       <span className="text-white-500 text-base sm:text-sm sm:leading-30px">
                         in
@@ -1608,15 +1599,6 @@ const Dashboard = () => {
                         ></path>
                       </svg>
                     </button>
-
-                    {/* <div
-                      className="__react_component_tooltip tfea33235-5c88-4ea1-9f96-7ecb7903da56 place-bottom type-dark"
-                      id="Members total"
-                      data-id="tooltip"
-                    >
-                      Total number of members in Forsage BUSD and last 24 hours
-                      change
-                    </div> */}
                   </div>
                 </div>
                 <span className="text-white text-2xl font-bold notranslate sm:text-xl false mt-5 sm:mt-2.5">
@@ -1678,20 +1660,13 @@ const Dashboard = () => {
               </span>
               <div className="flex flex-col py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
                 <span className="text-2xl text-white font-bold sm:text-xl">
-                  147273343.76 BUSD
+                  147273343.76 USDT
                 </span>
                 <span className="text-green-light text-base items-baseline sm:text-sm">
-                  + 13276.3 BUSD
+                  + 13276.3 USDT
                 </span>
               </div>
-              <div className="flex flex-col py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
-                <span className="text-2xl text-white font-bold sm:text-xl">
-                  22428.1621 BNB
-                </span>
-                <span className="text-green-light text-base items-baseline sm:text-sm">
-                  + 3.5985 BNB
-                </span>
-              </div>
+             
             </div>
             <div className="bg-gray rounded p-5 flex flex-col flex-1 max-w-full">
               <div className="flex justify-between items-center text-base text-white-500 sm:text-sm">
@@ -1825,7 +1800,7 @@ const Dashboard = () => {
                     <span className="text-base text-white-500 sm:text-sm">
                       <span>
                         Turnover,
-                        <span className="notranslate">BUSD</span>
+                        <span className="notranslate">USDT</span>
                       </span>
                     </span>
                     <span className="text-2xl text-white font-bold sm:text-xl">
