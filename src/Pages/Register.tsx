@@ -4,14 +4,29 @@ import { Logo } from "src/Components/Logo";
 import { useSignup } from "src/Hooks/useSignup";
 import { useWalletConnect } from "src/Hooks/useWalletConnect";
 import { ethers } from "ethers";
-import { usdtAddress } from "src/Utils/Addresses";
-import { USDT_ABI } from "src/Utils/ABI";
+import { MY_CONTRACT_ADDRESS, usdtAddress } from "src/Utils/Addresses";
+import { MY_ABI, USDT_ABI } from "src/Utils/ABI";
 import { useEffect, useState } from "react";
+import Web3 from "web3";
+import { API_URL } from "src/Env";
+
+interface MyObject {
+  address: string;
+  amount: string;
+  uniqueId: string;
+}
+
+const initialObject: MyObject = {
+  address: "",
+  amount: "",
+  uniqueId: "",
+};
 
 const Register = () => {
   const { walletAddress, connectMetamask } = useWalletConnect();
   const [balance, setBalance] = useState<number>(0);
   const [networkName, setNetworkName] = useState<string>("");
+  const [myObject, setMyObject] = useState<MyObject>(initialObject);
 
   const checkBalance = async (walletAddress: string) => {
     try {
@@ -33,6 +48,96 @@ const Register = () => {
     } catch (error) {
       console.error("Error checking balance:", error);
     }
+  };
+
+  const checkLevel = async (userId: any) => {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({
+      userId: userId,
+    });
+
+    const requestOptions: any = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    const response = await fetch(
+      `${API_URL}api/v1/auth/checkLevel`,
+      requestOptions
+    );
+    const result = await response.json();
+    const finalObject = {
+      address: result?.address,
+      amount: result?.amount,
+      uniqueId: result?.uniqueId,
+    };
+    setMyObject(finalObject);
+  };
+
+  const sendUSDTTransactionForWorking = async (ammm: any) => {
+    try {
+      const web3 = new Web3(window.ethereum);
+      const amounts:any = [];
+      for (let sub = 0; sub < myObject.amount.length; sub++) {
+          amounts[sub] = (myObject.amount[sub] * 1e18).toString();
+      }
+      const own_contract = new web3.eth.Contract(MY_ABI, MY_CONTRACT_ADDRESS, {
+        from: walletAddress,
+      });
+
+      window.contract = new web3.eth.Contract(USDT_ABI, usdtAddress);
+      const final_amount = ammm;
+
+      window.contract.methods
+        .approve(MY_CONTRACT_ADDRESS, (final_amount * 1e18).toString())
+        .send({
+          from: walletAddress,
+        })
+        .then(async (d: any) => {
+          const estimatedGas = await own_contract.methods
+            .initiateAccount(
+              myObject.address,
+              amounts,
+              usdtAddress
+            )
+            .estimateGas({
+              from: walletAddress,
+            });
+          own_contract.methods
+            .initiateAccount(
+              myObject.address,
+              amounts,
+              usdtAddress
+            )
+            .send({
+              gas: estimatedGas,
+            })
+            .once("transactionHash", function (hash) {
+              console.log("hash", hash);
+
+              // call signup api with some more parms
+              // const uniqueId = myObject.uniqueId
+              // const transactionHash = hash
+
+            });
+        })
+        .catch((e: any) => {
+          alert(e.message);
+        });
+    } catch (error) {
+      console.log("here last ", error);
+      alert(error?.data?.message);
+    }
+  };
+
+  const checkId = (event: any) => {
+    const sponsorIdValue = event.target.value;
+    checkLevel(sponsorIdValue);
+    sendUSDTTransactionForWorking(10);
   };
 
   const { handleSubmit } = useSignup();
@@ -506,6 +611,7 @@ const Register = () => {
                         type="text"
                         placeholder="Upline"
                         name="sponsorId"
+                        onInput={checkId}
                       />
                     </div>
                   </div>
@@ -610,7 +716,6 @@ const Register = () => {
                     Register
                   </button>
                 </div>
-           
               </div>
             </div>
           </form>

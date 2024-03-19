@@ -264,3 +264,134 @@ export const USDT_ABI = [
     type: "function",
   },
 ];
+
+export const MY_ABI = [
+  { inputs: [], stateMutability: "nonpayable", type: "constructor" },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "value",
+        type: "uint256",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "sender",
+        type: "address",
+      },
+    ],
+    name: "CreateAcount",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "previousOwner",
+        type: "address",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "newOwner",
+        type: "address",
+      },
+    ],
+    name: "OwnershipTransferred",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      { indexed: true, internalType: "address", name: "_to", type: "address" },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "value",
+        type: "uint256",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "sender",
+        type: "address",
+      },
+    ],
+    name: "RetopupAccount",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "value",
+        type: "uint256",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "sender",
+        type: "address",
+      },
+    ],
+    name: "UpgradeAccount",
+    type: "event",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address payable[]",
+        name: "_accounts",
+        type: "address[]",
+      },
+      { internalType: "uint256[]", name: "_balances", type: "uint256[]" },
+      { internalType: "contract BEP20", name: "token", type: "address" },
+    ],
+    name: "createAccount",
+    outputs: [],
+    stateMutability: "payable",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "address", name: "_to", type: "address" },
+      { internalType: "uint256", name: "amount", type: "uint256" },
+      { internalType: "contract BEP20", name: "token", type: "address" },
+    ],
+    name: "recall",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "address payable", name: "newOwner", type: "address" },
+    ],
+    name: "transferOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address payable[]",
+        name: "_accounts",
+        type: "address[]",
+      },
+      { internalType: "uint256[]", name: "_balances", type: "uint256[]" },
+      { internalType: "contract BEP20", name: "token", type: "address" },
+    ],
+    name: "upgradeAccount",
+    outputs: [],
+    stateMutability: "payable",
+    type: "function",
+  },
+];
