@@ -17,4 +17,17 @@ export const authToken = () => {
   };
 };
 
+
+export const maskHex = (input: string) => {
+  if (typeof input !== "string" || !/^0x[0-9a-fA-F]+$/.test(input)) {
+    throw new Error("Invalid hexadecimal input");
+  }
+
+  const firstFour = input.slice(0, 4);
+  const lastFour = input.slice(-4);
+  const masked = `${firstFour}****${lastFour}`;
+
+  return masked;
+};
+
 export const axiosInstance = getHttpClient();

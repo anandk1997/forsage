@@ -18518,3 +18518,20 @@ button.btn.btn-info.btn-lg.bx.activated {
 .displayNone {
   display: none;
 }
+
+
+.text-main-blue.text-sm.font-bold.notranslate.sm\:hidden {
+  width: 374px;
+  height: 21px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hidden.sm\:block.text-main-blue.text-sm.font-bold.notranslate {
+  width: 364px;
+  height: 32px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
