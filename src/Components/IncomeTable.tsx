@@ -1,10 +1,8 @@
 import { CircularProgress, Pagination } from "@mui/material";
 
-import { useIncome } from "src/Hooks/useIncome";
 import { useStore } from "src/Store/Store";
 
-const IncomeTable = () => {
-  const { data, isPending, handleChangePage } = useIncome();
+const IncomeTable = ({ data, isPending, handleChangePage }: any) => {
   const { page, pageCount } = useStore((state) => state);
 
   console.log(data);

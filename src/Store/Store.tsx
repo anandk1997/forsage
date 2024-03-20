@@ -32,16 +32,16 @@ interface IStoreState {
   walletAddress: string;
   setWalletAddress: (newAddress: string) => void;
 
-  dashboardData: object;
+  dashboardData: any;
   setDashboardData: (newDashboarData: object) => void;
 
-  userInfo: object;
+  userInfo: any;
   setUserInfo: (newUserInfo: object) => void;
 
-  workingPackages: object;
+  workingPackages: any;
   setWorkingPackage: (newWorkingPackage: object) => void;
 
-  matrixPackages: object;
+  matrixPackages: any;
   setMatrixPackage: (newMatrixPackage: object) => void;
 
   page: number;

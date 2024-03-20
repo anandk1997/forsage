@@ -515,7 +515,7 @@ const Login = () => {
                 <div className="absolute bottom-0 left-0 right-0 -rotate-180 wallet-gradient-main h-11 hidden sm:block"></div>
               </div>
               <div className="flex space-x-5 sm:space-x-0 sm:space-y-3.5 sm:flex-col">
-                {walletAddress && (
+                {!walletAddress && (
                   <button
                     onClick={connectMetamask}
                     className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-bg hover:bg-hover-main-bg active:bg-active-main-bg sm:w-full"
@@ -527,7 +527,6 @@ const Login = () => {
                 {walletAddress && (
                   <form onSubmit={(e) => handleSubmit(e, "address")}>
                     <button
-                      // onClick={callLogin}
                       className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-bg hover:bg-hover-main-bg active:bg-active-main-bg sm:w-full h-[48px]"
                       style={{ height: "48px" }}
                       type="submit"

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useReducer } from "react";
 import toast from "react-hot-toast";
 import { NavLink } from "react-router-dom";
 import { LogoWhite } from "src/Assets/Svg";
@@ -16,15 +16,21 @@ const Dashboard = () => {
     setWorkingPackage,
     matrixPackages,
     setMatrixPackage,
+
+    walletAddress,
   } = useStore((state) => state);
+
+  const [isShowMore, setIsShowMore] = useReducer((show) => !show, false);
 
   const copyToClipboard = (e: any) => {
     let printValue: string = "";
+
     if (e.target.value === undefined) {
       printValue = userInfo?.addresses?.ethAddress;
     } else {
       printValue = e.target.value;
     }
+
     navigator.clipboard
       .writeText(printValue)
       .then(() => toast.success("Text copied to clipboard!"))
@@ -41,6 +47,8 @@ const Dashboard = () => {
     setUserInfo(result?.userInfo[0]);
   };
 
+  console.log("dashboardData", dashboardData);
+
   const callAPIForPackage = async () => {
     const response = await fetch(
       `${API_URL}api/v1/packagesList?skip=0&limit=20`,
@@ -55,9 +63,6 @@ const Dashboard = () => {
     callAPI();
     callAPIForPackage();
   }, []);
-
-  console.log("dashboardData", dashboardData);
-  console.log("workingPackages", workingPackages);
 
   return (
     <div className="flex flex-col w-full space-y-10 sm:space-y-5 animate__animated">
@@ -116,25 +121,94 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-blue hover:bg-hover-main-blue active:bg-active-main-blue !w-full !py-0 !leading-[30px] !bg-[#242526] !text-[#9FA4B5] rounded-[16px] hidden sm:flex">
-              <span className="min-w-[80px] mr-2.5">Show more</span>
-              <svg
-                className="w-2.5 h-2.5 transition-all"
-                viewBox="0 0 12 10"
-                stroke="#9FA4B5"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="m1 1.992 4.75 6.016L11 1.992"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                ></path>
-              </svg>
+
+            <button
+              className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-blue hover:bg-hover-main-blue active:bg-active-main-blue !w-full !py-0 !leading-[30px] !bg-[#242526] !text-[#9FA4B5] rounded-[16px] hidden sm:flex"
+              onClick={setIsShowMore}
+            >
+              <span className="min-w-[80px] mr-2.5">
+                {isShowMore ? "Show less" : "Show more"}
+              </span>
+
+              {isShowMore ? (
+                <svg
+                  id="showMore"
+                  className="w-2.5 h-2.5 transition-all rotate-180"
+                  viewBox="0 0 12 10"
+                  stroke="#9FA4B5"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m1 1.992 4.75 6.016L11 1.992"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              ) : (
+                <svg
+                  className="w-2.5 h-2.5 transition-all"
+                  viewBox="0 0 12 10"
+                  stroke="#9FA4B5"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m1 1.992 4.75 6.016L11 1.992"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  ></path>
+                </svg>
+              )}
             </button>
           </div>
         </div>
+
+        {isShowMore && (
+          <div
+            id="mobileText"
+            className="flex flex-col items-start w-full hidden sm:flex"
+          >
+            <div className="flex justify-between w-full">
+              <div className="flex flex-col">
+                <div className="flex items-center mb-1">
+                  <span className="text-white">
+                    Address:- &nbsp;&nbsp;&nbsp;
+                  </span>
+                  <span className="text-white dotted font-bold mr-2.5 text-base sm:text-sm">
+                    {walletAddress}
+                  </span>
+                  <button>
+                    <svg
+                      className="w-5 h-5"
+                      viewBox="0 0 20 20"
+                      fill="#fff"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M15 6.667H8.332c-.92 0-1.667.746-1.667 1.666V15c0 .92.746 1.667 1.667 1.667h6.666c.92 0 1.667-.747 1.667-1.667V8.333c0-.92-.746-1.666-1.667-1.666Z"></path>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M3.469 3.468A2.167 2.167 0 0 1 5 2.833h6.666A2.167 2.167 0 0 1 13.834 5v1.667a.5.5 0 0 1-1 0V5a1.167 1.167 0 0 0-1.167-1.167H5.001A1.167 1.167 0 0 0 3.834 5v6.667a1.167 1.167 0 0 0 1.167 1.166h1.666a.5.5 0 1 1 0 1H5.001a2.167 2.167 0 0 1-2.167-2.166V5c0-.575.228-1.126.635-1.532Z"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+                <div className="flex items-center mb-1">
+                  <span className="text-white">
+                    Joining Date:- &nbsp;&nbsp;&nbsp;
+                  </span>
+                  <span className="text-white font-bold mr-2.5 text-base sm:text-sm">
+                    2024-01-02 18:06:11
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         <div className="flex flex-col max-w-500px w-full sm:max-w-full space-y-2">
           <div className="relative flex flex-wrap flex-grow w-full h-full p-5 justify-between bg-blue-100 rounded z-10 sm:p-4">
             <div className="flex items-center mb-2 sm:justify-between sm:w-full sm:flex-wrap">
@@ -331,15 +405,17 @@ const Dashboard = () => {
             <div className="tree____">
               {workingPackages &&
                 workingPackages.length > 0 &&
-                workingPackages.map((value) => {
-                  return <a className="aTag">
-                    <button
-                      type="button"
-                      className={"btn btn-info btn-lg bx active amountClass"}
-                    >
-                      <span> $ {value?.price} </span>
-                    </button>
-                  </a>;
+                workingPackages.map((value: any, i: number) => {
+                  return (
+                    <a className="aTag" key={i}>
+                      <button
+                        type="button"
+                        className={"btn btn-info btn-lg bx active amountClass"}
+                      >
+                        <span> $ {value?.price} </span>
+                      </button>
+                    </a>
+                  );
                 })}
             </div>
           </div>
@@ -361,20 +437,20 @@ const Dashboard = () => {
               name="wallet_addresss"
             />
             <div className="tree____">
-            {matrixPackages &&
+              {matrixPackages &&
                 matrixPackages.length > 0 &&
-                matrixPackages.map((value) => {
-                  return <a className="aTag">
-                    <button
-                      type="button"
-                      className={"btn btn-info btn-lg bx active amountClass"}
-                    >
-                      <span> $ {value?.price} </span>
-                    </button>
-                  </a>;
+                matrixPackages.map((value: any, i: number) => {
+                  return (
+                    <a className="aTag" key={i}>
+                      <button
+                        type="button"
+                        className={"btn btn-info btn-lg bx active amountClass"}
+                      >
+                        <span> $ {value?.price} </span>
+                      </button>
+                    </a>
+                  );
                 })}
-
-            
             </div>
 
             <div className="modal">
