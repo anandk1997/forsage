@@ -1,11 +1,32 @@
+import { useEffect } from "react";
 import toast from "react-hot-toast";
 import { NavLink } from "react-router-dom";
 import { LogoWhite } from "src/Assets/Svg";
+import { API_URL } from "src/Env";
+import { authToken, maskHex } from "src/Lib/utils";
+import { useStore } from "src/Store/Store";
 
 const Dashboard = () => {
-  const copyToClipboard = () => {
+  const {
+    dashboardData,
+    setDashboardData,
+    userInfo,
+    setUserInfo,
+    workingPackages,
+    setWorkingPackage,
+    matrixPackages,
+    setMatrixPackage,
+  } = useStore((state) => state);
+
+  const copyToClipboard = (e: any) => {
+    let printValue: string = "";
+    if (e.target.value === undefined) {
+      printValue = userInfo?.addresses?.ethAddress;
+    } else {
+      printValue = e.target.value;
+    }
     navigator.clipboard
-      .writeText("thecryptoglobal.io/b/xqg1z8")
+      .writeText(printValue)
       .then(() => toast.success("Text copied to clipboard!"))
       .catch((err) => {
         console.error("Could not copy text: ", err);
@@ -13,8 +34,33 @@ const Dashboard = () => {
       });
   };
 
+  const callAPI = async () => {
+    const response = await fetch(`${API_URL}api/v1/dashboard`, authToken());
+    const result = await response.json();
+    setDashboardData(result);
+    setUserInfo(result?.userInfo[0]);
+  };
+
+  const callAPIForPackage = async () => {
+    const response = await fetch(
+      `${API_URL}api/v1/packagesList?skip=0&limit=20`,
+      authToken()
+    );
+    const result = await response.json();
+    setWorkingPackage(result?.packages);
+    setMatrixPackage(result?.matrixPackages);
+  };
+
+  useEffect(() => {
+    callAPI();
+    callAPIForPackage();
+  }, []);
+
+  console.log("dashboardData", dashboardData);
+  console.log("workingPackages", workingPackages);
+
   return (
-    <div className="flex flex-col w-full space-y-10 sm:space-y-5">
+    <div className="flex flex-col w-full space-y-10 sm:space-y-5 animate__animated">
       <div className="flex w-full items-start justify-between space-x-10 lg:space-x-2.5 sm:space-x-0 sm:space-y-5 sm:flex-col sm:px-5">
         <div className="flex items-start flex-shrink-0 sm:flex-shrink sm:w-full">
           <div className="relative cursor-pointer rounded-full avatar_gradient p-1 sm:p-[5px] z-10">
@@ -37,7 +83,7 @@ const Dashboard = () => {
           <div className="flex flex-col items-start ml-6 h-full justify-center my-auto sm:w-full">
             <div className="flex justify-center items-center mb-1 sm:mb-2.5 sm:w-full sm:justify-between">
               <span className="text-white notranslate font-bold text-3xl mr-2.5 sm:text-xl cursor-pointer">
-                ID 1
+                ID {userInfo?.userId}
               </span>
             </div>
             <div className="flex flex-col items-start w-full sm:hidden">
@@ -45,10 +91,14 @@ const Dashboard = () => {
                 <div className="flex flex-col">
                   <div className="flex items-center mb-1">
                     <span className="text-white font-bold mr-2.5 text-base sm:text-sm">
-                      0x14Dc...207F
+                      {userInfo?.addresses?.ethAddress &&
+                        maskHex(userInfo?.addresses?.ethAddress)}
                     </span>
+
                     <button>
                       <svg
+                        data-value={userInfo?.addresses?.ethAddress}
+                        onClick={copyToClipboard}
                         className="w-5 h-5"
                         viewBox="0 0 20 20"
                         fill="#fff"
@@ -115,16 +165,17 @@ const Dashboard = () => {
                   </button>
                 </div>
               </div>
-              <span className="hidden sm:block text-main-blue text-base font-bold notranslate">
-                thecryptoglobal.io/b/xqg1z8
+              <span className="hidden sm:block text-main-blue text-sm font-bold notranslate">
+                {`http://localhost:5173/register?inviteCode=${userInfo?.addresses?.ethAddress}`}
               </span>
             </div>
             <div className="flex items-center justify-between w-full">
-              <span className="text-main-blue text-xl font-bold notranslate sm:hidden">
-                thecryptoglobal.io/b/xqg1z8
+              <span className="text-main-blue text-sm font-bold notranslate sm:hidden">
+                {`http://localhost:5173/register?inviteCode=${userInfo?.addresses?.ethAddress}`}
               </span>
               <div className="flex space-x-2.5 sm:w-full">
                 <button
+                  value={`http://localhost:5173/register?inviteCode=${userInfo?.addresses?.ethAddress}`}
                   className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none py-0 px-2.5 bg-main-blue text-white rounded !leading-30px hover:bg-hover-main-blue active:bg-active-main-blue !leading-30px sm:flex-1"
                   onClick={copyToClipboard}
                 >
@@ -151,7 +202,7 @@ const Dashboard = () => {
                     </span>
                   </div>
                   <span className="text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
-                    22181
+                    {dashboardData?.totalPartners}
                   </span>
                 </div>
                 <div className="flex p-2.5 w-full">
@@ -170,7 +221,7 @@ const Dashboard = () => {
                           strokeLinejoin="round"
                         ></path>
                       </svg>
-                      2
+                      {dashboardData?.todayPartners}
                     </div>
                     <img
                       src="https://busd.forsage.io/icons/activity_green.png"
@@ -191,7 +242,7 @@ const Dashboard = () => {
                     </span>
                   </div>
                   <span className="text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
-                    1651994
+                    {dashboardData?.team}
                   </span>
                 </div>
                 <div className="flex p-2.5 w-full">
@@ -210,7 +261,7 @@ const Dashboard = () => {
                           strokeLinejoin="round"
                         ></path>
                       </svg>
-                      464
+                      {dashboardData?.todayTeam}
                     </div>
                     <img
                       src="https://busd.forsage.io/icons/activity_green.png"
@@ -236,7 +287,7 @@ const Dashboard = () => {
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex flex-1 w-full text-white text-2xl font-bold notranslate sm:text-xl !mt-1 !sm:mt-2.5 mt-5 sm:mt-2.5">
-                    1116069 USDT
+                    {dashboardData?.totalUserProfit} USDT
                   </div>
                   <div className="flex p-1.5">
                     <div className="w-full text-green-light flex text-base items-center justify-end notranslate sm:text-sm">
@@ -254,7 +305,7 @@ const Dashboard = () => {
                             strokeLinejoin="round"
                           ></path>
                         </svg>
-                        15
+                        {dashboardData?.todayTotalUserProfit}
                       </div>
                     </div>
                   </div>
@@ -278,60 +329,18 @@ const Dashboard = () => {
         <div className="min-h-[125px] mt-10 px-2.5 py-1.5 sm:pb-5 w-full rounded bg-white-30 items-center justify-between flex flex-row sm:w-full sm:flex-col sm:rounded-none relative sm:space-y-2.5">
           <div className="flex items-center justify-evenly w-full">
             <div className="tree____">
-              <a className="aTag">
-                <button
-                  type="button"
-                  className="btn btn-info btn-lg bx activated"
-                  data-toggle="modal"
-                  data-target="#myModal2"
-                >
-                  <span> $ 20 </span>
-                </button>
-              </a>
-
-              <a className="aTag">
-                <button
-                  type="button"
-                  className="btn btn-info btn-lg bx activated"
-                  data-toggle="modal"
-                  data-target="#myModal2"
-                >
-                  <span> $ 50 </span>
-                </button>
-              </a>
-
-              <a className="aTag">
-                <button
-                  type="button"
-                  className="btn btn-info btn-lg bx activated"
-                  data-toggle="modal"
-                  data-target="#myModal2"
-                >
-                  <span> $ 100 </span>
-                </button>
-              </a>
-
-              <a className="aTag">
-                <button
-                  type="button"
-                  className="btn btn-info btn-lg bx activated"
-                  data-toggle="modal"
-                  data-target="#myModal2"
-                >
-                  <span> $ 200 </span>
-                </button>
-              </a>
-
-              <a className="aTag">
-                <button
-                  type="button"
-                  className="btn btn-info btn-lg bx activated"
-                  data-toggle="modal"
-                  data-target="#myModal2"
-                >
-                  <span> $ 500 </span>
-                </button>
-              </a>
+              {workingPackages &&
+                workingPackages.length > 0 &&
+                workingPackages.map((value) => {
+                  return <a className="aTag">
+                    <button
+                      type="button"
+                      className={"btn btn-info btn-lg bx active amountClass"}
+                    >
+                      <span> $ {value?.price} </span>
+                    </button>
+                  </a>;
+                })}
             </div>
           </div>
         </div>
@@ -352,60 +361,20 @@ const Dashboard = () => {
               name="wallet_addresss"
             />
             <div className="tree____">
-              <a className="aTag">
-                <button
-                  type="button"
-                  className="btn btn-info btn-lg bx activated"
-                  data-toggle="modal"
-                  data-target="#myModal2"
-                >
-                  <span> $ 10 </span>
-                </button>
-              </a>
+            {matrixPackages &&
+                matrixPackages.length > 0 &&
+                matrixPackages.map((value) => {
+                  return <a className="aTag">
+                    <button
+                      type="button"
+                      className={"btn btn-info btn-lg bx active amountClass"}
+                    >
+                      <span> $ {value?.price} </span>
+                    </button>
+                  </a>;
+                })}
 
-              <a className="aTag">
-                <button
-                  type="button"
-                  className="btn btn-info btn-lg bx activated"
-                  data-toggle="modal"
-                  data-target="#myModal2"
-                >
-                  <span> $ 50 </span>
-                </button>
-              </a>
-
-              <a className="aTag">
-                <button
-                  type="button"
-                  className="btn btn-info btn-lg bx activated"
-                  data-toggle="modal"
-                  data-target="#myModal2"
-                >
-                  <span> $ 100 </span>
-                </button>
-              </a>
-
-              <a className="aTag">
-                <button
-                  type="button"
-                  className="btn btn-info btn-lg bx activated"
-                  data-toggle="modal"
-                  data-target="#myModal2"
-                >
-                  <span> $ 200 </span>
-                </button>
-              </a>
-
-              <a className="aTag">
-                <button
-                  type="button"
-                  className="btn btn-info btn-lg bx activated"
-                  data-toggle="modal"
-                  data-target="#myModal2"
-                >
-                  <span> $ 500 </span>
-                </button>
-              </a>
+            
             </div>
 
             <div className="modal">
@@ -1602,7 +1571,7 @@ const Dashboard = () => {
                   </div>
                 </div>
                 <span className="text-white text-2xl font-bold notranslate sm:text-xl false mt-5 sm:mt-2.5">
-                  1652000
+                  {dashboardData?.totalMembers}
                 </span>
               </div>
               <div className="p-5 pt-0 flex text-green-light text-base items-baseline notranslate sm:text-sm">
@@ -1619,7 +1588,7 @@ const Dashboard = () => {
                     strokeLinejoin="round"
                   ></path>
                 </svg>
-                469
+                {dashboardData?.totalTodayMembers}
               </div>
             </div>
             <div className="bg-gray rounded p-5 flex flex-col max-w-full">
@@ -1647,26 +1616,16 @@ const Dashboard = () => {
                       ></path>
                     </svg>
                   </button>
-
-                  {/* <div
-                    className="__react_component_tooltip t7d926c16-0e54-402d-b1ed-1a57b630d327 place-bottom type-dark"
-                    id="Members received"
-                    data-id="tooltip"
-                  >
-                    Total amount received by all members of Forsage and last 24
-                    hours change
-                  </div> */}
                 </div>
               </span>
               <div className="flex flex-col py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
                 <span className="text-2xl text-white font-bold sm:text-xl">
-                  147273343.76 USDT
+                  0 USDT
                 </span>
                 <span className="text-green-light text-base items-baseline sm:text-sm">
-                  + 13276.3 USDT
+                  + 0 USDT
                 </span>
               </div>
-             
             </div>
             <div className="bg-gray rounded p-5 flex flex-col flex-1 max-w-full">
               <div className="flex justify-between items-center text-base text-white-500 sm:text-sm">
@@ -1687,79 +1646,15 @@ const Dashboard = () => {
                 <div className="flex flex-col border-t border-b border-white-100 pb-2.5 mt-2.5">
                   <div className="flex justify-between items-center py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
                     <span className="text-base text-white-500 notranslate sm:text-sm">
-                      Matrix
+                      Contract
                     </span>
                     <div className="flex justify-end items-center space-x-2.5">
                       <span className="text-base text-white notranslate sm:text-sm">
-                        0x5ac...B97
+                        0xf4...ca71
                       </span>
-                      <button>
-                        <svg
-                          className="h-18px w-18px"
-                          viewBox="0 0 20 20"
-                          fill="#fff"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M15 6.667H8.332c-.92 0-1.667.746-1.667 1.666V15c0 .92.746 1.667 1.667 1.667h6.666c.92 0 1.667-.747 1.667-1.667V8.333c0-.92-.746-1.666-1.667-1.666Z"></path>
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M3.469 3.468A2.167 2.167 0 0 1 5 2.833h6.666A2.167 2.167 0 0 1 13.834 5v1.667a.5.5 0 0 1-1 0V5a1.167 1.167 0 0 0-1.167-1.167H5.001A1.167 1.167 0 0 0 3.834 5v6.667a1.167 1.167 0 0 0 1.167 1.166h1.666a.5.5 0 1 1 0 1H5.001a2.167 2.167 0 0 1-2.167-2.166V5c0-.575.228-1.126.635-1.532Z"
-                          ></path>
-                        </svg>
-                      </button>
                       <a
                         target="_blank"
-                        href="https://bscscan.com/address/0x5acc84a3e955bdd76467d3348077d003f00ffb97"
-                      >
-                        <svg
-                          className="h-18px w-18px"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M11.314 3.813a3.446 3.446 0 1 1 4.873 4.874l-3.331 3.331a3.418 3.418 0 0 1-4.88-.001.5.5 0 0 1 .715-.7 2.417 2.417 0 0 0 3.452 0l.004-.004L15.48 7.98a2.446 2.446 0 1 0-3.46-3.46l-.416.417a.5.5 0 1 1-.707-.707l.417-.417Z"
-                            fill="#fff"
-                          ></path>
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M8.26 7.225a3.417 3.417 0 0 1 3.765.758.5.5 0 0 1-.715.7 2.417 2.417 0 0 0-3.452 0l-.003.004L4.52 12.02a2.446 2.446 0 0 0 3.46 3.46l.416-.417a.5.5 0 1 1 .708.707l-.417.417a3.446 3.446 0 1 1-4.874-4.874l3.332-3.332a3.417 3.417 0 0 1 1.115-.756Z"
-                            fill="#fff"
-                          ></path>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
-                    <span className="text-base text-white-500 notranslate sm:text-sm">
-                      Working
-                    </span>
-                    <div className="flex justify-end items-center space-x-2.5">
-                      <span className="text-base text-white notranslate sm:text-sm">
-                        0x2CA...e52
-                      </span>
-                      <button>
-                        <svg
-                          className="h-18px w-18px"
-                          viewBox="0 0 20 20"
-                          fill="#fff"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M15 6.667H8.332c-.92 0-1.667.746-1.667 1.666V15c0 .92.746 1.667 1.667 1.667h6.666c.92 0 1.667-.747 1.667-1.667V8.333c0-.92-.746-1.666-1.667-1.666Z"></path>
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M3.469 3.468A2.167 2.167 0 0 1 5 2.833h6.666A2.167 2.167 0 0 1 13.834 5v1.667a.5.5 0 0 1-1 0V5a1.167 1.167 0 0 0-1.167-1.167H5.001A1.167 1.167 0 0 0 3.834 5v6.667a1.167 1.167 0 0 0 1.167 1.166h1.666a.5.5 0 1 1 0 1H5.001a2.167 2.167 0 0 1-2.167-2.166V5c0-.575.228-1.126.635-1.532Z"
-                          ></path>
-                        </svg>
-                      </button>
-                      <a
-                        target="_blank"
-                        href="https://bscscan.com/address/0x2caa4694cb7daf7d49a198dc1103c06d4991ae52"
+                        href="https://bscscan.com/address/0xf418b08b835441f925687f06bb9dc3ec51a7ca71"
                       >
                         <svg
                           className="h-18px w-18px"
@@ -1790,10 +1685,10 @@ const Dashboard = () => {
                       Transactions made
                     </span>
                     <span className="text-2xl text-white font-bold sm:text-xl">
-                      5817992
+                      {dashboardData?.totalTransactions}
                     </span>
                     <span className="text-green-light text-base items-baseline sm:text-sm">
-                      + 993
+                      + {dashboardData?.todayTotalTransactions}
                     </span>
                   </div>
                   <div className="flex flex-col py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
@@ -1804,10 +1699,10 @@ const Dashboard = () => {
                       </span>
                     </span>
                     <span className="text-2xl text-white font-bold sm:text-xl">
-                      294546687.52
+                      {dashboardData?.totalTurnOver}
                     </span>
                     <span className="text-green-light text-base items-baseline sm:text-sm">
-                      + 26552.6
+                      + {dashboardData?.todayTotalTurnOver}
                     </span>
                   </div>
                 </div>

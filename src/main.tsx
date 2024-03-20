@@ -4,6 +4,7 @@ import App from "./App";
 
 import "src/Styles/tailwind.scss";
 import "src/Styles/pagination.scss";
+import 'animate.css';
 
 import ContextProviders from "./Contexts/ContextProviders";
 
