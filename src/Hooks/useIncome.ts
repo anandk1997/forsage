@@ -4,7 +4,7 @@ import { ChangeEvent } from "react";
 import { incomeApi } from "src/Api/Income";
 import { useStore } from "src/Store/Store";
 
-export const useIncome = () => {
+export const useIncome = (incomeType: string) => {
   const { page, skip, setPage, setPageCount } = useStore((state) => state);
 
   const { isPending, data } = useQuery({
@@ -14,6 +14,7 @@ export const useIncome = () => {
         page,
         skip,
         setPageCount,
+        incomeType,
       }),
   });
 

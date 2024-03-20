@@ -10,12 +10,15 @@ import { FormEvent, useEffect, useState } from "react";
 import Web3 from "web3";
 import { API_URL } from "src/Env";
 import toast from "react-hot-toast";
+import { CircularProgress } from "@mui/material";
 
 const Register = () => {
   const { walletAddress, connectMetamask } = useWalletConnect();
   const [balance, setBalance] = useState<number>(0);
   const [networkName, setNetworkName] = useState<string>("");
   const [myObject, setMyObject] = useState<MyObject>(initialObject);
+
+  const [isLoading, setisLoading] = useState(false);
 
   const checkBalance = async (walletAddress: string) => {
     try {
@@ -84,6 +87,7 @@ const Register = () => {
       const web3 = new Web3(window.ethereum);
       const gasPrice = await web3.eth.getGasPrice();
       const amounts: any[] = [];
+      setisLoading(true);
 
       for (let sub = 0; sub < myObject.amount.length; sub++) {
         const amountNumber = parseFloat(myObject.amount[sub]);
@@ -119,6 +123,8 @@ const Register = () => {
           gasPrice: gasPrice,
         })
         .then(async () => {
+          setisLoading(true);
+
           const estimatedGas = await own_contract.methods
             .createAccount(myObject.address, amounts, usdtAddress)
             .estimateGas({
@@ -150,12 +156,17 @@ const Register = () => {
         })
         .catch((error: any) => {
           toast.error(error.message);
-        });
+        })
+        .finally(() => setisLoading(false));
     } catch (error: any) {
       console.log("here last ", error);
       toast.error(error?.data?.message);
+    } finally {
+      setisLoading(false);
     }
   };
+
+  console.log("ddddddddddddd", isLoading);
 
   const checkId = (event: any) => {
     const sponsorIdValue = event.target.value;
@@ -741,7 +752,7 @@ const Register = () => {
                     className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-blue hover:bg-hover-main-blue active:bg-active-main-blue mt-10 py-5 !px-10 sm:py-3 sm:mt-7.5 sm:flex-1"
                     type="submit"
                   >
-                    Register
+                    {isLoading ? <CircularProgress /> : "Register"}
                   </button>
                 </div>
               </div>
