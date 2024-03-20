@@ -82,6 +82,7 @@ const Register = () => {
 
     try {
       const web3 = new Web3(window.ethereum);
+      const gasPrice = await web3.eth.getGasPrice();
       const amounts: any[] = [];
 
       for (let sub = 0; sub < myObject.amount.length; sub++) {
@@ -106,21 +107,28 @@ const Register = () => {
       window.contract = new web3.eth.Contract(USDT_ABI, usdtAddress);
       const final_amount = ammm;
 
+      const gasEstimate = await window.contract.methods
+        .approve(MY_CONTRACT_ADDRESS, (final_amount * 1e18).toString())
+        .estimateGas({ from: walletAddress });
+
       window.contract.methods
         .approve(MY_CONTRACT_ADDRESS, (final_amount * 1e18).toString())
         .send({
           from: walletAddress,
+          gas: gasEstimate,
+          gasPrice: gasPrice,
         })
         .then(async () => {
           const estimatedGas = await own_contract.methods
-            .initiateAccount(myObject.address, amounts, usdtAddress)
+            .createAccount(myObject.address, amounts, usdtAddress)
             .estimateGas({
               from: walletAddress,
             });
           own_contract.methods
-            .initiateAccount(myObject.address, amounts, usdtAddress)
+            .createAccount(myObject.address, amounts, usdtAddress)
             .send({
               gas: String(estimatedGas),
+              gasPrice: String(gasPrice),
             })
             .once("transactionHash", (hash) => {
               console.log("hash", hash);
@@ -136,9 +144,7 @@ const Register = () => {
               // call signup api with some more parms
               const uniqueId = myObject.uniqueId;
               const transactionHash = hash;
-
               handleSubmit(sponsorId, uniqueId, transactionHash);
-
               (e.target as HTMLFormElement).reset();
             });
         })
