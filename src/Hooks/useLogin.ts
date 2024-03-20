@@ -16,6 +16,8 @@ export const useLogin = () => {
 
     onSuccess: (res) => {
       localStorage.setItem("token", res?.data?.data?.token);
+      localStorage.setItem("isPreview", res?.data?.data?.isPreview);
+
       toast.success(res?.data?.statusMessage);
       navigate("/dashboard");
     },
