@@ -18,6 +18,9 @@ import { useStore } from "src/Store/Store";
 import { logout, maskHex } from "src/Lib/utils";
 import { usdtAddress } from "src/Utils/Addresses";
 import { USDT_ABI } from "src/Utils/ABI";
+import { Button } from "./ui/button";
+import { useLogin } from "src/Hooks/useLogin";
+import { CircularProgress } from "@mui/material";
 
 export const Navbar = () => {
   const navigate = useNavigate();
@@ -111,6 +114,7 @@ const NavbarSm = ({
 }) => {
   const [isTeam, setIsTeam] = useReducer((open) => !open, false);
   const [isInfo, setIsInfo] = useReducer((open) => !open, false);
+  const { isPending, handleSubmit } = useLogin();
 
   return (
     <div className="flex justify-between items-center rounded-mini max-w-desktop-preview-bar w-full bg-main-blue px-5 py-2 shadow-preview-bar lg:pl-10 sm:pl-5 lg:py-2.5 lg:rounded-none lg:rounded-b-mini lg:pr-0 lg:flex-col lg:pb-5 lg:h-screen lg:max-h-screen lg:rounded-b-none lg:justify-start">
@@ -126,24 +130,35 @@ const NavbarSm = ({
                 <span className="text-base text-white whitespace-nowrap mr-5 notranslate lg:mr-0 lg:text-2xl lg:text-medium lg:mb-7.5">
                   Preview ID<span className="hidden lg:inline ml-1.5">1</span>
                 </span>
-                <div className="flex justify-between items-center space-x-2.5 lg:space-x-5 lg:w-full lg:flex">
-                  <input className="px-4 py-3 rounded-mini leading-5 bg-white-100 text-white text-base outline-none lg:w-full lg:flex-1" />
-                  <button
-                    // disabled=""
-                    className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none bg-white-100 py-3 px-5 cursor-not-allowed lg:px-10"
-                  >
-                    Go
-                  </button>
-                </div>
+                <form onSubmit={(e) => handleSubmit(e, "id")}>
+                  <div className="flex justify-between items-center space-x-2.5 lg:space-x-5 lg:w-full lg:flex">
+                    <input
+                      name="address"
+                      className="px-4 py-3 rounded-mini leading-5 bg-white-100 text-white text-base outline-none lg:w-full lg:flex-1"
+                    />
+                    <button
+                      type="submit"
+                      className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none bg-white-100 py-3 px-5 cursor-not-allowed lg:px-10"
+                    >
+                      {isPending ? (
+                        <CircularProgress
+                          sx={{ scale: ".5", color: "white" }}
+                        />
+                      ) : (
+                        "Go"
+                      )}
+                    </button>
+                  </div>
+                </form>
               </div>
 
               <div className="w-full pr-5 lg:pr-10 sm:pr-5 !mt-4">
-                <NavLink
-                  to="/login"
+                <Button
+                  onClick={logout}
                   className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-bg hover:bg-black-500 whitespace-nowrap hidden lg:flex w-full"
                 >
                   Exit preview mode
-                </NavLink>
+                </Button>
               </div>
             </>
           )}

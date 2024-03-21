@@ -1,12 +1,10 @@
 import { useMutation } from "@tanstack/react-query";
-import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
 import { useStore } from "src/Store/Store";
 import { signupApi } from "src/Api/Signup";
 
 export const useSignup = () => {
-  const navigate = useNavigate();
 
   const { walletAddress } = useStore((state) => state);
 
@@ -14,9 +12,10 @@ export const useSignup = () => {
     mutationFn: signupApi,
 
     onSuccess: (res) => {
-      localStorage.setItem("user", JSON.stringify(res?.data?.data?.token));
+      localStorage.setItem("token", res?.data?.data?.token);
+      localStorage.setItem("isPreview", res?.data?.data?.isPreview);
       toast.success(res?.data?.statusMessage);
-      navigate("/dashboard");
+      window.location.href = "/dashboard";
     },
 
     onError: (res: any) => {

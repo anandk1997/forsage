@@ -507,13 +507,7 @@ const Login = () => {
                 Connect your wallet to start working. First time here? Watch a
                 tutorial to learn more
               </span>
-              <div className="w-full h-full relative flex justify-center items-center sm:mb-5">
-                <img
-                  className="hidden max-w-full h-full max-h-56 sm:flex"
-                  src="/preview_cards/wallet_mini_min.png"
-                />
-                <div className="absolute bottom-0 left-0 right-0 -rotate-180 wallet-gradient-main h-11 hidden sm:block"></div>
-              </div>
+             
               <div className="flex space-x-5 sm:space-x-0 sm:space-y-3.5 sm:flex-col">
                 {!walletAddress && (
                   <button

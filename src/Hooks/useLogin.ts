@@ -1,5 +1,4 @@
 import { useMutation } from "@tanstack/react-query";
-import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { FormEvent } from "react";
 
@@ -7,7 +6,6 @@ import { useStore } from "src/Store/Store";
 import { loginApi } from "src/Api/Login";
 
 export const useLogin = () => {
-  const navigate = useNavigate();
 
   const { walletAddress } = useStore((state) => state);
 
@@ -19,7 +17,8 @@ export const useLogin = () => {
       localStorage.setItem("isPreview", res?.data?.data?.isPreview);
 
       toast.success(res?.data?.statusMessage);
-      navigate("/dashboard");
+      window.location.href = '/dashboard'
+      // navigate("/dashboard");
     },
 
     onError: (res: any) => {
