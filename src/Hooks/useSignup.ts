@@ -5,7 +5,6 @@ import { useStore } from "src/Store/Store";
 import { signupApi } from "src/Api/Signup";
 
 export const useSignup = () => {
-
   const { walletAddress } = useStore((state) => state);
 
   const { mutate, isPending } = useMutation({
@@ -27,7 +26,7 @@ export const useSignup = () => {
   const handleSubmit = (
     sponsorId: FormDataEntryValue,
     uniqueId: string,
-    transactionHash: string
+    transactionHash: string,
   ) => {
     // e.preventDefault();
 

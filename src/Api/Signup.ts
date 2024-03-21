@@ -19,6 +19,7 @@ interface SignupResponse {
   type: string;
   data: {
     token: string;
+    isPreview: string;
   };
 }
 

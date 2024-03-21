@@ -5,8 +5,6 @@ import { useStore } from "src/Store/Store";
 const IncomeTable = ({ data, isPending, handleChangePage }: any) => {
   const { page, pageCount } = useStore((state) => state);
 
-  console.log(data);
-
   if (isPending)
     return (
       <div className="h-100 flex justify-center align-middle">
