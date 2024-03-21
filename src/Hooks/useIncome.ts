@@ -8,7 +8,7 @@ export const useIncome = (incomeType: string) => {
   const { page, skip, setPage, setPageCount } = useStore((state) => state);
 
   const { isPending, data } = useQuery({
-    queryKey: ["income", page],
+    queryKey: [incomeType, page],
     queryFn: () =>
       incomeApi({
         page,
@@ -16,7 +16,6 @@ export const useIncome = (incomeType: string) => {
         setPageCount,
         incomeType,
       }),
-    staleTime: 0,
   });
 
   const handleChangePage = (_e: ChangeEvent<unknown>, value: number) => {
