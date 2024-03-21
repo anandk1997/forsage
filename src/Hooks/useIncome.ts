@@ -16,6 +16,7 @@ export const useIncome = (incomeType: string) => {
         setPageCount,
         incomeType,
       }),
+    staleTime: 0,
   });
 
   const handleChangePage = (_e: ChangeEvent<unknown>, value: number) => {
