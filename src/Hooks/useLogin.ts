@@ -6,7 +6,6 @@ import { useStore } from "src/Store/Store";
 import { loginApi } from "src/Api/Login";
 
 export const useLogin = () => {
-
   const { walletAddress } = useStore((state) => state);
 
   const { mutate, isPending } = useMutation({
@@ -17,7 +16,7 @@ export const useLogin = () => {
       localStorage.setItem("isPreview", res?.data?.data?.isPreview);
 
       toast.success(res?.data?.statusMessage);
-      window.location.href = '/dashboard'
+      window.location.href = "/dashboard";
       // navigate("/dashboard");
     },
 

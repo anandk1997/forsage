@@ -17,7 +17,7 @@ export const authToken = () => {
   };
 };
 
-export  const logout = () => {
+export const logout = () => {
   localStorage.clear();
   window.location.href = "/";
 };

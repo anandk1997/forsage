@@ -507,7 +507,7 @@ const Login = () => {
                 Connect your wallet to start working. First time here? Watch a
                 tutorial to learn more
               </span>
-             
+
               <div className="flex space-x-5 sm:space-x-0 sm:space-y-3.5 sm:flex-col">
                 {!walletAddress && (
                   <button

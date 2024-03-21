@@ -61,7 +61,7 @@ const Register = () => {
 
     const response = await fetch(
       `${API_URL}api/v1/auth/checkLevel`,
-      requestOptions
+      requestOptions,
     );
     const result = await response.json();
     const finalObject = {
@@ -76,7 +76,7 @@ const Register = () => {
 
   const sendUSDTTransactionForWorking = async (
     e: FormEvent<HTMLFormElement>,
-    ammm: any
+    ammm: any,
   ) => {
     e.preventDefault();
 
@@ -104,13 +104,9 @@ const Register = () => {
         if (!isNaN(amountNumber)) {
           amounts[sub] = (amountNumber * 1e18).toString();
         } else {
-          toast.error(
-            `Failed to convert '${ada?.amount[sub]}' to a number.`
-          );
+          toast.error(`Failed to convert '${ada?.amount[sub]}' to a number.`);
 
-          console.error(
-            `Failed to convert '${ada?.amount[sub]}' to a number.`
-          );
+          console.error(`Failed to convert '${ada?.amount[sub]}' to a number.`);
         }
       }
       const own_contract = new web3.eth.Contract(MY_ABI, MY_CONTRACT_ADDRESS, {
