@@ -15,6 +15,7 @@ import { CircularProgress } from "@mui/material";
 const Register = () => {
   const { walletAddress, connectMetamask } = useWalletConnect();
   const [balance, setBalance] = useState<number>(0);
+  const [upline, setUpline] = useState<number>(0);
   const [networkName, setNetworkName] = useState<string>("");
   const [myObject, setMyObject] = useState<MyObject>(initialObject);
 
@@ -70,6 +71,7 @@ const Register = () => {
     };
 
     setMyObject(finalObject);
+    return finalObject;
   };
 
   const sendUSDTTransactionForWorking = async (
@@ -77,6 +79,13 @@ const Register = () => {
     ammm: any
   ) => {
     e.preventDefault();
+
+    const ada = await checkLevel(upline);
+
+    if (!ada?.address) {
+      toast.error("Please enter upline");
+      return;
+    }
 
     if (!!!walletAddress) {
       toast.error("Please connect to your wallet");
@@ -89,18 +98,18 @@ const Register = () => {
       const amounts: any[] = [];
       setisLoading(true);
 
-      for (let sub = 0; sub < myObject.amount.length; sub++) {
-        const amountNumber = parseFloat(myObject.amount[sub]);
+      for (let sub = 0; sub < ada.amount.length; sub++) {
+        const amountNumber = parseFloat(ada?.amount[sub]);
 
         if (!isNaN(amountNumber)) {
           amounts[sub] = (amountNumber * 1e18).toString();
         } else {
           toast.error(
-            `Failed to convert '${myObject.amount[sub]}' to a number.`
+            `Failed to convert '${ada?.amount[sub]}' to a number.`
           );
 
           console.error(
-            `Failed to convert '${myObject.amount[sub]}' to a number.`
+            `Failed to convert '${ada?.amount[sub]}' to a number.`
           );
         }
       }
@@ -126,12 +135,12 @@ const Register = () => {
           setisLoading(true);
 
           const estimatedGas = await own_contract.methods
-            .createAccount(myObject.address, amounts, usdtAddress)
+            .createAccount(ada?.address, amounts, usdtAddress)
             .estimateGas({
               from: walletAddress,
             });
           own_contract.methods
-            .createAccount(myObject.address, amounts, usdtAddress)
+            .createAccount(ada?.address, amounts, usdtAddress)
             .send({
               gas: String(estimatedGas),
               gasPrice: String(gasPrice),
@@ -148,7 +157,7 @@ const Register = () => {
               }
 
               // call signup api with some more parms
-              const uniqueId = myObject.uniqueId;
+              const uniqueId = ada?.uniqueId;
               const transactionHash = hash;
               handleSubmit(sponsorId, uniqueId, transactionHash);
               (e.target as HTMLFormElement).reset();
@@ -166,11 +175,9 @@ const Register = () => {
     }
   };
 
-  console.log("ddddddddddddd", isLoading);
-
   const checkId = (event: any) => {
     const sponsorIdValue = event.target.value;
-    checkLevel(sponsorIdValue);
+    setUpline(sponsorIdValue);
     // sendUSDTTransactionForWorking(10);
   };
 
