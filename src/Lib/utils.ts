@@ -17,6 +17,10 @@ export const authToken = () => {
   };
 };
 
+export const logout = () => {
+  localStorage.clear();
+  window.location.href = "/";
+};
 
 export const maskHex = (input: string) => {
   if (typeof input !== "string" || !/^0x[0-9a-fA-F]+$/.test(input)) {
@@ -25,7 +29,7 @@ export const maskHex = (input: string) => {
 
   const firstFour = input.slice(0, 4);
   const lastFour = input.slice(-4);
-  const masked = `${firstFour}****${lastFour}`;
+  const masked = `${firstFour}...${lastFour}`;
 
   return masked;
 };

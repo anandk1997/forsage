@@ -1,13 +1,12 @@
 import { authToken, axiosInstance } from "src/Lib/utils";
 
 export const incomeApi = async (
-  payload: IPayload
+  payload: IPayload,
 ): Promise<LoginResponse[]> => {
   try {
     const response = await axiosInstance.get(
       `api/v1/incomes/${payload.incomeType}`,
       {
-        // enum: ["directIncome", "levelIncome", "matrixIncome"],
         params: {
           page: payload.page,
           skip: payload.skip,
@@ -15,7 +14,7 @@ export const incomeApi = async (
         },
 
         ...authToken(),
-      }
+      },
     );
 
     const pageCount = Math.ceil(response.data.totalCount / 10);

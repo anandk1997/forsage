@@ -1,5 +1,6 @@
-import { useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { ethers } from "ethers";
 import {
   DashboardIcon,
   DropdownIcon,
@@ -13,6 +14,13 @@ import { Devider } from "./Sidebar";
 
 import { LogoGreen } from "src/Assets/Svg";
 import { Logo } from "./Logo";
+import { useStore } from "src/Store/Store";
+import { logout, maskHex } from "src/Lib/utils";
+import { usdtAddress } from "src/Utils/Addresses";
+import { USDT_ABI } from "src/Utils/ABI";
+import { Button } from "./ui/button";
+import { useLogin } from "src/Hooks/useLogin";
+import { CircularProgress } from "@mui/material";
 
 export const Navbar = () => {
   const navigate = useNavigate();
@@ -106,6 +114,7 @@ const NavbarSm = ({
 }) => {
   const [isTeam, setIsTeam] = useReducer((open) => !open, false);
   const [isInfo, setIsInfo] = useReducer((open) => !open, false);
+  const { isPending, handleSubmit } = useLogin();
 
   return (
     <div className="flex justify-between items-center rounded-mini max-w-desktop-preview-bar w-full bg-main-blue px-5 py-2 shadow-preview-bar lg:pl-10 sm:pl-5 lg:py-2.5 lg:rounded-none lg:rounded-b-mini lg:pr-0 lg:flex-col lg:pb-5 lg:h-screen lg:max-h-screen lg:rounded-b-none lg:justify-start">
@@ -121,24 +130,35 @@ const NavbarSm = ({
                 <span className="text-base text-white whitespace-nowrap mr-5 notranslate lg:mr-0 lg:text-2xl lg:text-medium lg:mb-7.5">
                   Preview ID<span className="hidden lg:inline ml-1.5">1</span>
                 </span>
-                <div className="flex justify-between items-center space-x-2.5 lg:space-x-5 lg:w-full lg:flex">
-                  <input className="px-4 py-3 rounded-mini leading-5 bg-white-100 text-white text-base outline-none lg:w-full lg:flex-1" />
-                  <button
-                    // disabled=""
-                    className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none bg-white-100 py-3 px-5 cursor-not-allowed lg:px-10"
-                  >
-                    Go
-                  </button>
-                </div>
+                <form onSubmit={(e) => handleSubmit(e, "id")}>
+                  <div className="flex justify-between items-center space-x-2.5 lg:space-x-5 lg:w-full lg:flex">
+                    <input
+                      name="address"
+                      className="px-4 py-3 rounded-mini leading-5 bg-white-100 text-white text-base outline-none lg:w-full lg:flex-1"
+                    />
+                    <button
+                      type="submit"
+                      className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none bg-white-100 py-3 px-5 cursor-not-allowed lg:px-10"
+                    >
+                      {isPending ? (
+                        <CircularProgress
+                          sx={{ scale: ".5", color: "white" }}
+                        />
+                      ) : (
+                        "Go"
+                      )}
+                    </button>
+                  </div>
+                </form>
               </div>
 
               <div className="w-full pr-5 lg:pr-10 sm:pr-5 !mt-4">
-                <NavLink
-                  to="/login"
+                <Button
+                  onClick={logout}
                   className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-main-bg hover:bg-black-500 whitespace-nowrap hidden lg:flex w-full"
                 >
                   Exit preview mode
-                </NavLink>
+                </Button>
               </div>
             </>
           )}
@@ -284,7 +304,10 @@ const NavbarSm = ({
                           stroke-linejoin="round"
                         ></path>
                       </svg>
-                      <span className="text-white-500 text-base ml-2.5 false">
+                      <span
+                        onClick={logout}
+                        className="text-white-500 text-base ml-2.5 false"
+                      >
                         Log out
                       </span>
                     </div>
@@ -342,6 +365,31 @@ const NavbarSm = ({
 };
 
 const AuthNav = ({ setIsNavSm }: { setIsNavSm: () => void }) => {
+  const { userInfo } = useStore((state) => state);
+  const [balance, setBalance] = useState<number>(0);
+
+  const checkBalance = async (walletAddress: string) => {
+    try {
+      if (!window.ethereum) {
+        console.log("window.ethereum is not available");
+        return;
+      }
+      await window.ethereum.request({ method: "eth_requestAccounts" });
+      const provider = new ethers.BrowserProvider(window.ethereum);
+      const signer = await provider.getSigner();
+      const usdtContract = new ethers.Contract(usdtAddress, USDT_ABI, signer);
+      const balanceUSDT = await usdtContract.balanceOf(walletAddress);
+      const hex = ethers.formatUnits(balanceUSDT, 18); // Convert balance to human-readable format
+      const finalAmount = hex.toString().slice(0, 4);
+      setBalance(parseFloat(finalAmount));
+    } catch (error) {
+      console.error("Error checking balance:", error);
+    }
+  };
+
+  useEffect(() => {
+    checkBalance(userInfo?.addresses?.ethAddress);
+  }, []);
   return (
     <>
       <nav className="z-10 w-full max-w-desktop-preview-bar m-auto header-border-b px-4 pt-3">
@@ -350,33 +398,6 @@ const AuthNav = ({ setIsNavSm }: { setIsNavSm: () => void }) => {
 
           <div className="flex justify-end items-center ml-auto">
             <div className="flex justify-end">
-              <div className="flex py-2 px-2.5 pr-5 rounded items-center bg-black-light notranslate lg:hidden">
-                <svg
-                  className="w-6 h-6"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    width="24"
-                    height="24"
-                    rx="12"
-                    fill="#fff"
-                    fill-opacity=".1"
-                  ></rect>
-                  <path
-                    d="M9.017 10.774 12 7.791l2.985 2.985L16.72 9.04 12 4.32 7.281 9.039l1.736 1.735ZM4.32 12l1.736-1.736L7.79 12l-1.735 1.735L4.32 12Zm4.697 1.226L12 16.209l2.984-2.985 1.737 1.735v.001L12 19.68l-4.719-4.719-.002-.002 1.738-1.733ZM16.209 12l1.735-1.736 1.736 1.736-1.736 1.735-1.735-1.735Z"
-                    fill="#F3BA2F"
-                  ></path>
-                  <path
-                    d="M13.76 12h.001l-1.76-1.762-1.303 1.301-.15.15-.307.308-.003.003.003.002 1.76 1.76 1.76-1.761.001-.001h-.001"
-                    fill="#F3BA2F"
-                  ></path>
-                </svg>
-                <span className="text-base ml-2.5 text-white-500">
-                  Smart Chain
-                </span>
-              </div>
               <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-2.5 bg-black-light hover:bg-line-gray active:bg-active-gray px-2.5 p-2 rounded ml-5 font-normal pl-0 pr-2.5 notranslate sm:pl-2.5 sm:ml-2.5">
                 <div className="flex items-center border-r border-white-100 px-2.5 last:border-r-0 lg:hidden undefined lg:px-0 lg:pl-2.5 sm:pl-0">
                   <svg
@@ -393,30 +414,10 @@ const AuthNav = ({ setIsNavSm }: { setIsNavSm: () => void }) => {
                     ></path>
                   </svg>
                   <span id="usdtBalance" className="text-base text-white">
-                    7.01 USDT
+                    {balance} USDT
                   </span>
                 </div>
-                <div className="flex items-center border-r border-white-100 px-2.5 last:border-r-0 lg:hidden undefined lg:px-0 lg:pl-2.5 sm:pl-0">
-                  <svg
-                    className="w-6 h-6 mr-2.5 sm:hidden"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect width="24" height="24" rx="12" fill="#F3BA2F"></rect>
-                    <path
-                      d="M9.017 10.774 12 7.791l2.985 2.985L16.72 9.04 12 4.32 7.281 9.039l1.736 1.735ZM4.32 12l1.736-1.736L7.79 12l-1.735 1.735L4.32 12Zm4.697 1.226L12 16.209l2.984-2.985 1.737 1.735v.001L12 19.68l-4.719-4.719-.002-.002 1.738-1.733ZM16.209 12l1.735-1.736 1.736 1.736-1.736 1.735-1.735-1.735Z"
-                      fill="#fff"
-                    ></path>
-                    <path
-                      d="M13.76 12h.001l-1.76-1.762-1.303 1.301-.15.15-.307.308-.003.003.003.002 1.76 1.76 1.76-1.761.001-.001h-.001"
-                      fill="#fff"
-                    ></path>
-                  </svg>
-                  <span id="bnbBalance" className="text-base text-white-500">
-                    0.00
-                  </span>
-                </div>
+
                 <div className="flex items-center border-r border-white-100 px-2.5 last:border-r-0 undefined undefined lg:px-0 lg:pl-2.5 sm:pl-0">
                   <svg
                     className="w-6 h-6 mr-2.5 sm:hidden"
@@ -443,12 +444,16 @@ const AuthNav = ({ setIsNavSm }: { setIsNavSm: () => void }) => {
                     ></path>
                   </svg>
                   <span id="address" className="text-base text-white-500">
-                    0x81...c7
+                    {userInfo?.addresses?.ethAddress &&
+                      maskHex(userInfo?.addresses?.ethAddress)}
                   </span>
                 </div>
               </button>
             </div>
-            <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-0 py-0 bg-black-light rounded-full w-10 h-10 hover:bg-line-gray active:bg-active-gray ml-5 px-0 py-0 lg:hidden sm:ml-2.5">
+            <button
+              onClick={logout}
+              className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-0 py-0 bg-black-light rounded-full w-10 h-10 hover:bg-line-gray active:bg-active-gray ml-5 px-0 py-0 lg:hidden sm:ml-2.5"
+            >
               <svg
                 className="ml-1"
                 width="24"

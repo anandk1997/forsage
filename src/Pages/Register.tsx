@@ -4,10 +4,10 @@ import { Logo } from "src/Components/Logo";
 import { useSignup } from "src/Hooks/useSignup";
 import { useWalletConnect } from "src/Hooks/useWalletConnect";
 import { ethers } from "ethers";
+import Web3 from "web3";
 import { MY_CONTRACT_ADDRESS, usdtAddress } from "src/Utils/Addresses";
 import { MY_ABI, USDT_ABI } from "src/Utils/ABI";
 import { FormEvent, useEffect, useState } from "react";
-import Web3 from "web3";
 import { API_URL } from "src/Env";
 import toast from "react-hot-toast";
 import { CircularProgress } from "@mui/material";
@@ -15,6 +15,7 @@ import { CircularProgress } from "@mui/material";
 const Register = () => {
   const { walletAddress, connectMetamask } = useWalletConnect();
   const [balance, setBalance] = useState<number>(0);
+  const [upline, setUpline] = useState<number>(0);
   const [networkName, setNetworkName] = useState<string>("");
   const [myObject, setMyObject] = useState<MyObject>(initialObject);
 
@@ -60,7 +61,7 @@ const Register = () => {
 
     const response = await fetch(
       `${API_URL}api/v1/auth/checkLevel`,
-      requestOptions
+      requestOptions,
     );
     const result = await response.json();
     const finalObject = {
@@ -70,13 +71,21 @@ const Register = () => {
     };
 
     setMyObject(finalObject);
+    return finalObject;
   };
 
   const sendUSDTTransactionForWorking = async (
     e: FormEvent<HTMLFormElement>,
-    ammm: any
+    ammm: any,
   ) => {
     e.preventDefault();
+
+    const ada = await checkLevel(upline);
+
+    if (!ada?.address) {
+      toast.error("Please enter upline");
+      return;
+    }
 
     if (!!!walletAddress) {
       toast.error("Please connect to your wallet");
@@ -89,19 +98,15 @@ const Register = () => {
       const amounts: any[] = [];
       setisLoading(true);
 
-      for (let sub = 0; sub < myObject.amount.length; sub++) {
-        const amountNumber = parseFloat(myObject.amount[sub]);
+      for (let sub = 0; sub < ada.amount.length; sub++) {
+        const amountNumber = parseFloat(ada?.amount[sub]);
 
         if (!isNaN(amountNumber)) {
           amounts[sub] = (amountNumber * 1e18).toString();
         } else {
-          toast.error(
-            `Failed to convert '${myObject.amount[sub]}' to a number.`
-          );
+          toast.error(`Failed to convert '${ada?.amount[sub]}' to a number.`);
 
-          console.error(
-            `Failed to convert '${myObject.amount[sub]}' to a number.`
-          );
+          console.error(`Failed to convert '${ada?.amount[sub]}' to a number.`);
         }
       }
       const own_contract = new web3.eth.Contract(MY_ABI, MY_CONTRACT_ADDRESS, {
@@ -126,12 +131,12 @@ const Register = () => {
           setisLoading(true);
 
           const estimatedGas = await own_contract.methods
-            .createAccount(myObject.address, amounts, usdtAddress)
+            .createAccount(ada?.address, amounts, usdtAddress)
             .estimateGas({
               from: walletAddress,
             });
           own_contract.methods
-            .createAccount(myObject.address, amounts, usdtAddress)
+            .createAccount(ada?.address, amounts, usdtAddress)
             .send({
               gas: String(estimatedGas),
               gasPrice: String(gasPrice),
@@ -148,7 +153,7 @@ const Register = () => {
               }
 
               // call signup api with some more parms
-              const uniqueId = myObject.uniqueId;
+              const uniqueId = ada?.uniqueId;
               const transactionHash = hash;
               handleSubmit(sponsorId, uniqueId, transactionHash);
               (e.target as HTMLFormElement).reset();
@@ -166,11 +171,9 @@ const Register = () => {
     }
   };
 
-  console.log("ddddddddddddd", isLoading);
-
   const checkId = (event: any) => {
     const sponsorIdValue = event.target.value;
-    checkLevel(sponsorIdValue);
+    setUpline(sponsorIdValue);
     // sendUSDTTransactionForWorking(10);
   };
 

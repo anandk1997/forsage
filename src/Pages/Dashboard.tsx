@@ -1,68 +1,23 @@
-import { useEffect, useReducer } from "react";
-import toast from "react-hot-toast";
 import { NavLink } from "react-router-dom";
+import { useReducer } from "react";
+
+import { useDashboard } from "src/Hooks/useDashboard";
 import { LogoWhite } from "src/Assets/Svg";
-import { API_URL } from "src/Env";
-import { authToken, maskHex } from "src/Lib/utils";
-import { useStore } from "src/Store/Store";
+import { maskHex } from "src/Lib/utils";
 
 const Dashboard = () => {
   const {
     dashboardData,
-    setDashboardData,
-    userInfo,
-    setUserInfo,
-    workingPackages,
-    setWorkingPackage,
-    matrixPackages,
-    setMatrixPackage,
 
-    walletAddress,
-  } = useStore((state) => state);
+    userInfo,
+    workingPackages,
+    matrixPackages,
+    ethAddress,
+
+    copyToClipboard,
+  } = useDashboard();
 
   const [isShowMore, setIsShowMore] = useReducer((show) => !show, false);
-
-  const copyToClipboard = (e: any) => {
-    let printValue: string = "";
-
-    if (e.target.value === undefined) {
-      printValue = userInfo?.addresses?.ethAddress;
-    } else {
-      printValue = e.target.value;
-    }
-
-    navigator.clipboard
-      .writeText(printValue)
-      .then(() => toast.success("Text copied to clipboard!"))
-      .catch((err) => {
-        console.error("Could not copy text: ", err);
-        toast.error("Failed to copy text to clipboard");
-      });
-  };
-
-  const callAPI = async () => {
-    const response = await fetch(`${API_URL}api/v1/dashboard`, authToken());
-    const result = await response.json();
-    setDashboardData(result);
-    setUserInfo(result?.userInfo[0]);
-  };
-
-  console.log("dashboardData", dashboardData);
-
-  const callAPIForPackage = async () => {
-    const response = await fetch(
-      `${API_URL}api/v1/packagesList?skip=0&limit=20`,
-      authToken()
-    );
-    const result = await response.json();
-    setWorkingPackage(result?.packages);
-    setMatrixPackage(result?.matrixPackages);
-  };
-
-  useEffect(() => {
-    callAPI();
-    callAPIForPackage();
-  }, []);
 
   return (
     <div className="flex flex-col w-full space-y-10 sm:space-y-5 animate__animated">
@@ -96,13 +51,12 @@ const Dashboard = () => {
                 <div className="flex flex-col">
                   <div className="flex items-center mb-1">
                     <span className="text-white font-bold mr-2.5 text-base sm:text-sm">
-                      {userInfo?.addresses?.ethAddress &&
-                        maskHex(userInfo?.addresses?.ethAddress)}
+                      {ethAddress && maskHex(ethAddress)}
                     </span>
 
                     <button>
                       <svg
-                        data-value={userInfo?.addresses?.ethAddress}
+                        data-value={ethAddress}
                         onClick={copyToClipboard}
                         className="w-5 h-5"
                         viewBox="0 0 20 20"
@@ -174,13 +128,13 @@ const Dashboard = () => {
             <div className="flex justify-between w-full">
               <div className="flex flex-col">
                 <div className="flex items-center mb-1">
-                  <span className="text-white">
-                    Address:- &nbsp;&nbsp;&nbsp;
-                  </span>
-                  <span className="text-white dotted font-bold mr-2.5 text-base sm:text-sm">
+                  <p className="text-white truncate">
+                    Address:- {ethAddress?.substring(0, 15)}...
+                  </p>
+                  {/* <span className="text-white dotted font-bold mr-2.5 text-base sm:text-sm">
                     {walletAddress}
-                  </span>
-                  <button>
+                  </span> */}
+                  <button onClick={copyToClipboard}>
                     <svg
                       className="w-5 h-5"
                       viewBox="0 0 20 20"
@@ -240,16 +194,16 @@ const Dashboard = () => {
                 </div>
               </div>
               <span className="hidden sm:block text-main-blue text-sm font-bold notranslate">
-                {`http://localhost:5173/register?inviteCode=${userInfo?.addresses?.ethAddress}`}
+                {`http://localhost:5173/register?inviteCode=${ethAddress}`}
               </span>
             </div>
             <div className="flex items-center justify-between w-full">
               <span className="text-main-blue text-sm font-bold notranslate sm:hidden">
-                {`http://localhost:5173/register?inviteCode=${userInfo?.addresses?.ethAddress}`}
+                {`http://localhost:5173/register?inviteCode=${ethAddress}`}
               </span>
               <div className="flex space-x-2.5 sm:w-full">
                 <button
-                  value={`http://localhost:5173/register?inviteCode=${userInfo?.addresses?.ethAddress}`}
+                  value={`http://localhost:5173/register?inviteCode=${ethAddress}`}
                   className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none py-0 px-2.5 bg-main-blue text-white rounded !leading-30px hover:bg-hover-main-blue active:bg-active-main-blue !leading-30px sm:flex-1"
                   onClick={copyToClipboard}
                 >
