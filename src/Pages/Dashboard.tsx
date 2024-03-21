@@ -175,7 +175,7 @@ const Dashboard = () => {
               <div className="flex flex-col">
                 <div className="flex items-center mb-1">
                   <span className="text-white">
-                    Address:- &nbsp;&nbsp;&nbsp;
+                    Address:- {userInfo?.addresses?.ethAddress}
                   </span>
                   <span className="text-white dotted font-bold mr-2.5 text-base sm:text-sm">
                     {walletAddress}
