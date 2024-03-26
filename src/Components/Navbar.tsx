@@ -300,8 +300,8 @@ const NavbarSm = ({
                       >
                         <path
                           d="M14 8V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2v-2M7 12h14m0 0-3-3m3 3-3 3"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         ></path>
                       </svg>
                       <span
@@ -368,17 +368,20 @@ const AuthNav = ({ setIsNavSm }: { setIsNavSm: () => void }) => {
   const { userInfo } = useStore((state) => state);
   const [balance, setBalance] = useState<number>(0);
 
-  const checkBalance = async (walletAddress: string) => {
+  const checkBalance = async () => {
     try {
       if (!window.ethereum) {
         console.log("window.ethereum is not available");
         return;
       }
-      await window.ethereum.request({ method: "eth_requestAccounts" });
+      const getAccounts = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
+
       const provider = new ethers.BrowserProvider(window.ethereum);
       const signer = await provider.getSigner();
       const usdtContract = new ethers.Contract(usdtAddress, USDT_ABI, signer);
-      const balanceUSDT = await usdtContract.balanceOf(walletAddress);
+      const balanceUSDT = await usdtContract.balanceOf(getAccounts[0]);
       const hex = ethers.formatUnits(balanceUSDT, 18); // Convert balance to human-readable format
       const finalAmount = hex.toString().slice(0, 4);
       setBalance(parseFloat(finalAmount));
@@ -388,7 +391,7 @@ const AuthNav = ({ setIsNavSm }: { setIsNavSm: () => void }) => {
   };
 
   useEffect(() => {
-    checkBalance(userInfo?.addresses?.ethAddress);
+    checkBalance();
   }, []);
   return (
     <>
@@ -426,20 +429,20 @@ const AuthNav = ({ setIsNavSm }: { setIsNavSm: () => void }) => {
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M3.468 3.468A2.167 2.167 0 0 1 5 2.833h8.334a1.333 1.333 0 0 1 1.333 1.334v2H15A1.333 1.333 0 0 1 16.334 7.5V10a.5.5 0 0 1-1 0V7.5A.333.333 0 0 0 15 7.167H5c-.417 0-.82-.12-1.167-.341V15A1.167 1.167 0 0 0 5 16.167h10a.333.333 0 0 0 .334-.334v-2.5a.5.5 0 0 1 1 0v2.5A1.333 1.333 0 0 1 15 17.168H5A2.166 2.166 0 0 1 2.833 15V5c0-.574.229-1.126.635-1.532ZM3.833 5A1.167 1.167 0 0 0 5 6.167h8.667v-2a.333.333 0 0 0-.333-.333H5A1.167 1.167 0 0 0 3.833 5Z"
                     ></path>
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M5 3a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1V5a2 2 0 0 0-2-2H5Z"
-                      fill-opacity=".5"
+                      fillOpacity=".5"
                     ></path>
                     <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M13.333 10.5a1.167 1.167 0 1 0 0 2.333h2.834V10.5h-2.834Zm-1.532-.365a2.167 2.167 0 0 1 1.532-.635h3.334a.5.5 0 0 1 .5.5v3.333a.5.5 0 0 1-.5.5h-3.334a2.166 2.166 0 0 1-1.532-3.698Z"
                     ></path>
                   </svg>
@@ -464,8 +467,8 @@ const AuthNav = ({ setIsNavSm }: { setIsNavSm: () => void }) => {
               >
                 <path
                   d="M14 8V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2v-2M7 12h14m0 0-3-3m3 3-3 3"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></path>
               </svg>
             </button>

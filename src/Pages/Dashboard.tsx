@@ -4,6 +4,7 @@ import { useReducer } from "react";
 import { useDashboard } from "src/Hooks/useDashboard";
 import { LogoWhite } from "src/Assets/Svg";
 import { maskHex } from "src/Lib/utils";
+import { PackagesList } from "src/Components/PackagesList";
 
 const Dashboard = () => {
   const {
@@ -96,8 +97,8 @@ const Dashboard = () => {
                   <path
                     d="m1 1.992 4.75 6.016L11 1.992"
                     stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   ></path>
                 </svg>
               ) : (
@@ -143,8 +144,8 @@ const Dashboard = () => {
                     >
                       <path d="M15 6.667H8.332c-.92 0-1.667.746-1.667 1.666V15c0 .92.746 1.667 1.667 1.667h6.666c.92 0 1.667-.747 1.667-1.667V8.333c0-.92-.746-1.666-1.667-1.666Z"></path>
                       <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
+                        fillRule="evenodd"
+                        clipRule="evenodd"
                         d="M3.469 3.468A2.167 2.167 0 0 1 5 2.833h6.666A2.167 2.167 0 0 1 13.834 5v1.667a.5.5 0 0 1-1 0V5a1.167 1.167 0 0 0-1.167-1.167H5.001A1.167 1.167 0 0 0 3.834 5v6.667a1.167 1.167 0 0 0 1.167 1.166h1.666a.5.5 0 1 1 0 1H5.001a2.167 2.167 0 0 1-2.167-2.166V5c0-.575.228-1.126.635-1.532Z"
                       ></path>
                     </svg>
@@ -359,18 +360,7 @@ const Dashboard = () => {
             <div className="tree____">
               {workingPackages &&
                 workingPackages.length > 0 &&
-                workingPackages.map((value: any, i: number) => {
-                  return (
-                    <a className="aTag" key={i}>
-                      <button
-                        type="button"
-                        className={"btn btn-info btn-lg bx active amountClass"}
-                      >
-                        <span> $ {value?.price} </span>
-                      </button>
-                    </a>
-                  );
-                })}
+                workingPackages && <PackagesList user={userInfo} packages={workingPackages} packageType='working' />}
             </div>
           </div>
         </div>
@@ -393,32 +383,7 @@ const Dashboard = () => {
             <div className="tree____">
               {matrixPackages &&
                 matrixPackages.length > 0 &&
-                matrixPackages.map((value: any, i: number) => {
-                  return (
-                    <a className="aTag" key={i}>
-                      <button
-                        type="button"
-                        className={"btn btn-info btn-lg bx active amountClass"}
-                      >
-                        <span> $ {value?.price} </span>
-                      </button>
-                    </a>
-                  );
-                })}
-            </div>
-
-            <div className="modal">
-              <div className="modal-content">
-                <span className="close-button">×</span>
-                <h1>
-                  {" "}
-                  <a href="https://thecryptoglobal.io/stake/Dashboard/Activation">
-                    <button className="customButton">
-                      Please activate Your Account First
-                    </button>
-                  </a>
-                </h1>
-              </div>
+                matrixPackages && <PackagesList user={userInfo} packages={matrixPackages} packageType='matrix'/>}
             </div>
           </div>
         </div>

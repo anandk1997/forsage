@@ -17,7 +17,7 @@ const Register = () => {
   const [balance, setBalance] = useState<number>(0);
   const [upline, setUpline] = useState<number>(0);
   const [networkName, setNetworkName] = useState<string>("");
-  const [myObject, setMyObject] = useState<MyObject>(initialObject);
+  // const [myObject, setMyObject] = useState<MyObject>(initialObject);
 
   const [isLoading, setisLoading] = useState(false);
 
@@ -70,7 +70,7 @@ const Register = () => {
       uniqueId: result?.uniqueId,
     };
 
-    setMyObject(finalObject);
+    // setMyObject(finalObject);
     return finalObject;
   };
 
@@ -142,8 +142,6 @@ const Register = () => {
               gasPrice: String(gasPrice),
             })
             .once("transactionHash", (hash) => {
-              console.log("hash", hash);
-
               const formData = new FormData(e.target as HTMLFormElement);
               const sponsorId = formData.get("sponsorId");
 
@@ -675,14 +673,14 @@ const Register = () => {
                         <path
                           d="M12 21.5a9.5 9.5 0 1 0 0-19 9.5 9.5 0 0 0 0 19Z"
                           stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         ></path>
                         <path
                           d="m9 12 2 2 4-4"
                           stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         ></path>
                       </svg>
                       <div
@@ -719,14 +717,14 @@ const Register = () => {
                         <path
                           d="M12 21.5a9.5 9.5 0 1 0 0-19 9.5 9.5 0 0 0 0 19Z"
                           stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         ></path>
                         <path
                           d="m9 12 2 2 4-4"
                           stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         ></path>
                       </svg>
                       <div
@@ -862,14 +860,14 @@ declare global {
   }
 }
 
-interface MyObject {
-  address: string;
-  amount: string;
-  uniqueId: string;
-}
+// interface MyObject {
+//   address: string;
+//   amount: string;
+//   uniqueId: string;
+// }
 
-const initialObject: MyObject = {
-  address: "",
-  amount: "",
-  uniqueId: "",
-};
+// const initialObject: MyObject = {
+//   address: "",
+//   amount: "",
+//   uniqueId: "",
+// };
