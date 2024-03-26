@@ -3,11 +3,14 @@ import toast from "react-hot-toast";
 
 import { getDashboard } from "src/Api/Dashboard";
 import { getPackages } from "src/Api/Packages";
+import { useStore } from "src/Store/Store";
 
 export const useDashboard = () => {
+  const { setUserInfo } = useStore();
+
   const { data: dashboardData } = useQuery({
     queryKey: ["dashboard"],
-    queryFn: getDashboard,
+    queryFn: () => getDashboard(setUserInfo),
   });
 
   const { data: packages } = useQuery({
