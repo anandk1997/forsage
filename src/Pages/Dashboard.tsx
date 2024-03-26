@@ -360,7 +360,13 @@ const Dashboard = () => {
             <div className="tree____">
               {workingPackages &&
                 workingPackages.length > 0 &&
-                workingPackages && <PackagesList user={userInfo} packages={workingPackages} packageType='working' />}
+                workingPackages && (
+                  <PackagesList
+                    user={userInfo}
+                    packages={workingPackages}
+                    packageType="working"
+                  />
+                )}
             </div>
           </div>
         </div>
@@ -383,7 +389,13 @@ const Dashboard = () => {
             <div className="tree____">
               {matrixPackages &&
                 matrixPackages.length > 0 &&
-                matrixPackages && <PackagesList user={userInfo} packages={matrixPackages} packageType='matrix'/>}
+                matrixPackages && (
+                  <PackagesList
+                    user={userInfo}
+                    packages={matrixPackages}
+                    packageType="matrix"
+                  />
+                )}
             </div>
           </div>
         </div>
