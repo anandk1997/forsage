@@ -1,7 +1,7 @@
 import { authToken, axiosInstance } from "src/Lib/utils";
 
 export const getDashboard = async (
-  setUserInfo: (newUserInfo: object) => void
+  setUserInfo: (newUserInfo: object) => void,
 ) => {
   try {
     const response = await axiosInstance.get("api/v1/dashboard", authToken());
