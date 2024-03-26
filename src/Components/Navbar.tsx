@@ -166,7 +166,7 @@ const NavbarSm = ({
           <div className="overflow-auto w-full hidden lg:flex">
             <div className="flex flex-1 flex-col h-full w-full overflow-y-auto space-y-2.5 lg:space-y-0">
               <div className="flex flex-1 flex-col w-full h-full overflow-y-auto space-y-2.5 lg:space-y-0 lg:mb-5 sm:mb-[50px]">
-                <NavLink to="/dashboard">
+                <NavLink to="/dashboard" onClick={close}>
                   <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent bg-black-light lg:bg-transparent lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                     <div className="flex items-center text-left">
                       <DashboardIcon />
@@ -196,7 +196,7 @@ const NavbarSm = ({
                       <Devider />
 
                       <div className="flex flex-col p-2.5 lg:py-0 lg:pr-0">
-                        <NavLink to="partners">
+                        <NavLink to="partners" onClick={close}>
                           <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
                             <div className="flex items-center text-left">
                               <PartnersIcon />
@@ -231,7 +231,7 @@ const NavbarSm = ({
                       <Devider />
 
                       <div className="flex flex-col p-2.5 lg:py-0 lg:pr-0">
-                        <NavLink to="referal-income">
+                        <NavLink to="referal-income" onClick={close}>
                           <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between  lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
                             <div className="flex items-center text-left">
                               <InstructionsIcon />
@@ -243,7 +243,7 @@ const NavbarSm = ({
                           </button>
                         </NavLink>
 
-                        <NavLink to="level-income">
+                        <NavLink to="level-income" onClick={close}>
                           <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between  lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
                             <div className="flex items-center text-left">
                               <InstructionsIcon />
@@ -259,7 +259,7 @@ const NavbarSm = ({
                           </button>
                         </NavLink>
 
-                        <NavLink to="non-working-income">
+                        <NavLink to="non-working-income" onClick={close}>
                           <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between  lg:pl-5 lg:border-t lg:border-white-300 hover:!bg-white-50 lg:hover:!bg-transparent">
                             <div className="flex items-center text-left">
                               <InstructionsIcon />
@@ -275,7 +275,7 @@ const NavbarSm = ({
                   )}
                 </div>
 
-                <NavLink to="promo">
+                <NavLink to="promo" onClick={close}>
                   <button className="relative w-full flex items-center px-2.5 py-2 rounded-xl cursor-pointer  hover:bg-black-light lg:hover:bg-transparent false lg:rounded-none lg:pl-0 lg:pr-5 lg:py-5 lg:justify-between lg:border-b lg:border-white-300">
                     <div className="flex items-center text-left">
                       <PromoIcon />
