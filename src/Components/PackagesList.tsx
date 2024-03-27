@@ -118,7 +118,10 @@ export const PackagesList = (data: any) => {
       method: "POST",
       body: raw,
       redirect: "follow",
-      headers: { Authorization: `Bearer ${token}` },
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
     };
 
     const result = await fetch(
@@ -132,7 +135,7 @@ export const PackagesList = (data: any) => {
       window.location.href = "/dashboard";
     } else {
       toast.error(response?.statusMessage);
-      window.location.href = "/dashboard";
+      // window.location.href = "/dashboard";
     }
     return response;
   };
@@ -150,7 +153,7 @@ export const PackagesList = (data: any) => {
       body: raw,
       redirect: "follow",
       headers: {
-        "Authorization": `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
     };
