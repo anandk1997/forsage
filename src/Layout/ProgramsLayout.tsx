@@ -4,7 +4,7 @@ import { LogoGreen } from "src/Assets/Svg";
 import { Logo } from "src/Components/Logo";
 
 const ProgramsLayout = ({ children }: { children: ReactNode }) => {
-  const [isFs, setIsFs] = useReducer((open) => !open, false);
+  const [isFs, setIsFs] = useReducer((open) => !open, true);
 
   return (
     <main className="flex flex-col space-y-10 sm:space-y-7.5">

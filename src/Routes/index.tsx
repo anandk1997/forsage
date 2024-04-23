@@ -4,6 +4,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { DashboardLayout } from "src/Layout/DashboardLayout";
 import NotFoundPage from "src/Components/NotFoundPage";
 import { AuthLayout } from "src/Layout/AuthLayout";
+import Tree from "src/Pages/Matrix/Tree";
 
 const Home = lazy(() => import("src/Pages/Home"));
 const Login = lazy(() => import("src/Pages/Login"));
@@ -88,6 +89,11 @@ export const router = createBrowserRouter([
       {
         path: "maxQore",
         element: <MaxQore />,
+      },
+
+      {
+        path: "tree/:id",
+        element: <Tree />,
       },
 
       {

@@ -172,9 +172,37 @@ export const PackagesList = (data: any) => {
 
     return finalObject;
   };
-  const executeTransactionForMatrix = (packageId: any, price: any) => {
+  const executeTransactionForMatrix = async (packageId: any, price: any) => {
     console.log("attributeValue", packageId);
     console.log("price", price);
+    const raw = JSON.stringify({
+      packages: price,
+    });
+
+    const token = localStorage.getItem("token");
+    if (!token) return;
+
+    const requestOptions: any = {
+      method: "POST",
+      body: raw,
+      redirect: "follow",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    };
+    const result = await fetch(
+      `${API_URL}api/v1/dashboard/submitNonWorking`,
+      requestOptions
+    );
+    const response = await result.json();
+
+    if (response?.statusCode === 200) {
+      toast.success(response?.statusMessage);
+      window.location.href = "/dashboard";
+    } else {
+      toast.error(response?.statusMessage);
+    }
   };
   return (
     <>

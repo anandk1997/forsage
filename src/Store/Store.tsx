@@ -4,6 +4,7 @@ const initialState = {
   walletAddress: "",
   dashboardData: {},
   userInfo: {},
+  tree: {},
   workingPackages: {},
   matrixPackages: {},
 
@@ -24,6 +25,7 @@ export const useStore = create<IStoreState>((set) => ({
   setMatrixPackage: (newMatrixPackage: object) =>
     set({ matrixPackages: newMatrixPackage }),
   setPage: (newPage: number) => set({ page: newPage }),
+  setTree: (newTree: number) => set({ tree: newTree }),
   setSkip: (newSkip: number) => set({ skip: newSkip }),
   setPageCount: (newPageCount: number) => set({ pageCount: newPageCount }),
 }));
@@ -46,6 +48,9 @@ interface IStoreState {
 
   page: number;
   setPage: (newPageCount: number) => void;
+
+  tree: any;
+  setTree: (newTree: any) => void;
 
   skip: number;
 
