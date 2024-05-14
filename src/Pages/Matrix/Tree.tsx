@@ -6,9 +6,9 @@ import { Link, useParams } from "react-router-dom";
 import OnlyTree from "./OnlyTree";
 
 const Tree = () => {
-  const { id, cycle } = useParams();
+  const { id, cycle,packagee } = useParams();
   const { tree, setTree } = useStore((state) => state);
-  const callAPI = async (id: any) => {
+  const callAPI = async (id: any,cycleee: any,packageee: any) => {
     const token = localStorage.getItem("token");
     if (!token) return;
 
@@ -22,7 +22,7 @@ const Tree = () => {
     };
 
     const result = await fetch(
-      `${API_URL}api/v1/tree?userId=${id}`,
+      `${API_URL}api/v1/tree?userId=${id}&packagee=${packageee}&cycle=${cycleee}`,
       requestOptions
     );
     const response = await result.json();
@@ -32,8 +32,8 @@ const Tree = () => {
   };
 
   useEffect(() => {
-    callAPI(id);
-  }, [id]);
+    callAPI(id,cycle,packagee);
+  }, [id,cycle,packagee]);
   return (
     <div>
       <div className="flex relative flex-1 py-10 pt-8.5 flex-col justify-between w-full px-10 sm:px-0 sm:pt-7.5">
@@ -103,7 +103,7 @@ const Tree = () => {
                             stroke="#F0B90B"
                           ></path>
                         </svg>
-                        20
+                        {packagee}
                       </div>
                     </div>
                   </div>
@@ -668,7 +668,7 @@ const Tree = () => {
                 <div className="flex flex-1">
                   <Link
                     className="flex items-center justify-start font-normal h-full w-full"
-                    to={`/dashboard/tree/${id}/${cycle !== undefined && parseInt(cycle) === 1 ? 1 : cycle !== undefined && parseInt(cycle) - 1}`}
+                    to={`/dashboard/tree/${id}/${cycle !== undefined && parseInt(cycle) === 1 ? 1 : cycle !== undefined && parseInt(cycle) - 1}/${packagee}`}
                   >
                     <svg
                       className="flex-shrink-0"
@@ -693,7 +693,7 @@ const Tree = () => {
                 <div className="flex flex-1">
                   <Link
                     className="flex items-center justify-end font-normal h-full w-full "
-                    to={`/dashboard/tree/${id}/${cycle !== undefined && parseInt(cycle) + 1}`}
+                    to={`/dashboard/tree/${id}/${cycle !== undefined && parseInt(cycle) + 1}/${packagee}`}
                   >
                     <span className="text-white text-base mr-2.5">
                       Cycle {cycle !== undefined && parseInt(cycle) + 1}
@@ -724,7 +724,7 @@ const Tree = () => {
                 <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-2.5 bg-black-light hover:bg-line-gray active:bg-active-gray min-w-140px xl:hidden p-7 bg-black-light rounded">
                   <Link
                     className="flex items-center justify-center font-normal h-full w-full"
-                    to={`/dashboard/tree/${id}/${cycle !== undefined && parseInt(cycle) === 1 ? 1 : cycle !== undefined && parseInt(cycle) - 1}`}
+                    to={`/dashboard/tree/${id}/${cycle !== undefined && parseInt(cycle) === 1 ? 1 : cycle !== undefined && parseInt(cycle) - 1}/${packagee}`}
                   >
                     <svg
                       className="flex-shrink-0"
@@ -742,7 +742,7 @@ const Tree = () => {
                       ></path>
                     </svg>
                     <span className="text-white text-base ml-2 5">
-                      Cycle {cycle}
+                      Cycle {cycle !== undefined && parseInt(cycle) === 1 ? 1 : cycle !== undefined && parseInt(cycle) - 1}
                     </span>
                   </Link>
                 </button>
@@ -754,7 +754,7 @@ const Tree = () => {
                       </div>
                       <div className="flex-1 flex flex-col items-center">
                         <span className="text-white text-two-half font-medium mb-2.5 sm:text-xl">
-                          ID 1
+                          ID {id}
                         </span>
                       </div>
                       <div className="flex items-start justify-end flex-1 text-white-300 text-two-half font-normal text-right  sm:text-xl">
@@ -777,7 +777,7 @@ const Tree = () => {
                               stroke="#F0B90B"
                             ></path>
                           </svg>
-                          20
+                          {packagee}
                         </div>
                       </div>
                     </div>
@@ -790,7 +790,7 @@ const Tree = () => {
                 <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-2.5 bg-black-light hover:bg-line-gray active:bg-active-gray min-w-140px xl:hidden p-7 bg-black-light rounded">
                   <Link
                     className="flex items-center justify-center font-normal h-full w-full"
-                    to={`/dashboard/tree/${id}/${cycle !== undefined && parseInt(cycle) + 1}`}
+                    to={`/dashboard/tree/${id}/${cycle !== undefined && parseInt(cycle) + 1}/${packagee}`}
                   >
                     <span className="text-white text-base mr-2.5">
                       Cycle {cycle !== undefined && parseInt(cycle) + 1}
@@ -816,7 +816,7 @@ const Tree = () => {
               <div className="hidden xl:flex justify-between">
                 <Link
                   className="flex cursor-pointer py-5 px-10 z-10 sm:hidden items-center"
-                  to={`/dashboard/tree/${id}/${cycle !== undefined && parseInt(cycle) === 1 ? 1 : cycle !== undefined && parseInt(cycle) - 1}`}
+                  to={`/dashboard/tree/${id}/${cycle !== undefined && parseInt(cycle) === 1 ? 1 : cycle !== undefined && parseInt(cycle) - 1}/${packagee}`}
                 >
                   <svg
                     className="flex-shrink-0 stroke-current text-white"
@@ -839,7 +839,7 @@ const Tree = () => {
                 </Link>
                 <Link
                   className="flex cursor-pointer py-5 px-10 z-10 ml-auto sm:hidden items-center"
-                  to={`/dashboard/tree/${id}/${cycle !== undefined && parseInt(cycle) + 1}`}
+                  to={`/dashboard/tree/${id}/${cycle !== undefined && parseInt(cycle) + 1}/${packagee}`}
                 >
                   <span className="text-white text-base mr-4">
                     Cycle {cycle !== undefined && parseInt(cycle) + 1}

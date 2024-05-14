@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import { useStore } from "src/Store/Store";
 
 const SelectTree = () => {
-  const { userInfo } = useStore((state) => state);
-  console.log("userInfo", userInfo);
+  const tempId = localStorage.getItem("tempId");
+  if (!tempId) return;
   const arr = [10,50,100,200,500];
 
   return (
@@ -45,8 +44,8 @@ const SelectTree = () => {
             <div>
               <div className="flex overflow-hidden relative w-full flex-col bg-black-light rounded p-7.5 pb-5 sm:p-5 sm:pl-2.5 sm:pr-2.5 sm:rounded-none ">
                 <div className="flex z-10 flex-wrap -m-2 sm:-mx-px mb-7.5 sm:justify-around">
-                  {arr.length > 0 && arr.map((_value:unknown,key:number) => (
-                   <Link to={`/dashboard/tree/${userInfo?.userId}/${key+1}`}>
+                  {arr.length > 0 && arr.map((_value:any) => (
+                   <Link to={`/dashboard/tree/${tempId}/${1}/${_value}`}>
                    <div className="relative overflow-hidden flex flex-col w-180px min-h-180px  sm:w-158px rounded-small p-5 m-2 justify-between bg-main-blue hover:bg-hover-main-blue sm:space-y-1.5">
                      <div className="flex w-full justify-between !mb-2.5">
                        <div className="flex space-x-1.5 items-center">
@@ -73,7 +72,7 @@ const SelectTree = () => {
                              stroke="#F0B90B"
                            ></path>
                          </svg>
-                         10
+                         {_value}
                        </span>
                      </div>
                      <div className="relative flex flex-col -ml-2.5 -mr-2.5 !mb-3 ">

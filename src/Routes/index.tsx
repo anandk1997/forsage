@@ -98,7 +98,7 @@ export const router = createBrowserRouter([
       },
 
       {
-        path: "tree/:id/:cycle",
+        path: "tree/:id/:cycle/:packagee",
         element: <Tree />,
       },
 

@@ -16,6 +16,7 @@ export const useDashboard = () => {
   });
 
   const userInfo = dashboardData?.userInfo?.[0];
+  localStorage.setItem("tempId", userInfo?.userId);
 
   const workingPackages = packages?.packages;
   const matrixPackages = packages?.matrixPackages;

@@ -1,10 +1,10 @@
 import { Link, useParams } from "react-router-dom";
 
 const SmallCircle = ({ data }: any) => {
-  const { cycle } = useParams();
+  const { cycle,packagee } = useParams();
   if (data?.userId?.userId) {
     return (
-      <Link to={`/dashboard/tree/${data?.userId?.userId}/${cycle}`}>
+      <Link to={`/dashboard/tree/${data?.userId?.userId}/${cycle}/${packagee}`}>
         <div className="relative">
           <div className="flex flex-col bg-white items-center justify-center text-main-blue text-base group false rounded-full  w-6.5 h-6.5 sm:w-3 sm:h-3 ">
             <svg
