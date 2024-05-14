@@ -156,7 +156,15 @@ const Dashboard = () => {
                     Joining Date:- &nbsp;&nbsp;&nbsp;
                   </span>
                   <span className="text-white font-bold mr-2.5 text-base sm:text-sm">
-                    2024-01-02 18:06:11
+                  {userInfo?.createdAt}
+                  </span>
+                </div>
+                <div className="flex items-center mb-1">
+                  <span className="text-white">
+                    Upline Id:- &nbsp;&nbsp;&nbsp;
+                  </span>
+                  <span className="text-white font-bold mr-2.5 text-base sm:text-sm">
+                   {userInfo?.sponsorId?.userId}
                   </span>
                 </div>
               </div>
