@@ -4,11 +4,11 @@ import { FormEvent } from "react";
 
 import { useStore } from "src/Store/Store";
 import { loginApi } from "src/Api/Login";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 export const useLogin = () => {
   const { walletAddress } = useStore((state) => state);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { mutate, isPending } = useMutation({
     mutationFn: loginApi,
 
