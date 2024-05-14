@@ -29,10 +29,10 @@ export const useLogin = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>, loginType: string) => {
     e.preventDefault();
 
-    if (!!!walletAddress) {
-      toast.error("Please connect to your wallet");
-      return;
-    }
+    // if (!!!walletAddress) {
+    //   toast.error("Please connect to your wallet");
+    //   return;
+    // }
 
     const formData = new FormData(e.target as HTMLFormElement);
     const address = formData.get("address");
