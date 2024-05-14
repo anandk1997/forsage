@@ -2,11 +2,11 @@ import { useEffect } from "react";
 import { API_URL } from "src/Env";
 import { useStore } from "src/Store/Store";
 import Circle from "./Circle";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import OnlyTree from "./OnlyTree";
 
 const Tree = () => {
-  const { id } = useParams();
+  const { id, cycle } = useParams();
   const { tree, setTree } = useStore((state) => state);
   const callAPI = async (id: any) => {
     const token = localStorage.getItem("token");
@@ -48,23 +48,23 @@ const Tree = () => {
                     className="mr-1.5 text text-white-300 sm:text-sm"
                     href="/dashboard?user=1"
                   >
-                    <span className="hover:text-white-500">ID 1</span> /
+                    <span className="hover:text-white-500">ID {id}</span> /
                   </a>
                   <a
                     className="mr-1.5 text text-white-300 sm:text-sm"
                     href="/dashboard/xGold?user=1"
                   >
-                    <span className="hover:text-white-500">Forsage xGold</span>
+                    <span className="hover:text-white-500">Matrix</span>
                   </a>
                 </div>
                 <span className="text text-white whitespace-nowrap sm:text-sm">
-                  level 2
+                  Cycle {cycle}
                 </span>
               </div>
               <div className="w-full flex justify-between flex-wrap">
                 <div className="flex flex-wrap items-center">
                   <span className="text-two-half text-white font-medium mr-2 sm:text-2xl sm:max-w-[170px]">
-                    level 2
+                    Cycle {cycle}
                   </span>
                 </div>
               </div>
@@ -76,11 +76,7 @@ const Tree = () => {
                 <div className="flex w-full flex-col z-10 p-7.5 overflow-hidden sm:p-5">
                   <div className="flex w-full justify-between pb-10 z-10">
                     <div className="flex flex-1 items-start justify-start ">
-                      <div className="flex items-center space-x-2.5">
-                        <span className="text-white-300 text-two-half font-normal sm:text-xl">
-                          Lvl 2
-                        </span>
-                      </div>
+                     
                     </div>
                     <div className="flex-1 flex flex-col items-center">
                       <span className="text-white text-two-half font-medium mb-2.5 sm:text-xl">
@@ -356,7 +352,7 @@ const Tree = () => {
                             </div>
                           </div>
                           <div className="flex flex-col justify-around items-center  w-full">
-                          <Circle data={tree[1]} />
+                            <Circle data={tree[1]} />
                             <div className="flex w-full items-start justify-evenly mt-7.5 sm:mt-5 first:mt-0">
                               <div className="relative flex w-full justify-evenly items-start false false">
                                 <div className="flex flex-col justify-around items-center  w-full">
@@ -616,30 +612,6 @@ const Tree = () => {
                       <div className="flex space-x-14 xl:space-x-8 sm:space-x-7.5">
                         <div className="flex flex-col">
                           <span className="text-white text-base sm:text-white-500 sm:text-sm">
-                            Partners
-                          </span>
-                          <div className="flex items-center mt-2.5">
-                            <svg
-                              className="stroke-current text-white-500 w-6 h-6"
-                              viewBox="0 0 16 16"
-                              fill="none"
-                              stroke="#fff"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
-                                stroke-width="1.333"
-                                strokeLinecap="round"
-                                stroke-linejoin="round"
-                              ></path>
-                            </svg>
-                            <span className="text-white text-base ml-2.5 sm:text-sm">
-                              1008
-                            </span>
-                          </div>
-                        </div>
-                        <div className="flex flex-col">
-                          <span className="text-white text-base sm:text-white-500 sm:text-sm">
                             Cycles
                           </span>
                           <div className="flex items-center mt-2.5">
@@ -694,9 +666,9 @@ const Tree = () => {
               </div>
               <div className="flex justify-between z-10">
                 <div className="flex flex-1">
-                  <a
+                  <Link
                     className="flex items-center justify-start font-normal h-full w-full"
-                    href="/dashboard/xGold/1?user=1"
+                    to={`/dashboard/tree/${id}/${cycle !== undefined && parseInt(cycle) === 1 ? 1 : cycle !== undefined && parseInt(cycle) - 1}`}
                   >
                     <svg
                       className="flex-shrink-0"
@@ -713,15 +685,19 @@ const Tree = () => {
                         stroke-linejoin="round"
                       ></path>
                     </svg>
-                    <span className="text-white text-base ml-2.5">Level 1</span>
-                  </a>
+                    <span className="text-white text-base ml-2.5">
+                      Cycle {cycle}
+                    </span>
+                  </Link>
                 </div>
                 <div className="flex flex-1">
-                  <a
+                  <Link
                     className="flex items-center justify-end font-normal h-full w-full "
-                    href="/dashboard/xGold/3?user=1"
+                    to={`/dashboard/tree/${id}/${cycle !== undefined && parseInt(cycle) + 1}`}
                   >
-                    <span className="text-white text-base mr-2.5">Level 3</span>
+                    <span className="text-white text-base mr-2.5">
+                      Cycle {cycle !== undefined && parseInt(cycle) + 1}
+                    </span>
                     <svg
                       className="flex-shrink-0"
                       width="8"
@@ -737,7 +713,7 @@ const Tree = () => {
                         stroke-linejoin="round"
                       ></path>
                     </svg>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -746,9 +722,9 @@ const Tree = () => {
             <div className="flex flex-col sm:px-5 space-y-10 z-10">
               <div className="flex space-x-10 xl:space-x-0 z-10">
                 <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-2.5 bg-black-light hover:bg-line-gray active:bg-active-gray min-w-140px xl:hidden p-7 bg-black-light rounded">
-                  <a
+                  <Link
                     className="flex items-center justify-center font-normal h-full w-full"
-                    href="/dashboard/xGold/1?user=1"
+                    to={`/dashboard/tree/${id}/${cycle !== undefined && parseInt(cycle) === 1 ? 1 : cycle !== undefined && parseInt(cycle) - 1}`}
                   >
                     <svg
                       className="flex-shrink-0"
@@ -765,18 +741,16 @@ const Tree = () => {
                         stroke-linejoin="round"
                       ></path>
                     </svg>
-                    <span className="text-white text-base ml-2 5">Level 1</span>
-                  </a>
+                    <span className="text-white text-base ml-2 5">
+                      Cycle {cycle}
+                    </span>
+                  </Link>
                 </button>
                 <div className="flex w-full min-h-340px sm:min-h-290px col-span-4 rounded relative bg-main-blue">
                   <div className="flex w-full flex-col z-10 p-7.5 overflow-hidden sm:p-5">
                     <div className="flex w-full justify-between pb-10 z-10">
                       <div className="flex flex-1 items-start justify-start ">
-                        <div className="flex items-center space-x-2.5">
-                          <span className="text-white-300 text-two-half font-normal sm:text-xl">
-                            Lvl 2
-                          </span>
-                        </div>
+                     
                       </div>
                       <div className="flex-1 flex flex-col items-center">
                         <span className="text-white text-two-half font-medium mb-2.5 sm:text-xl">
@@ -808,93 +782,19 @@ const Tree = () => {
                       </div>
                     </div>
                     <div className="flex flex-col  w-full h-full z-10">
-                     <OnlyTree trees={tree} />
-                      <div className="flex justify-between w-full ">
-                        <div className="flex space-x-14 xl:space-x-8 sm:space-x-7.5">
-                          <div className="flex flex-col">
-                            <span className="text-white text-base sm:text-white-500 sm:text-sm">
-                              Partners
-                            </span>
-                            <div className="flex items-center mt-2.5">
-                              <svg
-                                className="stroke-current text-white-500 w-6 h-6"
-                                viewBox="0 0 16 16"
-                                fill="none"
-                                stroke="#fff"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M6 7.333A2.667 2.667 0 1 0 6 2a2.667 2.667 0 0 0 0 5.333ZM2 14v-1.333A2.667 2.667 0 0 1 4.667 10h2.666A2.667 2.667 0 0 1 10 12.667V14M10.667 2.086a2.667 2.667 0 0 1 0 5.167M14 14v-1.333a2.667 2.667 0 0 0-2-2.567"
-                                  stroke-width="1.333"
-                                  strokeLinecap="round"
-                                  stroke-linejoin="round"
-                                ></path>
-                              </svg>
-                              <span className="text-white text-base ml-2.5 sm:text-sm">
-                                1008
-                              </span>
-                            </div>
-                          </div>
-                          <div className="flex flex-col">
-                            <span className="text-white text-base sm:text-white-500 sm:text-sm">
-                              Cycles
-                            </span>
-                            <div className="flex items-center mt-2.5">
-                              <svg
-                                className="stroke-current text-white-500 w-6 h-6"
-                                viewBox="0 0 20 20"
-                                fill="none"
-                                stroke="#2CFF4E"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  clipRule="evenodd"
-                                  d="M6.354 3.818a7.25 7.25 0 0 1 10.808 5.28.5.5 0 1 1-.99.137A6.25 6.25 0 0 0 4.551 7h2.115a.5.5 0 0 1 0 1H3.333a.5.5 0 0 1-.5-.5V4.167a.5.5 0 1 1 1 0v2.086a7.25 7.25 0 0 1 2.521-2.435ZM3.265 10.338a.5.5 0 0 1 .564.427A6.25 6.25 0 0 0 15.449 13h-2.116a.5.5 0 1 1 0-1H16.667a.5.5 0 0 1 .5.5v3.333a.5.5 0 1 1-1 0v-2.086a7.25 7.25 0 0 1-13.329-2.845.5.5 0 0 1 .427-.564Z"
-                                ></path>
-                              </svg>
-                              <span className="text-white text-base ml-2.5 sm:text-sm">
-                                45
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="flex flex-col">
-                          <span className="text-white text-base text-right sm:text-white-500 sm:text-sm">
-                            Total level revenue
-                          </span>
-                          <div className="flex items-center mt-2.5 justify-end">
-                            <svg
-                              className="stroke-current text-white w-6 h-6"
-                              viewBox="0 0 20 20"
-                              fill="none"
-                              stroke="#fff"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <g
-                                opacity=".5"
-                                strokeLinecap="round"
-                                stroke-linejoin="round"
-                              >
-                                <path d="M14.167 6.667v-2.5a.833.833 0 0 0-.834-.834H5A1.667 1.667 0 0 0 3.333 5m0 0A1.667 1.667 0 0 0 5 6.667h10a.833.833 0 0 1 .833.833V10m-12.5-5v10A1.667 1.667 0 0 0 5 16.667h10a.833.833 0 0 0 .833-.834v-2.5"></path>
-                                <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
-                              </g>
-                            </svg>
-                            <span className="text-white text-base ml-2.5 notranslate sm:text-sm">
-                              9304 BUSD
-                            </span>
-                          </div>
-                        </div>
-                      </div>
+                      <OnlyTree trees={tree} />
                     </div>
                   </div>
                   <div className="flex absolute rounded -bottom-5 top-5 right-5 left-2.5 bg-opacity-50 bg-main-blue"></div>
                 </div>
                 <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-2.5 bg-black-light hover:bg-line-gray active:bg-active-gray min-w-140px xl:hidden p-7 bg-black-light rounded">
-                  <a
+                  <Link
                     className="flex items-center justify-center font-normal h-full w-full"
-                    href="/dashboard/xGold/3?user=1"
+                    to={`/dashboard/tree/${id}/${cycle !== undefined && parseInt(cycle) + 1}`}
                   >
-                    <span className="text-white text-base mr-2.5">Level 3</span>
+                    <span className="text-white text-base mr-2.5">
+                      Cycle {cycle !== undefined && parseInt(cycle) + 1}
+                    </span>
                     <svg
                       className="flex-shrink-0"
                       width="8"
@@ -910,13 +810,13 @@ const Tree = () => {
                         stroke-linejoin="round"
                       ></path>
                     </svg>
-                  </a>
+                  </Link>
                 </button>
               </div>
               <div className="hidden xl:flex justify-between">
-                <a
+                <Link
                   className="flex cursor-pointer py-5 px-10 z-10 sm:hidden items-center"
-                  href="/dashboard/xGold/1?user=1"
+                  to={`/dashboard/tree/${id}/${cycle !== undefined && parseInt(cycle) === 1 ? 1 : cycle !== undefined && parseInt(cycle) - 1}`}
                 >
                   <svg
                     className="flex-shrink-0 stroke-current text-white"
@@ -933,13 +833,17 @@ const Tree = () => {
                       stroke-linejoin="round"
                     ></path>
                   </svg>
-                  <span className="text-white text-base ml-4">Level 1</span>
-                </a>
-                <a
+                  <span className="text-white text-base ml-4">
+                    Cycle {cycle}
+                  </span>
+                </Link>
+                <Link
                   className="flex cursor-pointer py-5 px-10 z-10 ml-auto sm:hidden items-center"
-                  href="/dashboard/xGold/3?user=1"
+                  to={`/dashboard/tree/${id}/${cycle !== undefined && parseInt(cycle) + 1}`}
                 >
-                  <span className="text-white text-base mr-4">Level 3</span>
+                  <span className="text-white text-base mr-4">
+                    Cycle {cycle !== undefined && parseInt(cycle) + 1}
+                  </span>
                   <svg
                     className="flex-shrink-0"
                     width="8"
@@ -955,32 +859,7 @@ const Tree = () => {
                       stroke-linejoin="round"
                     ></path>
                   </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="flex w-full items-center justify-center z-10 sm:px-5">
-            <div className="flex bg-black-light p-5 rounded items-center justify-center w-8/12 xl:w-full">
-              <div className="flex items-center justify-center w-full">
-                <a href="/dashboard/xGold/2?user=1&amp;cycle=45">
-                  <div className="flex items-center justify-center cursor-pointer">
-                    <span className="text-white text-base mr-4 sm:text-sm">
-                      45
-                    </span>
-                    <svg
-                      width="11"
-                      height="7"
-                      viewBox="0 0 8 5"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="m1 1 3 3 3-3" stroke="#fff"></path>
-                    </svg>
-                  </div>
-                </a>
-                <span className="text-white text-base w-24 text-center mx-2.5 sm:mx-4 sm:text-sm">
-                  Cycle: 46
-                </span>
+                </Link>
               </div>
             </div>
           </div>

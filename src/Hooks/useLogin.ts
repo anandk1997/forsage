@@ -4,10 +4,11 @@ import { FormEvent } from "react";
 
 import { useStore } from "src/Store/Store";
 import { loginApi } from "src/Api/Login";
+import { useNavigate } from "react-router-dom";
 
 export const useLogin = () => {
   const { walletAddress } = useStore((state) => state);
-
+  const navigate = useNavigate();
   const { mutate, isPending } = useMutation({
     mutationFn: loginApi,
 
@@ -16,8 +17,7 @@ export const useLogin = () => {
       localStorage.setItem("isPreview", res?.data?.data?.isPreview);
 
       toast.success(res?.data?.statusMessage);
-      window.location.href = "/dashboard";
-      // navigate("/dashboard");
+      navigate("/dashboard");
     },
 
     onError: (res: any) => {

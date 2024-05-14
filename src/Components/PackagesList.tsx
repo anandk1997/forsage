@@ -135,7 +135,6 @@ export const PackagesList = (data: any) => {
       window.location.href = "/dashboard";
     } else {
       toast.error(response?.statusMessage);
-      // window.location.href = "/dashboard";
     }
     return response;
   };

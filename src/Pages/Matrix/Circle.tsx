@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Circle = ({ data }: any) => {
+  const { cycle } = useParams();
   if (data?.userId?.userId) {
     return (
-      <Link to={`/dashboard/tree/${data?.userId?.userId}`}>
+      <Link to={`/dashboard/tree/${data?.userId?.userId}/${cycle}`}>
         <div className="relative">
           <div
             className="flex flex-col  bg-white 

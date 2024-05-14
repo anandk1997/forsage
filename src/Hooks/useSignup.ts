@@ -3,8 +3,10 @@ import toast from "react-hot-toast";
 
 import { useStore } from "src/Store/Store";
 import { signupApi } from "src/Api/Signup";
+import { useNavigate } from "react-router-dom";
 
 export const useSignup = () => {
+  const navigate = useNavigate()
   const { walletAddress } = useStore((state) => state);
 
   const { mutate, isPending } = useMutation({
@@ -14,7 +16,7 @@ export const useSignup = () => {
       localStorage.setItem("token", res?.data?.data?.token);
       localStorage.setItem("isPreview", res?.data?.data?.isPreview);
       toast.success(res?.data?.statusMessage);
-      window.location.href = "/dashboard";
+      navigate("/dashboard");
     },
 
     onError: (res: any) => {

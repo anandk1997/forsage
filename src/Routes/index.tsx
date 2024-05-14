@@ -5,6 +5,7 @@ import { DashboardLayout } from "src/Layout/DashboardLayout";
 import NotFoundPage from "src/Components/NotFoundPage";
 import { AuthLayout } from "src/Layout/AuthLayout";
 import Tree from "src/Pages/Matrix/Tree";
+import SelectTree from "src/Pages/Matrix/SelectTree";
 
 const Home = lazy(() => import("src/Pages/Home"));
 const Login = lazy(() => import("src/Pages/Login"));
@@ -92,7 +93,12 @@ export const router = createBrowserRouter([
       },
 
       {
-        path: "tree/:id",
+        path: "select/tree",
+        element: <SelectTree />,
+      },
+
+      {
+        path: "tree/:id/:cycle",
         element: <Tree />,
       },
 

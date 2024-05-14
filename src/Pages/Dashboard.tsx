@@ -487,7 +487,7 @@ const Dashboard = () => {
           </NavLink>
 
           <NavLink
-            to={`/dashboard/tree/${userInfo?.userId}`}
+            to={`/dashboard/select/tree`}
             className="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
           >
             <svg
