@@ -6,6 +6,7 @@ import NotFoundPage from "src/Components/NotFoundPage";
 import { AuthLayout } from "src/Layout/AuthLayout";
 import Tree from "src/Pages/Matrix/Tree";
 import SelectTree from "src/Pages/Matrix/SelectTree";
+import Profile from "src/Pages/Profile";
 
 const Home = lazy(() => import("src/Pages/Home"));
 const Login = lazy(() => import("src/Pages/Login"));
@@ -59,6 +60,12 @@ export const router = createBrowserRouter([
       {
         path: "",
         element: <Dashboard />,
+        errorElement: <NotFoundPage />,
+      },
+
+      {
+        path: "profile",
+        element: <Profile />,
         errorElement: <NotFoundPage />,
       },
 
