@@ -6,9 +6,9 @@ import { Link, useParams } from "react-router-dom";
 import OnlyTree from "./OnlyTree";
 
 const Tree = () => {
-  const { id, cycle,packagee } = useParams();
+  const { id, cycle, packagee } = useParams();
   const { tree, setTree } = useStore((state) => state);
-  const callAPI = async (id: any,cycleee: any,packageee: any) => {
+  const callAPI = async (id: any, cycleee: any, packageee: any) => {
     const token = localStorage.getItem("token");
     if (!token) return;
 
@@ -32,8 +32,8 @@ const Tree = () => {
   };
 
   useEffect(() => {
-    callAPI(id,cycle,packagee);
-  }, [id,cycle,packagee]);
+    callAPI(id, cycle, packagee);
+  }, [id, cycle, packagee]);
   return (
     <div>
       <div className="flex relative flex-1 py-10 pt-8.5 flex-col justify-between w-full px-10 sm:px-0 sm:pt-7.5">
@@ -75,9 +75,7 @@ const Tree = () => {
               <div className="flex w-full min-h-340px sm:min-h-290px col-span-4 rounded relative bg-main-blue">
                 <div className="flex w-full flex-col z-10 p-7.5 overflow-hidden sm:p-5">
                   <div className="flex w-full justify-between pb-10 z-10">
-                    <div className="flex flex-1 items-start justify-start ">
-                     
-                    </div>
+                    <div className="flex flex-1 items-start justify-start "></div>
                     <div className="flex-1 flex flex-col items-center">
                       <span className="text-white text-two-half font-medium mb-2.5 sm:text-xl">
                         ID 1
@@ -116,7 +114,7 @@ const Tree = () => {
                             <div className="flex w-full items-start justify-evenly mt-7.5 sm:mt-5 first:mt-0">
                               <div className="relative flex w-full justify-evenly items-start false false">
                                 <div className="flex flex-col justify-around items-center  w-full">
-                                  <Circle data={tree[0]} />
+                                <Circle data={tree[0]} />
                                   <div className="flex w-full items-start justify-evenly mt-7.5 sm:mt-5 first:mt-0">
                                     <div className="relative flex w-full justify-evenly items-start false false">
                                       <div className="flex flex-col justify-around items-center  w-full">
@@ -742,16 +740,17 @@ const Tree = () => {
                       ></path>
                     </svg>
                     <span className="text-white text-base ml-2 5">
-                      Cycle {cycle !== undefined && parseInt(cycle) === 1 ? 1 : cycle !== undefined && parseInt(cycle) - 1}
+                      Cycle{" "}
+                      {cycle !== undefined && parseInt(cycle) === 1
+                        ? 1
+                        : cycle !== undefined && parseInt(cycle) - 1}
                     </span>
                   </Link>
                 </button>
                 <div className="flex w-full min-h-340px sm:min-h-290px col-span-4 rounded relative bg-main-blue">
                   <div className="flex w-full flex-col z-10 p-7.5 overflow-hidden sm:p-5">
                     <div className="flex w-full justify-between pb-10 z-10">
-                      <div className="flex flex-1 items-start justify-start ">
-                     
-                      </div>
+                      <div className="flex flex-1 items-start justify-start "></div>
                       <div className="flex-1 flex flex-col items-center">
                         <span className="text-white text-two-half font-medium mb-2.5 sm:text-xl">
                           ID {id}

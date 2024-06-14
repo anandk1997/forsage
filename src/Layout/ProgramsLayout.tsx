@@ -67,22 +67,18 @@ const ProgramsLayout = ({ children }: { children: ReactNode }) => {
               </a>
             </div>
             <span className="text text-white whitespace-nowrap sm:text-sm">
-              Crypto Global Matrix
-            </span>
-            <span className="text text-white whitespace-nowrap ml-1.5 sm:text-sm">
-              (<span className="inline sm:hidden">12 out of 12 levels</span>
-              <span className="hidden sm:inline">12/12</span>)
+              Crypto Global Working
             </span>
           </div>
           <div className="w-full flex justify-between flex-wrap">
             <div className="flex flex-wrap items-center">
               <span className="text-two-half text-white font-medium mr-2 sm:text-2xl sm:max-w-[170px]">
-                Crypto Global matrix
+                Crypto Global Working
               </span>
             </div>
             <div className="flex flex-col items-end">
               <div className="self-end text-two-half text-white font-bold sm:text-2xl whitespace-nowrap">
-                369245 BUSD
+                0 USDT
               </div>
             </div>
           </div>

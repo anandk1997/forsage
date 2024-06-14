@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+import { useDashboard } from "src/Hooks/useDashboard";
 
 const SelectTree = () => {
+  const { dashboardData } = useDashboard();
   const tempId = localStorage.getItem("tempId");
+  
   if (!tempId) return;
   const arr = [10,50,100,200,500];
-
   return (
     <div>
       <div className="flex flex-shrink w-full flex-col items-center min-h-screen bg-main max-w-[calc(100% - 326px)] lg:max-w-full overflow-auto pt-20 sm:pt-14">
@@ -35,7 +37,7 @@ const SelectTree = () => {
                   </div>
                   <div className="flex flex-col items-end">
                     <div className="self-end text-two-half text-white font-bold sm:text-2xl whitespace-nowrap">
-                      0 USDT
+                      {dashboardData.MatrixSum} USDT
                     </div>
                   </div>
                 </div>

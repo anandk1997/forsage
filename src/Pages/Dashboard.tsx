@@ -479,7 +479,7 @@ const Dashboard = () => {
                 </span>
               </div>
               <span className="text-white text-2xl font-bold justify-end text-right notranslate sm:text-xl">
-                368715 USDT
+              {dashboardData?.MatrixSum} USDT
               </span>
             </div>
             <div className="flex justify-between h-full w-full">
@@ -547,7 +547,7 @@ const Dashboard = () => {
                 </span>
               </div>
               <span className="text-white text-2xl font-bold justify-end text-right notranslate sm:text-xl">
-                162135 USDT
+              {dashboardData?.totalWorkingSum} USDT
               </span>
             </div>
             <div className="flex justify-between h-full w-full">
