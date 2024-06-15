@@ -6,6 +6,6 @@ export const getDashboard = async () => {
 
     return response?.data;
   } catch (error) {
-    console.log("error while getting dashboard data", error);
+    console.error("error while getting dashboard data", error);
   }
 };

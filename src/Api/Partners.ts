@@ -1,21 +1,19 @@
 import { authToken, axiosInstance } from "src/Lib/utils";
 
-export const incomeApi = async (
-  payload: IPayload,
+export const partnersApi = async (
+  payload: IPayload
 ): Promise<LoginResponse[]> => {
   try {
-    const response = await axiosInstance.get(
-      `api/v1/incomes/${payload.incomeType}`,
-      {
-        params: {
-          page: payload.page,
-          skip: payload.skip,
-          limit: "10",
-        },
-
-        ...authToken(),
+    const response = await axiosInstance.get(`api/v1/team/partners/`, {
+      params: {
+        // page: payload.page,
+        skip: payload.page,
+        limit: "10",
+        amount: payload.amount,
       },
-    );
+
+      ...authToken(),
+    });
 
     const pageCount = Math.ceil(response.data.totalCount / 10);
     payload.setPageCount(pageCount);
@@ -37,9 +35,8 @@ interface LoginResponse {
 
 interface IPayload {
   page: number;
-  skip: number;
 
-  incomeType: string;
+  amount: string;
 
   setPageCount: (count: number) => void;
 }

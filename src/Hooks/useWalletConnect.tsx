@@ -17,7 +17,7 @@ export const useWalletConnect = () => {
       setWalletAddress("");
 
       toast.error("Please install MetaMask");
-      console.log("Please install MetaMask");
+      console.error("Please install MetaMask");
       return true;
     }
   }, [setWalletAddress]);
@@ -32,7 +32,6 @@ export const useWalletConnect = () => {
       });
       setWalletAddress(accounts[0]);
       toast.success("Connected Successfully");
-      console.log(accounts[0]);
     } catch (err: any) {
       toast.error(err.message);
       console.error(err);
@@ -57,7 +56,7 @@ export const useWalletConnect = () => {
       toast.success("Connected Successfully");
     } catch (error: any) {
       toast.error(error.message);
-      console.log(error);
+      console.error(error);
     }
   }, [installMeta, setWalletAddress, walletAddress]);
 
@@ -71,7 +70,6 @@ export const useWalletConnect = () => {
         });
         if (accounts.length > 0) {
           setWalletAddress(accounts[0]);
-          console.log(accounts[0]);
         }
       } catch (err: any) {
         toast.error(err.message);
@@ -82,7 +80,6 @@ export const useWalletConnect = () => {
     const addWalletListener = async () => {
       window.ethereum.on("accountsChanged", (accounts: string[]) => {
         setWalletAddress(accounts[0]);
-        console.log(accounts[0]);
       });
     };
 

@@ -9,6 +9,6 @@ export const getPackages = async () => {
 
     return response?.data;
   } catch (error) {
-    console.log("error while getting package", error);
+    console.error("error while getting package", error);
   }
 };

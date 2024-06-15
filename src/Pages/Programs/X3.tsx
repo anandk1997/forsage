@@ -5,7 +5,7 @@ import { useDashboard } from "src/Hooks/useDashboard";
 const X3 = () => {
   const [workingTreeData, setWorkingTreeData] = useState([]);
   const [totalPartners, setTotalPartners] = useState(0);
-  const { userInfo,dashboardData } = useDashboard();
+  const { userInfo, dashboardData } = useDashboard();
 
   const getWorkingTree = async () => {
     const token = localStorage.getItem("token");
@@ -22,7 +22,7 @@ const X3 = () => {
 
     const response = await fetch(
       `${API_URL}api/v1/team/workingList`,
-      requestOptions
+      requestOptions,
     );
     const result = await response.json();
     setWorkingTreeData(result?.packages);
@@ -33,15 +33,15 @@ const X3 = () => {
     getWorkingTree();
   }, []);
 
-  console.log("workingTreeData", workingTreeData);
   const myStyle = {
     padding: "0px 50px",
   };
-  const newStyle = { flexWrap: "wrap" };
+
   const thirdStyle = {
     display: "flex",
     MaxWidth: "150px",
   };
+
   return (
     <div className="flex flex-col space-y-10 sm:space-y-7.5">
       <div className="flex flex-wrap justify-between notranslate ">
@@ -68,7 +68,7 @@ const X3 = () => {
             </div>
             <div className="flex flex-col items-end">
               <div className="self-end text-two-half text-white font-bold sm:text-2xl whitespace-nowrap">
-                {dashboardData.totalWorkingSum} USDT
+                {dashboardData?.totalWorkingSum} USDT
               </div>
             </div>
           </div>
@@ -113,9 +113,9 @@ const X3 = () => {
                       <div className="flex w-full justify-center items-center">
                         <div
                           className="relative flex  justify-evenly items-start false"
-                          style={newStyle}
+                          style={{ flexWrap: "wrap" }}
                         >
-                          {item?.totalIds?.map((news: any, i: number) => (
+                          {item?.totalIds?.map((_: any, i: number) => (
                             <div key={i} className="flex" style={thirdStyle}>
                               <div className="flex flex-col w-full justify-evenly items-center space-y-1.5">
                                 <div className="relative">
@@ -191,9 +191,10 @@ const X3 = () => {
                   strokeLinejoin="round"
                 ></path>
               </svg>
-              <span className="text-base sm:text-sm">Total Partners {totalPartners}</span>
+              <span className="text-base sm:text-sm">
+                Total Partners {totalPartners}
+              </span>
             </div>
-            
           </div>
         </div>
       </div>

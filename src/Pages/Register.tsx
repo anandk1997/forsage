@@ -24,7 +24,7 @@ const Register = () => {
   const checkBalance = async (walletAddress: string) => {
     try {
       if (!window.ethereum) {
-        console.log("window.ethereum is not available");
+        console.info("window.ethereum is not available");
         return;
       }
 
@@ -162,7 +162,7 @@ const Register = () => {
         })
         .finally(() => setisLoading(false));
     } catch (error: any) {
-      console.log("here last ", error);
+      console.error("here last ", error);
       toast.error(error?.data?.message);
     } finally {
       setisLoading(false);

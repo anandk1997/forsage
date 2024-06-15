@@ -11,10 +11,7 @@ export const PackagesList = (data: any) => {
   const packageType = data?.packageType;
   const user = data?.user;
 
-  const executeTransactionForWorking = async (packageId: any, price: any) => {
-    console.log("attributeValue", packageId);
-    console.log("price", price);
-
+  const executeTransactionForWorking = async (_: any, price: any) => {
     const ada = await checkLevel(price);
 
     if (!ada?.address) {
@@ -22,7 +19,7 @@ export const PackagesList = (data: any) => {
       return;
     }
     if (!window.ethereum) {
-      console.log("window.ethereum is not available");
+      console.info("window.ethereum is not available");
       return;
     }
 
@@ -91,19 +88,19 @@ export const PackagesList = (data: any) => {
         .catch((error: any) => {
           toast.error(error.message);
         })
-        .finally(() => console.log("done"));
+        .finally(() => console.info("done"));
     } catch (error: any) {
-      console.log("here last ", error);
+      console.error("here last ", error);
       toast.error(error?.data?.message);
     } finally {
-      console.log("done");
+      console.error("done");
     }
   };
 
   const handleSubmit = async (
     price: any,
     uniqueId: any,
-    transactionHash: any
+    transactionHash: any,
   ) => {
     const raw = JSON.stringify({
       price: price,
@@ -126,7 +123,7 @@ export const PackagesList = (data: any) => {
 
     const result = await fetch(
       `${API_URL}api/v1/dashboard/submitWorking`,
-      requestOptions
+      requestOptions,
     );
     const response = await result.json();
 
@@ -157,10 +154,9 @@ export const PackagesList = (data: any) => {
       },
     };
 
-    console.log("requestOptions", requestOptions);
     const result = await fetch(
       `${API_URL}api/v1/dashboard/checkLevelIncome`,
-      requestOptions
+      requestOptions,
     );
     const response = await result.json();
     const finalObject = {
@@ -171,9 +167,8 @@ export const PackagesList = (data: any) => {
 
     return finalObject;
   };
-  const executeTransactionForMatrix = async (packageId: any, price: any) => {
-    console.log("attributeValue", packageId);
-    console.log("price", price);
+
+  const executeTransactionForMatrix = async (_: any, price: any) => {
     const raw = JSON.stringify({
       packages: price,
     });
@@ -192,7 +187,7 @@ export const PackagesList = (data: any) => {
     };
     const result = await fetch(
       `${API_URL}api/v1/dashboard/submitNonWorking`,
-      requestOptions
+      requestOptions,
     );
     const response = await result.json();
 

@@ -8,7 +8,7 @@ export const signupApi = async (
     const response = await axiosInstance.post("api/v1/auth/signup", payload);
     return response;
   } catch (error: any) {
-    console.log(error);
+    console.error(error);
     throw error;
   }
 };
