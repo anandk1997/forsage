@@ -82,7 +82,7 @@ const X3 = () => {
               workingTreeData.length > 0 &&
               workingTreeData?.map((item: any, key: number) => (
                 <a key={key} href="#">
-                  <div className="relative overflow-hidden flex flex-col w-180px min-h-158px max-h-[180px] sm:w-158px rounded-small p-5 m-2 justify-between bg-main-blue hover:bg-hover-main-blue sm:space-y-1.5">
+                  <div className="relative overflow-hidden flex flex-col w-180px h-[240px] sm:w-[158px] rounded-small p-5 m-2 justify-between bg-main-blue hover:bg-hover-main-blue sm:space-y-1.5">
                     <div className="flex w-full justify-between !mb-2.5">
                       <span
                         style={myStyle}
