@@ -1,7 +1,7 @@
 import { authToken, axiosInstance } from "src/Lib/utils";
 
 export const partnersApi = async (
-  payload: IPayload
+  payload: IPayload,
 ): Promise<LoginResponse[]> => {
   try {
     const response = await axiosInstance.get(`api/v1/team/partners/`, {

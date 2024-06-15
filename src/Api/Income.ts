@@ -8,8 +8,8 @@ export const incomeApi = async (
       `api/v1/incomes/${payload.incomeType}`,
       {
         params: {
-          page: payload.page,
-          skip: payload.skip,
+          // page: payload.page,
+          skip: payload.page,
           limit: "10",
         },
 

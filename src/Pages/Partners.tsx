@@ -52,14 +52,14 @@ const Partners = () => {
                 className={cn(
                   "flex items-center rounded px-2.5 py-1",
 
-                  isFilters ? "bg-main-blue" : "bg-main-blue-200"
+                  isFilters ? "bg-main-blue" : "bg-main-blue-200",
                 )}
               >
                 <svg
                   className={cn(
                     "w-5 h-5 fill-current mr-1.5",
 
-                    isFilters ? "text-white" : "text-main-blue"
+                    isFilters ? "text-white" : "text-main-blue",
                   )}
                   viewBox="0 0 24 24"
                   fill="#406AFF"
@@ -71,7 +71,7 @@ const Partners = () => {
                   className={cn(
                     "text-base leading-6",
 
-                    isFilters ? "text-white" : "text-main-blue"
+                    isFilters ? "text-white" : "text-main-blue",
                   )}
                 >
                   Filters
@@ -116,7 +116,7 @@ const Partners = () => {
                               <li
                                 className={cn(
                                   "min-h-50px py-3 px-5 border-b border-white-200 last:border-none hover:cursor-pointer hover:bg-gray-500",
-                                  amount === "20" && "bg-gray-500"
+                                  amount === "20" && "bg-gray-500",
                                 )}
                                 onClick={() => updatePackage("20")}
                               >
@@ -126,7 +126,7 @@ const Partners = () => {
                               <li
                                 className={cn(
                                   "min-h-50px py-3 px-5 border-b border-white-200 last:border-none hover:cursor-pointer hover:bg-gray-500",
-                                  amount === "50" && "bg-gray-500"
+                                  amount === "50" && "bg-gray-500",
                                 )}
                                 onClick={() => updatePackage("50")}
                               >
@@ -136,7 +136,7 @@ const Partners = () => {
                               <li
                                 className={cn(
                                   "min-h-50px py-3 px-5 border-b border-white-200 last:border-none hover:cursor-pointer hover:bg-gray-500",
-                                  amount === "100" && "bg-gray-500"
+                                  amount === "100" && "bg-gray-500",
                                 )}
                                 onClick={() => updatePackage("100")}
                               >
@@ -146,7 +146,7 @@ const Partners = () => {
                               <li
                                 className={cn(
                                   "min-h-50px py-3 px-5 border-b border-white-200 last:border-none hover:cursor-pointer hover:bg-gray-500",
-                                  amount === "200" && "bg-gray-500"
+                                  amount === "200" && "bg-gray-500",
                                 )}
                                 onClick={() => updatePackage("200")}
                               >
@@ -156,7 +156,7 @@ const Partners = () => {
                               <li
                                 className={cn(
                                   "min-h-50px py-3 px-5 border-b border-white-200 last:border-none hover:cursor-pointer hover:bg-gray-500",
-                                  amount === "500" && "bg-gray-500"
+                                  amount === "500" && "bg-gray-500",
                                 )}
                                 onClick={() => updatePackage("500")}
                               >
