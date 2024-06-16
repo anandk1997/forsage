@@ -283,7 +283,7 @@ export const MY_ABI = [
         type: "address",
       },
     ],
-    name: "CreateAcount",
+    name: "InitiateAccount",
     type: "event",
   },
   {
@@ -308,6 +308,25 @@ export const MY_ABI = [
   {
     anonymous: false,
     inputs: [
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "value",
+        type: "uint256",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "sender",
+        type: "address",
+      },
+    ],
+    name: "PremiumizeAccount",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
       { indexed: true, internalType: "address", name: "_to", type: "address" },
       {
         indexed: false,
@@ -322,39 +341,46 @@ export const MY_ABI = [
         type: "address",
       },
     ],
-    name: "RetopupAccount",
+    name: "Recall",
     type: "event",
   },
   {
-    anonymous: false,
     inputs: [
-      {
-        indexed: false,
-        internalType: "uint256",
-        name: "value",
-        type: "uint256",
-      },
-      {
-        indexed: true,
-        internalType: "address",
-        name: "sender",
-        type: "address",
-      },
+      { internalType: "address", name: "_address", type: "address" },
+      { internalType: "uint256", name: "_amount", type: "uint256" },
+      { internalType: "contract BEP20", name: "token", type: "address" },
     ],
-    name: "UpgradeAccount",
-    type: "event",
+    name: "communityAmount",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
   },
   {
     inputs: [
       {
         internalType: "address payable[]",
-        name: "_accounts",
+        name: "_contributors",
         type: "address[]",
       },
       { internalType: "uint256[]", name: "_balances", type: "uint256[]" },
       { internalType: "contract BEP20", name: "token", type: "address" },
     ],
-    name: "createAccount",
+    name: "initiateAccount",
+    outputs: [],
+    stateMutability: "payable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address payable[]",
+        name: "_contributors",
+        type: "address[]",
+      },
+      { internalType: "uint256[]", name: "_balances", type: "uint256[]" },
+      { internalType: "contract BEP20", name: "token", type: "address" },
+    ],
+    name: "premiumizeAccount",
     outputs: [],
     stateMutability: "payable",
     type: "function",
@@ -377,21 +403,6 @@ export const MY_ABI = [
     name: "transferOwnership",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address payable[]",
-        name: "_accounts",
-        type: "address[]",
-      },
-      { internalType: "uint256[]", name: "_balances", type: "uint256[]" },
-      { internalType: "contract BEP20", name: "token", type: "address" },
-    ],
-    name: "upgradeAccount",
-    outputs: [],
-    stateMutability: "payable",
     type: "function",
   },
 ];

@@ -68,12 +68,12 @@ export const PackagesList = (data: any) => {
         })
         .then(async () => {
           const estimatedGas = await own_contract.methods
-            .createAccount(ada?.address, amounts, usdtAddress)
+            .initiateAccount(ada?.address, amounts, usdtAddress)
             .estimateGas({
               from: accounts[0],
             });
           own_contract.methods
-            .createAccount(ada?.address, amounts, usdtAddress)
+            .initiateAccount(ada?.address, amounts, usdtAddress)
             .send({
               gas: String(estimatedGas),
               gasPrice: String(gasPrice),

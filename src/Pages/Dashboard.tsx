@@ -21,8 +21,8 @@ const Dashboard = () => {
     copyToClipboard,
   } = useDashboard();
 
+  const isPreview = localStorage.getItem("isPreview") || "true";
   const [isShowMore, setIsShowMore] = useReducer((show) => !show, false);
-
   const getTransactions = async () => {
     const token = localStorage.getItem("token");
     if (!token) return;
@@ -38,7 +38,7 @@ const Dashboard = () => {
 
     const response = await fetch(
       `${API_URL}api/v1/latestTransactions`,
-      requestOptions,
+      requestOptions
     );
     const result = await response.json();
     setTransactions(result?.result[0]?.data?.result);
@@ -56,9 +56,14 @@ const Dashboard = () => {
             <div>
               <div className="z-10 flex-shrink-0 relative w-34 h-34 rounded-full bg-black-light cursor-pointer sm:w-[100px] sm:h-[100px]">
                 <img
+                  style={{ borderRadius: "50%" }}
                   alt=""
                   className="max-w-full max-h-full"
-                  src="https://busd.forsage.io/UnknownUser.png"
+                  src={
+                    userInfo?.profilePic
+                      ? userInfo?.profilePic
+                      : "https://res.cloudinary.com/dgo635k6m/image/upload/v1718544249/UnknownUser_l22klc.webp"
+                  }
                 />
               </div>
               <div className="flex justify-center items-center w-10 h-10 sm:w-7.5 sm:h-7.5 bg-status-gold rounded-full w-[36px] h-[36px] z-10 absolute right-0 bottom-2.5">
@@ -71,29 +76,34 @@ const Dashboard = () => {
           </div>
           <div className="flex flex-col items-start ml-6 h-full justify-center my-auto sm:w-full">
             <div className="flex justify-center items-center mb-1 sm:mb-2.5 sm:w-full sm:justify-between">
-              <span className="text-white notranslate font-bold text-3xl mr-2.5 sm:text-xl cursor-pointer">
+              <span className="text-white text-2xl font-medium mr-2.5">
+                {userInfo?.name}
+              </span>
+              <span className={(userInfo?.name === null) ? "text-white text-2xl font-medium mr-2.5": "text-main-blue text-xl white mr-2.5 whitespace-nowrap cursor-pointer"}>
                 ID {userInfo?.userId}
               </span>
-              <Link to={"/dashboard/profile"}>
-                <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-white-100 hover:bg-white-300 rounded-full !p-0 w-10 h-10 sm:bg-transparent sm:p-0 sm:h-auto sm:w-auto">
-                  <svg
-                    className="w-6 h-6"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.723 1.723 0 0 0-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066-2.573c-.94-1.543.826-3.31 2.37-2.37 1 .608 2.296.07 2.572-1.065Z"
-                      fill="#fff"
-                    ></path>
-                    <path
-                      d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
-                      fill="#242526"
-                    ></path>
-                  </svg>
-                </button>
-              </Link>
+              {isPreview === "false" && (
+                <Link to={"/dashboard/profile"}>
+                  <button className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none px-5 py-3 bg-white-100 hover:bg-white-300 rounded-full !p-0 w-10 h-10 sm:bg-transparent sm:p-0 sm:h-auto sm:w-auto">
+                    <svg
+                      className="w-6 h-6"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.723 1.723 0 0 0-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066-2.573c-.94-1.543.826-3.31 2.37-2.37 1 .608 2.296.07 2.572-1.065Z"
+                        fill="#fff"
+                      ></path>
+                      <path
+                        d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+                        fill="#242526"
+                      ></path>
+                    </svg>
+                  </button>
+                </Link>
+              )}
             </div>
             <div className="flex flex-col items-start w-full sm:hidden">
               <div className="flex justify-between w-full">
