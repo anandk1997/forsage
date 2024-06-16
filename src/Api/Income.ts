@@ -2,7 +2,7 @@ import { authToken, axiosInstance } from "src/Lib/utils";
 
 export const incomeApi = async (
   payload: IPayload,
-): Promise<LoginResponse[]> => {
+): Promise<IncomeResponse[]> => {
   try {
     const response = await axiosInstance.get(
       `api/v1/incomes/${payload.incomeType}`,
@@ -27,7 +27,7 @@ export const incomeApi = async (
   }
 };
 
-interface LoginResponse {
+interface IncomeResponse {
   statusCode: number;
   statusMessage: string;
   type: string;

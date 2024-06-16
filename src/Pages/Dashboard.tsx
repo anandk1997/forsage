@@ -144,7 +144,7 @@ const Dashboard = () => {
                 >
                   <path
                     d="m1 1.992 4.75 6.016L11 1.992"
-                    stroke-width="2"
+                    strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   ></path>

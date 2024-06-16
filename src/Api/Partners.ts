@@ -2,7 +2,7 @@ import { authToken, axiosInstance } from "src/Lib/utils";
 
 export const partnersApi = async (
   payload: IPayload,
-): Promise<LoginResponse[]> => {
+): Promise<PartnersResponse[]> => {
   try {
     const response = await axiosInstance.get(`api/v1/team/partners/`, {
       params: {
@@ -25,7 +25,7 @@ export const partnersApi = async (
   }
 };
 
-interface LoginResponse {
+interface PartnersResponse {
   statusCode: number;
   statusMessage: string;
   type: string;

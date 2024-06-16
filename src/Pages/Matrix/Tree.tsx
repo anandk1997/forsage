@@ -152,7 +152,7 @@ const Tree = () => {
                                                         d="M10 9.167A3.333 3.333 0 1 0 10 2.5a3.333 3.333 0 0 0 0 6.667ZM5 17.5v-1.667A3.333 3.333 0 0 1 8.333 12.5h3.334A3.333 3.333 0 0 1 15 15.833V17.5"
                                                         stroke="#191A1B"
                                                         strokeLinecap="round"
-                                                        stroke-linejoin="round"
+                                                        strokeLinejoin="round"
                                                       ></path>
                                                     </svg>
                                                     <span className="group-hover:flex group-hover:absolute hidden w-20 h-20 sm:w-12 sm:h-12 rounded-full bg-white text-main-bg flex justify-center items-center z-30 text-sm sm:text-mini ">
@@ -208,7 +208,7 @@ const Tree = () => {
                                                         d="M10 9.167A3.333 3.333 0 1 0 10 2.5a3.333 3.333 0 0 0 0 6.667ZM5 17.5v-1.667A3.333 3.333 0 0 1 8.333 12.5h3.334A3.333 3.333 0 0 1 15 15.833V17.5"
                                                         stroke="#191A1B"
                                                         strokeLinecap="round"
-                                                        stroke-linejoin="round"
+                                                        strokeLinejoin="round"
                                                       ></path>
                                                     </svg>
                                                     <span className="group-hover:flex group-hover:absolute hidden w-20 h-20 sm:w-12 sm:h-12 rounded-full bg-white text-main-bg flex justify-center items-center z-30 text-sm sm:text-mini ">
@@ -285,7 +285,7 @@ const Tree = () => {
                                                         d="M10 9.167A3.333 3.333 0 1 0 10 2.5a3.333 3.333 0 0 0 0 6.667ZM5 17.5v-1.667A3.333 3.333 0 0 1 8.333 12.5h3.334A3.333 3.333 0 0 1 15 15.833V17.5"
                                                         stroke="#191A1B"
                                                         strokeLinecap="round"
-                                                        stroke-linejoin="round"
+                                                        strokeLinejoin="round"
                                                       ></path>
                                                     </svg>
                                                     <span className="group-hover:flex group-hover:absolute hidden w-20 h-20 sm:w-12 sm:h-12 rounded-full bg-white text-main-bg flex justify-center items-center z-30 text-sm sm:text-mini ">
@@ -406,7 +406,7 @@ const Tree = () => {
                                                         d="M10 9.167A3.333 3.333 0 1 0 10 2.5a3.333 3.333 0 0 0 0 6.667ZM5 17.5v-1.667A3.333 3.333 0 0 1 8.333 12.5h3.334A3.333 3.333 0 0 1 15 15.833V17.5"
                                                         stroke="#191A1B"
                                                         strokeLinecap="round"
-                                                        stroke-linejoin="round"
+                                                        strokeLinejoin="round"
                                                       ></path>
                                                     </svg>
                                                     <span className="group-hover:flex group-hover:absolute hidden w-20 h-20 sm:w-12 sm:h-12 rounded-full bg-white text-main-bg flex justify-center items-center z-30 text-sm sm:text-mini ">
@@ -462,7 +462,7 @@ const Tree = () => {
                                                         d="M10 9.167A3.333 3.333 0 1 0 10 2.5a3.333 3.333 0 0 0 0 6.667ZM5 17.5v-1.667A3.333 3.333 0 0 1 8.333 12.5h3.334A3.333 3.333 0 0 1 15 15.833V17.5"
                                                         stroke="#191A1B"
                                                         strokeLinecap="round"
-                                                        stroke-linejoin="round"
+                                                        strokeLinejoin="round"
                                                       ></path>
                                                     </svg>
                                                     <span className="group-hover:flex group-hover:absolute hidden w-20 h-20 sm:w-12 sm:h-12 rounded-full bg-white text-main-bg flex justify-center items-center z-30 text-sm sm:text-mini ">
@@ -539,7 +539,7 @@ const Tree = () => {
                                                         d="M10 9.167A3.333 3.333 0 1 0 10 2.5a3.333 3.333 0 0 0 0 6.667ZM5 17.5v-1.667A3.333 3.333 0 0 1 8.333 12.5h3.334A3.333 3.333 0 0 1 15 15.833V17.5"
                                                         stroke="#191A1B"
                                                         strokeLinecap="round"
-                                                        stroke-linejoin="round"
+                                                        strokeLinejoin="round"
                                                       ></path>
                                                     </svg>
                                                     <span className="group-hover:flex group-hover:absolute hidden w-20 h-20 sm:w-12 sm:h-12 rounded-full bg-white text-main-bg flex justify-center items-center z-30 text-sm sm:text-mini ">
@@ -646,7 +646,7 @@ const Tree = () => {
                             <g
                               opacity=".5"
                               strokeLinecap="round"
-                              stroke-linejoin="round"
+                              strokeLinejoin="round"
                             >
                               <path d="M14.167 6.667v-2.5a.833.833 0 0 0-.834-.834H5A1.667 1.667 0 0 0 3.333 5m0 0A1.667 1.667 0 0 0 5 6.667h10a.833.833 0 0 1 .833.833V10m-12.5-5v10A1.667 1.667 0 0 0 5 16.667h10a.833.833 0 0 0 .833-.834v-2.5"></path>
                               <path d="M16.667 10v3.333h-3.334a1.667 1.667 0 0 1 0-3.333h3.334Z"></path>
@@ -678,9 +678,9 @@ const Tree = () => {
                     >
                       <path
                         d="M7 13 1 7M7 1 1 7"
-                        stroke-width="1.5"
+                        strokeWidth="1.5"
                         strokeLinecap="round"
-                        stroke-linejoin="round"
+                        strokeLinejoin="round"
                       ></path>
                     </svg>
                     <span className="text-white text-base ml-2.5">
@@ -706,9 +706,9 @@ const Tree = () => {
                     >
                       <path
                         d="m1 13 6-6M1 1l6 6"
-                        stroke-width="1.5"
+                        strokeWidth="1.5"
                         strokeLinecap="round"
-                        stroke-linejoin="round"
+                        strokeLinejoin="round"
                       ></path>
                     </svg>
                   </Link>
@@ -734,9 +734,9 @@ const Tree = () => {
                     >
                       <path
                         d="M7 13 1 7M7 1 1 7"
-                        stroke-width="1.5"
+                        strokeWidth="1.5"
                         strokeLinecap="round"
-                        stroke-linejoin="round"
+                        strokeLinejoin="round"
                       ></path>
                     </svg>
                     <span className="text-white text-base ml-2 5">
@@ -804,9 +804,9 @@ const Tree = () => {
                     >
                       <path
                         d="m1 13 6-6M1 1l6 6"
-                        stroke-width="1.5"
+                        strokeWidth="1.5"
                         strokeLinecap="round"
-                        stroke-linejoin="round"
+                        strokeLinejoin="round"
                       ></path>
                     </svg>
                   </Link>
@@ -827,9 +827,9 @@ const Tree = () => {
                   >
                     <path
                       d="M7 13 1 7M7 1 1 7"
-                      stroke-width="1.5"
+                      strokeWidth="1.5"
                       strokeLinecap="round"
-                      stroke-linejoin="round"
+                      strokeLinejoin="round"
                     ></path>
                   </svg>
                   <span className="text-white text-base ml-4">
@@ -853,9 +853,9 @@ const Tree = () => {
                   >
                     <path
                       d="m1 13 6-6M1 1l6 6"
-                      stroke-width="1.5"
+                      strokeWidth="1.5"
                       strokeLinecap="round"
-                      stroke-linejoin="round"
+                      strokeLinejoin="round"
                     ></path>
                   </svg>
                 </Link>
