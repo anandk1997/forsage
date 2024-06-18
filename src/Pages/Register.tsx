@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { LogoGreen } from "src/Assets/Svg";
 import { Logo } from "src/Components/Logo";
 import { useSignup } from "src/Hooks/useSignup";
@@ -12,8 +12,14 @@ import { API_URL } from "src/Env";
 import toast from "react-hot-toast";
 import { CircularProgress } from "@mui/material";
 
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
+
 const Register = () => {
   const { walletAddress, connectMetamask } = useWalletConnect();
+  const query = useQuery();
+  const inviteCode = query.get("inviteCode");
   const [balance, setBalance] = useState<number>(0);
   const [upline, setUpline] = useState<number>(0);
   const [networkName, setNetworkName] = useState<string>("");
@@ -61,7 +67,7 @@ const Register = () => {
 
     const response = await fetch(
       `${API_URL}api/v1/auth/checkLevel`,
-      requestOptions,
+      requestOptions
     );
     const result = await response.json();
     const finalObject = {
@@ -76,7 +82,7 @@ const Register = () => {
 
   const sendUSDTTransactionForWorking = async (
     e: FormEvent<HTMLFormElement>,
-    ammm: any,
+    ammm: any
   ) => {
     e.preventDefault();
 
@@ -181,6 +187,30 @@ const Register = () => {
     checkBalance(walletAddress);
   }, [walletAddress]);
 
+  const callAPIForId = async (inviteCode: any) => {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    const requestOptions: any = {
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow",
+    };
+
+    const response = await fetch(
+      `${API_URL}api/v1/auth/checkUser/${inviteCode}`,
+      requestOptions
+    );
+    const result = await response.json();
+    if (result?.statusCode === 200) {
+      setUpline(result?.id);
+    } else {
+      toast.error(result?.statusMessage);
+    }
+  };
+
+  useEffect(() => {
+    callAPIForId(inviteCode);
+  }, [inviteCode]);
   return (
     <div className="flex relative overflow-hidden flex-col items-center justify-center w-screen min-h-screen text-white-500 pt-15">
       <header className="fixed top-0 w-full pb-2.5 pt-2.5 px-10 z-[2147483602] bg-transparent sm:px-5 lg:border-b lg:border-white-100 z-[999]">
@@ -652,6 +682,7 @@ const Register = () => {
                         placeholder="Upline"
                         name="sponsorId"
                         onInput={checkId}
+                        value={upline}
                       />
                     </div>
                   </div>
