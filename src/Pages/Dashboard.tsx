@@ -484,7 +484,7 @@ const Dashboard = () => {
         </div>
         <div className="grid w-full gap-10 mt-8 grid-cols-2 sm:grid-cols-1">
           <NavLink
-            onClick={(e) => toast.success("Comming Soon!")}
+            onClick={() => toast.success("Comming Soon!")}
             to="#"
             className="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
           >

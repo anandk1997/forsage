@@ -8,7 +8,6 @@ import {
   PartnersIcon,
   DashboardIcon,
   TeamIcon,
-  PromoIcon,
 } from "src/Assets/Icons";
 
 import { useNavContext } from "src/Contexts/useNavContext";
