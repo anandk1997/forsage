@@ -267,16 +267,16 @@ const Dashboard = () => {
                 </div>
               </div>
               <span className="hidden sm:block text-main-blue text-sm font-bold notranslate">
-                {`http://localhost:5173/register?inviteCode=${ethAddress}`}
+                {`https://thecryptoglobal.in/register?inviteCode=${ethAddress}`}
               </span>
             </div>
             <div className="flex items-center justify-between w-full">
               <span className="text-main-blue text-sm font-bold notranslate sm:hidden">
-                {`http://localhost:5173/register?inviteCode=${ethAddress}`}
+                {`https://thecryptoglobal.in/register?inviteCode=${ethAddress}`}
               </span>
               <div className="flex space-x-2.5 sm:w-full">
                 <button
-                  value={`http://localhost:5173/register?inviteCode=${ethAddress}`}
+                  value={`https://thecryptoglobal.in/register?inviteCode=${ethAddress}`}
                   className="flex justify-center items-center text-center text-base font-bold text-white rounded-mini sm:text-sm outline-none py-0 px-2.5 bg-main-blue text-white rounded !leading-30px hover:bg-hover-main-blue active:bg-active-main-blue !leading-30px sm:flex-1"
                   onClick={copyToClipboard}
                 >
