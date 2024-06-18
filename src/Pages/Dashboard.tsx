@@ -7,6 +7,7 @@ import { maskHex } from "src/Lib/utils";
 import { PackagesList } from "src/Components/PackagesList";
 import { API_URL } from "src/Env";
 import { timeAgo } from "src/Utils/TimeConvert";
+import toast from "react-hot-toast";
 
 const Dashboard = () => {
   const [transactions, setTransactions] = useState<[]>();
@@ -15,7 +16,6 @@ const Dashboard = () => {
 
     userInfo,
     workingPackages,
-    matrixPackages,
     ethAddress,
 
     copyToClipboard,
@@ -79,7 +79,13 @@ const Dashboard = () => {
               <span className="text-white text-2xl font-medium mr-2.5">
                 {userInfo?.name}
               </span>
-              <span className={(userInfo?.name === null) ? "text-white text-2xl font-medium mr-2.5": "text-main-blue text-xl white mr-2.5 whitespace-nowrap cursor-pointer"}>
+              <span
+                className={
+                  userInfo?.name === null
+                    ? "text-white text-2xl font-medium mr-2.5"
+                    : "text-main-blue text-xl white mr-2.5 whitespace-nowrap cursor-pointer"
+                }
+              >
                 ID {userInfo?.userId}
               </span>
               {isPreview === "false" && (
@@ -453,7 +459,7 @@ const Dashboard = () => {
               name="wallet_addresss"
             />
             <div className="tree____">
-              {matrixPackages &&
+              {/* {matrixPackages &&
                 matrixPackages.length > 0 &&
                 matrixPackages && (
                   <PackagesList
@@ -461,7 +467,8 @@ const Dashboard = () => {
                     packages={matrixPackages}
                     packageType="matrix"
                   />
-                )}
+                )} */}
+              <p>Comming Soon</p>
             </div>
           </div>
         </div>
@@ -477,7 +484,8 @@ const Dashboard = () => {
         </div>
         <div className="grid w-full gap-10 mt-8 grid-cols-2 sm:grid-cols-1">
           <NavLink
-            to="/dashboard/select/tree"
+            onClick={(e) => toast.success("Comming Soon!")}
+            to="#"
             className="relative flex flex-col p-7.5 w-full bg-gray rounded z-10 overflow-hidden justify-between min-h-programDashboard sm:p-5 sm:min-h-programDashboardMobile"
           >
             <div className="flex justify-between w-full z-10">
@@ -499,6 +507,7 @@ const Dashboard = () => {
                     <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
                     <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
                     <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
+                    {/* <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
                     <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
                     <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
                     <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
@@ -506,6 +515,8 @@ const Dashboard = () => {
                     <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
                     <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
                     <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
+                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
+                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div> */}
                   </div>
                 </div>
                 <div className="flex flex-col h-full relative justify-end sm:w-full sm:items-center">
@@ -567,6 +578,7 @@ const Dashboard = () => {
                     <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
                     <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
                     <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
+                    {/* <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
                     <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
                     <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
                     <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
@@ -575,8 +587,7 @@ const Dashboard = () => {
                     <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
                     <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
                     <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
-                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div>
+                    <div className="flex items-center justify-center m-1 w-7.5 h-7.5 rounded-md bg-main-blue"></div> */}
                   </div>
                 </div>
                 <div className="flex flex-col h-full relative justify-end sm:w-full sm:items-center">
