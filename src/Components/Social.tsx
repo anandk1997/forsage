@@ -1,7 +1,7 @@
 import {
-  DiscordIcon,
+  FacebookIcon,
+  InstagramIcon,
   TelegramIcon,
-  TwitterIcon,
   YoutubeIcon,
 } from "src/Assets/Svg";
 
@@ -14,16 +14,16 @@ export const Social = () => {
             className="w-7 h-7 flex justify-center items-center rounded-full bg-white-100 hover:bg-white-300"
             target="_blank"
             rel="noreferrer"
-            href="https://discord.gg/#/"
+            href="https://www.instagram.com/right_soch.1/"
           >
-            <DiscordIcon />
+            <InstagramIcon />
           </a>
 
           <a
             className="w-7 h-7 flex justify-center items-center rounded-full bg-white-100 hover:bg-white-300"
             target="_blank"
             rel="noreferrer"
-            href="https://t.me/#/"
+            href="https://t.me/VIPCRYPTOGLOBAL"
           >
             <TelegramIcon />
           </a>
@@ -32,7 +32,7 @@ export const Social = () => {
             className="w-7 h-7 flex justify-center items-center rounded-full bg-white-100 hover:bg-white-300"
             target="_blank"
             rel="noreferrer"
-            href="https://www.youtube.com/@#/"
+            href="https://www.youtube.com/@rscryptoglobal"
           >
             <YoutubeIcon />
           </a>
@@ -41,9 +41,9 @@ export const Social = () => {
             className="w-7 h-7 flex justify-center items-center rounded-full bg-white-100 hover:bg-white-300"
             target="_blank"
             rel="noreferrer"
-            href="https://twitter.com/#/"
+            href="https://www.facebook.com/profile.php?id=100073645694870"
           >
-            <TwitterIcon />
+            <FacebookIcon />
           </a>
         </div>
       </div>
