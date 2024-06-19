@@ -25,6 +25,7 @@ const Dashboard = () => {
 
   const isPreview = localStorage.getItem("isPreview") || "true";
   const [isShowMore, setIsShowMore] = useReducer((show) => !show, false);
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
   const [totalTransactionCount, setTotalTransactionCount] = useState<
     number | string | null
   >(null);
@@ -97,6 +98,10 @@ const Dashboard = () => {
 
     fetchTransactionCounts();
   }, []);
+
+  const dropDownChange = () => {
+    setDropdownVisible(!isDropdownVisible);
+  };
 
   return (
     <div className="flex flex-col w-full space-y-10 sm:space-y-5 animate__animated">
@@ -883,7 +888,10 @@ const Dashboard = () => {
                 </span>
               </div>
             </div>
-            <div className="bg-gray rounded p-5 flex flex-col flex-1 max-w-full">
+            <div
+              className="bg-gray rounded p-5 flex flex-col flex-1 max-w-full"
+              onClick={dropDownChange}
+            >
               <div className="flex justify-between items-center text-base text-white-500 sm:text-sm">
                 <span>The Crypto Global USDT Contracts</span>
                 <button className="rounded-full h-5 w-5 justify-center items-center bg-main-blue hidden lg:flex">
@@ -898,7 +906,9 @@ const Dashboard = () => {
                   </svg>
                 </button>
               </div>
-              <div className="flex flex-col flex-1 justify-between lg:hidden">
+              <div
+                className={`flex flex-col flex-1 justify-between ${isDropdownVisible ? "" : "lg:hidden"}`}
+              >
                 <div className="flex flex-col border-t border-b border-white-100 pb-2.5 mt-2.5">
                   <div className="flex justify-between items-center py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
                     <span className="text-base text-white-500 notranslate sm:text-sm">
@@ -906,11 +916,12 @@ const Dashboard = () => {
                     </span>
                     <div className="flex justify-end items-center space-x-2.5">
                       <span className="text-base text-white notranslate sm:text-sm">
-                        0xf4...ca71
+                        0xF6B...9edF
                       </span>
                       <a
                         target="_blank"
-                        href="https://bscscan.com/address/0xf418b08b835441f925687f06bb9dc3ec51a7ca71"
+                        rel="noopener noreferrer"
+                        href="https://bscscan.com/address/0xF6Be8847ab503fe3A09E3526a04f62D8482D9edF"
                       >
                         <svg
                           className="h-18px w-18px"
