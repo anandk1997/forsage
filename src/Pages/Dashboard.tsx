@@ -1,6 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useReducer, useState } from "react";
-
 import { useDashboard } from "src/Hooks/useDashboard";
 import { LogoWhite } from "src/Assets/Svg";
 import { maskHex } from "src/Lib/utils";
@@ -8,9 +7,12 @@ import { PackagesList } from "src/Components/PackagesList";
 import { API_URL } from "src/Env";
 import { timeAgo } from "src/Utils/TimeConvert";
 import toast from "react-hot-toast";
+interface Transaction {
+  timeStamp: string;
+}
 
 const Dashboard = () => {
-  const [transactions, setTransactions] = useState<[]>();
+  const [transactions, setTransactions] = useState<any>();
   const {
     dashboardData,
 
@@ -23,6 +25,14 @@ const Dashboard = () => {
 
   const isPreview = localStorage.getItem("isPreview") || "true";
   const [isShowMore, setIsShowMore] = useReducer((show) => !show, false);
+  const [totalTransactionCount, setTotalTransactionCount] = useState<
+    number | string | null
+  >(null);
+  const [todayTransactionCount, setTodayTransactionCount] = useState<
+    number | string | null
+  >(null);
+  const API_KEY = "178Z4Z1JBTU8BVBD5HSVK5E76F3US4GSJ1"; // Replace with your BscScan API key
+  const BNB_ADDRESS = "0xF6Be8847ab503fe3A09E3526a04f62D8482D9edF";
   const getTransactions = async () => {
     const token = localStorage.getItem("token");
     if (!token) return;
@@ -46,6 +56,46 @@ const Dashboard = () => {
 
   useEffect(() => {
     getTransactions();
+  }, []);
+
+  useEffect(() => {
+    const fetchTransactionCounts = async () => {
+      try {
+        const response = await fetch(
+          `https://api.bscscan.com/api?module=account&startblock=0&endblock=99999999&action=txlist&address=${BNB_ADDRESS}&sort=asc&apikey=${API_KEY}`
+        );
+
+        const data: { status: string; result: Transaction[] } =
+          await response.json();
+
+        if (data.status === "1" && data.result) {
+          const transactions = data.result;
+
+          // Total transaction count
+          setTotalTransactionCount(transactions.length);
+
+          // Today's transaction count
+          const today = new Date().toISOString().split("T")[0]; // Get today's date in YYYY-MM-DD format
+          const todayTransactions = transactions.filter((tx) => {
+            const txDate = new Date(parseInt(tx.timeStamp) * 1000)
+              .toISOString()
+              .split("T")[0];
+            return txDate === today;
+          });
+
+          setTodayTransactionCount(todayTransactions.length);
+        } else {
+          setTotalTransactionCount(0);
+          setTodayTransactionCount(0);
+        }
+      } catch (error) {
+        console.error("Error fetching transaction counts:", error);
+        setTotalTransactionCount(0);
+        setTodayTransactionCount(0);
+      }
+    };
+
+    fetchTransactionCounts();
   }, []);
 
   return (
@@ -826,10 +876,10 @@ const Dashboard = () => {
               </span>
               <div className="flex flex-col py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
                 <span className="text-2xl text-white font-bold sm:text-xl">
-                  0 USDT
+                  {dashboardData?.totalTurnOver} USDT
                 </span>
                 <span className="text-green-light text-base items-baseline sm:text-sm">
-                  + 0 USDT
+                  + {dashboardData?.todayTotalTurnOver} USDT
                 </span>
               </div>
             </div>
@@ -891,10 +941,10 @@ const Dashboard = () => {
                       Transactions made
                     </span>
                     <span className="text-2xl text-white font-bold sm:text-xl">
-                      {dashboardData?.totalTransactions}
+                      {totalTransactionCount}
                     </span>
                     <span className="text-green-light text-base items-baseline sm:text-sm">
-                      + {dashboardData?.todayTotalTransactions}
+                      + {todayTransactionCount}
                     </span>
                   </div>
                   <div className="flex flex-col py-2.5 border-b border-white-100 space-y-1.5 last:border-0 last:pb-0">
