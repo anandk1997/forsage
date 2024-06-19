@@ -111,7 +111,12 @@ const Dashboard = () => {
             <div>
               <div className="z-10 flex-shrink-0 relative w-34 h-34 rounded-full bg-black-light cursor-pointer sm:w-[100px] sm:h-[100px]">
                 <img
-                  style={{ borderRadius: "50%" }}
+                  style={{
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                    width: "100%",
+                    height: "100%",
+                  }}
                   alt=""
                   className="max-w-full max-h-full"
                   src={

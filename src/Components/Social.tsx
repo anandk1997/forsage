@@ -2,6 +2,7 @@ import {
   FacebookIcon,
   InstagramIcon,
   TelegramIcon,
+  TwitterIcon,
   YoutubeIcon,
 } from "src/Assets/Svg";
 
@@ -19,6 +20,14 @@ export const Social = () => {
             <InstagramIcon />
           </a>
 
+          <a
+            className="w-7 h-7 flex justify-center items-center rounded-full bg-white-100 hover:bg-white-300"
+            target="_blank"
+            rel="noreferrer"
+            href="https://x.com/RohitSh52147632"
+          >
+            <TwitterIcon />
+          </a>
           <a
             className="w-7 h-7 flex justify-center items-center rounded-full bg-white-100 hover:bg-white-300"
             target="_blank"
